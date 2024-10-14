@@ -28,6 +28,8 @@ Disallow: /?p=
 Disallow: /xmlrpc.php
 Disallow: /?author=
 Disallow: /wp-json/oembed/
+Disallow: /assets/
+Disallow: /assets/*
 
 # Block specific bad bots
 User-agent: BadBot
