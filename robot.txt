@@ -1,0 +1,44 @@
+User-agent: *
+Disallow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /login/
+Disallow: /user-data/
+Disallow: /search
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/
+Disallow: /wp-json/
+Disallow: /wp-login.php
+Disallow: /wp-signup.php
+Disallow: /wp-comments-post.php
+Disallow: /wp-config.php
+Disallow: /wp-trackback.php
+Disallow: /wp-cron.php
+Disallow: /?s=
+Disallow: /?p=
+Disallow: /xmlrpc.php
+Disallow: /?author=
+Disallow: /wp-json/oembed/
+
+# Block specific bad bots
+User-agent: BadBot
+Disallow: /
+
+User-agent: EvilBot
+Disallow: /
+
+# Crawl-delay for bots that respect it
+User-agent: *
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://ill.network/sitemap.xml

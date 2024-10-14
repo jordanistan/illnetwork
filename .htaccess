@@ -1,0 +1,115 @@
+# BEGIN Security
+
+# Protect .htaccess file itself
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Disable directory browsing
+Options -Indexes
+
+# Protect wp-config.php file
+<Files wp-config.php>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Protect against clickjacking
+Header always append X-Frame-Options SAMEORIGIN
+
+# Prevent MIME-type sniffing
+Header set X-Content-Type-Options nosniff
+
+# Block access to xmlrpc.php
+<Files xmlrpc.php>
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Protect against cross-site scripting (XSS)
+Header set X-XSS-Protection "1; mode=block"
+
+# Disable file editing in WordPress (optional, can also be done in wp-config.php)
+<FilesMatch "(wp-config\.php|wp-admin|wp-content|wp-includes)">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Prevent malicious bots from scanning
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block known bad bots by user-agent
+    RewriteCond %{HTTP_USER_AGENT} ^.*(badbot|evilbot|spambot).* [NC]
+    RewriteRule .* - [F,L]
+
+    # Block access to common WordPress files hackers target
+    RewriteRule ^wp-admin$ - [F,L]
+    RewriteRule ^wp-login\.php$ - [F,L]
+    RewriteRule ^xmlrpc\.php$ - [F,L]
+    RewriteRule ^wp-content/.*\.(txt|xml|log|sql)$ - [F,L]
+    RewriteRule ^wp-includes/.*\.(php|log)$ - [F,L]
+    RewriteRule ^wp-config\.php$ - [F,L]
+
+    # Block access to hidden files and directories (e.g., .git, .htaccess)
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# Limit the number of login attempts (useful against brute force attacks)
+<IfModule mod_reqtimeout.c>
+    RequestReadTimeout header=20-40,MinRate=500 body=20-40,MinRate=500
+</IfModule>
+
+# Disable access to sensitive WordPress files
+<FilesMatch "(^\.htaccess|^\.git|^\.svn|wp-config\.php|readme\.html|license\.txt)">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Block access to sensitive server files
+<FilesMatch "\.(ini|log|sh|swp|bak|inc|dist)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Disable image hotlinking (optional, replace yourdomain.com with your domain)
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?yourdomain\.com/.*$ [NC]
+RewriteRule \.(jpg|jpeg|png|gif)$ - [F,L]
+
+# Limit file upload size to 10MB
+LimitRequestBody 10485760
+
+# Block IP addresses that are known to perform malicious activities (replace with actual IPs)
+<Limit GET POST PUT>
+    order allow,deny
+    deny from 123.456.789.000
+    deny from 234.567.890.123
+    allow from all
+</Limit>
+
+# Disable Trace and Track (protects against cross-site tracing attacks)
+TraceEnable off
+
+# Block access to PHP files in wp-content/uploads
+<Directory "/wp-content/uploads/">
+    <FilesMatch "\.php$">
+        Order Deny,Allow
+        Deny from all
+    </FilesMatch>
+</Directory>
+
+# Protect against SQL injection attacks by filtering query strings
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} (\<|\>|%3C|%3E|\[|\]|\{|%7B|%7D|\)|\(|%28|%29|%27|'|\;|--|\.\.|\\\\|\/\*) [NC,OR]
+    RewriteCond %{QUERY_STRING} ("|\%22|\%3C|\%3E|\%3B|\%27) [NC]
+    RewriteRule ^(.*)$ - [F,L]
+</IfModule>
+
+# Set content security policy (CSP) headers to prevent content injection attacks (optional, adjust according to your needs)
+Header set Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline';"
+
+# END Security
