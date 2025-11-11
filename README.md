@@ -55,28 +55,13 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ## :checkered_flag: Starting ##
 
-```bash
-# Clone this project
-$ git clone https://github.com/jordanistan/illnetwork
-
-# Access
-$ cd illnetwork
-
-# Build and run the application
-$ docker compose up --build
-
-# The web interface will be available at http://localhost:8080
-# The scanner can be run by executing the healthcheck.sh script inside the container.
-```
-
-To run a scan on a remote host, you can use `docker compose exec`:
+Getting started is as simple as running a single command in your terminal. This will download and run the setup script, which will clone the repository and start the necessary Docker services.
 
 ```bash
-# Run a scan on a remote host (replace <remote_host> with the IP or hostname)
-$ docker compose exec app ./healthcheck.sh -t <remote_host>
+curl -sSL https://raw.githubusercontent.com/jordanistan/illnetwork/main/setup.sh | bash
 ```
 
-Scan reports and remediation plans will be saved in the `reports` directory.
+Once the setup is complete, the script will provide you with instructions on how to run a scan. The web interface will be available at `http://localhost:8080`.
 
 ## :memo: License ##
 

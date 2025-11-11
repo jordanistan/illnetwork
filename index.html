@@ -42,11 +42,11 @@
       </section>
 
       <section id="scanner" class="section">
-        <h2>Run a Scan</h2>
+        <h2>Get Started in Seconds</h2>
         <div class="gunmetal-panel">
-          <p>Getting started is easy. Just copy and paste this command into your terminal. Your scan results will appear live on this dashboard and be saved to a new report.</p>
-          <pre style="background: #111; padding: 1rem; border-radius: 5px; border: 1px solid var(--glow-color); color: var(--text-color);"><code>docker compose exec scanner ./healthcheck.sh -t &lt;target_host&gt;</code></pre>
-          <p>Replace <code>&lt;target_host&gt;</code> with the IP address or hostname of the machine you want to scan. To scan the local machine (inside the container), use <code>localhost</code>.</p>
+          <p>Run the following command in your terminal to download, set up, and run the scanner automatically. It will clone the repository and start the services for you.</p>
+          <pre style="background: #111; padding: 1rem; border-radius: 5px; border: 1px solid var(--glow-color); color: var(--text-color);"><code>curl -sSL https://raw.githubusercontent.com/jordanistan/illnetwork/main/setup.sh | bash</code></pre>
+          <p>Once the setup is complete, you can run a scan using the command provided in the terminal.</p>
         </div>
       </section>
 
