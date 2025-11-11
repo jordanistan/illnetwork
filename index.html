@@ -29,20 +29,22 @@
 
     <main>
       <section id="home" class="section">
-        <h1>ill.network Security Scanner</h1>
+        <h1>Find Linux Vulnerabilities Before They Find You</h1>
         <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem auto;">
-          A professional-grade, comprehensive security and health audit tool for Linux systems.
-          Run it from anywhere, scan anything.
+          ill.network provides a professional-grade security and health audit for your systems. Run it from anywhere, get your results instantly.
         </p>
         <div style="text-align: center;">
-          <a href="#scanner" class="cta-button">Start Scan</a>
+          <a href="#scanner" class="cta-button">Get Started</a>
         </div>
+        <p style="text-align: center; font-size: 1rem; max-width: 800px; margin: 1rem auto 0 auto;">
+          *Run our scanner from your terminal and watch the results appear live in your browser.*
+        </p>
       </section>
 
       <section id="scanner" class="section">
         <h2>Run a Scan</h2>
         <div class="gunmetal-panel">
-          <p>To initiate a scan, run the following command in your terminal. The results will be displayed here and saved to a report file.</p>
+          <p>Getting started is easy. Just copy and paste this command into your terminal. Your scan results will appear live on this dashboard and be saved to a new report.</p>
           <pre style="background: #111; padding: 1rem; border-radius: 5px; border: 1px solid var(--glow-color); color: var(--text-color);"><code>docker compose exec scanner ./healthcheck.sh -t &lt;target_host&gt;</code></pre>
           <p>Replace <code>&lt;target_host&gt;</code> with the IP address or hostname of the machine you want to scan. To scan the local machine (inside the container), use <code>localhost</code>.</p>
         </div>
@@ -51,7 +53,7 @@
       <section id="reports" class="section">
         <h2>Scan Reports</h2>
         <div class="gunmetal-panel">
-          <p>Generated reports will be listed here. Click on a report to view the details.</p>
+          <p>Dive deep into your scan history. Our reports provide detailed breakdowns of vulnerabilities, track security changes over time, and offer actionable advice to help you secure your systems.</p>
           <div id="report-list">
             <!-- Report links will be dynamically inserted here -->
           </div>

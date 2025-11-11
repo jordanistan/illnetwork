@@ -6,17 +6,17 @@
   --gunmetal-start: #4a5568;
   --gunmetal-end: #2d3748;
   --glow-color: #00ffff;
-  --text-color: #e2e8f0; /* Slightly less bright than before */
+  --text-color: #e2e8f0;
   --background-color: #1a202c;
 }
 
 body {
   background-color: var(--background-color);
-  background-image: linear-gradient(to bottom, #333, #111);
+  background-image: linear-gradient(to bottom, #2d3748, #1a202c);
   color: var(--text-color);
-  font-family: 'Roboto', sans-serif; /* More readable font for body */
-  font-size: 18px; /* Increased base font size */
-  line-height: 1.6; /* Increased line height */
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -33,8 +33,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
-  border-bottom: 1px solid var(--glow-color);
-  animation: pulse-border 3s infinite; /* Slowed down animation */
+  border-bottom: 1px solid rgba(0, 255, 255, 0.5);
+  animation: pulse-border 4s infinite; /* Slowed down animation */
 }
 
 .header--logo {
@@ -54,7 +54,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  text-shadow: 0 0 8px var(--glow-color); /* Reduced glow */
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.7); /* More subtle glow */
 }
 
 .nav ul {
@@ -73,12 +73,12 @@ body {
 
 .nav a:hover {
   color: var(--glow-color);
-  text-shadow: 0 0 10px var(--glow-color);
+  text-shadow: 0 0 8px var(--glow-color);
 }
 
 .section {
   padding: 4rem 0;
-  border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
 }
 
 .section h1, .section h2 {
@@ -86,7 +86,7 @@ body {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 2rem;
-  text-shadow: 0 0 12px var(--glow-color); /* Reduced glow */
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* More subtle glow */
 }
 
 p {
@@ -104,31 +104,31 @@ p {
   font-family: 'Orbitron', sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 8px var(--glow-color); /* Reduced glow */
-  animation: pulse-glow 3s infinite; /* Slowed down animation */
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7); /* More subtle glow */
+  animation: pulse-glow 4s infinite; /* Slowed down animation */
 }
 
 .cta-button:hover {
   background: var(--glow-color);
   color: var(--background-color);
-  box-shadow: 0 0 15px var(--glow-color);
+  box-shadow: 0 0 12px var(--glow-color);
 }
 
 @keyframes pulse-border {
-  0% { border-color: var(--glow-color); }
-  50% { border-color: rgba(0, 255, 255, 0.4); }
-  100% { border-color: var(--glow-color); }
+  0% { border-color: rgba(0, 255, 255, 0.5); }
+  50% { border-color: rgba(0, 255, 255, 0.2); }
+  100% { border-color: rgba(0, 255, 255, 0.5); }
 }
 
 @keyframes pulse-glow {
-  0% { box-shadow: 0 0 8px var(--glow-color); }
-  50% { box-shadow: 0 0 15px var(--glow-color); }
-  100% { box-shadow: 0 0 8px var(--glow-color); }
+  0% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.7); }
+  50% { box-shadow: 0 0 12px rgba(0, 255, 255, 0.9); }
+  100% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.7); }
 }
 
 .gunmetal-panel {
     background-image: linear-gradient(to top, var(--gunmetal-start), var(--gunmetal-end));
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.15);
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
