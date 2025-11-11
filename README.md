@@ -1,74 +1,77 @@
-<div align="center" id="top"> 
-  <img src="https://raw.githubusercontent.com/jordanistan/ill.network/main/assets/img/logo.png" alt="ill.network" />
-
-  &#xa0;
-
-  <h1 align="center">ill.network Security Scanner</h1>
+<div align="center">
+  <img src="assets/img/logo.png" alt="Illnet Rx Logo" width="120">
+  <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; color: #e5e7eb;">Illnet Rx</h1>
+  <p style="font-family: 'Montserrat', sans-serif; font-style: italic; color: #93c5fd;">Your prescription for enterprise compliance.</p>
 </div>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/jordanistan/illnetwork?color=00ffff">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/jordanistan/illnetwork?color=00ffff">
-  <img alt="License"
-src="https://img.shields.io/github/license/jordanistan/illnetwork?color=00ffff">
+  <img alt="Language" src="https://img.shields.io/github/languages/top/jordanistan/illnetwork?style=for-the-badge&color=2563eb&labelColor=0b1220">
+  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/jordanistan/illnetwork?style=for-the-badge&color=2563eb&labelColor=0b1220">
+  <img alt="License" src="https://img.shields.io/github/license/jordanistan/illnetwork?style=for-the-badge&color=2563eb&labelColor=0b1220">
 </p>
 
-<p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/jordanistan" target="_blank">Author</a>
-</p>
+---
 
-<br>
+## :pill: About Illnet Rx
 
-## :dart: About ##
+**Illnet Rx** is an AI-driven security and compliance scanner designed for modern homelabs and enterprise systems. It performs a comprehensive audit of a target system (local or remote), uses the power of GPT-4 to analyze the findings, and generates a clear, actionable "prescription" to remediate vulnerabilities and harden your security posture.
 
-**ill.network Security Scanner** is a comprehensive security and health audit tool for Linux systems. It's designed to be run from a Docker container, allowing you to scan local or remote hosts for a wide range of vulnerabilities and misconfigurations. The scanner provides a detailed report with remediation suggestions to help you secure your systems.
+Don't just scan. **Diagnose and cure.**
 
-The web interface provides a user-friendly way to view scan reports and manage the scanner.
+## :sparkles: Features
 
-## :sparkles: Features ##
+- :microscope: **Comprehensive Diagnostics:** Utilizes a suite of industry-standard tools like **ClamAV** (malware), **rkhunter** (rootkits), and various system checks to perform a deep-level audit.
+- :robot: **AI-Powered Analysis:** Leverages **GPT-4** to interpret raw scan logs, identify critical issues, and provide expert-level analysis.
+- :clipboard: **Actionable Prescriptions:** Generates detailed, copy-pasteable remediation commands for every identified issue.
+- :satellite: **Remote & Local Scanning:** Seamlessly scan the local container environment or a remote host over SSH.
+- :bell: **Real-time Alerts:** Get notified via **Slack** or **Email** when high-severity issues are detected.
+- :tv: **Live Web Interface:** A modern, real-time web UI to run scans, monitor progress, and view reports.
 
-:heavy_check_mark: **Comprehensive System Audit:** Checks for out-of-date packages, kernel security parameters, world-writable files, and risky sudo configurations.
-:heavy_check_mark: **Network Exposure Scanning:** Uses `nmap` to scan for open ports and identify running services.
-:heavy_check_mark: **Docker Security Analysis:**
-    - Scans Docker images for known vulnerabilities using `Trivy`.
-    - Detects containers running with `--privileged` or `--net=host` flags.
-:heavy_check_mark: **Web Server Audits:** Checks for missing security headers on detected web servers.
-:heavy_check_mark: **Automated Remediation Plan:** Generates a shell script with recommended commands to fix identified issues.
-:heavy_check_mark: **Web Interface:** A modern, responsive web interface to view and manage scan results.
+## :rocket: Getting Started
 
-## :rocket: Technologies ##
+Getting started with Illnet Rx involves a one-time setup script and a single Docker command.
 
-The following tools were used in this project:
+### 1. Prerequisites
 
-- **Frontend:** HTML, CSS (SASS), JavaScript
-- **Backend/Scanner:** Bash, Docker
-- **Security Tools:** `nmap`, `trivy`, `rkhunter`, `chkrootkit`, and more.
+- **Docker** and **Docker Compose**
+- **Git**
+- **SSH access** to the remote host you intend to scan (with a private key, typically `~/.ssh/id_rsa`).
 
-## :white_check_mark: Requirements ##
+### 2. Configuration
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Docker](https://www.docker.com) installed.
-
-## :checkered_flag: Starting ##
-
-Getting started is as simple as running a single command in your terminal. This will download and run the setup script, which will clone the repository and start the necessary Docker services.
+The included setup script will configure your environment, create a `.env` file for your credentials, and prepare the application for launch.
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/jordanistan/illnetwork/main/setup.sh | bash
+# Run the interactive setup script
+bash Illnet-Rx/setup.sh
 ```
 
-Once the setup is complete, the script will provide you with instructions on how to run a scan. The web interface will be available at `http://localhost:8080`.
+This script will ask for:
+1.  The **remote host's IP address or hostname**.
+2.  The **remote user** for the SSH connection.
+3.  Your **OpenAI API Key**.
 
-## :memo: License ##
+It will then verify SSH access and create the `./Illnet-Rx/.env` file for you.
 
-This project is under the MIT License. For more details, see the [LICENSE](LICENSE) file.
+### 3. Launching the Application
 
+Once the setup is complete, you can build and run the application using Docker Compose:
+
+```bash
+# Build and start the services in detached mode
+docker-compose up --build -d
+```
+
+### 4. Accessing Illnet Rx
+
+The web interface will be available at: **[http://localhost:5001](http://localhost:5001)**
+
+From there, you can start your first scan and view the live results.
+
+## :memo: License
+
+This project is under the MIT License. For more details, see the `LICENSE` file.
+
+<div align="center">
 Made with :heart: by <a href="https://github.com/jordanistan" target="_blank">Jordanistan</a>
-
-&#xa0;
-
-<a href="#top">Back to top</a>
+</div>
