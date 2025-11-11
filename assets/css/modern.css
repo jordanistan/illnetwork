@@ -1,12 +1,12 @@
 /* assets/css/modern.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;500&display=swap');
 
 :root {
   --gunmetal-start: #4a5568;
   --gunmetal-end: #2d3748;
   --glow-color: #00ffff;
-  --text-color: #edf2f7;
+  --text-color: #e2e8f0; /* Slightly less bright than before */
   --background-color: #1a202c;
 }
 
@@ -14,7 +14,9 @@ body {
   background-color: var(--background-color);
   background-image: linear-gradient(to bottom, #333, #111);
   color: var(--text-color);
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Roboto', sans-serif; /* More readable font for body */
+  font-size: 18px; /* Increased base font size */
+  line-height: 1.6; /* Increased line height */
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -32,7 +34,7 @@ body {
   align-items: center;
   padding: 2rem 0;
   border-bottom: 1px solid var(--glow-color);
-  animation: pulse-border 2s infinite;
+  animation: pulse-border 3s infinite; /* Slowed down animation */
 }
 
 .header--logo {
@@ -49,9 +51,10 @@ body {
 }
 
 .header--logo p {
+  font-family: 'Orbitron', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  text-shadow: 0 0 10px var(--glow-color);
+  text-shadow: 0 0 8px var(--glow-color); /* Reduced glow */
 }
 
 .nav ul {
@@ -64,6 +67,7 @@ body {
   text-decoration: none;
   color: var(--text-color);
   font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
   transition: all 0.3s ease;
 }
 
@@ -74,14 +78,21 @@ body {
 
 .section {
   padding: 4rem 0;
-  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.15);
 }
 
 .section h1, .section h2 {
+  font-family: 'Orbitron', sans-serif;
   text-align: center;
   font-size: 3rem;
   margin-bottom: 2rem;
-  text-shadow: 0 0 15px var(--glow-color);
+  text-shadow: 0 0 12px var(--glow-color); /* Reduced glow */
+}
+
+p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cta-button {
@@ -93,31 +104,32 @@ body {
   font-family: 'Orbitron', sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px var(--glow-color);
-  animation: pulse-glow 2s infinite;
+  box-shadow: 0 0 8px var(--glow-color); /* Reduced glow */
+  animation: pulse-glow 3s infinite; /* Slowed down animation */
 }
 
 .cta-button:hover {
   background: var(--glow-color);
   color: var(--background-color);
+  box-shadow: 0 0 15px var(--glow-color);
 }
 
 @keyframes pulse-border {
   0% { border-color: var(--glow-color); }
-  50% { border-color: rgba(0, 255, 255, 0.5); }
+  50% { border-color: rgba(0, 255, 255, 0.4); }
   100% { border-color: var(--glow-color); }
 }
 
 @keyframes pulse-glow {
-  0% { box-shadow: 0 0 10px var(--glow-color); }
-  50% { box-shadow: 0 0 20px var(--glow-color); }
-  100% { box-shadow: 0 0 10px var(--glow-color); }
+  0% { box-shadow: 0 0 8px var(--glow-color); }
+  50% { box-shadow: 0 0 15px var(--glow-color); }
+  100% { box-shadow: 0 0 8px var(--glow-color); }
 }
 
 .gunmetal-panel {
     background-image: linear-gradient(to top, var(--gunmetal-start), var(--gunmetal-end));
-    border: 1px solid rgba(0, 255, 255, 0.3);
+    border: 1px solid rgba(0, 255, 255, 0.2);
     border-radius: 10px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
 }
