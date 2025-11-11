@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /assets/
 
-Sitemap: https://illnet.ai/sitemap.xml
+Sitemap: https://ill.network/sitemap.xml

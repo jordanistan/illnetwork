@@ -1,9 +1,9 @@
 <div align="center" id="top"> 
-  <img src="https://raw.githubusercontent.com/jordanistan/ill.network/main/assets/img/logo.png" alt="illnet.ai" />
+  <img src="https://raw.githubusercontent.com/jordanistan/ill.network/main/assets/img/logo.png" alt="ill.network" />
 
   &#xa0;
 
-  <h1 align="center">illnet.ai Security Scanner</h1>
+  <h1 align="center">ill.network Security Scanner</h1>
 </div>
 
 <p align="center">
@@ -26,7 +26,7 @@ src="https://img.shields.io/github/license/jordanistan/illnetwork?color=00ffff">
 
 ## :dart: About ##
 
-**illnet.ai Security Scanner** is a comprehensive security and health audit tool for Linux systems. It's designed to be run from a Docker container, allowing you to scan local or remote hosts for a wide range of vulnerabilities and misconfigurations. The scanner provides a detailed report with remediation suggestions to help you secure your systems.
+**ill.network Security Scanner** is a comprehensive security and health audit tool for Linux systems. It's designed to be run from a Docker container, allowing you to scan local or remote hosts for a wide range of vulnerabilities and misconfigurations. The scanner provides a detailed report with remediation suggestions to help you secure your systems.
 
 The web interface provides a user-friendly way to view scan reports and manage the scanner.
 

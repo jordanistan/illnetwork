@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# illnet.ai Security Scanner
+# ill.network Security Scanner
 #
 # v3.0 - 2025-11-11
 #
@@ -10,6 +10,9 @@
 
 set -uo pipefail
 IFS=
+
+
+
 
 $'\n\t'
 
