@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>illnet.ai Security Scanner</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="illnet.ai Security Scanner - Professional-grade security auditing for your Linux systems.">
+  <meta name="keywords" content="security, scanner, linux, docker, vulnerability, audit">
+  <meta name="author" content="illnet.ai">
+  <link rel="stylesheet" href="assets/css/modern.css">
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
+</head>
+<body>
+
+  <div class="container">
+    <header class="header">
+      <a class="header--logo" href="#">
+        <img src="assets/img/logo.png" alt="illnet.ai Logo">
+        <p>illnet.ai</p>
+      </a>
+      <nav class="nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#scanner">Scanner</a></li>
+          <li><a href="#reports">Reports</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="section">
+        <h1>illnet.ai Security Scanner</h1>
+        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem auto;">
+          A professional-grade, comprehensive security and health audit tool for Linux systems.
+          Run it from anywhere, scan anything.
+        </p>
+        <div style="text-align: center;">
+          <a href="#scanner" class="cta-button">Start Scan</a>
+        </div>
+      </section>
+
+      <section id="scanner" class="section">
+        <h2>Run a Scan</h2>
+        <div class="gunmetal-panel">
+          <p>To initiate a scan, run the following command in your terminal. The results will be displayed here and saved to a report file.</p>
+          <pre style="background: #111; padding: 1rem; border-radius: 5px; border: 1px solid var(--glow-color); color: var(--text-color);"><code>docker compose exec scanner ./healthcheck.sh -t &lt;target_host&gt;</code></pre>
+          <p>Replace <code>&lt;target_host&gt;</code> with the IP address or hostname of the machine you want to scan. To scan the local machine (inside the container), use <code>localhost</code>.</p>
+        </div>
+      </section>
+
+      <section id="reports" class="section">
+        <h2>Scan Reports</h2>
+        <div class="gunmetal-panel">
+          <p>Generated reports will be listed here. Click on a report to view the details.</p>
+          <div id="report-list">
+            <!-- Report links will be dynamically inserted here -->
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <h2>About illnet.ai</h2>
+        <div class="gunmetal-panel">
+          <p>illnet.ai provides top-tier security solutions. Our scanner is a powerful tool designed to give you deep insights into your system's security posture, with actionable recommendations to harden your infrastructure.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem 0; border-top: 1px solid var(--glow-color); margin-top: 2rem;">
+      <p>&copy; 2025 illnet.ai - All Rights Reserved</p>
+    </footer>
+  </div>
+
+  <script>
+    // Simple script to list reports
+    document.addEventListener('DOMContentLoaded', function() {
+      const reportList = document.getElementById('report-list');
+      // This is a placeholder. In a real application, you would fetch the list of reports from the server.
+      // For this static site, we can't dynamically list files from the filesystem.
+      // We can, however, link to the reports directory.
+      reportList.innerHTML = '<p>Reports are saved in the <code>/reports</code> directory. You can view them <a href="/reports">here</a>.</p>';
+    });
+  </script>
+
+</body>
+</html>
