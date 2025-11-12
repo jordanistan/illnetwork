@@ -42,6 +42,19 @@ The application is configured via environment variables, which are loaded from t
 
 ## API Endpoints
 
+## :sparkles: Features
+
+-   :lock: **User Authentication:** The web interface is secured with a full login system to prevent unauthorized access.
+-   :bar_chart: **Security Dashboard:** A dynamic dashboard provides a high-level overview of your system's security posture, visualizing the latest scan results and severity trends.
+-   :tv: **Live Scan Monitoring:** Run scans and monitor their real-time output directly from the "Vitals Monitor" in the web UI.
+-   :robot: **AI-Powered Analysis:** Leverages **GPT-4** to interpret raw scan logs, identify critical issues, and provide expert-level analysis in easy-to-read reports.
+-   :pill: **Interactive Remediation:** Generate AI-based "prescriptions" (remediation scripts) and safely execute them on the target host with your explicit confirmation, all from within the UI.
+-   :calendar: **Scheduled Scans:** Configure automatic, recurring scans using standard cron expressions to ensure continuous monitoring.
+-   :wrench: **Configuration UI:** A comprehensive "Settings" page allows you to manage all application settings—from API keys to scan schedules—without ever touching a config file.
+-   :electric_plug: **Extensible Plugin Architecture:** The scanning engine is built on a modular plugin system, making it easy for developers to add new security tools and checks.
+-   :bell: **Real-time Alerts:** Get notified via **Slack** or **Email** when high-severity issues are detected.
+-   :satellite: **Remote & Local Scanning:** Seamlessly scan a remote host over SSH or perform a quick "Health Check" on the local container environment.
+
 The Flask web application exposes a few simple endpoints:
 
 -   `GET /`: The main scanner page with the live log viewer.

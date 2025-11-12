@@ -1,59 +1,33 @@
-# Project: Illnet Rx - Homelab Security Scanner
+# Project Overview
 
-## Directory Overview
+This directory contains **Illnet Rx**, a comprehensive, AI-driven security and compliance scanner for Linux systems, designed to be run as a Docker application.
 
-This directory contains the source code and configuration for **Illnet Rx**, a web-based security scanner designed for homelab environments. The project's brand identity, "Illnet Rx," positions it as a "prescription for enterprise compliance," using an AI-driven diagnostic approach to security.
+It provides a full-featured web interface for running scans, viewing reports, and managing application settings. The scanner can perform deep audits on remote hosts via SSH or quick health checks on its local environment.
 
-The application is containerized using Docker and consists of two main components:
-1.  A **scanner** backend that runs security tools like ClamAV (malware), rkhunter (rootkits), and other checks.
-2.  A **web UI** (built with Flask) that provides a user interface to run scans, view live log streams, and access generated reports.
+## Key Features
 
-## Key Technologies
+-   **Web Dashboard:** A dashboard provides a high-level overview of the target system's security posture.
+-   **Plugin-Based Scanning:** The scanning engine is modular, allowing for easy extension. It currently includes plugins for:
+    -   ClamAV (malware scanning)
+    -   Rkhunter (rootkit detection)
+    -   Credential exposure scanning
+-   **AI Analysis & Remediation:** Scan results are analyzed by GPT-4 to generate a detailed report and an actionable remediation script.
+-   **Interactive Execution:** Users can review and safely execute the AI-generated remediation script from the UI while monitoring its live output.
+-   **Scheduled Scans:** Scans can be run manually or scheduled automatically via cron expressions.
+-   **Configuration UI:** All major application settings can be managed from a "Settings" page in the web UI.
+-   **Alerting:** Sends notifications for high-severity findings via Slack or Email.
 
-*   **Backend:** Python, Shell (Bash)
-*   **Frontend:** Flask, HTML, CSS, JavaScript
-*   **AI:** OpenAI GPT-4 for log analysis and report generation.
-*   **Scanning Tools:** ClamAV, rkhunter, `ss`/`netstat`.
-*   **Containerization:** Docker, Docker Compose
-*   **Alerting:** Slack, Email (SMTP)
+## Running the Application
 
-## Building and Running the Project
+The application is designed to be run with Docker Compose.
 
-To build and run the application, follow these steps:
-
-1.  **Set Environment Variables:**
-    Create a `.env` file in the root directory or export the following environment variables. The `OPENAI_API_KEY` is required for the AI analysis feature.
-
+1.  **Initial Setup:** Run the setup script to configure your environment:
     ```bash
-    # Required for AI-powered analysis
-    export OPENAI_API_KEY="sk-..."
-
-    # Optional: For Slack alerts
-    export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
-
-    # Optional: For Email alerts
-    export ALERT_EMAIL_TO="you@example.com"
-    export SMTP_HOST="smtp.example.com"
-    export SMTP_PORT="587"
-    export SMTP_USER="smtp-user"
-    export SMTP_PASS="smtp-pass"
-    export SMTP_STARTTLS="true"
+    bash Illnet-Rx/setup.sh
     ```
-
-2.  **Run with Docker Compose:**
-    Execute the following command to build and start the container in detached mode.
-
+2.  **Launch:** Start the application using Docker Compose:
     ```bash
     docker-compose up --build -d
     ```
 
-3.  **Access the Web UI:**
-    Open your web browser and navigate to `http://localhost:5000`. From there, you can initiate a new scan.
-
-## Development Conventions
-
-*   **Configuration:** The application is configured via environment variables, as defined in the `docker-compose.yml` file. This includes API keys, alert settings, and scan parameters.
-*   **Code Structure:** The project is organized into `scanner/` and `webui/` directories, separating the core scanning logic from the presentation layer.
-*   **Output:** Scan logs and AI-generated reports (in Markdown, HTML, and JSON formats) are saved to the `./data/reports` directory by default, which is mapped to `/opt/data/reports` inside the container.
-*   **Alerting:** Alerts are triggered based on scan findings (e.g., malware found) or if the AI-generated summary flags a severity of "High" or "Critical". The severity threshold for alerts is configurable via the `ALERT_SEVERITY_THRESHOLD` environment variable.
-*   **Dependencies:** Python dependencies are managed in `scanner/requirements.txt`.
+The web interface will be available at `http://localhost:5001`.
