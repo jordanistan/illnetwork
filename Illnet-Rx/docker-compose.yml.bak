@@ -1,0 +1,33 @@
+services:
+  homelab-security:
+    build: .
+    container_name: homelab-security
+    env_file:
+      - .env
+    ports:
+      - "5001:5000"
+    environment:
+      - REMOTE_HOST=${REMOTE_HOST}
+      - REMOTE_USER=${REMOTE_USER}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OUTPUT_DIR=/opt/data/reports
+      - SCAN_PATH=${SCAN_PATH:-/opt/data}
+      - ALERT_SEVERITY_THRESHOLD=${ALERT_SEVERITY_THRESHOLD:-high}
+      # Slack (optional)
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      # Email (optional)
+      - ALERT_EMAIL_TO=${ALERT_EMAIL_TO}
+      - ALERT_EMAIL_FROM=${ALERT_EMAIL_FROM}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT:-587}
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASS=${SMTP_PASS}
+      - SMTP_STARTTLS=${SMTP_STARTTLS:-true}
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    volumes:
+      - ./data:/opt/data
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro
+    restart: unless-stopped

@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+{% block title %}Settings - Illnet Rx{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <h2>Application Settings</h2>
+  </div>
+  <div class="card-content">
+    <form method="post">
+      <div class="settings-grid">
+        
+        <div class="settings-section">
+          <h3>Scanner Configuration</h3>
+          <div class="form-group">
+            <label for="REMOTE_HOST">Remote Host IP/Hostname</label>
+            <input type="text" name="REMOTE_HOST" id="REMOTE_HOST" value="{{ settings.REMOTE_HOST }}">
+          </div>
+          <div class="form-group">
+            <label for="REMOTE_USER">Remote Host User</label>
+            <input type="text" name="REMOTE_USER" id="REMOTE_USER" value="{{ settings.REMOTE_USER }}">
+          </div>
+          <div class="form-group">
+            <label for="SCAN_PATH">Scan Path</label>
+            <input type="text" name="SCAN_PATH" id="SCAN_PATH" value="{{ settings.SCAN_PATH }}">
+            <small>The absolute path to scan on the target host (e.g., /var/www).</small>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3>AI & Analysis</h3>
+          <div class="form-group">
+            <label for="OPENAI_API_KEY">OpenAI API Key</label>
+            <input type="password" name="OPENAI_API_KEY" id="OPENAI_API_KEY" value="{{ settings.OPENAI_API_KEY }}">
+            <small>Your key is stored securely and will not be displayed.</small>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3>Scheduler</h3>
+          <div class="form-group">
+            <label for="SCAN_SCHEDULE">Scan Schedule (Cron Expression)</label>
+            <input type="text" name="SCAN_SCHEDULE" id="SCAN_SCHEDULE" value="{{ settings.SCAN_SCHEDULE }}">
+            <small>e.g., "0 2 * * 0" for 2 AM every Sunday. Leave blank to disable.</small>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3>Alerting</h3>
+          <div class="form-group">
+            <label for="ALERT_SEVERITY_THRESHOLD">Alert Severity Threshold</label>
+            <select name="ALERT_SEVERITY_THRESHOLD" id="ALERT_SEVERITY_THRESHOLD">
+              {% for sev in ['low', 'medium', 'high', 'critical'] %}
+                <option value="{{ sev }}" {% if settings.ALERT_SEVERITY_THRESHOLD == sev %}selected{% endif %}>{{ sev.capitalize() }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="SLACK_WEBHOOK_URL">Slack Webhook URL</label>
+            <input type="text" name="SLACK_WEBHOOK_URL" id="SLACK_WEBHOOK_URL" value="{{ settings.SLACK_WEBHOOK_URL }}">
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3>Email (SMTP)</h3>
+          <div class="form-group">
+            <label for="SMTP_HOST">SMTP Host</label>
+            <input type="text" name="SMTP_HOST" id="SMTP_HOST" value="{{ settings.SMTP_HOST }}">
+          </div>
+          <div class="form-group">
+            <label for="SMTP_PORT">SMTP Port</label>
+            <input type="text" name="SMTP_PORT" id="SMTP_PORT" value="{{ settings.SMTP_PORT }}">
+          </div>
+          <div class="form-group">
+            <label for="SMTP_USER">SMTP User</label>
+            <input type="text" name="SMTP_USER" id="SMTP_USER" value="{{ settings.SMTP_USER }}">
+          </div>
+          <div class="form-group">
+            <label for="SMTP_PASS">SMTP Password</label>
+            <input type="password" name="SMTP_PASS" id="SMTP_PASS" value="{{ settings.SMTP_PASS }}">
+          </div>
+        </div>
+
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Save Settings</button>
+        <small>Note: Some settings may require an application restart to take effect.</small>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .settings-section h3 {
+    font-size: 1.2rem;
+    color: var(--accent-primary);
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .form-group input, .form-group select {
+    width: 100%;
+    background: var(--bg-dark-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  .form-group small {
+    display: block;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .form-actions {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
+{% endblock %}

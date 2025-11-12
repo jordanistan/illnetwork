@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard - Illnet Rx{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+  <h1>Security Dashboard</h1>
+  <p>A high-level overview of your system's security posture based on the latest scan.</p>
+</div>
+
+<div class="dashboard-grid">
+  <div class="card">
+    <div class="card-header">
+      <h2>Latest Scan Summary</h2>
+    </div>
+    <div class="card-content">
+      {% if latest_report %}
+        <p><strong>Target Host:</strong> {{ latest_report.hostname }}</p>
+        <p><strong>Scan Date:</strong> {{ latest_report.date }}</p>
+        <p><strong>Overall Severity:</strong> <span class="badge badge-{{ latest_report.severity.lower() }}">{{ latest_report.severity }}</span></p>
+        <a href="{{ url_for('view_report', filename=latest_report.filename) }}" class="btn">View Full Report</a>
+      {% else %}
+        <p>No scans have been run yet. Go to the Diagnosis Engine to start a scan.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2>Severity Breakdown</h2>
+    </div>
+    <div class="card-content">
+      <div class="severity-chart">
+        <!-- This would be a place for a chart library, for now, we use simple bars -->
+        {% for sev, count in severity_counts.items() %}
+          <div class="bar-item">
+            <span class="bar-label">{{ sev.capitalize() }}</span>
+            <div class="bar-container">
+              <div class="bar bar-{{ sev }}" style="width: {{ (count / (total_findings or 1)) * 100 }}%;">{{ count }}</div>
+            </div>
+          </div>
+        {% else %}
+          <p>No findings in the latest report.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h2>Recent Findings</h2>
+  </div>
+  <div class="card-content">
+    {% if findings %}
+      <ul>
+        {% for finding in findings %}
+          <li>{{ finding }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No findings in the latest report.</p>
+    {% endif %}
+  </div>
+</div>
+
+
+<style>
+  .dashboard-header {
+    margin-bottom: 2rem;
+  }
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .severity-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .bar-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .bar-label {
+    flex-basis: 100px;
+    text-align: right;
+  }
+  .bar-container {
+    flex-grow: 1;
+    background: var(--bg-dark-primary);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .bar {
+    height: 24px;
+    line-height: 24px;
+    color: var(--bg-dark-primary);
+    font-weight: 600;
+    padding: 0 8px;
+    text-align: right;
+  }
+  .bar-critical { background-color: var(--critical-primary); }
+  .bar-high { background-color: var(--high-primary); }
+  .bar-medium { background-color: var(--medium-primary); }
+  .bar-low { background-color: var(--low-primary); }
+</style>
+{% endblock %}
