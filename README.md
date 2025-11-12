@@ -1,77 +1,51 @@
-<div align="center">
-  <img src="assets/img/logo.png" alt="Illnet Rx Logo" width="120">
-  <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; color: #e5e7eb;">Illnet Rx</h1>
-  <p style="font-family: 'Montserrat', sans-serif; font-style: italic; color: #93c5fd;">Your prescription for enterprise compliance.</p>
-</div>
+# Illnet Rx - Technical Reference
 
-<p align="center">
-  <img alt="Language" src="https://img.shields.io/github/languages/top/jordanistan/illnetwork?style=for-the-badge&color=2563eb&labelColor=0b1220">
-  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/jordanistan/illnetwork?style=for-the-badge&color=2563eb&labelColor=0b1220">
-  <img alt="License" src="https://img.shields.io/github/license/jordanistan/illnetwork?style=for-the-badge&color=2563eb&labelColor=0b1220">
-</p>
+This document provides a technical overview of the Illnet Rx application, intended for developers and contributors.
 
----
+## Architecture
 
-## :pill: About Illnet Rx
+The application is composed of two main components: a `scanner` engine and a `webui` for interaction and reporting.
 
-**Illnet Rx** is an AI-driven security and compliance scanner designed for modern homelabs and enterprise systems. It performs a comprehensive audit of a target system (local or remote), uses the power of GPT-4 to analyze the findings, and generates a clear, actionable "prescription" to remediate vulnerabilities and harden your security posture.
+-   **`scanner/`**: This directory contains the core logic for the security audit.
+    -   `scan.sh`: The main Bash script that executes the sequence of security tools (ClamAV, rkhunter, etc.). It is designed to be able to run against the local filesystem or a mounted remote filesystem.
+    -   `parse_logs.py`: A Python script that takes the raw output from `scan.sh`, extracts key indicators, and sends the log to the GPT-4 API for analysis and report generation.
+    -   `alerts.py`: Handles sending notifications to Slack or via email if the scan results meet the configured severity threshold.
 
-Don't just scan. **Diagnose and cure.**
+-   **`webui/`**: A Python Flask application that provides the user interface.
+    -   `app.py`: The main Flask application file. It handles HTTP requests, serves the frontend, and manages the scanning process.
+    -   `templates/`: Contains the Jinja2 HTML templates for the web interface.
+    -   `static/`: Contains the CSS stylesheets.
 
-## :sparkles: Features
+-   **`Dockerfile`**: A `python:3.12-slim` based Dockerfile that installs all necessary system-level tools (e.g., `clamav`, `rkhunter`, `sshfs`) and Python dependencies.
 
-- :microscope: **Comprehensive Diagnostics:** Utilizes a suite of industry-standard tools like **ClamAV** (malware), **rkhunter** (rootkits), and various system checks to perform a deep-level audit.
-- :robot: **AI-Powered Analysis:** Leverages **GPT-4** to interpret raw scan logs, identify critical issues, and provide expert-level analysis.
-- :clipboard: **Actionable Prescriptions:** Generates detailed, copy-pasteable remediation commands for every identified issue.
-- :satellite: **Remote & Local Scanning:** Seamlessly scan the local container environment or a remote host over SSH.
-- :bell: **Real-time Alerts:** Get notified via **Slack** or **Email** when high-severity issues are detected.
-- :tv: **Live Web Interface:** A modern, real-time web UI to run scans, monitor progress, and view reports.
+-   **`entrypoint.sh`**: This script is the container's entrypoint. Its primary role is to check for the `REMOTE_HOST` environment variable and, if present, mount the remote host's root filesystem to `/mnt/remote` using `sshfs` before starting the web application.
 
-## :rocket: Getting Started
+## Environment Variables
 
-Getting started with Illnet Rx involves a one-time setup script and a single Docker command.
+The application is configured via environment variables, which are loaded from the `.env` file by `docker-compose`.
 
-### 1. Prerequisites
+| Variable | Required | Description | Default |
+| :--- | :---: | :--- | :--- |
+| `REMOTE_HOST` | **Yes** | IP address or hostname of the server to scan. | |
+| `REMOTE_USER` | **Yes** | Username for the SSH connection to the remote host. | |
+| `OPENAI_API_KEY` | **Yes** | API key for OpenAI (used for GPT-4 analysis). | |
+| `SCAN_PATH` | No | Specify a subdirectory to scan relative to the root of the target filesystem. | `/opt/data` |
+| `ALERT_SEVERITY_THRESHOLD` | No | Minimum severity (`low`, `medium`, `high`, `critical`) to trigger alerts. | `high` |
+| `SLACK_WEBHOOK_URL` | No | Your Slack incoming webhook URL for alerts. | |
+| `ALERT_EMAIL_TO` | No | Recipient email address for alerts. | |
+| `ALERT_EMAIL_FROM`| No | Sender email address for alerts. | `alerts@example.local` |
+| `SMTP_HOST` | No | SMTP server for sending email alerts. | |
+| `SMTP_PORT` | No | SMTP port. | `587` |
+| `SMTP_USER` | No | SMTP username. | |
+| `SMTP_PASS` | No | SMTP password. | |
+| `SMTP_STARTTLS` | No | Whether to use STARTTLS for SMTP. | `true` |
 
-- **Docker** and **Docker Compose**
-- **Git**
-- **SSH access** to the remote host you intend to scan (with a private key, typically `~/.ssh/id_rsa`).
+## API Endpoints
 
-### 2. Configuration
+The Flask web application exposes a few simple endpoints:
 
-The included setup script will configure your environment, create a `.env` file for your credentials, and prepare the application for launch.
-
-```bash
-# Run the interactive setup script
-bash Illnet-Rx/setup.sh
-```
-
-This script will ask for:
-1.  The **remote host's IP address or hostname**.
-2.  The **remote user** for the SSH connection.
-3.  Your **OpenAI API Key**.
-
-It will then verify SSH access and create the `./Illnet-Rx/.env` file for you.
-
-### 3. Launching the Application
-
-Once the setup is complete, you can build and run the application using Docker Compose:
-
-```bash
-# Build and start the services in detached mode
-docker-compose up --build -d
-```
-
-### 4. Accessing Illnet Rx
-
-The web interface will be available at: **[http://localhost:5001](http://localhost:5001)**
-
-From there, you can start your first scan and view the live results.
-
-## :memo: License
-
-This project is under the MIT License. For more details, see the `LICENSE` file.
-
-<div align="center">
-Made with :heart: by <a href="https://github.com/jordanistan" target="_blank">Jordanistan</a>
-</div>
+-   `GET /`: The main scanner page with the live log viewer.
+-   `GET /scan/stream`: An `text/event-stream` endpoint that streams the live output of a running scan to the client.
+-   `GET /reports`: Displays a list of all generated reports.
+-   `GET /reports/<path:filename>`: Serves a specific report file from the reports directory.
+-   `GET /api/reports`: A JSON endpoint that returns a list of all available report filenames.

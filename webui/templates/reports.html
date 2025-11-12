@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reports - Homelab Security Scanner</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="brand">Illnet Rx</a>
+      <ul>
+        <li><a href="/">Scanner</a></li>
+        <li><a href="/reports" class="active">Reports</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section>
+      <header>
+        <h2>Available Reports</h2>
+        <form action="{{ url_for('clear_reports') }}" method="post" style="margin: 0;">
+          <button type="submit" class="btn-danger" onclick="return confirm('Are you sure you want to delete all reports? This action cannot be undone.');">
+            Clear All Reports
+          </button>
+        </form>
+      </header>
+      <ul id="reportList">
+        {% for report in reports %}
+          <li><a href="/reports/{{ report }}" target="_blank">{{ report }}</a></li>
+        {% else %}
+          <li>No reports found. Run a scan to generate one.</li>
+        {% endfor %}
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

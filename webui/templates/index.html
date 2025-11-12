@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scanner - Homelab Security Scanner</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="brand">Illnet Rx</a>
+      <ul>
+        <li><a href="/" class="active">Scanner</a></li>
+        <li><a href="/reports">Reports</a></li>
+        {% if session.logged_in %}
+          <li><a href="/logout">Logout</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <header>
+      <h1>Live Security Scan</h1>
+      <button id="runBtn">Run New Scan</button>
+    </header>
+
+    <section>
+      <h2>Live Output</h2>
+      <pre id="log" class="terminal"></pre>
+    </section>
+  </main>
+
+  <script>
+    const runBtn = document.getElementById('runBtn');
+    const logEl = document.getElementById('log');
+
+    function append(line) {
+      logEl.textContent += (line + "\n");
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    function startScan() {
+      runBtn.disabled = true;
+      logEl.textContent = 'Starting scan...\n';
+      const sse = new EventSource('/scan/stream');
+      sse.onmessage = (e) => append(e.data);
+      sse.addEventListener('done', () => {
+        append('=== Scan and report generation complete ===');
+        sse.close();
+        runBtn.disabled = false;
+      });
+      sse.onerror = () => {
+        append('[ERR] An error occurred with the scan stream. Connection closed.');
+        sse.close();
+        runBtn.disabled = false;
+      };
+    }
+
+    runBtn.addEventListener('click', startScan);
+
+    {% if autostart %}
+      startScan();
+    {% endif %}
+  </script>
+</body>
+</html>
