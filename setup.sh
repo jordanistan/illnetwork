@@ -49,13 +49,16 @@ if [ -t 0 ]; then # Interactive mode
     done
     echo
 else # Non-interactive mode
-    echo "[*] Non-interactive mode. Reading configuration from environment variables."
-    if [ -z "${REMOTE_HOST-}" ] || [ -z "${REMOTE_USER-}" ] || [ -z "${OPENAI_API_KEY-}" ]; then
-        echo "[!] In non-interactive mode, you must provide REMOTE_HOST, REMOTE_USER, and OPENAI_API_KEY as environment variables." >&2
-        echo "Example: export REMOTE_HOST=... && curl ... | bash" >&2
+    echo "[*] Non-interactive mode detected."
+    if [ "$#" -ne 3 ]; then
+        echo "[!] In non-interactive mode, you must provide REMOTE_HOST, REMOTE_USER, and OPENAI_API_KEY as arguments." >&2
+        echo "Usage: curl ... | bash -s -- <REMOTE_HOST> <REMOTE_USER> <OPENAI_API_KEY>" >&2
         exit 1
     fi
-    echo "[*] Configuration loaded from environment variables."
+    REMOTE_HOST="$1"
+    REMOTE_USER="$2"
+    OPENAI_API_KEY="$3"
+    echo "[*] Configuration loaded from arguments."
 fi
 echo
 
