@@ -6,4 +6,4 @@ class FreshclamPlugin(ScannerPlugin):
         return "ClamAV Definitions Update"
 
     def get_command(self):
-        return "sudo freshclam"
+        return ["sudo", "freshclam"]

@@ -22,7 +22,8 @@ class ScannerPlugin:
 
     def get_command(self):
         """
-        Returns the shell command that this plugin should execute.
+        Returns the command this plugin should execute.
+        Prefer an argument list. Return a string only when a shell pipeline is required.
         """
         raise NotImplementedError
 

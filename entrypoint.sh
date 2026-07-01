@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 # If REMOTE_HOST is set, mount the remote filesystem
@@ -28,7 +28,7 @@ if [ -n "${REMOTE_HOST}" ]; then
 
     echo "[*] Mounting ${REMOTE_USER}@${REMOTE_HOST}:/ to ${MOUNT_POINT}"    
     # Mount the remote filesystem
-    sshfs -o allow_other -o StrictHostKeyChecking=no -o IdentityFile="${SSH_KEY_PATH}" \
+    sshfs -o allow_other -o StrictHostKeyChecking=accept-new -o IdentityFile="${SSH_KEY_PATH}" \
         "${REMOTE_USER}@${REMOTE_HOST}:/" "${MOUNT_POINT}"
     
     echo "[*] Mount successful."

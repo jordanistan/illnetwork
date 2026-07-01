@@ -8,13 +8,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Python deps
-COPY scanner/requirements.txt /tmp/requirements.txt
+COPY Illnet-Rx/scanner/requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Copy code
-COPY scanner /opt/scanner
-COPY webui /opt/webui
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY Illnet-Rx/scanner /opt/scanner
+COPY Illnet-Rx/webui /opt/webui
+COPY Illnet-Rx/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENV OUTPUT_DIR=/opt/data/reports
 RUN mkdir -p ${OUTPUT_DIR}
@@ -24,4 +24,3 @@ EXPOSE 5000
 
 ENTRYPOINT ["/usr/bin/tini", "--", "/usr/local/bin/entrypoint.sh"]
 CMD ["python","app.py"]
-

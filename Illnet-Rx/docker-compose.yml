@@ -24,7 +24,7 @@ services:
       - SMTP_PASS=${SMTP_PASS}
       - SMTP_STARTTLS=${SMTP_STARTTLS:-true}
       - ADMIN_USER=${ADMIN_USER:-admin}
-      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-password}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:?Set ADMIN_PASSWORD to a strong value before starting Illnet Rx}
       - SCAN_SCHEDULE=${SCAN_SCHEDULE}
     cap_add:
       - SYS_ADMIN

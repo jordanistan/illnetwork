@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 OUTPUT_DIR="${OUTPUT_DIR:-/opt/data/reports}"

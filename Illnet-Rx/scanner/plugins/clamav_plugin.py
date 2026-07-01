@@ -1,6 +1,5 @@
 from .base import ScannerPlugin
 import os
-import shlex
 
 class ClamAVPlugin(ScannerPlugin):
     @property
@@ -11,4 +10,4 @@ class ClamAVPlugin(ScannerPlugin):
         scan_subdir = self.context.config.get("SCAN_PATH", "")
         full_scan_path = os.path.join(self.context.scan_root, scan_subdir.lstrip('/'))
         # clamscan returns 1 if viruses are found, which is handled by the runner
-        return f"sudo clamscan -r --bell -i {shlex.quote(full_scan_path)}"
+        return ["sudo", "clamscan", "-r", "--bell", "-i", full_scan_path]

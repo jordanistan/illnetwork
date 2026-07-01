@@ -23,8 +23,9 @@ The application is designed to be run with Docker Compose.
 
 1.  **Initial Setup:** Run the setup script to configure your environment:
     ```bash
-    bash Illnet-Rx/setup.sh
+    ./Illnet-Rx/setup.sh
     ```
+    For automation, use `./Illnet-Rx/setup.sh --non-interactive <REMOTE_HOST> <REMOTE_USER> <OPENAI_API_KEY> [ADMIN_PASSWORD]`.
 2.  **Launch:** Start the application using Docker Compose:
     ```bash
     docker-compose up --build -d

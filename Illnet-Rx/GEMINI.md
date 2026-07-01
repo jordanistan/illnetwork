@@ -28,6 +28,9 @@ To build and run the application, follow these steps:
     # Required for AI-powered analysis
     export OPENAI_API_KEY="sk-..."
 
+    # Required for web UI login
+    export ADMIN_PASSWORD="replace-with-a-strong-password"
+
     # Optional: For Slack alerts
     export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
 

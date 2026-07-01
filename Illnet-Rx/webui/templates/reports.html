@@ -6,6 +6,7 @@
   <div class="card-header">
     <h2>Consultation History</h2>
     <form action="{{ url_for('clear_reports') }}" method="post" style="margin: 0;">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
       <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete all reports? This action cannot be undone.');">
         Clear All Reports
       </button>
@@ -33,6 +34,7 @@
               <td>
                 <a href="{{ url_for('view_report', filename=report.filename) }}" class="btn">View</a>
                 <form action="{{ url_for('remediate_report', filename=report.filename) }}" method="post" style="display: inline;">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
                   <button type="submit" class="btn btn-primary">Generate Rx</button>
                 </form>
               </td>

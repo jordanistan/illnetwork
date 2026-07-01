@@ -1,92 +1,211 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [[ -d "${SCRIPT_DIR}/Illnet-Rx" ]]; then
+  DEFAULT_ENV_FILE="${SCRIPT_DIR}/Illnet-Rx/.env"
+else
+  DEFAULT_ENV_FILE="${SCRIPT_DIR}/.env"
+fi
+ENV_FILE="${ENV_FILE:-$DEFAULT_ENV_FILE}"
+SSH_KEY_PATH="${SSH_KEY_PATH:-$HOME/.ssh/id_rsa}"
+NON_INTERACTIVE=0
+
+usage() {
+  cat <<'USAGE'
+Illnet Rx Remote Scanner Setup
+
+Usage:
+  ./setup.sh
+  ./setup.sh --non-interactive <REMOTE_HOST> <REMOTE_USER> <OPENAI_API_KEY> [ADMIN_PASSWORD]
+
+Required tools:
+  Debian/Ubuntu: sudo apt install openssh-client
+  Red Hat/Fedora: sudo dnf install openssh-clients
+  Arch: sudo pacman -S openssh
+  macOS: xcode-select --install, or brew install openssh
+
+Environment overrides:
+  ENV_FILE       Destination .env path
+  SSH_KEY_PATH   SSH private key path
+  ADMIN_PASSWORD Admin UI password for non-interactive mode
+USAGE
+}
+
+install_help() {
+  echo "[!] Missing required OpenSSH tools." >&2
+  echo "Install them with one of:" >&2
+  echo "  Debian/Ubuntu: sudo apt install openssh-client" >&2
+  echo "  Red Hat/Fedora: sudo dnf install openssh-clients" >&2
+  echo "  Arch: sudo pacman -S openssh" >&2
+  echo "  macOS: xcode-select --install, or brew install openssh" >&2
+}
+
+need_cmd() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+prompt_required() {
+  local prompt="$1"
+  local var
+  while true; do
+    read -r -p "$prompt" var
+    if [[ -n "$var" ]]; then
+      printf '%s' "$var"
+      return
+    fi
+    echo "[!] Value cannot be empty." >&2
+  done
+}
+
+prompt_secret_required() {
+  local prompt="$1"
+  local var
+  while true; do
+    read -r -s -p "$prompt" var
+    echo
+    if [[ -n "$var" ]]; then
+      printf '%s' "$var"
+      return
+    fi
+    echo "[!] Value cannot be empty." >&2
+  done
+}
+
+generate_password() {
+  if need_cmd openssl; then
+    openssl rand -base64 24 | tr -d '\n'
+  elif need_cmd python3; then
+    python3 -c 'import secrets; print(secrets.token_urlsafe(24), end="")'
+  else
+    echo "[!] openssl/python3 not found; generating a lower-grade fallback password." >&2
+    printf 'illnet-%s-%s' "$(date +%s)" "$$"
+  fi
+}
+
+write_env_var() {
+  local key="$1"
+  local value="$2"
+  printf '%s=%q\n' "$key" "$value" >> "$ENV_FILE"
+}
+
+ensure_ssh_key() {
+  mkdir -p "$(dirname "$SSH_KEY_PATH")"
+  chmod 700 "$(dirname "$SSH_KEY_PATH")"
+
+  if [[ -f "$SSH_KEY_PATH" ]]; then
+    echo "[*] Existing SSH key found at $SSH_KEY_PATH."
+    return
+  fi
+
+  echo "[*] No existing SSH key found at $SSH_KEY_PATH."
+  if [[ "$NON_INTERACTIVE" -eq 1 ]]; then
+    echo "[*] Non-interactive mode: generating a new SSH key."
+    ssh-keygen -t ed25519 -N "" -f "$SSH_KEY_PATH" >/dev/null
+    return
+  fi
+
+  read -r -p "Generate a new SSH key now? (y/n) " reply
+  if [[ "$reply" =~ ^[Yy]$ ]]; then
+    ssh-keygen -t ed25519 -N "" -f "$SSH_KEY_PATH"
+  else
+    echo "[!] SSH key is required. Generate one and run setup again." >&2
+    exit 1
+  fi
+}
+
+copy_or_print_public_key() {
+  if [[ "$NON_INTERACTIVE" -eq 0 ]] && need_cmd ssh-copy-id; then
+    echo "[*] Copying your public SSH key to ${REMOTE_USER}@${REMOTE_HOST}."
+    ssh-copy-id "${REMOTE_USER}@${REMOTE_HOST}"
+    return
+  fi
+
+  echo
+  echo "--- ACTION REQUIRED ---"
+  echo "Add this public key to ~${REMOTE_USER}/.ssh/authorized_keys on ${REMOTE_HOST}:"
+  echo "----"
+  cat "${SSH_KEY_PATH}.pub"
+  echo "----"
+  echo
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --non-interactive)
+      NON_INTERACTIVE=1
+      shift
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+if [[ ! -t 0 ]]; then
+  NON_INTERACTIVE=1
+fi
 
 echo "--- Illnet Rx Remote Scanner Setup ---"
-echo "This script will help you configure this scanner to connect to a remote host."
 echo
 
-# Check for required tools
-if ! command -v ssh-keygen >/dev/null 2>&1 || ! command -v ssh-copy-id >/dev/null 2>&1; then
-    echo "[!] 'ssh-keygen' and 'ssh-copy-id' are required for this setup." >&2
-    echo "Please install your system's OpenSSH client package and run this script again." >&2
+if ! need_cmd ssh-keygen || ! need_cmd ssh; then
+  install_help
+  exit 1
+fi
+
+ensure_ssh_key
+
+if [[ "$NON_INTERACTIVE" -eq 1 ]]; then
+  if [[ "$#" -lt 3 || "$#" -gt 4 ]]; then
+    echo "[!] Non-interactive mode requires REMOTE_HOST, REMOTE_USER, OPENAI_API_KEY, and optional ADMIN_PASSWORD." >&2
+    usage >&2
     exit 1
-fi
-
-# --- SSH Key Setup ---
-SSH_KEY_PATH="$HOME/.ssh/id_rsa"
-if [ ! -f "$SSH_KEY_PATH" ]; then
-    echo "[*] No existing SSH key found at $SSH_KEY_PATH."
-    read -p "Would you like to generate a new SSH key now? (y/n) " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        ssh-keygen -t rsa -b 4096 -N "" -f "$SSH_KEY_PATH"
-        echo "[*] New SSH key generated."
-    else
-        echo "[!] SSH key is required. Please generate one and run this script again." >&2
-        exit 1
-    fi
+  fi
+  REMOTE_HOST="$1"
+  REMOTE_USER="$2"
+  OPENAI_API_KEY="$3"
+  ADMIN_PASSWORD="${4:-${ADMIN_PASSWORD:-}}"
+  if [[ -z "$ADMIN_PASSWORD" ]]; then
+    ADMIN_PASSWORD="$(generate_password)"
+    echo "[*] Generated ADMIN_PASSWORD for the web UI: $ADMIN_PASSWORD"
+  fi
 else
-    echo "[*] Existing SSH key found at $SSH_KEY_PATH."
+  REMOTE_HOST="$(prompt_required "Enter the remote host IP address or hostname: ")"
+  REMOTE_USER="$(prompt_required "Enter the remote host username: ")"
+  OPENAI_API_KEY="$(prompt_secret_required "Enter your OpenAI API key: ")"
+  ADMIN_PASSWORD="$(prompt_secret_required "Create a web UI admin password (12+ chars): ")"
 fi
 
-echo
-echo "--- Remote Host Configuration ---"
-
-# --- Get Remote Host Details ---
-read -p "Enter the remote host's IP address or hostname: " REMOTE_HOST
-while [ -z "$REMOTE_HOST" ]; do
-    read -p "Remote host cannot be empty. Please enter it again: " REMOTE_HOST
-done
-
-read -p "Enter the username for the remote host (e.g., ubuntu, ec2-user, root): " REMOTE_USER
-while [ -z "$REMOTE_USER" ]; do
-    read -p "Remote user cannot be empty. Please enter it again: " REMOTE_USER
-done
-
-echo
-echo "[*] Now, I will copy your public SSH key to the remote host."
-echo "You will be prompted for the remote user's password."
-if ssh-copy-id "${REMOTE_USER}@${REMOTE_HOST}"; then
-    echo "[*] SSH key successfully copied."
-else
-    echo "[!] Failed to copy SSH key. Please check your connection and credentials." >&2
-    exit 1
+if [[ ${#ADMIN_PASSWORD} -lt 12 || "$ADMIN_PASSWORD" == "password" ]]; then
+  echo "[!] ADMIN_PASSWORD must be non-default and at least 12 characters." >&2
+  exit 1
 fi
 
-echo
-echo "--- API Key Configuration ---"
-read -sp "Enter your OpenAI API Key (it will not be displayed): " OPENAI_API_KEY
-while [ -z "$OPENAI_API_KEY" ]; do
-    echo
-    read -sp "OpenAI API Key cannot be empty. Please enter it again: " OPENAI_API_KEY
-done
-echo
+copy_or_print_public_key
 
-# --- Create .env file ---
-echo
-echo "[*] Creating the .env file for Docker Compose..."
-cat > .env << EOL
-# This file is automatically generated by the setup.sh script
-# Docker Compose will use these variables to configure the application
+echo "[*] Creating $ENV_FILE."
+mkdir -p "$(dirname "$ENV_FILE")"
+umask 077
+: > "$ENV_FILE"
+{
+  echo "# This file is automatically generated by setup.sh"
+  echo "# Docker Compose uses these variables to configure Illnet Rx."
+  echo
+} >> "$ENV_FILE"
+write_env_var "REMOTE_HOST" "$REMOTE_HOST"
+write_env_var "REMOTE_USER" "$REMOTE_USER"
+write_env_var "OPENAI_API_KEY" "$OPENAI_API_KEY"
+write_env_var "ADMIN_USER" "admin"
+write_env_var "ADMIN_PASSWORD" "$ADMIN_PASSWORD"
+write_env_var "SCAN_SCHEDULE" ""
+chmod 600 "$ENV_FILE"
 
-# Remote scanning configuration
-REMOTE_HOST=${REMOTE_HOST}
-REMOTE_USER=${REMOTE_USER}
-
-# OpenAI API Key for report analysis
-OPENAI_API_KEY=${OPENAI_API_KEY}
-
-# You can add other optional variables here, for example:
-# SLACK_WEBHOOK_URL=...
-# ALERT_EMAIL_TO=...
-EOL
-
-echo "[*] '.env' file created successfully."
 echo
-echo "--- Setup Complete! ---"
-echo
-echo "You can now start the application by running:"
-echo "  docker-compose up --build -d"
-echo
-echo "Then, open your browser to http://localhost:5001 to run a scan."
-echo "The scan will be performed on '${REMOTE_HOST}' as user '${REMOTE_USER}'."
+echo "--- Setup Complete ---"
+echo "Environment written to: $ENV_FILE"
+echo "Start the app with Docker Compose, then open http://localhost:5001."

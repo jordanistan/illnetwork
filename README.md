@@ -26,6 +26,7 @@ The application is configured via environment variables, which are loaded from t
 
 | Variable | Required | Description | Default |
 | :--- | :---: | :--- | :--- |
+| `ADMIN_PASSWORD` | **Yes** | Strong non-default password for the web UI login. | |
 | `REMOTE_HOST` | **Yes** | IP address or hostname of the server to scan. | |
 | `REMOTE_USER` | **Yes** | Username for the SSH connection to the remote host. | |
 | `OPENAI_API_KEY` | **Yes** | API key for OpenAI (used for GPT-4 analysis). | |

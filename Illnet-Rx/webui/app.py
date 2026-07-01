@@ -1,37 +1,66 @@
 from flask import (
-    Flask, render_template, request, send_from_directory, Response, jsonify,
-    session, redirect, url_for, flash
+    Flask, render_template, request, send_file, send_from_directory, Response, jsonify,
+    session, redirect, url_for, flash, abort
 )
 import subprocess
 import os
-import time
-import shlex
+import sys
+from pathlib import Path
 from functools import wraps
 from datetime import datetime
 from openai import OpenAI
-import mistune
-
-from flask import (
-    Flask, render_template, request, send_from_directory, Response, jsonify,
-    session, redirect, url_for, flash
-)
-import subprocess
-import os
-import time
-import shlex
-from functools import wraps
-from datetime import datetime
-from openai import OpenAI
-import mistune
 from apscheduler.schedulers.background import BackgroundScheduler
-from .config import config
+
+APP_ROOT = Path(__file__).resolve().parents[1]
+if str(APP_ROOT) not in sys.path:
+    sys.path.insert(0, str(APP_ROOT))
+
+try:
+    from .config import config
+    from .security import (
+        build_remediation_command,
+        ensure_child_path,
+        get_csrf_token,
+        markdown_to_safe_html,
+        mask_secret_settings,
+        require_secure_admin_password,
+        resolve_report_path,
+        validate_csrf_token,
+    )
+except ImportError:
+    from config import config
+    from security import (
+        build_remediation_command,
+        ensure_child_path,
+        get_csrf_token,
+        markdown_to_safe_html,
+        mask_secret_settings,
+        require_secure_admin_password,
+        resolve_report_path,
+        validate_csrf_token,
+    )
 
 # --- Configuration ---
 REPORT_DIR = config.get("OUTPUT_DIR", "/opt/data/reports")
 PARSER = "/opt/scanner/parse_logs.py"
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.secret_key = os.environ.get("SECRET_KEY") or os.urandom(24)
+
+
+@app.context_processor
+def inject_csrf_token():
+    return {"csrf_token": get_csrf_token(session)}
+
+
+@app.before_request
+def validate_csrf_request():
+    if request.method not in {"POST", "PUT", "PATCH", "DELETE"}:
+        return
+
+    token = request.form.get("csrf_token") or request.headers.get("X-CSRFToken")
+    if not validate_csrf_token(session, token):
+        abort(400)
 
 # --- Authentication ---
 def login_required(f):
@@ -46,8 +75,14 @@ def login_required(f):
 def login():
     error = None
     if request.method == 'POST':
+        try:
+            configured_password = require_secure_admin_password(config.get('ADMIN_PASSWORD'))
+        except ValueError:
+            error = 'Admin password is not configured securely. Set ADMIN_PASSWORD to a strong value before logging in.'
+            return render_template('login.html', error=error)
+
         if request.form['username'] != config.get('ADMIN_USER') or \
-           request.form['password'] != config.get('ADMIN_PASSWORD'):
+           request.form['password'] != configured_password:
             error = 'Invalid credentials. Please try again.'
         else:
             session['logged_in'] = True
@@ -79,15 +114,8 @@ def settings():
         flash('Settings saved successfully. Some changes may require a restart.', 'success')
         return redirect(url_for('settings'))
     
-    # For GET request, don't pass sensitive values to the template directly
-    # The config object handles this, but we obscure them for display
-    display_settings = config.settings.copy()
-    if display_settings.get('OPENAI_API_KEY'):
-        display_settings['OPENAI_API_KEY'] = '********'
-    if display_settings.get('SMTP_PASS'):
-        display_settings['SMTP_PASS'] = '********'
-
-    return render_template('settings.html', settings=config.settings)
+    display_settings = mask_secret_settings(config.settings)
+    return render_template('settings.html', settings=display_settings)
 
 # --- Core Routes ---
 def list_reports():
@@ -155,7 +183,7 @@ def dashboard():
             }
 
             # Parse file content for findings and severity counts
-            report_path = os.path.join(REPORT_DIR, latest_md_file)
+            report_path = resolve_report_path(REPORT_DIR, latest_md_file, {'.md'})
             with open(report_path, 'r') as f:
                 in_findings_section = False
                 for line in f:
@@ -235,12 +263,12 @@ def reports():
 @app.route("/report/view/<path:filename>")
 @login_required
 def view_report(filename):
-    # Ensure we are only opening .md files for security
-    if not filename.endswith('.md'):
+    try:
+        report_path = resolve_report_path(REPORT_DIR, filename, {'.md'})
+    except ValueError:
         flash("Invalid report format.", "error")
         return redirect(url_for('reports'))
 
-    report_path = os.path.join(REPORT_DIR, filename)
     if not os.path.exists(report_path):
         flash("Report file not found.", "error")
         return redirect(url_for('reports'))
@@ -250,14 +278,19 @@ def view_report(filename):
     
     # The report name for the title, without the extension
     report_name = filename.replace('.md', '')
-    report_html = mistune.html(markdown_content)
+    report_html = markdown_to_safe_html(markdown_content)
     
     return render_template('view_report.html', report_name=report_name, report_html=report_html)
 
 @app.route("/reports/<path:filename>")
 @login_required
 def get_report(filename):
-    return send_from_directory(REPORT_DIR, filename)
+    try:
+        report_path = resolve_report_path(REPORT_DIR, filename, {'.md', '.html', '.json', '.txt'})
+    except ValueError:
+        flash("Invalid report path.", "error")
+        return redirect(url_for('reports'))
+    return send_file(report_path)
 
 @app.route('/reports/clear', methods=['POST'])
 @login_required
@@ -280,12 +313,24 @@ from apscheduler.schedulers.background import BackgroundScheduler
 # --- Reusable Analysis Function ---
 def trigger_analysis(report_file, target_host):
     """Triggers the GPT analysis for a given report file."""
-    if report_file and os.path.exists(report_file):
-        with open(report_file, 'r') as f:
+    if not report_file:
+        err_msg = "[ERR] Report file not found, cannot run analysis."
+        print(err_msg)
+        return None, err_msg
+
+    try:
+        safe_report_file = ensure_child_path(REPORT_DIR, report_file)
+    except ValueError:
+        err_msg = "[ERR] Report file is outside the configured report directory."
+        print(err_msg)
+        return None, err_msg
+
+    if os.path.exists(safe_report_file):
+        with open(safe_report_file, 'r') as f:
             scan_log_content = f.read()
         
         try:
-            p2_cmd = ["python3", PARSER, target_host, report_file]
+            p2_cmd = ["python3", PARSER, target_host, str(safe_report_file)]
             p2 = subprocess.Popen(p2_cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             stdout, stderr = p2.communicate(input=scan_log_content)
             
@@ -383,7 +428,7 @@ def scan_stream():
 @login_required
 def execute_remediation(target_host):
     """Executes the remediation script on the target host and streams the output."""
-    data = request.get_json()
+    data = request.get_json(silent=True) or {}
     script_content = data.get('script')
 
     if not script_content:
@@ -393,27 +438,23 @@ def execute_remediation(target_host):
         remote_user = config.get("REMOTE_USER")
         remote_host_env = config.get("REMOTE_HOST")
         
-        command = ""
         # Determine if the target is remote or local (the container itself)
         if remote_host_env and target_host == remote_host_env:
             yield "data: Executing script on remote host via SSH...\n\n"
-            # Use ssh to execute the script. The script content is piped to bash on the remote host.
-            command = f"ssh -o StrictHostKeyChecking=no {remote_user}@{target_host} 'bash -s'"
         elif target_host == 'localhost':
             yield "data: Executing script locally in the container...\n\n"
-            command = "bash -s"
         else:
             yield f"data: [ERR] Target host '{target_host}' does not match configured remote host or 'localhost'. Aborting.\n\n"
             yield "event: done\ndata: complete\n\n"
             return
 
         try:
+            command = build_remediation_command(target_host, remote_host_env, remote_user)
             process = subprocess.Popen(
                 command,
                 stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
-                shell=True,
                 text=True
             )
             
@@ -440,11 +481,49 @@ def execute_remediation(target_host):
     # The provided JS in the last step is a simplified polyfill idea.
     return Response(generate(), mimetype='text/event-stream')
 
+def generate_remediation_script(report_content: str) -> str:
+    """Calls OpenAI API to generate a remediation script from a report."""
+    openai_api_key = config.get("OPENAI_API_KEY") or os.environ.get("OPENAI_API_KEY")
+    if not openai_api_key:
+        return "# OpenAI API key not set. Cannot generate script."
+
+    client = OpenAI(api_key=openai_api_key)
+    prompt = f"""
+You are an expert system administrator and security professional.
+Based on the following security report findings, generate a remediation shell script.
+
+Guidelines:
+1. Produce only a Bash script beginning with #!/usr/bin/env bash.
+2. Make it non-interactive and idempotent.
+3. Use set -euo pipefail and explain each remediation step in comments.
+4. Detect the operating system before package-manager commands.
+5. Never exfiltrate secrets, fetch remote code, disable authentication, or weaken SSH/TLS/firewall controls.
+
+Security Report Findings:
+```
+{report_content}
+```
+"""
+    try:
+        resp = client.chat.completions.create(
+            model="gpt-4",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.1,
+        )
+        return resp.choices[0].message.content
+    except Exception as e:
+        return f"# Error generating script: {e}"
+
 @app.route('/report/<path:filename>/remediate', methods=['POST'])
 @login_required
 def remediate_report(filename):
     """Generates a remediation script for a given report."""
-    report_path = os.path.join(REPORT_DIR, filename)
+    try:
+        report_path = resolve_report_path(REPORT_DIR, filename, {'.md', '.txt'})
+    except ValueError:
+        flash("Invalid report path.", "error")
+        return redirect(url_for('reports'))
+
     if not os.path.exists(report_path):
         flash("Report file not found.", "error")
         return redirect(url_for('reports'))

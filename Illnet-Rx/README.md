@@ -29,7 +29,7 @@ The application is configured primarily via the **Settings** page in the web UI.
 | Variable | Description | Default |
 | :--- | :--- | :--- |
 | `ADMIN_USER` | Username for the web UI login. | `admin` |
-| `ADMIN_PASSWORD` | Password for the web UI login. | `password` |
+| `ADMIN_PASSWORD` | Password for the web UI login. Must be set to a strong non-default value. | (required) |
 | `REMOTE_HOST` | IP address or hostname of the server to scan. | |
 | `REMOTE_USER` | Username for the SSH connection to the remote host. | |
 | `OPENAI_API_KEY` | API key for OpenAI (used for GPT-4 analysis). | |

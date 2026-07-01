@@ -2,11 +2,6 @@ import subprocess
 import os
 import shlex
 import datetime
-
-import subprocess
-import os
-import shlex
-import datetime
 import importlib
 import pkgutil
 from . import plugins
@@ -50,14 +45,15 @@ class Scanner:
 
     def _run_command(self, command):
         """
-        Runs a shell command and yields its output line by line.
+        Runs a command and yields its output line by line.
         The output is also written to the report file.
         """
+        use_shell = isinstance(command, str)
         process = subprocess.Popen(
             command,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
-            shell=True,
+            shell=isinstance(command, str),
             text=True,
             bufsize=1
         )
@@ -70,7 +66,8 @@ class Scanner:
         
         process.wait()
         if process.returncode != 0:
-            err_msg = f"[SCANNER-WARN] Command '{command}' finished with non-zero exit code: {process.returncode}."
+            display_command = command if use_shell else shlex.join(command)
+            err_msg = f"[SCANNER-WARN] Command '{display_command}' finished with non-zero exit code: {process.returncode}."
             with open(self.report_file_path, "a") as report_file:
                 report_file.write(err_msg + '\n')
             yield err_msg
@@ -104,7 +101,7 @@ class Scanner:
         yield "--------------------------------------"
 
         healthcheck_script_path = os.path.join(os.path.dirname(__file__), 'healthcheck.sh')
-        yield from self._run_command(f"sudo {shlex.quote(healthcheck_script_path)}")
+        yield from self._run_command(["sudo", healthcheck_script_path])
 
         yield "--------------------------------------"
         yield "Health check complete."

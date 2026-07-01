@@ -3,7 +3,7 @@ services:
     build: .
     container_name: homelab-security
     env_file:
-      - .env
+      - ./Illnet-Rx/.env
     ports:
       - "5001:5000"
     environment:
@@ -23,11 +23,13 @@ services:
       - SMTP_USER=${SMTP_USER}
       - SMTP_PASS=${SMTP_PASS}
       - SMTP_STARTTLS=${SMTP_STARTTLS:-true}
+      - ADMIN_USER=${ADMIN_USER:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:?Set ADMIN_PASSWORD to a strong value before starting Illnet Rx}
     cap_add:
       - SYS_ADMIN
     devices:
       - /dev/fuse
     volumes:
-      - ./data:/opt/data
+      - ./Illnet-Rx/data:/opt/data
       - ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro
     restart: unless-stopped

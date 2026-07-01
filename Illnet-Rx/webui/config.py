@@ -26,7 +26,7 @@ class Config:
             'SMTP_PASS': os.getenv('SMTP_PASS', ''),
             'SMTP_STARTTLS': os.getenv('SMTP_STARTTLS', 'true'),
             'ADMIN_USER': os.getenv('ADMIN_USER', 'admin'),
-            'ADMIN_PASSWORD': os.getenv('ADMIN_PASSWORD', 'password'),
+            'ADMIN_PASSWORD': os.getenv('ADMIN_PASSWORD', ''),
             'SCAN_SCHEDULE': os.getenv('SCAN_SCHEDULE', '')
         }
 

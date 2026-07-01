@@ -1,5 +1,6 @@
 import os
 import datetime
+import html
 import json
 import re
 import sys
@@ -12,6 +13,15 @@ REPORT_DIR = os.environ.get("OUTPUT_DIR", "/opt/data/reports")
 ALERT_SEVERITY_THRESHOLD = os.getenv("ALERT_SEVERITY_THRESHOLD", "high").lower()  # low|medium|high|critical
 
 SEVERITY_ORDER = {"low": 1, "medium": 2, "high": 3, "critical": 4}
+SAFE_FILENAME_RE = re.compile(r"[^A-Za-z0-9_.-]+")
+
+def safe_report_base_filename(hostname: str, timestamp: str, severity: str) -> str:
+    safe_host = SAFE_FILENAME_RE.sub("_", hostname or "localhost").strip("._-")
+    if not safe_host:
+        safe_host = "localhost"
+    safe_timestamp = SAFE_FILENAME_RE.sub("_", timestamp)
+    safe_severity = SAFE_FILENAME_RE.sub("_", severity or "low").lower()
+    return f"{safe_host}-{safe_timestamp}-Summary-Report-{safe_severity}"
 
 def extract_simple_indicators(scan_text: str):
     # ClamAV infections
@@ -74,7 +84,7 @@ def save_reports(summary: str, base_filename: str):
     with open(md_file, "w") as f:
         f.write(summary)
 
-    html_content = f"<html><head><meta charset='utf-8'></head><body><pre>{summary}</pre></body></html>"
+    html_content = f"<html><head><meta charset='utf-8'></head><body><pre>{html.escape(summary)}</pre></body></html>"
     with open(html_file, "w") as f:
         f.write(html_content)
 
@@ -114,7 +124,7 @@ if __name__ == "__main__":
     overall = derive_overall_severity(summary, infected, rk_warn)
     
     timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    base_filename = f"{hostname}-{timestamp}-Summary-Report-{overall}"
+    base_filename = safe_report_base_filename(hostname, timestamp, overall)
     
     md_file, html_file, json_file = save_reports(summary, base_filename)
 
