@@ -11,7 +11,7 @@ run_scan() {
     local SCAN_ROOT="/"
     local TARGET_HOST="localhost"
 
-    if [[ -n "${REMOTE_HOST:-}" ]]; then
+    if [[ "${SCAN_MODE:-local}" == "ssh" && -n "${REMOTE_HOST:-}" ]]; then
         # If a remote host is defined, we scan the mount point.
         SCAN_ROOT="/mnt/remote"
         TARGET_HOST="${REMOTE_HOST}"
@@ -60,4 +60,4 @@ run_scan 2>&1 | tee -a "$REPORT_FILE"
 
 # Emit machine-readable lines for the UI.
 echo "__REPORT_FILE__=$REPORT_FILE"
-echo "__TARGET_HOST__=${REMOTE_HOST:-localhost}"
+echo "__TARGET_HOST__=${TARGET_HOST}"

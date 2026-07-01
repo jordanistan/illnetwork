@@ -1,34 +1,83 @@
 {% extends "layout.html" %}
-{% block title %}Diagnosis Engine - Illnet Rx{% endblock %}
+{% block title %}Scanner - Illnet Rx{% endblock %}
 
 {% block content %}
-<div class="card">
-  <div class="card-header">
-    <h2>Diagnosis Engine</h2>
-    <div style="display: flex; align-items: center; gap: 1rem;">
-      <select id="scan-type-select" class="form-control">
-        <option value="deep_scan">Deep Scan (Remote Target)</option>
-        <option value="health_check">Host Health Check (Local)</option>
-      </select>
-      <button id="runBtn" class="btn btn-primary">Run Diagnosis</button>
+<section class="scanner-grid">
+  <div class="card scanner-stage">
+    <div class="card-header">
+      <div>
+        <h2>Scanner Console</h2>
+        <p style="margin: 0.35rem 0 0;">Run a local sweep first. Switch to remote SSH or an agent-fed host only when you need a wider view.</p>
+      </div>
+      <div class="mode-switch">
+        <span class="mode-pill active">Local-first</span>
+        <span class="mode-pill {% if scan_mode == 'ssh' %}active{% endif %}">SSH remote</span>
+        <span class="mode-pill {% if agent_enabled %}active{% endif %}">Agent</span>
+      </div>
+    </div>
+
+    <div class="card-content">
+      <div class="split-2" style="margin-bottom: 1rem;">
+        <div class="callout">
+          <div class="label">Current mode</div>
+          <h3 style="margin-top: 0.35rem;">{{ scan_mode|upper }}</h3>
+          <p style="margin-bottom: 0;">{% if scan_mode == 'ssh' and remote_host %}Mounted SSH scans can inspect {{ remote_host }}.{% else %}This install scans the local machine first.{% endif %}</p>
+        </div>
+        <div class="callout warn">
+          <div class="label">Agent option</div>
+          <h3 style="margin-top: 0.35rem;">{% if agent_enabled %}Ready to ingest{% else %}Not configured{% endif %}</h3>
+          <p style="margin-bottom: 0;">{% if agent_enabled %}Remote hosts can report back to the dashboard with a lightweight agent.{% else %}Add an agent token in settings to accept remote host reports.{% endif %}</p>
+        </div>
+      </div>
+
+      <div class="toolbar" style="margin-bottom: 1rem;">
+        <select id="scan-type-select" class="form-control" style="max-width: 320px;">
+          <option value="deep_scan">{% if scan_mode == 'ssh' %}Remote filesystem scan{% else %}Full local scan{% endif %}</option>
+          <option value="health_check">Quick health check</option>
+        </select>
+        <button id="runBtn" class="btn btn-primary">Run Local Scan</button>
+        <a href="{{ url_for('reports') }}" class="btn">View Reports</a>
+      </div>
+
+      <pre id="log" class="terminal">Welcome to Illnet Rx. Choose a scan and press Run Local Scan to begin.</pre>
     </div>
   </div>
-  <div class="card-content">
-    <h3>Vitals Monitor</h3>
-    <pre id="log" class="terminal">Welcome to the Illnet Rx Diagnosis Engine. Select a scan type and click "Run Diagnosis" to begin.</pre>
-  </div>
-</div>
 
-<style>
-  .form-control {
-    background: var(--bg-dark-primary);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 1rem;
-  }
-</style>
+  <aside class="panel-stack">
+    <div class="card">
+      <div class="card-header">
+        <h2>Deployment Guide</h2>
+      </div>
+      <div class="card-content">
+        <div class="recent-list">
+          <div class="info-surface">
+            <div class="label">1. Local</div>
+            <p style="margin-bottom: 0;">Run this on the machine you want to inspect. No SSH setup required.</p>
+          </div>
+          <div class="info-surface">
+            <div class="label">2. SSH remote</div>
+            <p style="margin-bottom: 0;">Use the SSH mode when you want the dashboard to inspect a mounted remote filesystem.</p>
+          </div>
+          <div class="info-surface">
+            <div class="label">3. Agent</div>
+            <p style="margin-bottom: 0;">Install the remote agent bundle from <code>Illnet-Rx/agent</code> for hosts that should report back on their own schedule.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>What to expect</h2>
+      </div>
+      <div class="card-content">
+        <div class="callout">
+          The terminal streams the scan in real time, then the GPT summary appears beneath it and lands in Reports.
+        </div>
+      </div>
+    </div>
+  </aside>
+</section>
 
 <script>
   const runBtn = document.getElementById('runBtn');
@@ -36,7 +85,6 @@
   const scanTypeSelect = document.getElementById('scan-type-select');
 
   function append(line) {
-    // Sanitize HTML content from the stream
     const sanitizedLine = line.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     logEl.innerHTML += (sanitizedLine + "\n");
     logEl.scrollTop = logEl.scrollHeight;
@@ -44,9 +92,9 @@
 
   function startScan() {
     runBtn.disabled = true;
-    runBtn.textContent = 'Diagnosis in Progress...';
-    logEl.innerHTML = 'Initializing diagnosis engine...\n';
-    
+    runBtn.textContent = 'Scanning...';
+    logEl.innerHTML = 'Initializing scanner...\n';
+
     const scanType = scanTypeSelect.value;
     const url = new URL("{{ url_for('scan_stream') }}", window.location.origin);
     url.searchParams.append('scan_type', scanType);
@@ -58,17 +106,17 @@
     };
 
     sse.addEventListener('done', () => {
-      append('=== Diagnosis and analysis complete. You can view the full report in the Consultation History. ===');
+      append('=== Scan and analysis complete. Check the dashboard and reports for the latest results. ===');
       sse.close();
       runBtn.disabled = false;
-      runBtn.textContent = 'Run New Diagnosis';
+      runBtn.textContent = 'Run Local Scan';
     });
 
     sse.onerror = () => {
-      append('[ERR] An error occurred with the vitals monitor stream. Connection closed.');
+      append('[ERR] The scanner stream stopped unexpectedly.');
       sse.close();
       runBtn.disabled = false;
-      runBtn.textContent = 'Run New Diagnosis';
+      runBtn.textContent = 'Run Local Scan';
     };
   }
 

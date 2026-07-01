@@ -2,24 +2,83 @@
 {% block title %}Dashboard - Illnet Rx{% endblock %}
 
 {% block content %}
-<div class="dashboard-header">
-  <h1>Security Dashboard</h1>
-  <p>A high-level overview of your system's security posture based on the latest scan.</p>
-</div>
+<section class="dashboard-hero">
+  <div class="hero-panel">
+    <div class="chip">Local-first monitoring</div>
+    <h1>See the machine before it becomes a problem.</h1>
+    <p>
+      Illnet Rx keeps the default workflow local, then layers in remote SSH scans or agent-fed telemetry when you need it.
+      The dashboard stays focused on what matters: current risk, recent findings, and the next action.
+    </p>
+    <div class="hero-actions">
+      <a href="{{ url_for('scanner_page') }}" class="btn btn-primary">Run Local Scan</a>
+      <a href="{{ url_for('reports') }}" class="btn">Open Reports</a>
+    </div>
+  </div>
 
-<div class="dashboard-grid">
+  <aside class="panel-stack">
+    <div class="surface" style="padding: 1rem 1.1rem;">
+      <div class="label">Current mode</div>
+      <div class="report-title" style="margin-top: 0.3rem;">
+        <span class="chip">{{ scan_mode|upper }}</span>
+        {% if scan_mode == 'ssh' and remote_host %}
+          <span class="chip">{{ remote_host }}</span>
+        {% elif agent_enabled %}
+          <span class="chip">Agent intake enabled</span>
+        {% else %}
+          <span class="chip">Local host only</span>
+        {% endif %}
+      </div>
+      <p style="margin-top: 0.8rem;">The scanner runs locally by default and only reaches outward when you explicitly configure it.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="label">Findings</span>
+        <span class="value">{{ total_findings }}</span>
+      </div>
+      <div class="stat">
+        <span class="label">Critical</span>
+        <span class="value">{{ severity_counts.critical }}</span>
+      </div>
+      <div class="stat">
+        <span class="label">Agent</span>
+        <span class="value">{{ 'On' if agent_enabled else 'Off' }}</span>
+      </div>
+    </div>
+  </aside>
+</section>
+
+<section class="dashboard-grid">
   <div class="card">
     <div class="card-header">
       <h2>Latest Scan Summary</h2>
+      {% if latest_report %}
+        <span class="badge badge-{{ latest_report.severity.lower() }}">{{ latest_report.severity }}</span>
+      {% endif %}
     </div>
     <div class="card-content">
       {% if latest_report %}
-        <p><strong>Target Host:</strong> {{ latest_report.hostname }}</p>
-        <p><strong>Scan Date:</strong> {{ latest_report.date }}</p>
-        <p><strong>Overall Severity:</strong> <span class="badge badge-{{ latest_report.severity.lower() }}">{{ latest_report.severity }}</span></p>
-        <a href="{{ url_for('view_report', filename=latest_report.filename) }}" class="btn">View Full Report</a>
+        <div class="split-2">
+          <div class="info-surface">
+            <div class="label">Target host</div>
+            <h3 style="margin-top: 0.35rem;">{{ latest_report.hostname }}</h3>
+            <p style="margin-bottom: 0;">{{ latest_report.date }}</p>
+          </div>
+          <div class="info-surface">
+            <div class="label">Latest severity</div>
+            <h3 style="margin-top: 0.35rem;">{{ latest_report.severity }}</h3>
+            <p style="margin-bottom: 0;">The newest report is ready for review.</p>
+          </div>
+        </div>
+        <div class="hero-actions" style="margin-top: 1rem;">
+          <a href="{{ url_for('view_report', filename=latest_report.filename) }}" class="btn btn-primary">View Full Report</a>
+          <a href="{{ url_for('scanner_page') }}" class="btn btn-secondary">Run Again</a>
+        </div>
       {% else %}
-        <p>No scans have been run yet. Go to the Diagnosis Engine to start a scan.</p>
+        <div class="callout">
+          No scans have run yet. Start a local scan from the scanner page and the results will appear here.
+        </div>
       {% endif %}
     </div>
   </div>
@@ -30,81 +89,37 @@
     </div>
     <div class="card-content">
       <div class="severity-chart">
-        <!-- This would be a place for a chart library, for now, we use simple bars -->
         {% for sev, count in severity_counts.items() %}
           <div class="bar-item">
-            <span class="bar-label">{{ sev.capitalize() }}</span>
+            <div class="bar-label">
+              <span>{{ sev.capitalize() }}</span>
+              <span>{{ count }}</span>
+            </div>
             <div class="bar-container">
-              <div class="bar bar-{{ sev }}" style="width: {{ (count / (total_findings or 1)) * 100 }}%;">{{ count }}</div>
+              <div class="bar bar-{{ sev }}" style="width: {{ (count / (total_findings or 1)) * 100 }}%;"></div>
             </div>
           </div>
-        {% else %}
-          <p>No findings in the latest report.</p>
         {% endfor %}
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="card">
+<section class="card">
   <div class="card-header">
     <h2>Recent Findings</h2>
+    <span class="chip">Latest report only</span>
   </div>
   <div class="card-content">
     {% if findings %}
-      <ul>
+      <div class="recent-list">
         {% for finding in findings %}
-          <li>{{ finding }}</li>
+          <div class="info-surface">{{ finding }}</div>
         {% endfor %}
-      </ul>
+      </div>
     {% else %}
-      <p>No findings in the latest report.</p>
+      <div class="callout warn">No findings in the latest report.</div>
     {% endif %}
   </div>
-</div>
-
-
-<style>
-  .dashboard-header {
-    margin-bottom: 2rem;
-  }
-  .dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-  .severity-chart {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .bar-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .bar-label {
-    flex-basis: 100px;
-    text-align: right;
-  }
-  .bar-container {
-    flex-grow: 1;
-    background: var(--bg-dark-primary);
-    border-radius: 6px;
-    overflow: hidden;
-  }
-  .bar {
-    height: 24px;
-    line-height: 24px;
-    color: var(--bg-dark-primary);
-    font-weight: 600;
-    padding: 0 8px;
-    text-align: right;
-  }
-  .bar-critical { background-color: var(--critical-primary); }
-  .bar-high { background-color: var(--high-primary); }
-  .bar-medium { background-color: var(--medium-primary); }
-  .bar-low { background-color: var(--low-primary); }
-</style>
+</section>
 {% endblock %}

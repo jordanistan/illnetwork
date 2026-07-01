@@ -17,7 +17,8 @@ Illnet Rx Remote Scanner Setup
 
 Usage:
   ./setup.sh
-  ./setup.sh --non-interactive <REMOTE_HOST> <REMOTE_USER> <OPENAI_API_KEY> [ADMIN_PASSWORD]
+  ./setup.sh --non-interactive local <OPENAI_API_KEY> [ADMIN_PASSWORD]
+  ./setup.sh --non-interactive ssh <REMOTE_HOST> <REMOTE_USER> <OPENAI_API_KEY> [ADMIN_PASSWORD]
 
 Required tools:
   Debian/Ubuntu: sudo apt install openssh-client
@@ -72,6 +73,23 @@ prompt_secret_required() {
   done
 }
 
+prompt_choice() {
+  local prompt="$1"
+  local choice
+  while true; do
+    read -r -p "$prompt" choice
+    case "$choice" in
+      local|ssh)
+        printf '%s' "$choice"
+        return
+        ;;
+      *)
+        echo "[!] Choose either 'local' or 'ssh'." >&2
+        ;;
+    esac
+  done
+}
+
 generate_password() {
   if need_cmd openssl; then
     openssl rand -base64 24 | tr -d '\n'
@@ -114,22 +132,6 @@ ensure_ssh_key() {
   fi
 }
 
-copy_or_print_public_key() {
-  if [[ "$NON_INTERACTIVE" -eq 0 ]] && need_cmd ssh-copy-id; then
-    echo "[*] Copying your public SSH key to ${REMOTE_USER}@${REMOTE_HOST}."
-    ssh-copy-id "${REMOTE_USER}@${REMOTE_HOST}"
-    return
-  fi
-
-  echo
-  echo "--- ACTION REQUIRED ---"
-  echo "Add this public key to ~${REMOTE_USER}/.ssh/authorized_keys on ${REMOTE_HOST}:"
-  echo "----"
-  cat "${SSH_KEY_PATH}.pub"
-  echo "----"
-  echo
-}
-
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --non-interactive)
@@ -153,30 +155,47 @@ fi
 echo "--- Illnet Rx Remote Scanner Setup ---"
 echo
 
-if ! need_cmd ssh-keygen || ! need_cmd ssh; then
-  install_help
-  exit 1
-fi
-
-ensure_ssh_key
+MODE="local"
 
 if [[ "$NON_INTERACTIVE" -eq 1 ]]; then
-  if [[ "$#" -lt 3 || "$#" -gt 4 ]]; then
-    echo "[!] Non-interactive mode requires REMOTE_HOST, REMOTE_USER, OPENAI_API_KEY, and optional ADMIN_PASSWORD." >&2
+  if [[ "$1" == "local" || "$1" == "ssh" ]]; then
+    MODE="$1"
+    shift
+  fi
+  if [[ "$MODE" == "local" && ( "$#" -lt 1 || "$#" -gt 2 ) ]]; then
+    echo "[!] Local non-interactive mode requires OPENAI_API_KEY and optional ADMIN_PASSWORD." >&2
     usage >&2
     exit 1
   fi
-  REMOTE_HOST="$1"
-  REMOTE_USER="$2"
-  OPENAI_API_KEY="$3"
-  ADMIN_PASSWORD="${4:-${ADMIN_PASSWORD:-}}"
+  if [[ "$MODE" == "ssh" && ( "$#" -lt 3 || "$#" -gt 4 ) ]]; then
+    echo "[!] SSH non-interactive mode requires REMOTE_HOST, REMOTE_USER, OPENAI_API_KEY, and optional ADMIN_PASSWORD." >&2
+    usage >&2
+    exit 1
+  fi
+  if [[ "$MODE" == "local" ]]; then
+    REMOTE_HOST=""
+    REMOTE_USER=""
+    OPENAI_API_KEY="$1"
+    ADMIN_PASSWORD="${2:-${ADMIN_PASSWORD:-}}"
+  else
+    REMOTE_HOST="$1"
+    REMOTE_USER="$2"
+    OPENAI_API_KEY="$3"
+    ADMIN_PASSWORD="${4:-${ADMIN_PASSWORD:-}}"
+  fi
   if [[ -z "$ADMIN_PASSWORD" ]]; then
     ADMIN_PASSWORD="$(generate_password)"
     echo "[*] Generated ADMIN_PASSWORD for the web UI: $ADMIN_PASSWORD"
   fi
 else
-  REMOTE_HOST="$(prompt_required "Enter the remote host IP address or hostname: ")"
-  REMOTE_USER="$(prompt_required "Enter the remote host username: ")"
+  MODE="$(prompt_choice "Choose deployment mode (local or ssh): ")"
+  if [[ "$MODE" == "ssh" ]]; then
+    REMOTE_HOST="$(prompt_required "Enter the remote host IP address or hostname: ")"
+    REMOTE_USER="$(prompt_required "Enter the remote host username: ")"
+  else
+    REMOTE_HOST=""
+    REMOTE_USER=""
+  fi
   OPENAI_API_KEY="$(prompt_secret_required "Enter your OpenAI API key: ")"
   ADMIN_PASSWORD="$(prompt_secret_required "Create a web UI admin password (12+ chars): ")"
 fi
@@ -186,7 +205,25 @@ if [[ ${#ADMIN_PASSWORD} -lt 12 || "$ADMIN_PASSWORD" == "password" ]]; then
   exit 1
 fi
 
-copy_or_print_public_key
+if [[ "$MODE" == "ssh" ]]; then
+  if ! need_cmd ssh-keygen || ! need_cmd ssh; then
+    install_help
+    exit 1
+  fi
+  ensure_ssh_key
+  if [[ "$NON_INTERACTIVE" -eq 0 ]] && need_cmd ssh-copy-id; then
+    echo "[*] Copying your public SSH key to ${REMOTE_USER}@${REMOTE_HOST}."
+    ssh-copy-id "${REMOTE_USER}@${REMOTE_HOST}"
+  else
+    echo
+    echo "--- ACTION REQUIRED ---"
+    echo "Add this public key to ~${REMOTE_USER}/.ssh/authorized_keys on ${REMOTE_HOST}:"
+    echo "----"
+    cat "${SSH_KEY_PATH}.pub"
+    echo "----"
+    echo
+  fi
+fi
 
 echo "[*] Creating $ENV_FILE."
 mkdir -p "$(dirname "$ENV_FILE")"
@@ -197,8 +234,11 @@ umask 077
   echo "# Docker Compose uses these variables to configure Illnet Rx."
   echo
 } >> "$ENV_FILE"
-write_env_var "REMOTE_HOST" "$REMOTE_HOST"
-write_env_var "REMOTE_USER" "$REMOTE_USER"
+write_env_var "SCAN_MODE" "$MODE"
+if [[ "$MODE" == "ssh" ]]; then
+  write_env_var "REMOTE_HOST" "$REMOTE_HOST"
+  write_env_var "REMOTE_USER" "$REMOTE_USER"
+fi
 write_env_var "OPENAI_API_KEY" "$OPENAI_API_KEY"
 write_env_var "ADMIN_USER" "admin"
 write_env_var "ADMIN_PASSWORD" "$ADMIN_PASSWORD"
@@ -209,3 +249,5 @@ echo
 echo "--- Setup Complete ---"
 echo "Environment written to: $ENV_FILE"
 echo "Start the app with Docker Compose, then open http://localhost:5001."
+echo "Local scans are enabled by default. Use SSH mode only if you want a mounted remote host."
+echo "Remote agents can be installed from Illnet-Rx/agent/install.sh."

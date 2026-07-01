@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-# If REMOTE_HOST is set, mount the remote filesystem
-if [ -n "${REMOTE_HOST}" ]; then
+# If SSH remote mode is selected, mount the remote filesystem
+if [ "${SCAN_MODE:-local}" = "ssh" ] && [ -n "${REMOTE_HOST:-}" ]; then
     echo "--- Remote host provided, attempting to mount via sshfs ---"
     
     REMOTE_USER="${REMOTE_USER:-root}"

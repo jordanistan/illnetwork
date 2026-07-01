@@ -27,6 +27,10 @@ try:
         resolve_report_path,
         validate_csrf_token,
     )
+    from .agent_ingest import (
+        save_agent_scan_log,
+        validate_agent_token,
+    )
 except ImportError:
     from config import config
     from security import (
@@ -39,10 +43,23 @@ except ImportError:
         resolve_report_path,
         validate_csrf_token,
     )
+    from agent_ingest import (
+        save_agent_scan_log,
+        validate_agent_token,
+    )
 
 # --- Configuration ---
 REPORT_DIR = config.get("OUTPUT_DIR", "/opt/data/reports")
 PARSER = "/opt/scanner/parse_logs.py"
+
+
+def build_scanner_config():
+    return {
+        "SCAN_MODE": config.get("SCAN_MODE"),
+        "REMOTE_HOST": config.get("REMOTE_HOST"),
+        "SCAN_PATH": config.get("SCAN_PATH"),
+        "OUTPUT_DIR": REPORT_DIR
+    }
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY") or os.urandom(24)
@@ -109,6 +126,10 @@ def settings():
             new_settings['OPENAI_API_KEY'] = config.get('OPENAI_API_KEY')
         if not new_settings.get('SMTP_PASS'):
             new_settings['SMTP_PASS'] = config.get('SMTP_PASS')
+        if not new_settings.get('AGENT_TOKEN'):
+            new_settings['AGENT_TOKEN'] = config.get('AGENT_TOKEN')
+        if not new_settings.get('ADMIN_PASSWORD'):
+            new_settings['ADMIN_PASSWORD'] = config.get('ADMIN_PASSWORD')
 
         config.save(new_settings)
         flash('Settings saved successfully. Some changes may require a restart.', 'success')
@@ -208,14 +229,22 @@ def dashboard():
         latest_report=latest_report_info,
         findings=findings,
         severity_counts=severity_counts,
-        total_findings=total_findings
+        total_findings=total_findings,
+        scan_mode=(config.get("SCAN_MODE") or "local").lower(),
+        remote_host=config.get("REMOTE_HOST"),
+        agent_enabled=bool(config.get("AGENT_TOKEN"))
     )
 
 
 @app.route("/scanner")
 @login_required
 def scanner_page():
-    return render_template("index.html")
+    return render_template(
+        "index.html",
+        scan_mode=(config.get("SCAN_MODE") or "local").lower(),
+        remote_host=config.get("REMOTE_HOST"),
+        agent_enabled=bool(config.get("AGENT_TOKEN")),
+    )
 
 
 @app.route("/reports")
@@ -341,23 +370,57 @@ def trigger_analysis(report_file, target_host):
             return stdout, stderr
         except Exception as e:
             err_msg = f"[ERR] GPT analysis step failed: {e}"
-            print(err_msg)
-            return None, err_msg
+        print(err_msg)
+        return None, err_msg
     else:
         err_msg = "[ERR] Report file not found, cannot run analysis."
         print(err_msg)
         return None, err_msg
+
+
+@app.route("/api/agent/report", methods=["POST"])
+def agent_report():
+    configured_token = config.get("AGENT_TOKEN")
+    provided_token = (
+        request.headers.get("X-Illnet-Agent-Token")
+        or request.headers.get("Authorization", "").removeprefix("Bearer ").strip()
+    )
+    if not validate_agent_token(configured_token, provided_token):
+        return jsonify({"error": "unauthorized"}), 401
+
+    payload = request.get_json(silent=True) or {}
+    hostname = (
+        payload.get("hostname")
+        or request.args.get("hostname")
+        or request.headers.get("X-Illnet-Agent-Hostname")
+        or "agent"
+    ).strip()
+    scan_text = payload.get("scan_text")
+    if scan_text is None:
+        scan_text = request.get_data(as_text=True)
+    if not scan_text.strip():
+        return jsonify({"error": "scan_text is required"}), 400
+
+    raw_report_path = save_agent_scan_log(REPORT_DIR, hostname, scan_text)
+    stdout, stderr = trigger_analysis(raw_report_path, hostname)
+    if stderr and not stdout:
+        return jsonify({"error": "analysis failed", "details": stderr}), 500
+
+    return jsonify(
+        {
+            "status": "ok",
+            "hostname": hostname,
+            "report_file": raw_report_path,
+            "analysis": stdout or "",
+        }
+    )
 
 # --- Scheduled Scan Job ---
 def scheduled_scan_job():
     """The job that is executed by the scheduler."""
     print("--- Running Scheduled Scan ---")
     with app.app_context():
-        scanner_config = {
-            "REMOTE_HOST": config.get("REMOTE_HOST"),
-            "SCAN_PATH": config.get("SCAN_PATH"),
-            "OUTPUT_DIR": REPORT_DIR
-        }
+        scanner_config = build_scanner_config()
         scanner = Scanner(scanner_config)
         
         report_file = None
@@ -382,12 +445,8 @@ def scheduled_scan_job():
 def scan_stream():
     def generate():
         scan_type = request.args.get('scan_type', 'deep_scan')
-        
-        scanner_config = {
-            "REMOTE_HOST": config.get("REMOTE_HOST"),
-            "SCAN_PATH": config.get("SCAN_PATH"),
-            "OUTPUT_DIR": REPORT_DIR
-        }
+
+        scanner_config = build_scanner_config()
         scanner = Scanner(scanner_config)
         
         report_file = None

@@ -2,22 +2,30 @@
 {% block title %}Login - Illnet Rx{% endblock %}
 
 {% block content %}
-<div class="login-container">
-  <h1>Illnet Rx Login</h1>
-  {% if error %}
-    <p class="error">{{ error }}</p>
-  {% endif %}
-  <form method="post">
-    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" required>
+<div class="login-shell">
+  <div class="login-container">
+    <div class="login-hero">
+      <div class="chip">Secure access</div>
+      <h1>Illnet Rx</h1>
+      <p>Sign in to launch local scans, review findings, and bring remote hosts online only when you choose to.</p>
     </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-  </form>
+
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="post">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Enter Dashboard</button>
+    </form>
+  </div>
 </div>
 {% endblock %}

@@ -14,8 +14,10 @@ class Config:
         """Loads settings from the JSON file, with env var fallback."""
         # Default values from environment variables
         env_settings = {
+            'SCAN_MODE': os.getenv('SCAN_MODE', 'local'),
             'REMOTE_HOST': os.getenv('REMOTE_HOST', ''),
             'REMOTE_USER': os.getenv('REMOTE_USER', ''),
+            'AGENT_TOKEN': os.getenv('AGENT_TOKEN', ''),
             'OPENAI_API_KEY': os.getenv('OPENAI_API_KEY', ''),
             'SCAN_PATH': os.getenv('SCAN_PATH', '/'),
             'ALERT_SEVERITY_THRESHOLD': os.getenv('ALERT_SEVERITY_THRESHOLD', 'high'),

@@ -15,10 +15,11 @@ class Scanner:
         self.config = config
         self.scan_root = "/"
         self.target_host = "localhost"
+        self.scan_mode = (self.config.get("SCAN_MODE") or "local").lower()
         self.report_file_path = self._generate_report_path()
         self.plugins = self._load_plugins()
 
-        if self.config.get("REMOTE_HOST"):
+        if self.scan_mode == "ssh" and self.config.get("REMOTE_HOST"):
             self.scan_root = "/mnt/remote"
             self.target_host = self.config["REMOTE_HOST"]
 
@@ -97,7 +98,7 @@ class Scanner:
         """
         yield "Initializing Host Health Check..."
         yield f"Report log will be saved to: {self.report_file_path}"
-        yield "Target: localhost (container)"
+        yield f"Target: {self.target_host} (container)"
         yield "--------------------------------------"
 
         healthcheck_script_path = os.path.join(os.path.dirname(__file__), 'healthcheck.sh')

@@ -106,6 +106,17 @@ class SecurityHardeningTests(unittest.TestCase):
             with self.subTest(template=template):
                 self.assertIn("csrf_token", template.read_text())
 
+    def test_ui_templates_reflect_local_first_and_agent_mode(self):
+        settings_template = REPO_ROOT / "Illnet-Rx" / "webui" / "templates" / "settings.html"
+        index_template = REPO_ROOT / "Illnet-Rx" / "webui" / "templates" / "index.html"
+        dashboard_template = REPO_ROOT / "Illnet-Rx" / "webui" / "templates" / "dashboard.html"
+
+        self.assertIn("SCAN_MODE", settings_template.read_text())
+        self.assertIn("AGENT_TOKEN", settings_template.read_text())
+        self.assertIn("Local-first", index_template.read_text())
+        self.assertIn("Agent", index_template.read_text())
+        self.assertIn("Local-first monitoring", dashboard_template.read_text())
+
     def test_remediation_fetch_sends_csrf_header(self):
         template = REPO_ROOT / "Illnet-Rx" / "webui" / "templates" / "remediation.html"
         content = template.read_text()

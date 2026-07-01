@@ -7,7 +7,7 @@ This document provides a technical overview of the Illnet Rx application, intend
 The application is composed of two main components: a `scanner` engine and a `webui` for interaction and reporting.
 
 -   **`scanner/`**: This directory contains the core logic for the security audit.
-    -   `scan.sh`: The main Bash script that executes the sequence of security tools (ClamAV, rkhunter, etc.). It is designed to be able to run against the local filesystem or a mounted remote filesystem.
+    -   `scan.sh`: The main Bash script that executes the sequence of security tools (ClamAV, rkhunter, etc.). It defaults to the local filesystem and can optionally target a mounted remote filesystem.
     -   `parse_logs.py`: A Python script that takes the raw output from `scan.sh`, extracts key indicators, and sends the log to the GPT-4 API for analysis and report generation.
     -   `alerts.py`: Handles sending notifications to Slack or via email if the scan results meet the configured severity threshold.
 
@@ -18,7 +18,7 @@ The application is composed of two main components: a `scanner` engine and a `we
 
 -   **`Dockerfile`**: A `python:3.12-slim` based Dockerfile that installs all necessary system-level tools (e.g., `clamav`, `rkhunter`, `sshfs`) and Python dependencies.
 
--   **`entrypoint.sh`**: This script is the container's entrypoint. Its primary role is to check for the `REMOTE_HOST` environment variable and, if present, mount the remote host's root filesystem to `/mnt/remote` using `sshfs` before starting the web application.
+-   **`entrypoint.sh`**: This script is the container's entrypoint. It mounts a remote filesystem only when SSH remote mode is selected; otherwise it starts the web application locally.
 
 ## Environment Variables
 
@@ -27,9 +27,11 @@ The application is configured via environment variables, which are loaded from t
 | Variable | Required | Description | Default |
 | :--- | :---: | :--- | :--- |
 | `ADMIN_PASSWORD` | **Yes** | Strong non-default password for the web UI login. | |
-| `REMOTE_HOST` | **Yes** | IP address or hostname of the server to scan. | |
-| `REMOTE_USER` | **Yes** | Username for the SSH connection to the remote host. | |
+| `SCAN_MODE` | No | `local` or `ssh`. Local is the default. | `local` |
+| `REMOTE_HOST` | No | IP address or hostname of the server to scan when SSH mode is enabled. | |
+| `REMOTE_USER` | No | Username for the SSH connection to the remote host. | |
 | `OPENAI_API_KEY` | **Yes** | API key for OpenAI (used for GPT-4 analysis). | |
+| `AGENT_TOKEN` | No | Shared secret used by remote agents that post scan results to the dashboard. | |
 | `SCAN_PATH` | No | Specify a subdirectory to scan relative to the root of the target filesystem. | `/opt/data` |
 | `ALERT_SEVERITY_THRESHOLD` | No | Minimum severity (`low`, `medium`, `high`, `critical`) to trigger alerts. | `high` |
 | `SLACK_WEBHOOK_URL` | No | Your Slack incoming webhook URL for alerts. | |
@@ -54,12 +56,13 @@ The application is configured via environment variables, which are loaded from t
 -   :wrench: **Configuration UI:** A comprehensive "Settings" page allows you to manage all application settings—from API keys to scan schedules—without ever touching a config file.
 -   :electric_plug: **Extensible Plugin Architecture:** The scanning engine is built on a modular plugin system, making it easy for developers to add new security tools and checks.
 -   :bell: **Real-time Alerts:** Get notified via **Slack** or **Email** when high-severity issues are detected.
--   :satellite: **Remote & Local Scanning:** Seamlessly scan a remote host over SSH or perform a quick "Health Check" on the local container environment.
+-   :satellite: **Remote & Local Scanning:** Scan locally by default, mount remote hosts over SSH when needed, or ingest results from a lightweight agent.
 
 The Flask web application exposes a few simple endpoints:
 
 -   `GET /`: The main scanner page with the live log viewer.
 -   `GET /scan/stream`: An `text/event-stream` endpoint that streams the live output of a running scan to the client.
+-   `POST /api/agent/report`: Accepts agent scan logs and turns them into dashboard reports.
 -   `GET /reports`: Displays a list of all generated reports.
 -   `GET /reports/<path:filename>`: Serves a specific report file from the reports directory.
 -   `GET /api/reports`: A JSON endpoint that returns a list of all available report filenames.

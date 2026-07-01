@@ -20,7 +20,7 @@ The application is composed of a `scanner` engine and a `webui` for interaction 
 
 -   **`Dockerfile`**: A `python:3.12-slim` based Dockerfile that installs all necessary system-level tools (e.g., `clamav`, `rkhunter`, `sshfs`) and Python dependencies.
 
--   **`entrypoint.sh`**: This script is the container's entrypoint. Its primary role is to check for a remote host configuration and, if present, mount the remote host's root filesystem to `/mnt/remote` using `sshfs` before starting the web application.
+-   **`entrypoint.sh`**: This script is the container's entrypoint. It mounts a remote filesystem only when SSH remote mode is selected; otherwise it starts the web application locally.
 
 ## Configuration
 
@@ -30,9 +30,11 @@ The application is configured primarily via the **Settings** page in the web UI.
 | :--- | :--- | :--- |
 | `ADMIN_USER` | Username for the web UI login. | `admin` |
 | `ADMIN_PASSWORD` | Password for the web UI login. Must be set to a strong non-default value. | (required) |
+| `SCAN_MODE` | Default mode for scanning. Local is the default. | `local` |
 | `REMOTE_HOST` | IP address or hostname of the server to scan. | |
 | `REMOTE_USER` | Username for the SSH connection to the remote host. | |
 | `OPENAI_API_KEY` | API key for OpenAI (used for GPT-4 analysis). | |
+| `AGENT_TOKEN` | Shared secret used by remote agents that post scan results to the dashboard. | |
 | `SCAN_PATH` | The absolute path to scan on the target host. | `/` |
 | `SCAN_SCHEDULE`| A cron expression to enable automatic scans (e.g., `0 2 * * 0`). | (empty) |
 | `ALERT_SEVERITY_THRESHOLD` | Minimum severity (`low`, `medium`, `high`, `critical`) to trigger alerts. | `high` |
@@ -54,8 +56,9 @@ The Flask web application exposes several endpoints:
 -   `GET /logout`: Logs the user out.
 -   `GET /`: Redirects to the main dashboard.
 -   `GET /dashboard`: Displays the main security dashboard.
--   `GET /scanner`: Displays the page for running manual scans.
+-   `GET /scanner`: Displays the page for running manual scans with local-first copy.
 -   `GET /scan/stream`: An `text/event-stream` endpoint that streams the live output of a running scan. Accepts a `scan_type` query parameter.
+-   `POST /api/agent/report`: Accepts agent scan logs and turns them into dashboard reports.
 -   `GET /reports`: Displays the list of all generated reports.
 -   `GET /report/view/<filename>`: Renders a parsed, human-readable view of a specific report.
 -   `POST /report/<filename>/remediate`: Generates an AI-based remediation script for a report.

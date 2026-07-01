@@ -4,7 +4,7 @@ import secrets
 from pathlib import Path
 
 
-SECRET_SETTING_KEYS = {"OPENAI_API_KEY", "SMTP_PASS"}
+SECRET_SETTING_KEYS = {"OPENAI_API_KEY", "SMTP_PASS", "AGENT_TOKEN", "ADMIN_PASSWORD"}
 DEFAULT_ADMIN_PASSWORDS = {"", "password", "admin", "changeme", "change-me"}
 _HOST_RE = re.compile(r"^[A-Za-z0-9._:-]+$")
 _USER_RE = re.compile(r"^[A-Za-z0-9._-]+$")
