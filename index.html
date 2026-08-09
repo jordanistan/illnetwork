@@ -2,28 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ill.network — Know what is running</title>
-  <meta name="description" content="A calm, local-first security audit for Linux systems.">
+  <title>ill.network // local security console</title>
+  <meta name="description" content="A local-first security and health audit for Linux systems.">
   <link rel="stylesheet" href="assets/css/modern.css">
 </head>
 <body>
   <div class="container">
     <header class="header">
-      <a class="header--logo" href="#home"><p>ill.network</p></a>
-      <nav class="nav" aria-label="Main navigation"><ul>
-        <li><a href="#scanner">Start here</a></li><li><a href="#reports">Reports</a></li><li><a href="#about">About</a></li>
-      </ul></nav>
+      <a class="header--logo" href="#about"><p>ILLNETWORK</p></a>
+      <p class="header-tagline">local security scanner · linux systems</p>
     </header>
+
+    <div class="marquee" aria-label="site announcement"><span>✦ thanks for visiting!! ✦ this scanner is local-first ✦ keep your reports close ✦ no account required ✦ powered by curiosity and coffee &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ✦ thanks for visiting!! ✦ this scanner is local-first ✦ keep your reports close ✦ no account required ✦ powered by curiosity and coffee &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+
+    <nav class="nav" aria-label="Main navigation"><ul>
+      <li><a href="#about">[ about ]</a></li><li><a href="#scanner">[ scanner ]</a></li><li><a href="#reports">[ reports ]</a></li><li><a href="#status">[ status ]</a></li>
+    </ul></nav>
+
     <main>
-      <section id="home" class="hero">
-        <div><span class="eyebrow">Local-first security / v1.0</span><h1>Know what is running.</h1><div class="hero-copy"><p>ill.network is a straightforward security and health audit for your Linux systems. Take a useful snapshot, understand the signal, and make the next move.</p><a class="cta-button" href="#scanner">Run your first scan <span aria-hidden="true">↗</span></a></div></div>
-        <div class="hero-mark" aria-hidden="true"><span>i//</span></div>
+      <section id="about" class="section">
+        <div class="window-bar"><span>▣ about_illnetwork.txt</span><span class="window-controls"><i>_</i><i>▢</i><i>×</i></span></div>
+        <div class="section-body"><div class="hero-grid"><div class="avatar" aria-hidden="true">i<br>//</div><div><span class="eyebrow">WELCOME, OPERATOR</span><h1>Know what is running<span class="cursor"></span></h1><p class="lead">ill.network is a straightforward security and health audit for your Linux systems. Take a useful snapshot, understand the signal, and make the next move.</p><p>This page is a small love letter to the weird, useful web — with a security console hiding underneath. No account, no dashboard maze, no cloud required for the first pass.</p></div></div><div class="caution"><span>⚠ LOCAL-FIRST SECURITY ⚠</span></div></div>
       </section>
-      <section id="scanner" class="section split"><div><span class="eyebrow">01 / Get started</span><h2>A small ritual for a safer machine.</h2></div><div><p class="section-intro">No account, no dashboard maze. Run one command locally and let the scanner show you the parts of your system worth your attention.</p><div class="gunmetal-panel"><p>Paste this into your terminal to install and start the scanner:</p><pre><code>curl -sSL https://raw.githubusercontent.com/jordanistan/illnetwork/main/setup.sh | bash</code></pre><p>When it is ready, open the local address printed in your terminal.</p></div></div></section>
-      <section id="reports" class="section split"><div><span class="eyebrow">02 / Keep the signal</span><h2>Reports you can return to.</h2></div><div><p class="section-intro">Each run becomes a readable record of findings, system context, and practical recommendations — so you can see whether things are getting better.</p><a class="cta-button" href="/reports">View reports <span aria-hidden="true">↗</span></a></div></section>
-      <section id="about" class="section split"><div><span class="eyebrow">03 / The point</span><h2>Useful beats noisy.</h2></div><p class="section-intro">ill.network is built for people who run their own infrastructure. It keeps collection close to home, makes capability clear, and gives you enough detail to act with confidence.</p></section>
+
+      <section id="scanner" class="section">
+        <div class="window-bar"><span>▣ C:\scanner\start_here.bat</span><span class="window-controls"><i>_</i><i>▢</i><i>×</i></span></div>
+        <div class="section-body"><h2>▸ Get scanning</h2><p>Open a terminal on the machine you want to check and run:</p><div class="terminal-panel command"><code>curl -sSL https://raw.githubusercontent.com/jordanistan/illnetwork/main/setup.sh | bash</code></div><p style="margin-top:16px">The installer starts the local console and prints the address. Keep this page open while the checks run, then return here for the report archive.</p><div class="links"><a class="retro-button" href="#reports">View reports ↗</a></div></div>
+      </section>
+
+      <section id="reports" class="section">
+        <div class="window-bar"><span>▣ C:\reports\README.txt</span><span class="window-controls"><i>_</i><i>▢</i><i>×</i></span></div>
+        <div class="section-body"><h2>▸ Reports you can return to</h2><div class="cards"><article class="card"><h3>scan_history.log</h3><span class="badge">LOCAL</span><p>Each run becomes a readable record of findings, system context, and practical recommendations.</p><a class="retro-button" href="/reports">Open archive ↗</a></article><article class="card"><h3>remediation.sh</h3><span class="badge yellow">REVIEW FIRST</span><p>Generate an informed next step from a report, then inspect every command before running it.</p><a class="retro-button" href="#scanner">Run a scan ↗</a></article></div></div>
+      </section>
+
+      <section id="status" class="section">
+        <div class="window-bar"><span>▣ system_status.exe</span><span class="window-controls"><i>_</i><i>▢</i><i>×</i></span></div>
+        <div class="section-body"><h2>▸ Current capabilities</h2><ul class="status-list"><li><strong>MODE</strong>Local-first by default</li><li><strong>INPUT</strong>Linux system checks</li><li><strong>OUTPUT</strong>Readable scan reports</li><li><strong>ACCESS</strong>Private local console</li></ul></div>
+      </section>
     </main>
-    <footer><span>© 2026 ill.network</span><span style="float:right">Built for the curious and careful.</span></footer>
+
+    <footer><span>ill.network // v1.0</span><span style="float:right">best viewed with curiosity ☕</span></footer>
   </div>
 </body>
 </html>
