@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login - Homelab Security Scanner</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sign in — ill.network</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   <div class="login-container">
-    <h1>Illnet Rx - Login</h1>
+    <span class="eyebrow">ill.network / private console</span>
+    <h1>Welcome back.</h1>
     {% if error %}
       <p class="error"><strong>Error:</strong> {{ error }}</p>
     {% endif %}
@@ -16,7 +18,7 @@
       <input type="text" name="username" id="username" required>
       <label for="password">Password</label>
       <input type="password" name="password" id="password" required>
-      <button type="submit">Login</button>
+      <button type="submit">Enter console ↗</button>
     </form>
   </div>
 </body>
