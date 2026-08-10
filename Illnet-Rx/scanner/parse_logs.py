@@ -4,8 +4,6 @@ import html
 import json
 import re
 import sys
-from openai import OpenAI
-
 from alerts import notify
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
@@ -35,7 +33,12 @@ def extract_simple_indicators(scan_text: str):
 def gpt_summary(scan_text: str):
     if not OPENAI_API_KEY:
         return "OpenAI API key not set. Skipping GPT summary."
-    
+
+    try:
+        from openai import OpenAI
+    except ImportError:
+        return "OpenAI client is not installed. Skipping GPT summary."
+
     client = OpenAI(api_key=OPENAI_API_KEY)
     
     prompt = f"""
@@ -69,14 +72,18 @@ A brief, non-technical summary for managers or non-technical users.
 {scan_text}
 ```
 """
-    resp = client.chat.completions.create(
-        model="gpt-4",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.2,
-    )
-    return resp.choices[0].message.content
+    try:
+        resp = client.chat.completions.create(
+            model="gpt-4",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.2,
+        )
+        return resp.choices[0].message.content
+    except Exception as exc:
+        return f"OpenAI analysis failed; raw scan data was preserved. ({exc})"
 
 def save_reports(summary: str, base_filename: str):
+    os.makedirs(REPORT_DIR, exist_ok=True)
     md_file = os.path.join(REPORT_DIR, base_filename + ".md")
     html_file = os.path.join(REPORT_DIR, base_filename + ".html")
     json_file = os.path.join(REPORT_DIR, base_filename + ".json")

@@ -1,5 +1,9 @@
 import pathlib
 import re
+import os
+import shlex
+import subprocess
+import tempfile
 import unittest
 
 
@@ -44,6 +48,28 @@ class SetupPortabilityTests(unittest.TestCase):
             with self.subTest(script=script):
                 self.assertIn("write_env_var", content)
                 self.assertIn("printf '%s=%q\\n'", content)
+
+    def test_setup_scripts_can_run_from_stdin(self):
+        for script in SETUP_SCRIPTS:
+            with self.subTest(script=script), tempfile.TemporaryDirectory() as tmpdir:
+                env = os.environ.copy()
+                env.update({
+                    "ENV_FILE": str(pathlib.Path(tmpdir) / "illnet.env"),
+                    "HOME": str(pathlib.Path(tmpdir) / "home"),
+                })
+                quoted_script = shlex.quote(str(script))
+                result = subprocess.run(
+                    ["bash", "-c", f"cat {quoted_script} | bash -s -- --non-interactive local test-key test-admin-password"],
+                    cwd=REPO_ROOT,
+                    env=env,
+                    capture_output=True,
+                    text=True,
+                    timeout=10,
+                    check=False,
+                )
+                self.assertEqual(result.returncode, 0, msg=result.stderr)
+                self.assertIn("Setup Complete", result.stdout)
+                self.assertTrue(pathlib.Path(env["ENV_FILE"]).exists())
 
 
 if __name__ == "__main__":

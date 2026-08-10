@@ -1,68 +1,86 @@
-# Illnet Rx - Technical Reference
+# Illnet Rx
 
-This document provides a technical overview of the Illnet Rx application, intended for developers and contributors.
+Illnet Rx is a local-first Linux security scanner. It runs ClamAV, rkhunter, and credential checks in a Docker container, streams scan output in the web UI, and saves raw logs plus Markdown, HTML, and JSON reports.
 
-## Architecture
+## Quick start
 
-The application is composed of two main components: a `scanner` engine and a `webui` for interaction and reporting.
+From a checkout:
 
--   **`scanner/`**: This directory contains the core logic for the security audit.
-    -   `scan.sh`: The main Bash script that executes the sequence of security tools (ClamAV, rkhunter, etc.). It defaults to the local filesystem and can optionally target a mounted remote filesystem.
-    -   `parse_logs.py`: A Python script that takes the raw output from `scan.sh`, extracts key indicators, and sends the log to the GPT-4 API for analysis and report generation.
-    -   `alerts.py`: Handles sending notifications to Slack or via email if the scan results meet the configured severity threshold.
+```bash
+export OPENAI_API_KEY="sk-..."
+export ADMIN_PASSWORD="use-a-strong-password-at-least-12-characters"
+./setup.sh
+docker compose -f compose.yaml up --build -d
+```
 
--   **`webui/`**: A Python Flask application that provides the user interface.
-    -   `app.py`: The main Flask application file. It handles HTTP requests, serves the frontend, and manages the scanning process.
-    -   `templates/`: Contains the Jinja2 HTML templates for the web interface.
-    -   `static/`: Contains the CSS stylesheets.
+Open http://localhost:5001, sign in with username `admin`, open **Scanner**, and select **Run new scan**. The scan log streams live. When it finishes, the report archive contains the raw scan and generated `.md`, `.html`, and `.json` files.
 
--   **`Dockerfile`**: A `python:3.12-slim` based Dockerfile that installs all necessary system-level tools (e.g., `clamav`, `rkhunter`, `sshfs`) and Python dependencies.
+The setup script writes secrets to `Illnet-Rx/.env` with mode `0600`. Reports persist in `Illnet-Rx/data/reports` through the Compose volume.
 
--   **`entrypoint.sh`**: This script is the container's entrypoint. It mounts a remote filesystem only when SSH remote mode is selected; otherwise it starts the web application locally.
+### Piped bootstrap
 
-## Environment Variables
+The installer is safe to run from stdin. It clones the repository into `./illnetwork` when run outside a checkout, then writes the environment file there:
 
-The application is configured via environment variables, which are loaded from the `.env` file by `docker-compose`.
+```bash
+export OPENAI_API_KEY="sk-..."
+export ADMIN_PASSWORD="use-a-strong-password-at-least-12-characters"
+curl -fsSL https://raw.githubusercontent.com/jordanistan/illnetwork/main/setup.sh | bash
+cd illnetwork
+docker compose -f compose.yaml up --build -d
+```
 
-| Variable | Required | Description | Default |
-| :--- | :---: | :--- | :--- |
-| `ADMIN_PASSWORD` | **Yes** | Strong non-default password for the web UI login. | |
-| `SCAN_MODE` | No | `local` or `ssh`. Local is the default. | `local` |
-| `REMOTE_HOST` | No | IP address or hostname of the server to scan when SSH mode is enabled. | |
-| `REMOTE_USER` | No | Username for the SSH connection to the remote host. | |
-| `OPENAI_API_KEY` | **Yes** | API key for OpenAI (used for GPT-4 analysis). | |
-| `AGENT_TOKEN` | No | Shared secret used by remote agents that post scan results to the dashboard. | |
-| `SCAN_PATH` | No | Specify a subdirectory to scan relative to the root of the target filesystem. | `/opt/data` |
-| `ALERT_SEVERITY_THRESHOLD` | No | Minimum severity (`low`, `medium`, `high`, `critical`) to trigger alerts. | `high` |
-| `SLACK_WEBHOOK_URL` | No | Your Slack incoming webhook URL for alerts. | |
-| `ALERT_EMAIL_TO` | No | Recipient email address for alerts. | |
-| `ALERT_EMAIL_FROM`| No | Sender email address for alerts. | `alerts@example.local` |
-| `SMTP_HOST` | No | SMTP server for sending email alerts. | |
-| `SMTP_PORT` | No | SMTP port. | `587` |
-| `SMTP_USER` | No | SMTP username. | |
-| `SMTP_PASS` | No | SMTP password. | |
-| `SMTP_STARTTLS` | No | Whether to use STARTTLS for SMTP. | `true` |
+For CI or another non-interactive shell, pass the mode and values explicitly:
 
-## API Endpoints
+```bash
+./setup.sh --non-interactive local "$OPENAI_API_KEY" "$ADMIN_PASSWORD"
+```
 
-## :sparkles: Features
+Use `ssh` mode only when the container should scan a mounted remote host:
 
--   :lock: **User Authentication:** The web interface is secured with a full login system to prevent unauthorized access.
--   :bar_chart: **Security Dashboard:** A dynamic dashboard provides a high-level overview of your system's security posture, visualizing the latest scan results and severity trends.
--   :tv: **Live Scan Monitoring:** Run scans and monitor their real-time output directly from the "Vitals Monitor" in the web UI.
--   :robot: **AI-Powered Analysis:** Leverages **GPT-4** to interpret raw scan logs, identify critical issues, and provide expert-level analysis in easy-to-read reports.
--   :pill: **Interactive Remediation:** Generate AI-based "prescriptions" (remediation scripts) and safely execute them on the target host with your explicit confirmation, all from within the UI.
--   :calendar: **Scheduled Scans:** Configure automatic, recurring scans using standard cron expressions to ensure continuous monitoring.
--   :wrench: **Configuration UI:** A comprehensive "Settings" page allows you to manage all application settings—from API keys to scan schedules—without ever touching a config file.
--   :electric_plug: **Extensible Plugin Architecture:** The scanning engine is built on a modular plugin system, making it easy for developers to add new security tools and checks.
--   :bell: **Real-time Alerts:** Get notified via **Slack** or **Email** when high-severity issues are detected.
--   :satellite: **Remote & Local Scanning:** Scan locally by default, mount remote hosts over SSH when needed, or ingest results from a lightweight agent.
+```bash
+./setup.sh --non-interactive ssh REMOTE_HOST REMOTE_USER "$OPENAI_API_KEY" "$ADMIN_PASSWORD"
+```
 
-The Flask web application exposes a few simple endpoints:
+## Scan and report flow
 
--   `GET /`: The main scanner page with the live log viewer.
--   `GET /scan/stream`: An `text/event-stream` endpoint that streams the live output of a running scan to the client.
--   `POST /api/agent/report`: Accepts agent scan logs and turns them into dashboard reports.
--   `GET /reports`: Displays a list of all generated reports.
--   `GET /reports/<path:filename>`: Serves a specific report file from the reports directory.
--   `GET /api/reports`: A JSON endpoint that returns a list of all available report filenames.
+1. `Scanner.run_scan()` executes the enabled plugins and writes a raw log under `/opt/data/reports`.
+2. The web UI consumes the `__REPORT_FILE__` and `__TARGET_HOST__` markers from the scan stream.
+3. `parse_logs.py` analyzes the raw log. If no OpenAI key or client is available, it still writes a useful fallback report instead of failing.
+4. The parser writes Markdown, HTML, and JSON reports to the shared reports directory.
+5. `/reports` lists the generated reports and `/report/view/<filename>` renders the Markdown safely.
+
+## Configuration
+
+| Variable | Purpose | Default |
+| --- | --- | --- |
+| `ADMIN_USER` | Web UI username | `admin` |
+| `ADMIN_PASSWORD` | Strong web UI password | required |
+| `OPENAI_API_KEY` | Optional GPT analysis and remediation detail | empty |
+| `SCAN_MODE` | `local` or `ssh` | `local` |
+| `REMOTE_HOST` | Remote host for SSH mode | empty |
+| `REMOTE_USER` | Remote SSH username | empty |
+| `SCAN_PATH` | Path inside the target filesystem | `/opt/data` in Compose |
+| `AGENT_TOKEN` | Token for remote agent intake | empty |
+| `ALERT_SEVERITY_THRESHOLD` | Alert threshold | `high` |
+| `SLACK_WEBHOOK_URL` | Optional Slack alert destination | empty |
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_STARTTLS` | Optional email alert settings | see `.env` |
+
+## Useful commands
+
+```bash
+docker compose -f compose.yaml logs -f illnet-rx
+docker compose -f compose.yaml ps
+docker compose -f compose.yaml down
+python3 -m unittest discover -s tests -v
+```
+
+To use a remote agent, configure `AGENT_TOKEN`, then run `Illnet-Rx/agent/install.sh` on the target host. The agent posts scan text to `POST /api/agent/report` and the dashboard generates the same report artifacts.
+
+## Repository map
+
+- `setup.sh` — checkout and pipe-safe installer.
+- `compose.yaml` — canonical Docker Compose deployment.
+- `Illnet-Rx/scanner/` — plugin scanner and report parser.
+- `Illnet-Rx/webui/` — Flask application, templates, and report routes.
+- `Illnet-Rx/data/reports/` — persisted raw and generated reports.
+- `tests/` — installer, security, agent, and report-generation tests.

@@ -34,7 +34,10 @@
 
       <section id="install" class="section">
         <div class="window-bar"><span>▣ C:\scanner\start_here.bat</span><span class="window-controls"><i>_</i><i>▢</i><i>×</i></span></div>
-        <div class="section-body"><h2>▸ boot the scanner</h2><p>Open a terminal on the machine you want to check and run:</p><div class="terminal-panel command"><span class="prompt">operator@illnetwork:~$ </span><code>curl -sSL https://raw.githubusercontent.com/jordanistan/illnetwork/main/setup.sh | bash</code></div><p style="margin-top:16px">The installer starts the local console and prints the address. Keep this page open while the checks run.</p><div class="links"><a class="retro-button" href="/">Return to console ↗</a><a class="retro-button" href="#reports">Read reports ↗</a></div></div>
+        <div class="section-body"><h2>▸ boot the scanner</h2><p>Open a terminal, add your credentials, and run the pipe-safe bootstrap:</p><div class="terminal-panel command"><span class="prompt">operator@illnetwork:~$ </span><code>export OPENAI_API_KEY="sk-..."
+export ADMIN_PASSWORD="use-a-strong-password-at-least-12-characters"
+curl -fsSL https://raw.githubusercontent.com/jordanistan/illnetwork/main/setup.sh | bash
+cd illnetwork &amp;&amp; docker compose -f compose.yaml up --build -d</code></div><p style="margin-top:16px">Open <code>http://localhost:5001</code>, sign in as <code>admin</code>, and choose <strong>Run new scan</strong>. Reports are saved locally even when AI analysis is unavailable.</p><div class="links"><a class="retro-button" href="/">Return to console ↗</a><a class="retro-button" href="#reports">Read reports ↗</a></div></div>
       </section>
 
       <section id="reports" class="section">
