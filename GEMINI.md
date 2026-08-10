@@ -1,34 +1,43 @@
-# Project Overview
+# Illnet Rx contributor guide
 
-This directory contains **Illnet Rx**, a comprehensive, AI-driven security and compliance scanner for Linux systems, designed to be run as a Docker application.
+Illnet Rx is a Dockerized, local-first Linux security scanner. The canonical runtime lives under `Illnet-Rx/`; the repository root owns Compose, setup, the public landing page, and tests.
 
-It provides a full-featured web interface for running scans, viewing reports, and managing application settings. The scanner can perform deep audits on remote hosts via SSH or quick health checks on its local environment.
+## Run locally
 
-## Key Features
+```bash
+export OPENAI_API_KEY="sk-..."
+export ADMIN_PASSWORD="use-a-strong-password-at-least-12-characters"
+./setup.sh
+docker compose -f compose.yaml up --build -d
+```
 
--   **Web Dashboard:** A dashboard provides a high-level overview of the target system's security posture.
--   **Plugin-Based Scanning:** The scanning engine is modular, allowing for easy extension. It currently includes plugins for:
-    -   ClamAV (malware scanning)
-    -   Rkhunter (rootkit detection)
-    -   Credential exposure scanning
--   **AI Analysis & Remediation:** Scan results are analyzed by GPT-4 to generate a detailed report and an actionable remediation script.
--   **Interactive Execution:** Users can review and safely execute the AI-generated remediation script from the UI while monitoring its live output.
--   **Scheduled Scans:** Scans can be run manually or scheduled automatically via cron expressions.
--   **Configuration UI:** All major application settings can be managed from a "Settings" page in the web UI.
--   **Alerting:** Sends notifications for high-severity findings via Slack or Email.
+Use `http://localhost:5001`, log in as `admin`, open **Scanner**, and run a scan. Raw logs and generated Markdown/HTML/JSON reports persist under `Illnet-Rx/data/reports/`.
 
-## Running the Application
+The installer also supports stdin execution:
 
-The application is designed to be run with Docker Compose.
+```bash
+export OPENAI_API_KEY="sk-..."
+export ADMIN_PASSWORD="use-a-strong-password-at-least-12-characters"
+curl -fsSL https://raw.githubusercontent.com/jordanistan/illnetwork/main/setup.sh | bash
+cd illnetwork
+docker compose -f compose.yaml up --build -d
+```
 
-1.  **Initial Setup:** Run the setup script to configure your environment:
-    ```bash
-    ./Illnet-Rx/setup.sh
-    ```
-    For automation, use `./Illnet-Rx/setup.sh --non-interactive <REMOTE_HOST> <REMOTE_USER> <OPENAI_API_KEY> [ADMIN_PASSWORD]`.
-2.  **Launch:** Start the application using Docker Compose:
-    ```bash
-    docker-compose up --build -d
-    ```
+For automation, use `./setup.sh --non-interactive local OPENAI_API_KEY ADMIN_PASSWORD`. SSH mode is `./setup.sh --non-interactive ssh REMOTE_HOST REMOTE_USER OPENAI_API_KEY ADMIN_PASSWORD`.
 
-The web interface will be available at `http://localhost:5001`.
+## Architecture
+
+- `Illnet-Rx/scanner/scanner.py` dynamically loads plugins and emits report markers.
+- `Illnet-Rx/scanner/plugins/` contains ClamAV, rkhunter, freshclam, and credential checks.
+- `Illnet-Rx/scanner/parse_logs.py` creates Markdown, HTML, and JSON reports. Missing OpenAI dependencies or keys produce a fallback report.
+- `Illnet-Rx/webui/app.py` streams scans, invokes the parser, serves reports, and accepts agent reports.
+- `compose.yaml` is canonical and maps `Illnet-Rx/data` to `/opt/data`.
+
+## Verification
+
+```bash
+python3 -m unittest discover -s tests -v
+git diff --check
+```
+
+Preserve path validation, CSRF checks, strong-password validation, local-first SSH gating, pipe-safe setup, and fallback report generation.

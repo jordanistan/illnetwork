@@ -1,15 +1,57 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-if [[ -d "${SCRIPT_DIR}/Illnet-Rx" ]]; then
-  DEFAULT_ENV_FILE="${SCRIPT_DIR}/Illnet-Rx/.env"
+SCRIPT_SOURCE="${BASH_SOURCE[0]-}"
+if [[ -n "$SCRIPT_SOURCE" && -f "$SCRIPT_SOURCE" ]]; then
+  SCRIPT_DIR="$(cd -- "$(dirname -- "$SCRIPT_SOURCE")" && pwd)"
 else
-  DEFAULT_ENV_FILE="${SCRIPT_DIR}/.env"
+  # A script downloaded with `curl | bash` has no file-backed BASH_SOURCE.
+  SCRIPT_DIR="$(pwd -P)"
 fi
+if [[ -d "${SCRIPT_DIR}/Illnet-Rx" ]]; then
+  REPO_ROOT="$SCRIPT_DIR"
+elif [[ -d "${SCRIPT_DIR}/../Illnet-Rx" ]]; then
+  REPO_ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
+else
+  REPO_ROOT="$SCRIPT_DIR"
+fi
+
+# When run from a pipe outside a checkout, fetch the runnable repository first.
+if [[ ! -d "${REPO_ROOT}/Illnet-Rx" || ! -f "${REPO_ROOT}/docker-compose.yml" ]]; then
+  INSTALL_DIR="${ILLNET_INSTALL_DIR:-${PWD}/illnetwork}"
+  REPO_URL="${ILLNET_REPO_URL:-https://github.com/jordanistan/illnetwork.git}"
+  if [[ "${ILLNET_BOOTSTRAPPED:-0}" != "1" ]]; then
+    if ! command -v git >/dev/null 2>&1; then
+      echo "[!] git is required when setup.sh is run from a pipe outside a checkout." >&2
+      exit 1
+    fi
+    if [[ -e "$INSTALL_DIR" && ! -d "$INSTALL_DIR/.git" ]]; then
+      echo "[!] Install directory already exists and is not a Git checkout: $INSTALL_DIR" >&2
+      exit 1
+    fi
+    if [[ ! -d "$INSTALL_DIR/.git" ]]; then
+      echo "[*] Downloading Illnet Rx into $INSTALL_DIR."
+      git clone --depth 1 "$REPO_URL" "$INSTALL_DIR"
+    fi
+    bootstrap_args=("$@")
+    if [[ ${#bootstrap_args[@]} -eq 0 && -n "${OPENAI_API_KEY:-}" ]]; then
+      bootstrap_args=(--non-interactive local "$OPENAI_API_KEY" "${ADMIN_PASSWORD:-}")
+    fi
+    export ILLNET_BOOTSTRAPPED=1
+    exec env ENV_FILE="${ENV_FILE:-$INSTALL_DIR/Illnet-Rx/.env}" \
+      "$INSTALL_DIR/setup.sh" "${bootstrap_args[@]}"
+  fi
+fi
+
+DEFAULT_ENV_FILE="${REPO_ROOT}/Illnet-Rx/.env"
 ENV_FILE="${ENV_FILE:-$DEFAULT_ENV_FILE}"
 SSH_KEY_PATH="${SSH_KEY_PATH:-$HOME/.ssh/id_rsa}"
 NON_INTERACTIVE=0
+
+# Permit `OPENAI_API_KEY=... ADMIN_PASSWORD=... curl ... | bash`.
+if [[ $# -eq 0 && -n "${OPENAI_API_KEY:-}" ]]; then
+  set -- --non-interactive local "$OPENAI_API_KEY" "${ADMIN_PASSWORD:-}"
+fi
 
 usage() {
   cat <<'USAGE'
@@ -158,7 +200,7 @@ echo
 MODE="local"
 
 if [[ "$NON_INTERACTIVE" -eq 1 ]]; then
-  if [[ "$1" == "local" || "$1" == "ssh" ]]; then
+  if [[ "${1:-}" == "local" || "${1:-}" == "ssh" ]]; then
     MODE="$1"
     shift
   fi
