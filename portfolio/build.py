@@ -3,7 +3,7 @@
 from pathlib import Path
 from html import escape as esc
 from urllib.parse import urlencode
-import argparse, json, shutil
+import argparse, hashlib, json, shutil
 from birdy_gallery import render_gallery
 
 ROOT = Path(__file__).resolve().parent
@@ -39,13 +39,18 @@ def header(s, mode, prefix='../'):
     preview = f'<div class="preview">DESIGN REVIEW · No live booking, payments, or data capture · <a href="{prefix}review.html">All domain previews ↗</a></div>' if mode=='preview' else ''
     return preview + f'<a class="skip" href="#main">Skip to content</a><header><div class="shell nav"><a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">{MARKS[s["theme"]]}</span>{esc(s["brand"])}</a><nav class="navlinks" aria-label="Main navigation"><a href="#explore">Explore</a>{photos_link}<a href="#how">The approach</a><a href="#questions">Questions</a></nav><a class="navend" href="#contact">{("Review the concept" if mode=="preview" else "Get in touch")} ↗</a></div></header>'
 
+def asset_name(s,name):
+    if s['theme']!='birdy': return name
+    path=ROOT/'assets'/name
+    return path.stem+'-'+hashlib.sha256(path.read_bytes()).hexdigest()[:12]+path.suffix
+
 def document(s, content, mode, title=None, prefix='../', extra_class=''):
     title = title or s['brand']+' — '+s.get('eyebrow','Concept preview').title()
     robots = '<meta name="robots" content="noindex,nofollow">' if mode=='preview' or s['theme'] in ('heart','studio') else ''
     canonical = '' if mode=='preview' else f'<link rel="canonical" href="https://{s["domain"]}/">'
     return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="{POLICY}"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="description" content="{esc(s.get('lede',s.get('text','')),quote=True)}">{robots}{canonical}<meta property="og:title" content="{esc(title,quote=True)}"><meta property="og:type" content="website"><title>{esc(title)}</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css"></head>
-<body class="{s['theme']} {extra_class}">{header(s,mode,prefix)}{content}<footer class="shell footer"><div class="footerline"><strong>{esc(s['brand'])}</strong><nav class="footlinks" aria-label="Footer"><a href="privacy.html">Privacy & terms</a><a href="#contact">Contact</a><a href="https://github.com/jordanistan">GitHub ↗</a></nav></div><p>© 2026 Jordan Robison · {esc(s.get('stage','Supporting domain concept'))}. No claimed testimonials, certification, sales, or customer counts.</p></footer><script src="assets/site.js" defer></script></body></html>'''
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="{POLICY}"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="description" content="{esc(s.get('lede',s.get('text','')),quote=True)}">{robots}{canonical}<meta property="og:title" content="{esc(title,quote=True)}"><meta property="og:type" content="website"><title>{esc(title)}</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/{asset_name(s,'site.css')}"></head>
+<body class="{s['theme']} {extra_class}">{header(s,mode,prefix)}{content}<footer class="shell footer"><div class="footerline"><strong>{esc(s['brand'])}</strong><nav class="footlinks" aria-label="Footer"><a href="privacy.html">Privacy & terms</a><a href="#contact">Contact</a><a href="https://github.com/jordanistan">GitHub ↗</a></nav></div><p>© 2026 Jordan Robison · {esc(s.get('stage','Supporting domain concept'))}. No claimed testimonials, certification, sales, or customer counts.</p></footer><script src="assets/{asset_name(s,'site.js')}" defer></script></body></html>'''
 
 def offer_cards(s,mode):
     out=[]
@@ -122,7 +127,7 @@ def privacy(s,mode):
 
 def write_site(s,path,mode):
     path.mkdir(parents=True,exist_ok=True); (path/'assets').mkdir(exist_ok=True)
-    for name in ['site.css','site.js']: shutil.copyfile(ROOT/'assets'/name,path/'assets'/name)
+    for name in ['site.css','site.js']: shutil.copyfile(ROOT/'assets'/name,path/'assets'/asset_name(s,name))
     (path/'assets'/'hero.svg').write_text(svg_art(s['theme']))
     (path/'assets'/'favicon.svg').write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="10" fill="#183c2b"/><text x="24" y="33" text-anchor="middle" font-family="monospace" font-size="25" fill="#f7f4e8">{esc(MARKS[s["theme"]])}</text></svg>')
     (path/'index.html').write_text(alias_page(s,mode) if 'primary' in s else page(s,mode))
