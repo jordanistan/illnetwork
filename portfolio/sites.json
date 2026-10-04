@@ -1,0 +1,121 @@
+{
+  "owner": "Jordan Robison",
+  "contact": "jordan.robison@gmail.com",
+  "excluded": ["sxswasted.com", "austinfcsoccer.com", "austinfcsoccer.net", "austinfcjerseys.com", "atxsoccerjerseys.com"],
+  "sites": [
+    {
+      "domain": "pawsfectwalks.com", "brand": "Pawsfect Walks", "theme": "paws", "eyebrow": "AUSTIN · WALKS & DROP-INS",
+      "headline": "Good walks.\nHappy dogs.\nPeace of mind.", "lede": "Personal dog walks and drop-ins in central Austin. A familiar face, a thoughtful routine, and time for your dog to sniff the good stuff.",
+      "cta": "Ask about a walk", "subject": "Pawsfect Walks availability", "note": "Evening and weekend requests · Availability confirmed personally",
+      "section": "A little fresh air goes a long way.", "intro": "Start with a meet-and-greet. Tell Jordan about your dog's routine and the care you need. Service area, timing, and the final quote are agreed before a walk is booked.",
+      "offers": [
+        {"name":"The neighborhood loop", "label":"30-MINUTE WALK", "price":"$22", "text":"A relaxed walk with sniff breaks, fresh water, and a short update afterward. One dog; route and pace agreed at the meet-and-greet."},
+        {"name":"The longer adventure", "label":"60-MINUTE WALK", "price":"$35", "text":"More time outdoors at your dog's pace. Weather and your dog's comfort decide the route, with water and rest breaks along the way."},
+        {"name":"A friendly check-in", "label":"DROP-IN VISIT", "price":"Ask for a quote", "text":"A care visit built around the routine you agree with Jordan. Discuss feeding, water, and a yard or potty break before booking."}
+      ],
+      "steps":[["Say hello","Share your neighborhood, preferred days, and the kind of care you need. No home address or entry instructions yet."],["Meet & plan","We discuss handling, behavior, care needs, weather, and expectations together."],["Confirm your visit","A walk is booked only after timing, price, and care arrangements are confirmed in writing."]],
+      "faqs":[["When are walks available?","Early evenings and weekends are the initial focus. Every request is confirmed personally; the site does not promise a slot."],["Can I set up regular walks?","Yes, ask about a recurring routine. We agree a schedule and price before any recurring commitment."],["Is this already insured?","Coverage has not been verified in this site build. Jordan will confirm insurance and operating readiness before accepting a paid care booking."],["Can Birdy join my dog's walk?","Client dogs are walked separately by default. Any shared walk needs prior agreement and a suitability check."]],
+      "contact_title":"Let's find your dog's next favorite route.", "contact_text":"Send your neighborhood, preferred timing, and a little about your dog. Please do not send door codes, keys, or private medical records by email.", "stage":"Inquiry site · paid care launch pending insurance and intake"
+    },
+    {
+      "domain":"spaceghostkilla.com", "brand":"SpaceGhostKilla", "theme":"ghost", "eyebrow":"CLOUD SECURITY · PRACTICAL DEFENSE",
+      "headline":"Know the risk.\nFix the cause.", "lede":"Focused security reviews for cloud identity, CI/CD, and the controls that protect real systems. Clear evidence, prioritized findings, and a plan your team can use.",
+      "cta":"Discuss a security review", "subject":"SpaceGhostKilla security review", "email":"support@spaceghostkilla.com", "note":"Scoped work · Written authorization · No credentials over email",
+      "section":"Start with one well-defined problem.", "intro":"Jordan brings cloud, AppSec, DevSecOps, IAM, and FedRAMP support experience. Every engagement starts with an agreed scope; a review does not promise certification, compliance, or a vulnerability-free environment.",
+      "offers":[
+        {"name":"Focused security review","label":"ENTRA OR CI/CD","price":"From $800","text":"One agreed environment or workflow. Evidence review, a prioritized findings report, and a walkthrough. Final scope and fee confirmed before work."},
+        {"name":"Cloud / IAM assessment","label":"CUSTOM SCOPE","price":"Request a quote","text":"A review shaped around your cloud identities, controls, and deployment paths. Deliverables, access, exclusions, and timing are set in writing."},
+        {"name":"Remediation support","label":"ENGINEERING HELP","price":"Request a quote","text":"Turn findings into practical changes with your team. Changes are tested and approved through your existing workflow."}
+      ],
+      "steps":[["Pick the boundary","Share the problem and system types, without secrets or customer data."],["Authorize the scope","Agree deliverables, permissions, handling of evidence, fee, and timing."],["Act on the evidence","Get a prioritized report and discuss the fixes that matter first."]],
+      "faqs":[["Do you test without permission?","No. Assessment work requires written authorization and stays within its scope."],["Are the digital products released?","The Quick Audit is a free preview. The Field Manual and KubeScan remain unreleased until their release criteria are met."],["Is this a FedRAMP assessment?","No. Support and engineering experience do not imply accredited assessment status or a certification service."]],
+      "contact_title":"Make the next security decision with evidence.", "contact_text":"Describe the environment and the outcome you need. Keep credentials, tokens, and confidential findings out of the initial message.","stage":"Consulting inquiry · final scope by agreement"
+    },
+    {
+      "domain":"iamjordanrobison.com", "brand":"Jordan Robison", "theme":"jordan", "eyebrow":"CLOUD SECURITY / DEVSECOPS / LINUX",
+      "headline":"I build systems.\nThen help make\nthem safer.", "lede":"Security engineering with an operations mindset. From cloud identity and CI/CD to Linux infrastructure, I connect the finding to the change that fixes it.",
+      "cta":"Start a conversation", "subject":"Engineering opportunity for Jordan", "note":"Based in Austin · Remote roles & scoped consulting",
+      "section":"Where security meets engineering.", "intro":"Experience across AppSec, cloud security, SRE, DevOps, and FedRAMP technical support. Hands-on work with Wiz and Cloudflare, backed by Linux, Python, infrastructure as code, and secure delivery practices.",
+      "offers":[["Cloud & identity","AWS / ENTRA / CLOUDFLARE","IAM, cloud configuration, visibility, and least-privilege access."],["Secure delivery","APPSEC / CI-CD / SBOM","SAST, DAST, SCA, dependency controls, and practical remediation in development workflows."],["Reliable infrastructure","LINUX / IAC / OPERATIONS","Terraform, Ansible, containers, Kubernetes, observability, and operations experience."]],
+      "steps":[["Security","Review how applications, identities, and cloud controls can fail."],["Engineering","Build a fix that fits the team's delivery and operations workflow."],["Communication","Explain the evidence, tradeoffs, and next step clearly."]],
+      "faqs":[["What opportunities are you exploring?","Remote security, cloud, DevSecOps, and platform engineering roles, plus scoped consulting through SpaceGhostKilla."],["Where can I see your work?","Explore the public GitHub projects linked below. Each repository documents its current capabilities and limitations."],["Can I request a resume?","Yes. Email with the role or project details and request the appropriate resume."]],
+      "contact_title":"Have a role or a problem in mind?", "contact_text":"Send the role, team, location or remote policy, compensation range if available, and what you want to accomplish.", "stage":"Professional portfolio"
+    },
+    {
+      "domain":"find-fido.com", "brand":"Find Fido", "theme":"fido", "eyebrow":"DOG-FRIENDLY DAYS · STARTING IN AUSTIN",
+      "headline":"More places.\nMore tail wags.", "lede":"A growing guide to getting out with your dog. Start with a simple outing plan, then help us build a useful, carefully checked city guide.",
+      "cta":"Suggest a dog-friendly place", "subject":"Find Fido Austin suggestion", "note":"Austin pilot · No paid rankings · Listings added after verification",
+      "section":"Make a day of it, together.", "intro":"Choose the kind of outing you want below. This first edition provides planning prompts and official resource links. A verified venue directory and booking marketplace are still being built.",
+      "offers":[["A little room to roam","PARKS & TRAILS","Check the official park page for leash rules, access, closures, and facilities before heading out."],["Coffee with company","PATIOS & COFFEE","Ask the venue whether dogs are allowed on the patio today. Bring water and plan shade and a comfortable break."],["A stop on the road","STAYS & CAMPGROUNDS","Confirm pet rules, fees, size limits, and overnight arrangements directly with your host."]],
+      "steps":[["Choose your outing","Use the planner to pick a park, patio, or travel day."],["Check the details","Verify today's dog policy, conditions, and opening times with the source."],["Share a good find","Suggest a place with its official link. We verify before adding a listing."]],
+      "faqs":[["Can I book a walker here?","Not yet. Austin dog-walking inquiries can go to Pawsfect Walks. A marketplace will need provider checks, insurance rules, and a secure booking system."],["Are these verified venue listings?","No. The current cards are planning categories, not venue listings. Official resource links are provided where available."],["Can businesses pay for placement?","Sponsorship requests are welcome. Paid placements will be labeled and separated from verification."]],
+      "contact_title":"Know a place dogs should know about?", "contact_text":"Send the place name, city, official website, and why it belongs in the guide. No personal location histories or lost-pet contact details, please.", "stage":"City-guide pilot"
+    },
+    {
+      "domain":"iambirdy.com", "brand":"I Am Birdy", "theme":"birdy", "eyebrow":"BIRDY & JORDAN · THE SMALL ADVENTURES",
+      "headline":"Best friend.\nCo-pilot.\nChief sniffer.", "lede":"Birdy is a red heeler and brown Lab mix with a talent for making an ordinary day an adventure. This is the home for the walks, the road ahead, and the things we learn along the way.",
+      "cta":"Say hello to Birdy", "subject":"Hello Birdy", "note":"Austin home base · Travel journal in the making",
+      "section":"The good life is a shared walk.", "intro":"We're building a small journal about life with Birdy, dog-friendly outings, and the gear that makes them easier. Only things we actually try will become personal reviews.",
+      "offers":[["Around the neighborhood","WALKS & LITTLE FINDS","A place for the routes, parks, and quiet stops we visit together. New stories will identify where and when we went."],["The road ahead","CAMPING & TRAVEL","A travel journal as we test camping and mobile working. No invented destinations or completed trips."],["The useful stuff","GEAR & COLLABORATIONS","Future gear notes and clearly disclosed partnerships. No affiliate products or merchandise are for sale in this first edition."]],
+      "steps":[["Go outside","Find one small adventure that works for both of us."],["Pay attention","Notice the route, the practical details, and the dog's comfort."],["Share the useful part","Publish a real experience instead of another generic list."]],
+      "faqs":[["Who is Birdy?","Jordan's female red heeler and brown Lab mix, and the inspiration for this pet and travel project."],["Can brands get in touch?","Yes. Relevant collaboration ideas are welcome. Any sponsorship or affiliate relationship will be disclosed."],["Where do the city guides live?","Find Fido is the companion guide project. Pawsfect Walks is the local care-service project."]],
+      "contact_title":"A hello, a good route, or a useful idea.", "contact_text":"Send a note or a relevant collaboration proposal. We don't share a home address or live travel location.", "stage":"Pet & travel journal"
+    },
+    {
+      "domain":"ill.network", "brand":"ILL Network", "theme":"lab", "eyebrow":"INTELLIGENT LEARNING LAB",
+      "headline":"Learn it.\nBuild it.\nUnderstand it.", "lede":"An independent lab for Linux, infrastructure, and thoughtful AI. Real projects, readable experiments, and tools you can inspect before you trust.",
+      "cta":"Explore the lab", "subject":"ILL Network lab inquiry", "note":"Independent Linux Lab · Infrastructure Learning Lab · Intelligent Learning Lab",
+      "section":"Three paths. One curious mindset.", "intro":"Learning stays useful when you can reproduce it. Start with the labs below, then explore the existing Illnet Rx scanner in the public source repository. Nothing on this static site runs scans against your device.",
+      "offers":[["Independent Linux Lab","01 / LINUX","Build an inventory of services, permissions, updates, and backups. Understand your machine before changing it."],["Infrastructure Learning Lab","02 / INFRASTRUCTURE","Map a small system, document its dependencies, and practice a restore in a controlled environment."],["Intelligent Learning Lab","03 / AI","Evaluate an automation using a small task, explicit boundaries, and human review where decisions matter."]],
+      "steps":[["Make it observable","Write down what you have and the outcome you expect."],["Make it repeatable","Use small experiments with a recorded setup and result."],["Make it understandable","Document what worked, what failed, and what comes next."]],
+      "faqs":[["What does ILL mean?","Intelligent Learning Lab is the umbrella. Independent Linux Lab and Infrastructure Learning Lab are its two other learning tracks."],["Can I run the scanner here?","No. Illnet Rx is a local-first application in the repository. Read its setup and permissions before running it locally."],["Are labs paid?","The starter guides are free. Paid workshops or support are possible future offerings, not subscriptions launched by this page."]],
+      "contact_title":"Bring a useful question to the lab.", "contact_text":"Suggest a lab, ask about a project, or discuss a scoped technical workshop. Please keep credentials and private infrastructure details out of your first note.", "stage":"Public learning lab"
+    },
+    {
+      "domain":"illnet.ai", "brand":"ILLNET AI", "theme":"ai", "eyebrow":"AUTOMATION WITH AN AUDIT TRAIL",
+      "headline":"Less busywork.\nMore control.", "lede":"Start with one repetitive process. Make the inputs clear, keep the boundaries explicit, and turn automation into something you can understand and supervise.",
+      "cta":"Discuss an automation", "subject":"ILLNET AI workflow inquiry", "note":"Workflow design · Human approval · No autonomous production access",
+      "section":"A useful workflow beats an impressive demo.", "intro":"An early service concept for small teams that want practical automation. Work begins with a process map and a scoped proposal. No hosted AI product, agents, or paid subscription is live yet.",
+      "offers":[["Workflow discovery","MAP THE PROCESS","Identify the repetitive step, who owns it, what data it needs, and where human approval belongs."],["A focused prototype","TEST ONE TASK","Build a narrow demonstration with sample or authorized data and measurable acceptance criteria."],["Operational handoff","MAKE IT MAINTAINABLE","Document credentials, permissions, error handling, and ownership before a production integration is considered."]],
+      "steps":[["Map","Agree the task and the expected output."],["Prove","Test a small workflow before promising scale."],["Own","Keep human oversight, logs, and a clear way to stop it."]],
+      "faqs":[["Is there an AI product I can subscribe to?","Not yet. This is a workflow-design concept and inquiry page."],["Do I need to send API keys?","No. Never send keys through email, website forms, or GitHub. Production access requires a separate secure setup."],["Can you automate my existing business?","Describe a single repetitive process. Feasibility, integrations, pricing, and scope are agreed after discovery."]],
+      "contact_title":"What is the one task you keep repeating?", "contact_text":"Describe the process, the tools involved, and what a good result looks like. Use examples without customer data or credentials.", "stage":"Automation service concept"
+    },
+    {
+      "domain":"hearty.fit", "brand":"Hearty", "theme":"hearty", "eyebrow":"SMALL ROUTINES · ROOM TO BREATHE",
+      "headline":"A little more\nintentional.\nEvery day.", "lede":"A simple planner for the everyday routines you choose. Make space for a walk, a meal, a break, or a moment to plan tomorrow.",
+      "cta":"Ask about the planner", "subject":"Hearty planner project", "note":"General lifestyle planning · No personalized exercise or medical advice",
+      "section":"Build a routine you can actually remember.", "intro":"Use the printable starter planner to choose and reflect on your own habits. Hearty is an educational lifestyle project, not a treatment program or a promise of health outcomes.",
+      "offers":[["Choose one thing","SMALL & SPECIFIC","Write down one routine you want to make space for. Choose something appropriate to your circumstances."],["Give it a place","A SIMPLE PLAN","Decide when it fits and what might get in the way. Keep the plan small enough to revisit."],["Notice what happened","REFLECT WITHOUT A SCORE","Use a brief note to record how the day went. No calorie estimates, diagnosis, or automated health recommendations."]],
+      "steps":[["Choose","Pick your own everyday routine."],["Plan","Give it a realistic time and place."],["Reflect","Record what helped and adjust your next plan."]],
+      "faqs":[["Is this a fitness coaching service?","No. This edition is a general routine planner. It does not prescribe exercise or provide medical advice."],["Does the planner collect my information?","The interactive fields stay on this page and are not submitted or saved. You can print your own copy."],["Are paid planners available?","Not yet. The starter is free. Future digital products need an approved catalog and payment provider."]],
+      "contact_title":"Help shape a calmer everyday planner.", "contact_text":"Send product feedback or a collaboration idea. Please don't send personal medical information.", "stage":"Free lifestyle planner · digital products in development"
+    },
+    {
+      "domain":"healthyheart.clinic", "brand":"Healthy Heart", "theme":"heart", "eyebrow":"AN EDUCATIONAL PROJECT · NOT A CLINIC",
+      "headline":"Prepare the\nconversation.\nAsk your questions.", "lede":"A simple place to organize questions for your own licensed healthcare professional. No diagnoses, treatment plans, or appointment booking.",
+      "cta":"Share project feedback", "subject":"Healthy Heart education project", "note":"No clinical services · No medical records collected",
+      "section":"Your questions deserve a place on the page.", "intro":"Despite the domain name, this project is not a licensed clinic. It offers a blank visit-preparation worksheet. Future content would require professional review before publication.",
+      "offers":[["What do I want to ask?","QUESTIONS","A blank worksheet for questions you want to discuss with your healthcare professional."],["What should I bring?","PREPARATION","Space to write your own notes and reminders. Store the completed worksheet privately, outside this website."],["What did we agree?","FOLLOW-UP NOTES","A place to record instructions given by your clinician. This project does not interpret or replace those instructions."]],
+      "steps":[["Write","List the questions you want to bring."],["Discuss","Use the worksheet with your licensed professional."],["Keep privately","Keep any personal health details in your own secure records."]],
+      "faqs":[["Is Healthy Heart a medical practice?","No. It is an educational project. The domain name does not indicate a licensed clinic."],["Can I book an appointment here?","No. No appointments, telehealth, diagnosis, or treatment are offered."],["Can I upload records or symptoms?","No. This site has no health intake or upload feature. Please don't send records or health details to the project contact."]],
+      "contact_title":"Feedback about the project only.", "contact_text":"Product and collaboration questions are welcome. Contact your own licensed healthcare professional for care; do not email symptoms or records here.","stage":"Education-only project · professional review pending"
+    },
+    {
+      "domain":"starfieldstudio.com", "brand":"Starfield Studio", "theme":"studio", "eyebrow":"SPACE / ART / DIGITAL CRAFT",
+      "headline":"A little further\nfrom ordinary.", "lede":"A creative studio concept at the intersection of space-inspired art, digital design, and photography. Starting small, with work that can speak for itself.",
+      "cta":"Discuss a creative project", "subject":"Starfield Studio creative inquiry", "note":"Concept studio · Print collection not yet released",
+      "section":"Make something worth looking at twice.", "intro":"This edition features original vector studies created for the site, not astrophotographs or products ready to ship. Commercial launch requires brand clearance and an approved catalog with production samples.",
+      "offers":[["Digital design","CREATIVE PROJECTS","Landing pages, visual concepts, and digital assets. Scope, licensing, and price are agreed before work starts."],["Space-inspired studies","ORIGINAL VECTOR ART","Explore three geometric studies below. These are concept artwork, not photos of named astronomical targets."],["Future print collection","PRINTS & OBJECTS","A planned collection once artwork rights, fulfillment, print quality, and pricing are verified. No checkout is available yet."]],
+      "steps":[["A clear brief","Define the subject, audience, format, and intended use."],["A focused direction","Review a concept before building a full collection."],["A considered finish","Confirm rights, deliverables, and quality before release."]],
+      "faqs":[["Can I buy a print now?","Not yet. No print catalog or fulfillment provider has been approved."],["Are these astronomy photos?","No. The artwork in this edition consists of original vector design studies."],["Is the brand cleared for commerce?","Trademark clearance has not been completed. This is a concept and design preview pending that review."]],
+      "contact_title":"Have a small, interesting creative brief?", "contact_text":"Share the intended project, format, audience, and timeline. A proposal comes before any paid work.", "stage":"Concept preview · name clearance pending"
+    }
+  ],
+  "aliases":[
+    {"domain":"illnet.net","primary":"ill.network","brand":"ILL Network","theme":"lab","headline":"One network.\nThree ways to learn.","text":"The supporting address for ILL Network's Linux, infrastructure, and AI learning tracks."},
+    {"domain":"starfieldstudio.shop","primary":"starfieldstudio.com","brand":"Starfield Studio / Shop","theme":"studio","headline":"A collection\nin the making.","text":"The planned storefront for the studio's future collection. Products, prices, rights, and fulfillment are still being verified. No orders are taken here."},
+    {"domain":"starfieldstudio.store","primary":"starfieldstudio.com","brand":"Starfield Studio / Store","theme":"studio","headline":"Art that finds\na place with you.","text":"A supporting address for the studio's future print collection. Visit the studio concept; there are no products available to buy yet."},
+    {"domain":"starfieldstudio.info","primary":"starfieldstudio.com","brand":"Starfield Studio / About","theme":"studio","headline":"Meet the\nstudio concept.","text":"Background on a creative project for space-inspired art and digital design. The main studio has the current concept and release status."}
+  ]
+}

@@ -1,0 +1,28 @@
+name: Domain studio security
+on:
+  pull_request:
+    branches: [main]
+    paths: ['portfolio/**', '.github/workflows/portfolio-*.yml']
+  push:
+    branches: [main]
+    paths: ['portfolio/**', '.github/workflows/portfolio-*.yml']
+  workflow_dispatch:
+  schedule:
+    - cron: '41 1 * * 2'
+permissions:
+  contents: read
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Scan repository history for secrets
+        uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_COMMENTS: 'false'
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: 'false'

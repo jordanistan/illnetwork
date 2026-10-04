@@ -1,0 +1,63 @@
+name: Domain studio checks and Pages preview
+on:
+  pull_request:
+    branches: [main]
+    paths: ['portfolio/**', '.github/portfolio/**', '.github/agents/**', '.github/workflows/portfolio-*.yml', 'AGENTS.md']
+  push:
+    branches: [main]
+    paths: ['portfolio/**', '.github/portfolio/**', '.github/agents/**', '.github/workflows/portfolio-*.yml', 'AGENTS.md']
+  workflow_dispatch:
+  schedule:
+    - cron: '17 1 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Release boundaries
+        run: python3 -m unittest discover -s portfolio -p 'test_*.py' -v
+      - name: JavaScript syntax
+        run: node --check portfolio/assets/site.js
+      - name: Build exact review artifact
+        run: python3 portfolio/build.py --mode preview --output _portfolio-preview
+      - name: Local links, CSP, and artifact isolation
+        run: python3 portfolio/check.py _portfolio-preview
+      - name: Validate production exports separately
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          config=json.loads(Path('portfolio/sites.json').read_text())
+          for site in config['sites'] + config['aliases']:
+              output=f"_production/{site['domain']}"
+              subprocess.run(['python3','portfolio/build.py','--mode','production','--domain',site['domain'],'--output',output],check=True)
+              subprocess.run(['python3','portfolio/check.py',output],check=True)
+          PY
+      - name: Upload only the review artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+        with:
+          path: _portfolio-preview
+  deploy:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    needs: validate
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy educational review
+        id: deploy
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
