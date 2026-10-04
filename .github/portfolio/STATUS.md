@@ -34,3 +34,7 @@ Daily continuation is enabled for approximately 7 PM America/Chicago. Each run m
 Read AGENTS, STATE, DECISIONS, ROADMAP, LAUNCH, TEAM and actual issues/PRs. The full local prompt is CEO_STAFF_PROMPT.md. Laptop: prepare P003 prerequisites (#29). Desktop: select an unclaimed desktop-lane task; P008 (#33) is ready. P001 (#34) requires owner/admin inspection of HTTPS/access settings; preserve Cloudflare protections and DNS/email. Shared generator/assets belong to one integration lead. Use atomic claims and separate branches/worktrees.
 
 No commercial DNS, checkout, subscriptions, company formation, outside messages or paid launch is completed or claimed. Owner launch inputs are in LAUNCH.md. No revenue or customer acquisition is claimed.
+
+## P003 launch-readiness documentation — October 4, 2026
+
+Existing native `jordanistan/PawfectWalks` repository discovered and preserved. Ten linked Obsidian-compatible notes and seven requirement issues (#39–#45) document how to complete launch readiness; see [P003_HANDOFF.md](pawsfect-walks/P003_HANDOFF.md). Public source contains generic drafts only. All seven operational confirmations remain pending. Native and ILL pricing/area/scope, form/email receipt, staffing/classification and merchant activation need actual evidence. Documentation completion does not complete P003 or enable paid care. Claim is retained with an exact-SHA local handoff/release command because connector ref deletion is unavailable.

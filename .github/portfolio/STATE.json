@@ -66,7 +66,7 @@
   "tasks": {
     "P001": "deployment jobs success; central 403/HTTP redirect and mirror 404 require account administration",
     "P002": "complete in PR #35; merge 2bdb15e37746fbfa29ffc717187c5827da9b3673; lease released",
-    "P003": "owner inputs needed",
+    "P003": "documentation prepared: 10 native notes and 7 tasks #39–#45; owner confirmation, insurer/legal review and live operational tests pending",
     "P004": "review build ready; final client process needed",
     "P005": "owner hosting connection needed",
     "P006": "ready",
@@ -90,5 +90,26 @@
     "P005": 31,
     "P007": 32,
     "P008": 33
+  },
+  "pawsfect_walks": {
+    "native_repository": "jordanistan/PawfectWalks",
+    "dashboard": "docs/launch/00_Launch_Dashboard.md",
+    "parent_issue": 29,
+    "requirement_issues": [
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "launch_status": "not ready; seven confirmations pending",
+    "claim_ref": "claims/P003",
+    "claim_sha": "69b36376f2fb7d24dda339ea3958812a091188f3",
+    "claim_status": "retained with exact local release/handoff command; connector lacks deletion",
+    "documentation_pr": 2,
+    "documentation_commit": "0d62c23a0141344967d7c13174a573da80ae1214",
+    "documentation_checks": "10 notes; relative links and issue references passed; documentation-only privacy review"
   }
 }
