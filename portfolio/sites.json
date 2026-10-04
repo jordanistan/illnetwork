@@ -52,14 +52,65 @@
       "contact_title":"Know a place dogs should know about?", "contact_text":"Send the place name, city, official website, and why it belongs in the guide. No personal location histories or lost-pet contact details, please.", "stage":"City-guide pilot"
     },
     {
-      "domain":"iambirdy.com", "brand":"I Am Birdy", "theme":"birdy", "eyebrow":"BIRDY & JORDAN · THE SMALL ADVENTURES",
-      "headline":"Best friend.\nCo-pilot.\nChief sniffer.", "lede":"Birdy is a red heeler and brown Lab mix with a talent for making an ordinary day an adventure. This is the home for the walks, the road ahead, and the things we learn along the way.",
-      "cta":"Say hello to Birdy", "subject":"Hello Birdy", "note":"Austin home base · Travel journal in the making",
-      "section":"The good life is a shared walk.", "intro":"We're building a small journal about life with Birdy, dog-friendly outings, and the gear that makes them easier. Only things we actually try will become personal reviews.",
-      "offers":[["Around the neighborhood","WALKS & LITTLE FINDS","A place for the routes, parks, and quiet stops we visit together. New stories will identify where and when we went."],["The road ahead","CAMPING & TRAVEL","A travel journal as we test camping and mobile working. No invented destinations or completed trips."],["The useful stuff","GEAR & COLLABORATIONS","Future gear notes and clearly disclosed partnerships. No affiliate products or merchandise are for sale in this first edition."]],
-      "steps":[["Go outside","Find one small adventure that works for both of us."],["Pay attention","Notice the route, the practical details, and the dog's comfort."],["Share the useful part","Publish a real experience instead of another generic list."]],
-      "faqs":[["Who is Birdy?","Jordan's female red heeler and brown Lab mix, and the inspiration for this pet and travel project."],["Can brands get in touch?","Yes. Relevant collaboration ideas are welcome. Any sponsorship or affiliate relationship will be disclosed."],["Where do the city guides live?","Find Fido is the companion guide project. Pawsfect Walks is the local care-service project."]],
-      "contact_title":"A hello, a good route, or a useful idea.", "contact_text":"Send a note or a relevant collaboration proposal. We don't share a home address or live travel location.", "stage":"Pet & travel journal"
+      "domain": "iambirdy.com",
+      "brand": "I Am Birdy",
+      "theme": "birdy",
+      "eyebrow": "BIRDY & JORDAN / THE PHOTO JOURNAL",
+      "headline": "Good places.\nGreat company.\nOne curious dog.",
+      "lede": "Meet Birdy: Jordan’s red heeler and brown Lab mix, favorite co-pilot, and the face behind this photo journal. Come along for the places we’ve been, the little moments worth keeping, and the next adventure.",
+      "cta": "Meet Birdy",
+      "subject": "Hello Birdy",
+      "note": "Austin home base · A life in photos",
+      "section": "Every adventure has a face.",
+      "intro": "This one has a pink collar and a very good nose. Birdy’s journal brings together the places she’s been and the moments Jordan has photographed along the way.",
+      "offers": [
+        [
+          "Around the neighborhood",
+          "WALKS & LITTLE FINDS",
+          "A place for the routes, parks, and quiet stops we visit together. New stories will identify where and when we went."
+        ],
+        [
+          "The road ahead",
+          "CAMPING & TRAVEL",
+          "A travel journal as we test camping and mobile working. No invented destinations or completed trips."
+        ],
+        [
+          "The useful stuff",
+          "GEAR & COLLABORATIONS",
+          "Future gear notes and clearly disclosed partnerships. No affiliate products or merchandise are for sale in this first edition."
+        ]
+      ],
+      "steps": [
+        [
+          "Go outside",
+          "Find one small adventure that works for both of us."
+        ],
+        [
+          "Pay attention",
+          "Notice the route, the practical details, and the dog's comfort."
+        ],
+        [
+          "Share the useful part",
+          "Publish a real experience instead of another generic list."
+        ]
+      ],
+      "faqs": [
+        [
+          "Who is Birdy?",
+          "Birdy is Jordan’s female red heeler and brown Lab mix. She’s the co-pilot in these photos, and the reason this journal exists."
+        ],
+        [
+          "What will I find in the journal?",
+          "Photos from places Birdy has visited, the stories behind them, and practical notes for outings with a dog."
+        ],
+        [
+          "Can I support Birdy?",
+          "Sharing the journal is a lovely start. Jordan is also planning a personal GoFundMe for Birdy’s routine care and adventures. Fundraising details will appear here once the page is ready."
+        ]
+      ],
+      "contact_title": "Know a place Birdy would love?",
+      "contact_text": "A shady walk, a welcoming stop, or a good story from your own dog’s adventures — we’d love to hear it.",
+      "stage": "Birdy & Jordan’s photo journal"
     },
     {
       "domain":"ill.network", "brand":"ILL Network", "theme":"lab", "eyebrow":"INTELLIGENT LEARNING LAB",

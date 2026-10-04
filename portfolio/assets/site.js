@@ -62,3 +62,49 @@ document.querySelectorAll('.worksheet').forEach(worksheet => {
   });
   syncPrint();
 });
+
+// Scroll-snap photo deck: progressive enhancement, no autoplay or network calls.
+document.querySelectorAll('[data-photo-deck]').forEach(deck => {
+  const track = deck.querySelector('.photo-track');
+  const slides = [...track.querySelectorAll('.photo-slide')];
+  const previous = deck.querySelector('[data-deck-prev]');
+  const next = deck.querySelector('[data-deck-next]');
+  const status = deck.querySelector('[data-deck-status]');
+  let index = 0;
+  let settle;
+  const render = () => {
+    previous.disabled = index === 0;
+    next.disabled = index === slides.length - 1;
+    status.textContent = `Photo ${index + 1} of ${slides.length}`;
+  };
+  const go = (target, smooth = true) => {
+    index = Math.max(0, Math.min(slides.length - 1, target));
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    track.scrollTo({left: slides[index].offsetLeft - slides[0].offsetLeft,
+      behavior: smooth && !reduced ? 'smooth' : 'auto'});
+    render();
+  };
+  previous.addEventListener('click', () => go(index - 1));
+  next.addEventListener('click', () => go(index + 1));
+  track.addEventListener('keydown', event => {
+    if (event.target !== track) return;
+    const targets = {ArrowLeft: index - 1, ArrowRight: index + 1,
+      Home: 0, End: slides.length - 1};
+    if (!(event.key in targets)) return;
+    event.preventDefault();
+    go(targets[event.key]);
+  });
+  track.addEventListener('scroll', () => {
+    window.clearTimeout(settle);
+    settle = window.setTimeout(() => {
+      index = slides.reduce((nearest, slide, i) =>
+        Math.abs(slide.offsetLeft - slides[0].offsetLeft - track.scrollLeft) <
+        Math.abs(slides[nearest].offsetLeft - slides[0].offsetLeft - track.scrollLeft)
+          ? i : nearest, 0);
+      render();
+    }, 150);
+  }, {passive: true});
+  window.addEventListener('resize', () => go(index, false));
+  render();
+  deck.querySelector('[data-deck-controls]').hidden = false;
+});
