@@ -21,3 +21,5 @@ git push --force-with-lease=refs/heads/claims/P009:45c397150ad0c22760d30df4eb481
 ```
 
 If the lease fails, coordinate instead of deleting a changed claim. Acquire a new claim before further writing.
+
+Live deployment follow-up: old CSS/JS were still observed in the cloud browser after the new HTML deployed. Birdy builds now use content-hashed CSS/JS filenames, so changes select a fresh asset URL. Native staging regenerates the deck and versioned assets before copying the public artifact. Actual deployed controls will be rechecked after this fix.
