@@ -1,0 +1,1058 @@
+{
+  "browser": "143.0.7499.4",
+  "results": [
+    {
+      "domain": "pawsfectwalks.com",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(23, 41, 31)",
+            "background": "rgb(246, 244, 238)"
+          }
+        ],
+        "estimate": "$175 / week"
+      }
+    },
+    {
+      "domain": "spaceghostkilla.com",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(241, 236, 255)",
+            "background": "rgb(11, 9, 22)"
+          },
+          {
+            "text": "rgb(241, 236, 255)",
+            "background": "rgb(11, 9, 22)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "iamjordanrobison.com",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(23, 44, 55)",
+            "background": "rgb(238, 239, 233)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "find-fido.com",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(34, 58, 43)",
+            "background": "rgb(244, 247, 237)"
+          }
+        ],
+        "filters": [
+          [
+            "parks",
+            1,
+            "true"
+          ],
+          [
+            "patios",
+            1,
+            "true"
+          ],
+          [
+            "travel",
+            1,
+            "true"
+          ],
+          [
+            "all",
+            3,
+            "true"
+          ]
+        ]
+      }
+    },
+    {
+      "domain": "iambirdy.com",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(81, 44, 32)",
+            "background": "rgb(255, 245, 232)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "ill.network",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(21, 43, 36)",
+            "background": "rgb(244, 245, 235)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "illnet.ai",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(238, 242, 255)",
+            "background": "rgb(13, 18, 34)"
+          }
+        ],
+        "planner": {
+          "leads": "Start with a lead intake checklist. Keep outreach drafts for human review; do not auto-send messages.",
+          "reports": "Use approved sample evidence. Keep a human review before publishing or sharing a report.",
+          "scheduling": "Start with availability suggestions. Confirm the appointment before making a calendar commitment.",
+          "bookkeeping": "Suggest transaction categories. Reconcile against the original records and review before filing."
+        }
+      }
+    },
+    {
+      "domain": "hearty.fit",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(86, 55, 39)",
+            "background": "rgb(252, 243, 236)"
+          },
+          {
+            "text": "rgb(86, 55, 39)",
+            "background": "rgb(252, 243, 236)"
+          }
+        ],
+        "printCalled": true,
+        "printFields": 3,
+        "clearWorks": true,
+        "reloadCleared": true
+      }
+    },
+    {
+      "domain": "healthyheart.clinic",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(41, 62, 60)",
+            "background": "rgb(245, 245, 241)"
+          },
+          {
+            "text": "rgb(41, 62, 60)",
+            "background": "rgb(245, 245, 241)"
+          }
+        ],
+        "printCalled": true,
+        "printFields": 3,
+        "clearWorks": true,
+        "reloadCleared": true
+      }
+    },
+    {
+      "domain": "starfieldstudio.com",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(245, 238, 231)",
+            "background": "rgb(15, 14, 20)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "illnet.net",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    },
+    {
+      "domain": "starfieldstudio.shop",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    },
+    {
+      "domain": "starfieldstudio.store",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    },
+    {
+      "domain": "starfieldstudio.info",
+      "width": 1440,
+      "overflow": {
+        "width": 1440,
+        "scroll": 1440,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    },
+    {
+      "domain": "pawsfectwalks.com",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(23, 41, 31)",
+            "background": "rgb(246, 244, 238)"
+          }
+        ],
+        "estimate": "$175 / week"
+      }
+    },
+    {
+      "domain": "spaceghostkilla.com",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(241, 236, 255)",
+            "background": "rgb(11, 9, 22)"
+          },
+          {
+            "text": "rgb(241, 236, 255)",
+            "background": "rgb(11, 9, 22)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "iamjordanrobison.com",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(23, 44, 55)",
+            "background": "rgb(238, 239, 233)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "find-fido.com",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(34, 58, 43)",
+            "background": "rgb(244, 247, 237)"
+          }
+        ],
+        "filters": [
+          [
+            "parks",
+            1,
+            "true"
+          ],
+          [
+            "patios",
+            1,
+            "true"
+          ],
+          [
+            "travel",
+            1,
+            "true"
+          ],
+          [
+            "all",
+            3,
+            "true"
+          ]
+        ]
+      }
+    },
+    {
+      "domain": "iambirdy.com",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(81, 44, 32)",
+            "background": "rgb(255, 245, 232)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "ill.network",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(21, 43, 36)",
+            "background": "rgb(244, 245, 235)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "illnet.ai",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(238, 242, 255)",
+            "background": "rgb(13, 18, 34)"
+          }
+        ],
+        "planner": {
+          "leads": "Start with a lead intake checklist. Keep outreach drafts for human review; do not auto-send messages.",
+          "reports": "Use approved sample evidence. Keep a human review before publishing or sharing a report.",
+          "scheduling": "Start with availability suggestions. Confirm the appointment before making a calendar commitment.",
+          "bookkeeping": "Suggest transaction categories. Reconcile against the original records and review before filing."
+        }
+      }
+    },
+    {
+      "domain": "hearty.fit",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(86, 55, 39)",
+            "background": "rgb(252, 243, 236)"
+          },
+          {
+            "text": "rgb(86, 55, 39)",
+            "background": "rgb(252, 243, 236)"
+          }
+        ],
+        "printCalled": true,
+        "printFields": 3,
+        "clearWorks": true,
+        "reloadCleared": true
+      }
+    },
+    {
+      "domain": "healthyheart.clinic",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(41, 62, 60)",
+            "background": "rgb(245, 245, 241)"
+          },
+          {
+            "text": "rgb(41, 62, 60)",
+            "background": "rgb(245, 245, 241)"
+          }
+        ],
+        "printCalled": true,
+        "printFields": 3,
+        "clearWorks": true,
+        "reloadCleared": true
+      }
+    },
+    {
+      "domain": "starfieldstudio.com",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(245, 238, 231)",
+            "background": "rgb(15, 14, 20)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "illnet.net",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    },
+    {
+      "domain": "starfieldstudio.shop",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    },
+    {
+      "domain": "starfieldstudio.store",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    },
+    {
+      "domain": "starfieldstudio.info",
+      "width": 390,
+      "overflow": {
+        "width": 390,
+        "scroll": 390,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    },
+    {
+      "domain": "pawsfectwalks.com",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(23, 41, 31)",
+            "background": "rgb(246, 244, 238)"
+          }
+        ],
+        "estimate": "$175 / week"
+      }
+    },
+    {
+      "domain": "spaceghostkilla.com",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(241, 236, 255)",
+            "background": "rgb(11, 9, 22)"
+          },
+          {
+            "text": "rgb(241, 236, 255)",
+            "background": "rgb(11, 9, 22)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "iamjordanrobison.com",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(23, 44, 55)",
+            "background": "rgb(238, 239, 233)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "find-fido.com",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(34, 58, 43)",
+            "background": "rgb(244, 247, 237)"
+          }
+        ],
+        "filters": [
+          [
+            "parks",
+            1,
+            "true"
+          ],
+          [
+            "patios",
+            1,
+            "true"
+          ],
+          [
+            "travel",
+            1,
+            "true"
+          ],
+          [
+            "all",
+            3,
+            "true"
+          ]
+        ]
+      }
+    },
+    {
+      "domain": "iambirdy.com",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(81, 44, 32)",
+            "background": "rgb(255, 245, 232)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "ill.network",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(21, 43, 36)",
+            "background": "rgb(244, 245, 235)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "illnet.ai",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(238, 242, 255)",
+            "background": "rgb(13, 18, 34)"
+          }
+        ],
+        "planner": {
+          "leads": "Start with a lead intake checklist. Keep outreach drafts for human review; do not auto-send messages.",
+          "reports": "Use approved sample evidence. Keep a human review before publishing or sharing a report.",
+          "scheduling": "Start with availability suggestions. Confirm the appointment before making a calendar commitment.",
+          "bookkeeping": "Suggest transaction categories. Reconcile against the original records and review before filing."
+        }
+      }
+    },
+    {
+      "domain": "hearty.fit",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(86, 55, 39)",
+            "background": "rgb(252, 243, 236)"
+          },
+          {
+            "text": "rgb(86, 55, 39)",
+            "background": "rgb(252, 243, 236)"
+          }
+        ],
+        "printCalled": true,
+        "printFields": 3,
+        "clearWorks": true,
+        "reloadCleared": true
+      }
+    },
+    {
+      "domain": "healthyheart.clinic",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(41, 62, 60)",
+            "background": "rgb(245, 245, 241)"
+          },
+          {
+            "text": "rgb(41, 62, 60)",
+            "background": "rgb(245, 245, 241)"
+          }
+        ],
+        "printCalled": true,
+        "printFields": 3,
+        "clearWorks": true,
+        "reloadCleared": true
+      }
+    },
+    {
+      "domain": "starfieldstudio.com",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": [
+          {
+            "text": "rgb(245, 238, 231)",
+            "background": "rgb(15, 14, 20)"
+          }
+        ]
+      }
+    },
+    {
+      "domain": "illnet.net",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    },
+    {
+      "domain": "starfieldstudio.shop",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    },
+    {
+      "domain": "starfieldstudio.store",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    },
+    {
+      "domain": "starfieldstudio.info",
+      "width": 320,
+      "overflow": {
+        "width": 320,
+        "scroll": 320,
+        "offenders": []
+      },
+      "keyboard": {
+        "text": "Skip to content",
+        "outline": "solid"
+      },
+      "skip": "main",
+      "errors": [],
+      "checks": {
+        "secondaryColors": []
+      }
+    }
+  ]
+}

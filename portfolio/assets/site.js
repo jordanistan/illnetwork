@@ -39,3 +39,26 @@ if (workflow) {
   const update = () => { workflow.querySelector('[data-workflow-output]').textContent = notes[workflow.querySelector('select').value]; };
   workflow.addEventListener('change', update); update();
 }
+
+// Plain text mirrors allow long notes to flow across printed pages.
+document.querySelectorAll('.worksheet').forEach(worksheet => {
+  const fields = [...worksheet.querySelectorAll('textarea')];
+  const mirrors = fields.map(field => {
+    const mirror = document.createElement('div');
+    mirror.className = 'print-value';
+    mirror.setAttribute('aria-hidden', 'true');
+    field.after(mirror);
+    return mirror;
+  });
+  const syncPrint = () => fields.forEach((field, i) => { mirrors[i].textContent = field.value; });
+  worksheet.addEventListener('input', syncPrint);
+  window.addEventListener('beforeprint', syncPrint);
+  window.addEventListener('pageshow', syncPrint);
+  worksheet.querySelector('[data-clear-worksheet]').addEventListener('click', () => {
+    fields.forEach(field => { field.value = ''; });
+    syncPrint();
+    worksheet.querySelector('[data-clear-status]').textContent = 'Worksheet cleared.';
+    fields[0].focus();
+  });
+  syncPrint();
+});

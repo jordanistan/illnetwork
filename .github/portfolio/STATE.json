@@ -17,7 +17,7 @@
     "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
     "production_artifacts": "all 14 built and checked",
     "javascript_syntax": "passed",
-    "browser_qa": "not performed; supported browser-control skill unavailable",
+    "browser_qa": "Chromium 143 passed 42 domain/viewport combinations across 14 domains at 1440, 390 and 320 CSS pixels; desktop/mobile screenshots and two worksheet PDFs recorded; no console errors or horizontal overflow; screen-reader, physical-printer and non-Chromium checks not performed",
     "scanner_regressions": "25 passed in isolated environment with Flask 3.1.3"
   },
   "github_delivery": {
@@ -62,10 +62,10 @@
   },
   "commercial_deployments": "not configured",
   "native_secret_scanning_and_push_protection": "unverified",
-  "next_task": "P002 (desktop) or P003 prerequisites (laptop); P001 requires account administration",
+  "next_task": "finish P002 review/integration (desktop) or P003 prerequisites (laptop); P001 requires account administration",
   "tasks": {
     "P001": "deployment jobs success; central 403/HTTP redirect and mirror 404 require account administration",
-    "P002": "ready",
+    "P002": "browser QA complete on agent/desktop/P002-browser-qa; review and integration pending",
     "P003": "owner inputs needed",
     "P004": "review build ready; final client process needed",
     "P005": "owner hosting connection needed",
