@@ -4,3 +4,28 @@
 .tool .micro{color:var(--ink)}
 .print-value{display:none}
 @media print{body:has(.worksheet) #how{display:none!important}.worksheet textarea{display:none}.worksheet .print-value{display:block;white-space:pre-wrap;overflow-wrap:anywhere;min-height:160px;border:1px solid #999;padding:13px 15px;color:black}.worksheet .field{display:block}.worksheet label{display:block;margin-bottom:8px}}
+
+/* Birdy's native horizontal deck also works without JavaScript. */
+.photo-track{position:relative;display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding:8px 0 18px;scrollbar-color:var(--accent) var(--wash);border-radius:14px}
+.photo-track:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+.photo-slide{flex:0 0 calc(100% - 64px);min-width:0;margin:0;scroll-snap-align:start;scroll-snap-stop:always;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper)}
+.photo-slide:only-child{flex-basis:100%}
+.photo-slide img{display:block;width:100%;height:clamp(240px,55vw,560px);object-fit:contain;background:var(--wash)}
+.photo-slide figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 22px;font-size:.85rem;color:var(--muted)}
+.photo-slide figcaption a{white-space:nowrap}
+.photo-deck-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;flex-wrap:wrap}
+.photo-deck-controls p{margin:0}
+.photo-deck-controls button:disabled{opacity:.45;cursor:default}
+@media(max-width:540px){.photo-slide{flex-basis:calc(100% - 28px)}.photo-slide figcaption{padding:14px}.photo-deck-controls .button{padding:12px 14px}.photo-deck-controls{gap:8px}}
+@media print{.photo-track{display:block;overflow:visible}.photo-slide{break-inside:avoid;margin-bottom:24px}.photo-deck-controls{display:none!important}.photo-slide img{height:auto}}
+
+.birdy-hero{grid-template-columns:1.08fr 1fr;gap:48px}
+.birdy-hero h1{font-size:clamp(3rem,5.5vw,5.5rem)}
+.birdy-portrait{margin:0;background:var(--paper);padding:14px 14px 0;border:1px solid var(--line);border-radius:18px;box-shadow:8px 12px 0 var(--wash)}
+.birdy-portrait img{display:block;aspect-ratio:4/3;object-fit:cover;border-radius:10px}
+.birdy-portrait figcaption{padding:14px 8px;font-family:var(--display);font-size:1.15rem;font-style:italic}
+.birdy-story{display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:start}
+.birdy-story .lede{max-width:none}.story-link{font-weight:650}
+.birdy .navlinks{gap:20px}.birdy .navend{white-space:nowrap}
+@media(max-width:900px){.birdy-hero,.birdy-story{grid-template-columns:1fr;gap:30px}.birdy-portrait{max-width:680px}.birdy-hero h1{font-size:clamp(3rem,9vw,5rem)}}
+@media(max-width:540px){.birdy .navlinks{gap:16px;flex-wrap:wrap}.birdy-hero h1{font-size:3.2rem}.birdy-portrait{box-shadow:5px 7px 0 var(--wash)}}

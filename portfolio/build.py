@@ -4,6 +4,7 @@ from pathlib import Path
 from html import escape as esc
 from urllib.parse import urlencode
 import argparse, json, shutil
+from birdy_gallery import render_gallery
 
 ROOT = Path(__file__).resolve().parent
 CONFIG = json.loads((ROOT / 'sites.json').read_text())
@@ -34,8 +35,9 @@ def svg_art(theme):
     return start + art + '</svg>'
 
 def header(s, mode, prefix='../'):
+    photos_link = '<a href="index.html#photos">Photos</a>' if s['theme']=='birdy' else ''
     preview = f'<div class="preview">DESIGN REVIEW · No live booking, payments, or data capture · <a href="{prefix}review.html">All domain previews ↗</a></div>' if mode=='preview' else ''
-    return preview + f'<a class="skip" href="#main">Skip to content</a><header><div class="shell nav"><a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">{MARKS[s["theme"]]}</span>{esc(s["brand"])}</a><nav class="navlinks" aria-label="Main navigation"><a href="#explore">Explore</a><a href="#how">The approach</a><a href="#questions">Questions</a></nav><a class="navend" href="#contact">{("Review the concept" if mode=="preview" else "Get in touch")} ↗</a></div></header>'
+    return preview + f'<a class="skip" href="#main">Skip to content</a><header><div class="shell nav"><a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">{MARKS[s["theme"]]}</span>{esc(s["brand"])}</a><nav class="navlinks" aria-label="Main navigation"><a href="#explore">Explore</a>{photos_link}<a href="#how">The approach</a><a href="#questions">Questions</a></nav><a class="navend" href="#contact">{("Review the concept" if mode=="preview" else "Get in touch")} ↗</a></div></header>'
 
 def document(s, content, mode, title=None, prefix='../', extra_class=''):
     title = title or s['brand']+' — '+s.get('eyebrow','Concept preview').title()
@@ -68,7 +70,7 @@ def extra(s,mode):
     if t=='jordan':
       return '<section class="section projects"><p class="kicker">PUBLIC WORK</p><h2>Projects you can inspect.</h2>'+''.join(f'<a class="project-row" href="{url}"><strong>{name}</strong><p>{txt}</p><span aria-hidden="true">↗</span></a>' for name,txt,url in [('SpaceGhostKilla','Security research, a free audit preview, and scoped consulting.','https://github.com/jordanistan/spaceghostkilla'),('ILL Network','Local-first Linux tooling and three learning tracks.','https://github.com/jordanistan/illnetwork'),('Domain studio','Dependency-free sites, secure builds, and documented handoffs.','https://github.com/jordanistan/illnetwork/tree/main/portfolio')])+'</section>'
     if t=='birdy':
-      return '<section class="section"><p class="kicker">THE ORIGINAL CO-PILOT</p><h2>This is Birdy.</h2><img class="photo-birdy" src="https://raw.githubusercontent.com/jordanistan/iambirdy/main/iambirdy.jpg" alt="Birdy, Jordan’s dog, in the original photo from her site" loading="lazy"><p class="micro">Original photo preserved from Birdy’s existing website. The hero illustration is a stylized mascot.</p></section>'
+      return render_gallery(json.loads((ROOT/'birdy-gallery.json').read_text()))
     if t=='ai':
       return '<section class="section"><div class="tool tool-grid" data-workflow><div><p class="kicker">WORKFLOW STARTER</p><h3>Pick one thing to simplify.</h3><div class="field"><label for="workflow">Process</label><select id="workflow"><option value="leads">Lead intake & drafts</option><option value="reports">Report preparation</option><option value="scheduling">Scheduling suggestions</option><option value="bookkeeping">Bookkeeping categories</option></select></div><p class="micro">A planning prompt, not an AI agent. No data leaves the page.</p></div><div class="result" aria-live="polite"><p data-workflow-output>Start with a lead intake checklist. Keep outreach drafts for human review; do not auto-send messages.</p></div></div></section>'
     if t in ('hearty','heart'):
@@ -88,7 +90,21 @@ def contact(s,mode):
       action='<p><strong>Design review only</strong></p><p>Live inquiries, appointments, purchases, and subscriptions are not enabled in this preview.</p><a class="button" href="#explore">Explore the concept ↗</a>'
     return f'<section class="contact" id="contact"><div><p class="kicker">THE NEXT STEP</p><h2>{esc(s["contact_title"])}</h2><p>{esc(s["contact_text"])}</p></div><div>{action}</div></section>'
 
+def birdy_page(s,mode):
+    photos=json.loads((ROOT/'birdy-gallery.json').read_text())
+    first=photos[0]
+    intro=('<section class="section birdy-story" id="explore"><div><p class="kicker">MEET YOUR CO-PILOT</p><h2>A pink collar.<br>A world to explore.</h2></div><div><p class="lede">'+esc(s['intro'])+'</p><p>Some photos are about a place. Others are about the company you keep. This journal makes room for both: the destination, the small discoveries, and Birdy right in the middle of it all.</p><a class="story-link" href="#photos">Start with the photo deck ↓</a></div></section>')
+    notes=('<section class="section" id="how"><p class="kicker">BEHIND THE PHOTOS</p><h2>More than a postcard.</h2><div class="cards"><article class="card"><span class="serial">01 / THE PLACE</span><h3>Where did we go?</h3><p>A name, a setting, and the details that make each place memorable. The photo is the beginning of the story.</p></article><article class="card"><span class="serial">02 / THE MOMENT</span><h3>What caught Birdy’s attention?</h3><p>The little things deserve a place in the journal, too. A good stop, an unexpected discovery, or simply a photo worth keeping.</p></article><article class="card"><span class="serial">03 / THE FIELD NOTES</span><h3>Would we bring a dog again?</h3><p>When there’s a useful detail to share, we’ll include it with the story: access, shade, water, and what made the outing work.</p></article></div></section>')
+    faq='<section class="section faq" id="questions"><div><p class="kicker">GET TO KNOW BIRDY</p><h2>A few things<br>you might wonder.</h2></div><div>'+''.join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q,a in s['faqs'])+'</div></section>'
+    body=f'<main tabindex="-1" id="main" class="shell"><section class="hero birdy-hero"><div><p class="kicker">{esc(s["eyebrow"])}</p><h1>{"<br>".join(esc(s["headline"]).splitlines())}</h1><p class="lede">{esc(s["lede"])}</p><div class="actions"><a class="button" href="#photos">Explore Birdy’s photos ↓</a><a class="button secondary" href="#explore">Meet the co-pilot</a></div><p class="micro">{esc(s["note"])}</p></div><figure class="birdy-portrait"><img src="{esc(first["src"])}" alt="{esc(first["alt"])}" width="1824" height="1373" fetchpriority="high"><figcaption>Birdy / always good company.</figcaption></figure></section><div class="ribbon"><b>I AM BIRDY</b><span>Places. Moments. Field notes.</span><span>WITH JORDAN ↗</span></div>'+intro+render_gallery(photos)+notes+faq+contact(s,mode)+'</main>'
+    html=document(s,body,mode)
+    html=html.replace('>Explore</a>', '>Our story</a>').replace('>The approach</a>', '>Travel notes</a>').replace('>Questions</a>', '>About Birdy</a>')
+    html=html.replace('Pet &amp; travel journal. No claimed testimonials, certification, sales, or customer counts.', 'A life in photos.')
+    html=html.replace('Birdy &amp; Jordan’s photo journal. No claimed testimonials, certification, sales, or customer counts.', 'Birdy &amp; Jordan’s photo journal.')
+    return html
+
 def page(s,mode):
+    if s['theme']=='birdy': return birdy_page(s,mode)
     filterbar = '<div class="filterbar" data-filters role="group" aria-label="Outing categories">'+''.join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key=="all").lower()}">{name}</button>' for key,name in [('all','All ideas'),('parks','Parks'),('patios','Patios'),('travel','Travel')])+'</div><p class="micro" data-filter-count aria-live="polite">3 planning categories shown. These are not venue listings.</p>' if s['theme']=='fido' else ''
     body=f'''<main tabindex="-1" id="main" class="shell"><section class="hero"><div><p class="kicker">{esc(s['eyebrow'])}</p><h1>{'<br>'.join(esc(s['headline']).splitlines())}</h1><p class="lede">{esc(s['lede'])}</p><div class="actions"><a class="button" href="{'#explore' if s['theme']=='lab' else '#contact'}">{esc(s['cta'])} <span aria-hidden="true">↗</span></a><a class="button secondary" href="#explore">Take a look ↓</a></div><p class="micro">{esc(s['note'])}</p></div><div class="hero-art"><img src="assets/hero.svg" alt="" width="500" height="500"><div class="artcaption"><span>{esc(s['brand'])}</span><span>EDITION / 01</span></div></div></section><div class="ribbon"><b>{esc(s['domain'])}</b><span>{esc(s['stage'])}</span><span>BUILT WITH CARE ↗</span></div><section class="section" id="explore"><div class="section-head"><div><p class="kicker">THE IDEA / IN PRACTICE</p><h2>{esc(s['section'])}</h2></div><p>{esc(s['intro'])}</p></div>{filterbar}<div class="cards">{offer_cards(s,mode)}</div></section>{extra(s,mode)}<section class="section" id="how"><p class="kicker">A SIMPLE APPROACH</p><h2>Start small. Make it useful.</h2><div class="steps">'''
     body+=''.join(f'<article class="step"><div class="number">0{i}</div><h3>{esc(a)}</h3><p>{esc(b)}</p></article>' for i,(a,b) in enumerate(s['steps'],1))
@@ -114,6 +130,11 @@ def write_site(s,path,mode):
     (path/'_headers').write_text(HEADERS)
     (path/'robots.txt').write_text('User-agent: *\nDisallow: /\n' if mode=='preview' or s['theme'] in ('heart','studio') else 'User-agent: *\nAllow: /\nSitemap: https://'+s['domain']+'/sitemap.xml\n')
     (path/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://'+s['domain']+'/</loc></url></urlset>')
+    if s['theme']=='birdy':
+      for photo in json.loads((ROOT/'birdy-gallery.json').read_text()):
+        if photo['src'].startswith('assets/birdy/'):
+          target=path/photo['src']; target.parent.mkdir(parents=True,exist_ok=True)
+          shutil.copyfile(ROOT/photo['src'],target)
     if s['theme']=='studio':
       for i,t in enumerate(['studio','ai','ghost'],1): (path/'assets'/f'study-{i}.svg').write_text(svg_art(t))
     if s['theme']=='lab' and 'primary' not in s:
