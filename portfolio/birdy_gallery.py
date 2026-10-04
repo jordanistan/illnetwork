@@ -29,4 +29,4 @@ def render_gallery(photos):
             f'<p class="micro" data-deck-status role="status" aria-live="polite" aria-atomic="true">Photo 1 of {len(photos)}</p>'
             '<button class="button secondary" type="button" data-deck-next aria-controls="birdy-photo-track" aria-label="Next photo">Next →</button></div></div>'
             f'<div class="actions"><a class="button secondary" href="{ALBUM}" target="_blank" rel="noopener noreferrer">Open Birdy’s Google Photos album ↗</a></div>'
-            '<p class="micro">Original photos from Birdy’s site. The hero illustration is a stylized mascot.</p></section>')
+            '<p class="micro">Birdy’s photo journal. Open any photo for a full-size view.</p></section>')
