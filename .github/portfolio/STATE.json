@@ -62,10 +62,10 @@
   },
   "commercial_deployments": "not configured",
   "native_secret_scanning_and_push_protection": "unverified",
-  "next_task": "finish P002 review/integration (desktop) or P003 prerequisites (laptop); P001 requires account administration",
+  "next_task": "P008 learning labs (desktop) or P003 prerequisites (laptop); P001 requires account administration",
   "tasks": {
     "P001": "deployment jobs success; central 403/HTTP redirect and mirror 404 require account administration",
-    "P002": "browser QA complete on agent/desktop/P002-browser-qa; review and integration pending",
+    "P002": "complete in PR #35; merge 2bdb15e37746fbfa29ffc717187c5827da9b3673; lease released",
     "P003": "owner inputs needed",
     "P004": "review build ready; final client process needed",
     "P005": "owner hosting connection needed",
