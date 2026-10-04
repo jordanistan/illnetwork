@@ -2,9 +2,10 @@
 
 ## Review now
 
-1. Merge/check the domain-studio change. If the Pages deploy job says Pages is disabled or incorrectly configured, open `jordanistan/illnetwork` → Settings → Pages → Source → **GitHub Actions** and rerun the workflow. That administration action is not exposed by the current connector.
-2. The deployed root is the new educational ILL lab; `/review.html` links to all 14 previews. Use the URL returned by the successful deploy job. Do not report an assumed URL as verified.
-3. Every preview is public if the repository's Pages setting is public. No private operational documents enter the artifact.
+1. All five initial PRs are merged and their Pages deployment jobs succeeded; see STATUS/STATE for evidence. The central ill.network URL returned Cloudflare 403 from this environment and GitHub's repository URL redirects to HTTP. This is an owner/admin follow-up (P001, issue #34), not evidence that Cloudflare protections should be disabled.
+2. Use the personal site's review mirror as the intended mirror URL (PR #63 deployment succeeded but HTTP returned 404; access still unverified): `https://iamjordanrobison.com/domain-previews/review.html`. It generates all 14 previews from the pinned, previously reviewed ILL source commit. Update the pin deliberately after later source changes; it does not follow mutable main automatically.
+3. An owner-authenticated local session should inspect actual Pages custom-domain/HTTPS settings and Cloudflare access/security configuration, then test root and /review.html. Do not guess the cause or disrupt DNS/email. Repository administration is not exposed by this connection.
+4. Every preview is public. No private operational documents enter the artifact.
 
 ## Production from the same repository
 

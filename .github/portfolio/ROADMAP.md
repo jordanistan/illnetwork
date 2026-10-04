@@ -4,7 +4,7 @@ These are tasks and goals, not earned revenue or promised outcomes. Work on one 
 
 | ID | Priority | Work | Completion evidence | Owner lane |
 |---|---|---|---|---|
-| P001 | P0 | Verify Pages preview and repair deployment if needed | Actual successful workflow + returned URL | Integration |
+| P001 | P0 | Inspect ill.network Cloudflare 403 / Pages HTTP redirect (issue #34) | HTTPS root/catalog accessible; preserve access controls | Integration |
 | P002 | P0 | Mobile/desktop and keyboard QA of all 14 builds | Screenshots, console check, interactions + issue report | QA desktop |
 | P003 | P0 | Prepare Pawsfect Walks launch | Owner-approved insurance, terms, intake, availability; verified production inquiry | Operations laptop |
 | P004 | P0 | SpaceGhostKilla consulting funnel | Preserved downloads; services build tested; reviewed scope/authorization template | Security/services |
@@ -18,3 +18,7 @@ These are tasks and goals, not earned revenue or promised outcomes. Work on one 
 | P012 | P3 | Health project review | Qualified content review; no clinical intake or health claims | Owner/editorial |
 
 Near-term success is a verified inquiry path and a first paid customer. Do not substitute page count or commits for sales. Do not auto-send outreach; Jordan must authorize recipient-directed actions explicitly.
+
+## Open task issues
+
+P001 [#34](https://github.com/jordanistan/illnetwork/issues/34); P002 [#28](https://github.com/jordanistan/illnetwork/issues/28); P003 [#29](https://github.com/jordanistan/illnetwork/issues/29); P004 [#30](https://github.com/jordanistan/illnetwork/issues/30); P005 [#31](https://github.com/jordanistan/illnetwork/issues/31); P007 [#32](https://github.com/jordanistan/illnetwork/issues/32); P008 [#33](https://github.com/jordanistan/illnetwork/issues/33).
