@@ -24,3 +24,9 @@ GitHub commit/PR/merge/deployment results must be added after observing the actu
 ## Continue
 
 Read STATE, DECISIONS, ROADMAP, LAUNCH, TEAM and current issues/PRs. Inspect P001 deployment, then claim P002 or an independent ready task. Laptop/desktop use distinct claimed tasks and worktrees. Shared generator/assets belong to the integration lead. The complete local Codex prompt is CEO_STAFF_PROMPT.md.
+
+## CI repair evidence
+
+GitHub reported CodeQL default setup already enabled; its PR analysis passed. Removed the conflicting advanced CodeQL job while retaining the passing Gitleaks job and native default analysis. Native secret scanning/push protection are still unverified.
+
+The existing dependency audit identified vulnerable Flask 3.0.3 in both scanner manifests. Updated both to the reported patched Flask 3.1.3; scanner regression checks are required and recorded with the delivery evidence.
