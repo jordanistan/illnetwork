@@ -1,0 +1,10 @@
+
+# Domain-studio outputs and local task leases
+_portfolio-preview/
+_production/
+.portfolio-claims/
+portfolio/__pycache__/
+**/.env
+**/.env.*
+!**/.env.example
+**/__pycache__/

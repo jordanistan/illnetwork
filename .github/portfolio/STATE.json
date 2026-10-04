@@ -1,0 +1,40 @@
+{
+  "updated": "2026-10-04",
+  "coordinator_repository": "jordanistan/illnetwork",
+  "source": "portfolio/",
+  "domain_count": 14,
+  "primary_sites": 10,
+  "supporting_domains": 4,
+  "excluded_domains": [
+    "sxswasted.com",
+    "austinfcsoccer.com",
+    "austinfcsoccer.net",
+    "austinfcjerseys.com",
+    "atxsoccerjerseys.com"
+  ],
+  "local_verification": {
+    "release_boundary_tests": "5 passed",
+    "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
+    "production_artifacts": "all 14 built and checked",
+    "javascript_syntax": "passed",
+    "browser_qa": "not performed; supported browser-control skill unavailable"
+  },
+  "github_delivery": "pending; inspect actual PR/Actions",
+  "commercial_deployments": "not configured",
+  "native_secret_scanning_and_push_protection": "unverified",
+  "next_task": "P001",
+  "tasks": {
+    "P001": "ready",
+    "P002": "ready",
+    "P003": "owner inputs needed",
+    "P004": "review build ready; final client process needed",
+    "P005": "owner hosting connection needed",
+    "P006": "ready",
+    "P007": "ready",
+    "P008": "ready",
+    "P009": "owner experience needed",
+    "P010": "ready",
+    "P011": "clearance/fulfillment needed",
+    "P012": "professional review needed"
+  }
+}
