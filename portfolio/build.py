@@ -8,7 +8,7 @@ from birdy_gallery import render_gallery
 
 ROOT = Path(__file__).resolve().parent
 CONFIG = json.loads((ROOT / 'sites.json').read_text())
-POLICY = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https://raw.githubusercontent.com/jordanistan/iambirdy/main/iambirdy.jpg; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"
+POLICY = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"
 HEADERS = f"/*\n  Content-Security-Policy: {POLICY}; frame-ancestors 'none'\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()\n  Strict-Transport-Security: max-age=31536000\n"
 MARKS = {'paws':'p','ghost':'G','lab':'//','ai':'i','jordan':'JR','birdy':'b','fido':'f','hearty':'h','heart':'+','studio':'✦'}
 
@@ -35,7 +35,7 @@ def svg_art(theme):
     return start + art + '</svg>'
 
 def header(s, mode, prefix='../'):
-    photos_link = '<a href="index.html#photos">Photos</a>' if s['theme']=='birdy' else ''
+    photos_link = '<a href="index.html#photos">Gallery</a>' if s['theme']=='birdy' else ''
     preview = f'<div class="preview">DESIGN REVIEW · No live booking, payments, or data capture · <a href="{prefix}review.html">All domain previews ↗</a></div>' if mode=='preview' else ''
     return preview + f'<a class="skip" href="#main">Skip to content</a><header><div class="shell nav"><a class="brand" href="index.html"><span class="brandmark" aria-hidden="true">{MARKS[s["theme"]]}</span>{esc(s["brand"])}</a><nav class="navlinks" aria-label="Main navigation"><a href="#explore">Explore</a>{photos_link}<a href="#how">The approach</a><a href="#questions">Questions</a></nav><a class="navend" href="#contact">{("Review the concept" if mode=="preview" else "Get in touch")} ↗</a></div></header>'
 
@@ -96,12 +96,12 @@ def contact(s,mode):
     return f'<section class="contact" id="contact"><div><p class="kicker">THE NEXT STEP</p><h2>{esc(s["contact_title"])}</h2><p>{esc(s["contact_text"])}</p></div><div>{action}</div></section>'
 
 def birdy_page(s,mode):
-    photos=json.loads((ROOT/'birdy-gallery.json').read_text())
-    first=photos[0]
+    media=json.loads((ROOT/'birdy-gallery.json').read_text())
+    first=media[0]
     intro=('<section class="section birdy-story" id="explore"><div><p class="kicker">MEET YOUR CO-PILOT</p><h2>A pink collar.<br>A world to explore.</h2></div><div><p class="lede">'+esc(s['intro'])+'</p><p>Some photos are about a place. Others are about the company you keep. This journal makes room for both: the destination, the small discoveries, and Birdy right in the middle of it all.</p><a class="story-link" href="#photos">Start with the photo deck ↓</a></div></section>')
     notes=('<section class="section" id="how"><p class="kicker">BEHIND THE PHOTOS</p><h2>More than a postcard.</h2><div class="cards"><article class="card"><span class="serial">01 / THE PLACE</span><h3>Where did we go?</h3><p>A name, a setting, and the details that make each place memorable. The photo is the beginning of the story.</p></article><article class="card"><span class="serial">02 / THE MOMENT</span><h3>What caught Birdy’s attention?</h3><p>The little things deserve a place in the journal, too. A good stop, an unexpected discovery, or simply a photo worth keeping.</p></article><article class="card"><span class="serial">03 / THE FIELD NOTES</span><h3>Would we bring a dog again?</h3><p>When there’s a useful detail to share, we’ll include it with the story: access, shade, water, and what made the outing work.</p></article></div></section>')
     faq='<section class="section faq" id="questions"><div><p class="kicker">GET TO KNOW BIRDY</p><h2>A few things<br>you might wonder.</h2></div><div>'+''.join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q,a in s['faqs'])+'</div></section>'
-    body=f'<main tabindex="-1" id="main" class="shell"><section class="hero birdy-hero"><div><p class="kicker">{esc(s["eyebrow"])}</p><h1>{"<br>".join(esc(s["headline"]).splitlines())}</h1><p class="lede">{esc(s["lede"])}</p><div class="actions"><a class="button" href="#photos">Explore Birdy’s photos ↓</a><a class="button secondary" href="#explore">Meet the co-pilot</a></div><p class="micro">{esc(s["note"])}</p></div><figure class="birdy-portrait"><img src="{esc(first["src"])}" alt="{esc(first["alt"])}" width="1824" height="1373" fetchpriority="high"><figcaption>Birdy / always good company.</figcaption></figure></section><div class="ribbon"><b>I AM BIRDY</b><span>Places. Moments. Field notes.</span><span>WITH JORDAN ↗</span></div>'+intro+render_gallery(photos)+notes+faq+contact(s,mode)+'</main>'
+    body=f'<main tabindex="-1" id="main" class="shell"><section class="hero birdy-hero"><div><p class="kicker">{esc(s["eyebrow"])}</p><h1>{"<br>".join(esc(s["headline"]).splitlines())}</h1><p class="lede">{esc(s["lede"])}</p><div class="actions"><a class="button" href="#photos">Explore Birdy’s gallery ↓</a><a class="button secondary" href="#explore">Meet the co-pilot</a></div><p class="micro">{esc(s["note"])}</p></div><figure class="birdy-portrait"><img src="{esc(first["src"])}" alt="{esc(first["alt"])}" width="1600" height="1205" fetchpriority="high"><figcaption>Birdy / always good company.</figcaption></figure></section><div class="ribbon"><b>I AM BIRDY</b><span>Places. Moments. Field notes.</span><span>WITH JORDAN ↗</span></div>'+intro+render_gallery(media)+notes+faq+contact(s,mode)+'</main>'
     html=document(s,body,mode)
     html=html.replace('>Explore</a>', '>Our story</a>').replace('>The approach</a>', '>Travel notes</a>').replace('>Questions</a>', '>About Birdy</a>')
     html=html.replace('Pet &amp; travel journal. No claimed testimonials, certification, sales, or customer counts.', 'A life in photos.')
@@ -136,10 +136,10 @@ def write_site(s,path,mode):
     (path/'robots.txt').write_text('User-agent: *\nDisallow: /\n' if mode=='preview' or s['theme'] in ('heart','studio') else 'User-agent: *\nAllow: /\nSitemap: https://'+s['domain']+'/sitemap.xml\n')
     (path/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://'+s['domain']+'/</loc></url></urlset>')
     if s['theme']=='birdy':
-      for photo in json.loads((ROOT/'birdy-gallery.json').read_text()):
-        if photo['src'].startswith('assets/birdy/'):
-          target=path/photo['src']; target.parent.mkdir(parents=True,exist_ok=True)
-          shutil.copyfile(ROOT/photo['src'],target)
+      for item in json.loads((ROOT/'birdy-gallery.json').read_text()):
+        if item['src'].startswith('assets/birdy/'):
+          target=path/item['src']; target.parent.mkdir(parents=True,exist_ok=True)
+          shutil.copyfile(ROOT/item['src'],target)
     if s['theme']=='studio':
       for i,t in enumerate(['studio','ai','ghost'],1): (path/'assets'/f'study-{i}.svg').write_text(svg_art(t))
     if s['theme']=='lab' and 'primary' not in s:

@@ -1,7 +1,2060 @@
 [
   {
-    "src": "https://raw.githubusercontent.com/jordanistan/iambirdy/main/iambirdy.jpg",
+    "src": "assets/birdy/birdy-06cb4074424dc62b.webp",
+    "type": "image",
     "alt": "Birdy, a speckled brown and white dog wearing a pink collar, looking toward the camera outdoors",
     "caption": "Meet Birdy. The original photo from her website."
+  },
+  {
+    "src": "assets/birdy/birdy-daac8c425b97ccf6.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-1c7b8328169da9b6.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-97f97ce293ccc4ff.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3c880b659b37ec75.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c8cb11d189562369.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3c335e4a80a3bc6d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-e80e2e60117724cd.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-778e46ab92da8ea5.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cd9563bc28caf97b.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-104c08446d605f15.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ba4fe5fc009a7804.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a00ea31efdbf14c9.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-e021be6c28d2adbb.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c7733c433e0beea4.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d97d0e01e7d4cd99.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-038a17ba5a4a33bf.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-6e694c55126d135a.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-dc2f0dc1f0dcb4f0.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ad931a43c7dc7ed9.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bfc2c29ed50059d1.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a9d74510492fa1a6.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-2a8da275da01d573.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-69fc642ee68b6b2f.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-75910f640190045e.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-7f03b7e7a8a4e3f3.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-70d89e26d35a91f6.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cb0c6df1669d94c0.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ad51c3b3050d1213.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3fa188bab624f6cb.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c56fa896a0d3045b.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f120a992613deecc.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-39e15b9bfb1c6386.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9e80724d2d38c66d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9f5a721c4cd60a42.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b0a9ed2be53ae857.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ef9d1edfc7e6fb8c.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-245078171d140b3a.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b6c35b518c413877.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b1ac02a0226a69cb.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-8ad126fc4edad7c0.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-2072a6c99c949cd8.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f43ea8896c6424ca.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3ce5fab8dd9f96d8.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-034d890bbd4677d4.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b62394e3f75ab793.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-aed953d83839f48b.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d6396e2a387deff8.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9dc122b02e1a762f.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cfa707cbe6fcca54.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bf5861ace9f7b2e3.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a92c0cd0ade9bb0a.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-8419785d9bd17e7f.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f0d98fb6380dd87b.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c9cf41e434bc99c4.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d0890ef1df7a9140.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d3cb8e0db3742940.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-74891c7b957f8b96.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ceac3e6111fcfdea.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ac6181c4d9012ac4.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-2ebd48ec5cc0a955.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ce2dd7cc1fbe9106.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-0f74cef0ba8521ff.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-5f353947547d4e2d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c704cd5dab3e316c.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-23a8374043277506.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-7558169d2271ceed.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3a02175434546a52.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-5cb7d4ec35de81e9.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a54091f165d5d1f1.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-83c60eb2c7502199.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f864494c510664c8.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-61fdedcfb164e249.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c129ff22afd306c2.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-1e1674161e0a215a.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cf8b865892fefc70.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-8b4987bb1720b3f3.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-80520d4101f351ee.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-878bae3f5611fca9.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d280c050d4fd23af.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-7bc577c66706e0b4.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-94159fbaa5ec8e06.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d9d40a8f2393afda.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3245d9ee7d495494.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-6ecfaf2e37f0ae2d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ce3ce775f2330397.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-faebc57e4189f5b1.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-daaf252c882283c4.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-6897dfc9a65fbf62.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-991443d8cea2cbcf.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-94bbc96027b4c1ef.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-8d18b5f7f4e3fd4a.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c693ca68fe4b0e56.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-0941dfe3841e4a90.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f67bd1bad7e724c5.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-87b429d22f4f9409.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ac447439a9b65ebc.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c71d263c6b4ac049.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f558d12273525250.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-662528f331f4f79c.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-dff2a5c03367f475.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-905564a9bac060c4.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ce12eaa80d19272d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-107f2fe2b7e02c1d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-95891b0c84f4930d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f4d2d37ef11e7895.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-be59bad79591428f.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a2598b21569295e6.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c3e5a33cb24f3c85.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-7cba8eca85c3258f.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-827a0439033a7fbb.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-2cb75a80bb34d5f6.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-935c2f58ebf0ff3d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c71616f96037f283.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-deb8d1dc5d922f0d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-73a4702a4f693235.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bc3432a6547a8404.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-6926a5a6b00918f0.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-1fd641f13d059942.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-efd3c295c693945d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-5a2bafc5ecb10276.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-0e636013eed5866e.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-475a1f7d5d8b996f.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bae47224f24507e1.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-6b99213337f8558e.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bf63a6ed5f64636d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-6f2dd5d39029c436.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ab87b9c093449354.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bcd0254ca1c19bd5.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3de0f08358f7a48e.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b8b2236e88d97d98.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-6ab26be08487cedf.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-aed7ff54f3a66350.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-fe6d04332bbc430a.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-e1be31104dd69010.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9dd76a3f37fa4109.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-e54126821f07ac20.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f58ad305ee086325.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-57df0baf4bc3835e.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-2e6b599bd46271c8.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-59f91fee5d4c9a91.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c311770d0ca75ac3.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b05495d48e0b7657.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d838dc05ba437bd5.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c28eaeb0981297c8.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ca32c9880b1b09a5.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c50e0b037396b31d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f1ea3b0f3f4acef9.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-eadf37042a871bce.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b79da7116303536f.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-de08ded4ea824ec7.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-468d9b758d6a9b78.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-802f3376704a3a55.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b5e47f0ce953a827.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-144b434557005f6e.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-8b1639c6f3c946cc.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-44bc716c70202347.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-0369297cbeda3130.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-8f344539728b7202.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bd9f8ee1e7e4ccba.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-eed560b5954d8582.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-5e23aa8a43dce225.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cacbec53b7f1921c.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-88479ef6735fecb0.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-1db73bad5901d666.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-1c384d12c5234cd4.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3f6ba112065382f9.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d258d1ea2f75767e.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-630bb69f8c04b6cb.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-537f20f24c5d4d2c.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-869b1f922927ebc5.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-1f92adbc566c0dae.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-6820a32535da491d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a28deaa2f67383ed.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-5a7e6263af13317e.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-045f899ccb673506.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-0c2815d344208718.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-065f500377e71ec6.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-03f1db91d6c3c463.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-aaed09eae3fb9ebf.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b221c18a014ffe47.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9ba3be959d50e190.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-04f3deb5a81eda6a.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-627eba5fdac8d7aa.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f20f5979806b0488.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-edab479991660483.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b85fe782f36c1084.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-e9917db6fb9ae739.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cafb19d37f9b99d5.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d24775046ffe1780.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-8847c319f101b2da.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-20d43f9cf26b66bc.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c4ef08623da61cfd.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cc0d27a9fb71efe2.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cb4d8f59eb018155.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f7bae555d6b98013.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cb30e4077873b940.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d6b063f78a40fb4a.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-4bf888a1e13626dd.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-30c05f3f7c7279f4.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cf04048b6185553b.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-1e4c0d9c3566e380.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a0f1ad0209c43ba8.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cb3c5d13f26a613d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-05b1fb1cb4e69d46.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-e97210d982e3a923.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ecbb9c2960e2eefc.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-317ec7876d7995df.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-5109178eeea84873.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a1b9b9c724a7214f.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-46ab77a6557299dd.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-713fcc540d01387c.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-10ab64ec1e1e3415.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b896aee934c3103c.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b9c659caf34405a7.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-5713f4369d03303e.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-7ba309af86aa17d5.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-4f0c2dbb857e58d3.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-468205fb4ebb1dcc.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9ffbbe00a624e460.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-80850224e2cbe727.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-500b0da678bbd898.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3d6237581075f7d6.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ee882a273144d902.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-306210994883e113.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-580d0635edf5e9c3.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9849bd83277020fc.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-e109cebaf30a3d34.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9ff5995f50d3cbab.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b26126af0a9b5f43.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-37aa212981a0ea40.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-271d6cff13903d6c.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-072df052050a4d30.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f03ea43328d316c7.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-539ef87802c7aacc.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b9e8139923c13215.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a256239306f0a174.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-1ea0a538f252f7b8.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c4723ac9c904f25c.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-7229637b6fdfc522.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c9c1d7d132d854b5.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-e31889c86c3d259b.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a6493d899fdc1c64.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f1af76bccb50cf62.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bca13077153c1809.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bef996d6525a8b86.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f6d7e03ab34a62da.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-067d78d3618a1339.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-410fdccbf4ddf4bf.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-40f5e74897987f59.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-12e3430cc84ebe2a.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-999a75264615c05e.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-e8dcc3b5d5bb9a88.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-017bb0a809d1be5b.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-80d95b9bcd435d7b.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-699b0d6cce8a4995.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-0380d375b8e050e8.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-673e6f1f216273a7.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b1115850073a67c0.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b1ceb1e0c892b8f6.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-4dee69cbd48d0c5b.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-5a2f216e5c8c1b9e.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3d6ce5529d95bd12.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-97d6bd18ef4d6e76.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-66de8653fadd662c.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-c5a786dae0dbd702.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-7209662ae0cbc1bc.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-0ad3527fac2efd7c.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-78debc6c58b9ad9e.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-2abe2d54f0799788.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-895451911d2853a0.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-202dfa38ac140364.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d8df8dc7a16ab89d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-1ae15de798b68b8b.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-662561c613c45a18.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-6935953d65939cec.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-fd219d5d4129041d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-53c651c46c648f01.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-4e121eefcc6f4f23.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f9f7a788bf4201cc.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-2640908aedb8177f.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bb183232e96e53b1.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a999981e38becc43.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-6f44c5786581eeec.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-4b4274c11b5e2d34.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-76a9eadf36af81e3.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-791dfa4a206b383e.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-afbaac8a0e9ab9c4.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-2ff5cad4222fa341.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a326f4d3500ae8ca.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-cadc034878efe168.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d57f20e7136fbb41.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3325b980aee2e1d8.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-00bda9c4614cc89b.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d7ef9ae3c0d97c20.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-39eda2a9f18222c0.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-0a99ecaa70def721.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-1bd41c3c8f6777ee.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-fb1baf51c45b1269.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-52a947891036a452.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-08f14572d1af049d.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-88d134b7a353ca21.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-50a337d6b2c315cf.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-b4c95f744e65a114.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-4bd7f009113fc9b9.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ba061831a6a52601.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-fa65cb4dc19c7bdf.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bf4f643a4513d8b3.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-31430162d95dca1c.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-7f689425a3c37f05.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-152ac272fd7bf422.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-dd6d4140113ee2e2.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-db850db0559d7454.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9856ee1dc8f34d4f.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-0ce75eafeedef888.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a7fb8e4dccd7a652.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-1bcd5c2fe94ad6bf.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-047794c37269c61f.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-d54e62b93631369f.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-3321f98985adf4a0.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-bf6f36750890d36d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-379a4a7db47fe072.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-f40f3847ebc110af.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9333092ec283aa2a.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-12af81c1a62fe89f.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-4d1a45e170803732.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-a87ccb14575f1055.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-2f868dd5c0895450.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-752fd2edc935a7c9.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-43f5a393eaa24e6e.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-8ea983b7b617ffa7.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-8860e8838c62ff67.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-28e4fd17c4d6ab6d.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-85a65dc2864dc485.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-879784d452262ffe.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-ded71ddfb3dbaa6b.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-04e044eb1a34e496.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-7ab15d07e16a8f93.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9ce02fdb73c00d10.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-9a99c5a5fba21c02.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-5f956c1d12a4a560.webp",
+    "type": "image",
+    "alt": "Photo from Birdy's collection",
+    "caption": "A moment from Birdy's photo collection."
+  },
+  {
+    "src": "assets/birdy/birdy-111844f21be35778.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
+  },
+  {
+    "src": "assets/birdy/birdy-af0863a41a90f0e7.mp4",
+    "type": "video",
+    "alt": "Video from Birdy's collection",
+    "caption": "A video from Birdy's collection."
   }
 ]

@@ -1,5 +1,19 @@
 # P009 checkpoint — 2026-10-04
 
+## Full media continuation
+
+Branch in both repositories: `codex/birdy-full-gallery-20261004`. The completed lease at `45c397150ad0c22760d30df4eb48178e1d65d69d` was released by exact compare-and-swap, then P009 was reacquired at central main `b552641437913b551d32b156a475007480082c4f`.
+
+Imported all 342 supported files supplied locally by the owner: 301 standard images, 12 raw photos, and 29 videos. The existing hero is also represented by a stripped derivative, making 343 gallery entries total. All web media lives together under `portfolio/assets/birdy/` centrally and `site-assets/gallery/` natively. Original masters and the 7.6 GB archive remain local and unpublished.
+
+Privacy boundary: ImageMagick creates resized WebP derivatives with `-strip`; public names are opaque content hashes. ExifTool reported no EXIF, GPS, XMP, IPTC, or ICC fields in all 314 public WebP files. Videos were re-encoded with source metadata and chapters removed; no creation time, location, device make/model, or Android-version tags remained. The native staged-artifact checker rejects metadata-bearing images and its deliberate contamination regression failed as intended. No filenames, dates, places, or stories were inferred into public captions.
+
+Gallery changes: build-time manifests now distinguish images and videos; the scroll-snap deck renders native video controls with `preload="none"`; controls/counts use “item”; CSP adds self-only `media-src`; full-resolution local masters are ignored. Central and native renderers/manifests/assets are aligned.
+
+Passing checks: native JS and Python syntax, renderer escaping/path tests, 343 unique source/existence checks, fresh 2-page staged artifact with 0 errors, metadata rejection regression, metadata scans; central shared JS syntax, 5 release tests, 37-page preview artifact with 0 errors, and 2-page Birdy production artifact with 0 errors. Chromium loaded 343 items/29 videos at desktop size; its 390×844 check found no horizontal overflow, and Next/End navigation plus track focus passed. Remote CI/deployment and live verification remain pending.
+
+Next: visually review generic entries and replace generic alt/caption text with accurate owner-approved descriptions that do not expose private locations; publish PRs and observe CI/deploy before claiming live delivery. Native video controls are present, but playing every video through remains outside this automated check.
+
 Task: Birdy gallery and editorial rewrite / cloud / integration lead. Issue #47; fundraiser follow-up #48. Branch in both repos: `codex/birdy-photo-album-20261004`.
 
 Claim ref: `claims/P009`, acquired at `45c397150ad0c22760d30df4eb48178e1d65d69d` in `jordanistan/illnetwork`. No other claim was modified. P013 checker work remains excluded.

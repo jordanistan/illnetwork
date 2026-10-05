@@ -6,7 +6,9 @@ updated: 2026-10-04
 ---
 # Turn Birdy's photos into stories
 
-Source album supplied by Jordan: https://photos.app.goo.gl/hmzCdVn8bEniivNn8 . Access was denied in this cloud browser. Do not try alternate routes to bypass that denial. The native repository currently has one real photo, `iambirdy.jpg`; the new photo deck shows exactly that one photo. It does not automatically synchronize Google Photos.
+Update: the owner supplied a local folder containing 342 supported media files. All are now represented in the review gallery by metadata-free web derivatives with opaque public filenames. The full-resolution masters and archive remain local and unpublished. Generic alt text/captions deliberately avoid using embedded metadata or inferring locations; the editorial task below remains necessary for accurate, useful descriptions.
+
+Source album supplied by Jordan: https://photos.app.goo.gl/hmzCdVn8bEniivNn8 . Access was denied in this cloud browser. Do not try alternate routes to bypass that denial. The site does not automatically synchronize Google Photos; future additions must use an explicitly supplied local folder or selected uploads and pass the same privacy conversion.
 
 An owner-authenticated local Codex can work from photos Jordan downloads to an explicitly supplied local folder, or Jordan can upload selected photos here. Start with 6–12 favorites spanning different outings. Keep original full-resolution masters outside the public repository; add appropriately sized public copies with descriptive filenames. Preserve natural appearance. If editing images, follow the available image-editing instructions.
 

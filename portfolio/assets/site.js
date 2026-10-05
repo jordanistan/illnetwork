@@ -75,7 +75,7 @@ document.querySelectorAll('[data-photo-deck]').forEach(deck => {
   const render = () => {
     previous.disabled = index === 0;
     next.disabled = index === slides.length - 1;
-    status.textContent = `Photo ${index + 1} of ${slides.length}`;
+    status.textContent = `Item ${index + 1} of ${slides.length}`;
   };
   const go = (target, smooth = true) => {
     index = Math.max(0, Math.min(slides.length - 1, target));
