@@ -10,14 +10,14 @@
 .photo-track:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
 .photo-slide{flex:0 0 calc(100% - 64px);min-width:0;margin:0;scroll-snap-align:start;scroll-snap-stop:always;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper)}
 .photo-slide:only-child{flex-basis:100%}
-.photo-slide img{display:block;width:100%;height:clamp(240px,55vw,560px);object-fit:contain;background:var(--wash)}
+.photo-slide img,.photo-slide video{display:block;width:100%;height:clamp(240px,55vw,560px);object-fit:contain;background:var(--wash)}
 .photo-slide figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 22px;font-size:.85rem;color:var(--muted)}
 .photo-slide figcaption a{white-space:nowrap}
 .photo-deck-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;flex-wrap:wrap}
 .photo-deck-controls p{margin:0}
 .photo-deck-controls button:disabled{opacity:.45;cursor:default}
 @media(max-width:540px){.photo-slide{flex-basis:calc(100% - 28px)}.photo-slide figcaption{padding:14px}.photo-deck-controls .button{padding:12px 14px}.photo-deck-controls{gap:8px}}
-@media print{.photo-track{display:block;overflow:visible}.photo-slide{break-inside:avoid;margin-bottom:24px}.photo-deck-controls{display:none!important}.photo-slide img{height:auto}}
+@media print{.photo-track{display:block;overflow:visible}.photo-slide{break-inside:avoid;margin-bottom:24px}.photo-deck-controls,.photo-slide video{display:none!important}.photo-slide img,.photo-slide video{height:auto}}
 
 .birdy-hero{grid-template-columns:1.08fr 1fr;gap:48px}
 .birdy-hero h1{font-size:clamp(3rem,5.5vw,5.5rem)}

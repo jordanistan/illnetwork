@@ -38,3 +38,11 @@ No commercial DNS, checkout, subscriptions, company formation, outside messages 
 ## P003 launch-readiness documentation — October 4, 2026
 
 Existing native `jordanistan/PawfectWalks` repository discovered and preserved. Ten linked Obsidian-compatible notes and seven requirement issues (#39–#45) document how to complete launch readiness; see [P003_HANDOFF.md](pawsfect-walks/P003_HANDOFF.md). Public source contains generic drafts only. All seven operational confirmations remain pending. Native and ILL pricing/area/scope, form/email receipt, staffing/classification and merchant activation need actual evidence. Documentation completion does not complete P003 or enable paid care. Claim is retained with an exact-SHA local handoff/release command because connector ref deletion is unavailable.
+
+## P009 full media import — October 4, 2026
+
+All 342 supported owner-supplied local files were converted into privacy-stripped web derivatives: 301 standard images, 12 raw photos, and 29 videos. With the existing hero derivative, the Birdy gallery now contains 343 entries (314 images and 29 videos) in `portfolio/assets/birdy/`. Full-resolution masters and their archive remain outside the public source/artifact.
+
+Public filenames are opaque and the gallery uses generic captions pending owner-approved editorial notes. No original filenames, capture dates, inferred locations, or stories are shown. All public WebP files have no EXIF, GPS, XMP, IPTC, or ICC fields; the native artifact checker also rejects embedded image metadata. Videos were re-encoded without source metadata and use `preload="none"` with a self-only `media-src` CSP.
+
+Central checks passed: 5 release tests; 37-page preview artifact with 0 errors; 2-page Birdy production artifact with 0 errors; shared JS syntax; 314-image/29-video copy counts; 186 MB production size; metadata-marker scan. Native checks passed separately. Chromium loaded all 343 items and 29 videos at desktop size; at 390×844 it showed no horizontal overflow, Next advanced to item 2, End reached item 343, and focus remained on the track. PR CI, deployment, and live verification remain pending.

@@ -18,6 +18,11 @@ class ReleaseBoundaryTests(unittest.TestCase):
                 self.assertIn('noindex,nofollow',text)
             for domain in mod.CONFIG['excluded']: self.assertFalse((out/domain).exists())
             self.assertEqual(14,len([p for p in out.iterdir() if p.is_dir() and '.' in p.name]))
+            birdy=out/'iambirdy.com'; html=(birdy/'index.html').read_text()
+            self.assertEqual(314,len(list((birdy/'assets'/'birdy').glob('*.webp'))))
+            self.assertEqual(29,len(list((birdy/'assets'/'birdy').glob('*.mp4'))))
+            self.assertEqual(29,html.count('<video controls preload="none"'))
+            self.assertIn("media-src 'self'",html)
     def test_production_inquiry_requires_email_and_no_booking_capture(self):
         with tempfile.TemporaryDirectory() as d:
             out=Path(d)/'site'; mod.build('production',out,'pawsfectwalks.com')
