@@ -12,7 +12,9 @@ Gallery changes: build-time manifests now distinguish images and videos; the scr
 
 Passing checks: native JS and Python syntax, renderer escaping/path tests, 343 unique source/existence checks, fresh 2-page staged artifact with 0 errors, metadata rejection regression, metadata scans; central shared JS syntax, 5 release tests, 37-page preview artifact with 0 errors, and 2-page Birdy production artifact with 0 errors. Chromium loaded 343 items/29 videos at desktop size; its 390×844 check found no horizontal overflow, and Next/End navigation plus track focus passed. Remote CI/deployment and live verification remain pending.
 
-Next: visually review generic entries and replace generic alt/caption text with accurate owner-approved descriptions that do not expose private locations; publish PRs and observe CI/deploy before claiming live delivery. Native video controls are present, but playing every video through remains outside this automated check.
+Delivery evidence: central PR #51 merged at `5d6305a022eb7dcabc89e23c309a03439f5125fa`; native PR #5 merged at `3eefe1b5fc89d8d499877406e94c6fcb4cb511d4`. All observed post-merge Pages/checks, security, CodeQL, and dependency workflows succeeded (central runs 37257796069, 37257796070, 37257796052, 37257795394, 37257795482; native runs 37257799235, 37257799231, 37257798098). Live `https://iambirdy.com/` served 343 slides/29 videos, the sampled video returned HTTP 200 with byte ranges, and the served hero contained no sensitive image metadata.
+
+Next: visually review generic entries and replace generic alt/caption text with accurate owner-approved descriptions that do not expose private locations. Native video controls are present, but playing every video through remains outside this automated check.
 
 Task: Birdy gallery and editorial rewrite / cloud / integration lead. Issue #47; fundraiser follow-up #48. Branch in both repos: `codex/birdy-photo-album-20261004`.
 
