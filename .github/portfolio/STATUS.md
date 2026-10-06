@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 4, 2026
+# Portfolio checkpoint — October 6, 2026
 
 ## Shipped
 
@@ -46,3 +46,11 @@ All 342 supported owner-supplied local files were converted into privacy-strippe
 Public filenames are opaque and the gallery uses generic captions pending owner-approved editorial notes. No original filenames, capture dates, inferred locations, or stories are shown. All public WebP files have no EXIF, GPS, XMP, IPTC, or ICC fields; the native artifact checker also rejects embedded image metadata. Videos were re-encoded without source metadata and use `preload="none"` with a self-only `media-src` CSP.
 
 Central checks passed: 5 release tests; 37-page preview artifact with 0 errors; 2-page Birdy production artifact with 0 errors; shared JS syntax; 314-image/29-video copy counts; 186 MB production size; metadata-marker scan. Native checks passed separately. Chromium loaded all 343 items and 29 videos at desktop size; at 390×844 it showed no horizontal overflow, Next advanced to item 2, End reached item 343, and focus remained on the track. PR CI, deployment, and live verification remain pending.
+
+## P006 professional portfolio polish — October 6, 2026
+
+Native [iamjordanrobison PR #64](https://github.com/jordanistan/iamjordanrobison/pull/64) merged as `41c0c9ce29c9462406c311d752662c792aa2fb4a`. The GitHub Pages review now leads with a résumé-grounded recruiter brief, selected experience, inspectable public work, and a direct download of `Jordan_Robison_2026-Resume.pdf`. No live inquiry capture, scheduling, checkout, tracker, external script, or unverified credential was added.
+
+An independent review caught and resolved unsupported location/job-search wording, an embedded PDF Content Credentials attachment, and an incomplete native validation instruction. The published PDF was structurally re-exported with pixel-identical rendering and exact extracted-text parity; it remains a tagged two-page document with no form, JavaScript, attachment, model metadata, or external action. The artifact checker now rejects those PDF features. The combined 39-page artifact, Gitleaks, GitGuardian, and CodeQL checks passed. Post-merge Pages run [37547571692](https://github.com/jordanistan/iamjordanrobison/actions/runs/37547571692) succeeded; the [live root](https://iamjordanrobison.com/) and [live résumé](https://iamjordanrobison.com/Jordan_Robison_2026-Resume.pdf) returned HTTP 200, and the live PDF matched SHA-256 `da94f1bdb9f5d76d2294f328e711149cd90f5365014d4384c25921fa4c233449`.
+
+This P006 change is limited to the native educational review. The separate production generator remains unchanged while P009 owns shared central files. Owner actions and the exact lease-release command are recorded in [issue #56](https://github.com/jordanistan/illnetwork/issues/56). The non-applicable env0 Terraform integration still fails on this static repository and requires owner/admin scoping rather than invented Terraform configuration.
