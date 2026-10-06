@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04",
+  "updated": "2026-10-06",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -51,6 +51,15 @@
         "deployment": "success",
         "url": "https://iamjordanrobison.com/domain-previews/review.html",
         "http_verification": "403 initially; 404 on follow-up with browser user-agent; owner Pages source/admin check needed"
+      },
+      "recruiter_review": {
+        "pr": 64,
+        "sha": "41c0c9ce29c9462406c311d752662c792aa2fb4a",
+        "pages_run": 37547571692,
+        "deployment": "success",
+        "url": "https://iamjordanrobison.com/",
+        "resume_url": "https://iamjordanrobison.com/Jordan_Robison_2026-Resume.pdf",
+        "http_verification": "root and resume HTTP 200; live PDF matched reviewed SHA-256; 0 attachments, forms or JavaScript"
       }
     },
     "starfieldstudio": {
@@ -69,7 +78,7 @@
     "P003": "documentation prepared: 10 native notes and 7 tasks #39–#45; owner confirmation, insurer/legal review and live operational tests pending",
     "P004": "review build ready; final client process needed",
     "P005": "owner hosting connection needed",
-    "P006": "ready",
+    "P006": "complete in native PR #64; Pages run 37547571692 and live root/resume HTTP 200; production-source sync deferred while P009 owns shared generator/assets",
     "P007": "ready",
     "P008": "ready",
     "P009": "owner experience needed",
@@ -88,6 +97,7 @@
     "P003": 29,
     "P004": 30,
     "P005": 31,
+    "P006": 56,
     "P007": 32,
     "P008": 33
   },
