@@ -80,6 +80,7 @@ To use a remote agent, configure `AGENT_TOKEN`, then run `Illnet-Rx/agent/instal
 
 - `setup.sh` — checkout and pipe-safe installer.
 - `compose.yaml` — canonical Docker Compose deployment.
+- `learning-labs/` — safe, reproducible Linux, infrastructure, and intelligent-workflow exercises.
 - `Illnet-Rx/scanner/` — plugin scanner and report parser.
 - `Illnet-Rx/webui/` — Flask application, templates, and report routes.
 - `Illnet-Rx/data/reports/` — persisted raw and generated reports.

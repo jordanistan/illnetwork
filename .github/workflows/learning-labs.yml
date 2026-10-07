@@ -1,0 +1,29 @@
+name: Learning lab checks
+
+on:
+  pull_request:
+    branches: [main]
+    paths: ['learning-labs/**', '.github/workflows/learning-labs.yml']
+  push:
+    branches: [main]
+    paths: ['learning-labs/**', '.github/workflows/learning-labs.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: learning-labs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Run offline standard-library exercises
+        run: python3 -m unittest discover -s learning-labs/tests -v
