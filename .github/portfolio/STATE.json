@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -14,6 +14,7 @@
   ],
   "local_verification": {
     "release_boundary_tests": "5 passed",
+    "learning_lab_tests": "5 passed; local-only inventory, create-only output, synthetic restore integrity, cross-platform traversal rejection and deterministic review-gate detection",
     "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
     "production_artifacts": "all 14 built and checked",
     "javascript_syntax": "passed",
@@ -71,7 +72,7 @@
   },
   "commercial_deployments": "not configured",
   "native_secret_scanning_and_push_protection": "unverified",
-  "next_task": "P008 learning labs (desktop) or P003 prerequisites (laptop); P001 requires account administration",
+  "next_task": "Review and merge P008 PR #58 after checks; otherwise P003 owner prerequisites or unclaimed P007; P001 requires account administration",
   "tasks": {
     "P001": "deployment jobs success; central 403/HTTP redirect and mirror 404 require account administration",
     "P002": "complete in PR #35; merge 2bdb15e37746fbfa29ffc717187c5827da9b3673; lease released",
@@ -80,11 +81,20 @@
     "P005": "owner hosting connection needed",
     "P006": "complete in native PR #64; Pages run 37547571692 and live root/resume HTTP 200; production-source sync deferred while P009 owns shared generator/assets",
     "P007": "ready",
-    "P008": "ready",
+    "P008": "implementation in PR #58; checks and merge verification pending; shared Pages generator unchanged while P009 owns it",
     "P009": "owner experience needed",
     "P010": "ready",
     "P011": "clearance/fulfillment needed",
     "P012": "professional review needed"
+  },
+  "learning_labs": {
+    "issue": 33,
+    "pull_request": 58,
+    "branch": "codex/p008-learning-labs-20261007",
+    "commit": "9d9e7d714270c04b1763e31e08dbc5d46829915a",
+    "status": "reviewable source implementation; GitHub checks and merge pending",
+    "checks": "5 offline lab tests, 5 release-boundary tests, 37-page preview artifact and all 14 separate production exports passed locally",
+    "pages_scope": "unchanged to avoid collision with active P009 shared-generator claim"
   },
   "observed_security": "Gitleaks and active CodeQL scans passed in all five repositories; scanner dependency audit passed",
   "automation": {

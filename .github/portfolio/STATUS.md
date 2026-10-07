@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 6, 2026
+# Portfolio checkpoint — October 7, 2026
 
 ## Shipped
 
@@ -54,3 +54,11 @@ Native [iamjordanrobison PR #64](https://github.com/jordanistan/iamjordanrobison
 An independent review caught and resolved unsupported location/job-search wording, an embedded PDF Content Credentials attachment, and an incomplete native validation instruction. The published PDF was structurally re-exported with pixel-identical rendering and exact extracted-text parity; it remains a tagged two-page document with no form, JavaScript, attachment, model metadata, or external action. The artifact checker now rejects those PDF features. The combined 39-page artifact, Gitleaks, GitGuardian, and CodeQL checks passed. Post-merge Pages run [37547571692](https://github.com/jordanistan/iamjordanrobison/actions/runs/37547571692) succeeded; the [live root](https://iamjordanrobison.com/) and [live résumé](https://iamjordanrobison.com/Jordan_Robison_2026-Resume.pdf) returned HTTP 200, and the live PDF matched SHA-256 `da94f1bdb9f5d76d2294f328e711149cd90f5365014d4384c25921fa4c233449`.
 
 This P006 change is limited to the native educational review. The separate production generator remains unchanged while P009 owns shared central files. Owner actions and the exact lease-release command are recorded in [issue #56](https://github.com/jordanistan/illnetwork/issues/56). The non-applicable env0 Terraform integration still fails on this static repository and requires owner/admin scoping rather than invented Terraform configuration.
+
+## P008 ill.network learning labs — October 7, 2026
+
+[PR #58](https://github.com/jordanistan/illnetwork/pull/58) adds three source-level, standard-library-only exercises for the Independent Linux, Infrastructure and Intelligent Learning Lab tracks. The exercises create a deliberately limited local Linux inventory, verify a synthetic archive/restore cycle and evaluate a deterministic human-review gate. Each includes setup, expected outcomes, verification, limitations and cleanup guidance.
+
+Five offline lab tests passed, including create-only output behavior, selected-field parsing, cross-platform archive traversal rejection, restored hash equality and unsafe-candidate detection. The existing five release-boundary tests, 37-page preview check and all 14 separate production export checks still pass. A new least-privilege Action uses a full-SHA checkout pin, disables persisted credentials and receives no secrets or write permission. Independent review found no high-severity issue; its overwrite, archive-path, privacy-wording and coverage findings were resolved before publication.
+
+The shared generator and Pages artifact were deliberately unchanged because P009 owns those paths. Illnet Rx scanner/runtime/downloads, Birdy media, DNS and held domains remain untouched. PR checks and merge verification are pending. After P009 releases the generator, the owner can decide whether to add a direct Pages link to the repository labs.
