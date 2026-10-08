@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -15,6 +15,7 @@
   "local_verification": {
     "release_boundary_tests": "5 passed",
     "learning_lab_tests": "5 passed; local-only inventory, create-only output, synthetic restore integrity, cross-platform traversal rejection and deterministic review-gate detection",
+    "find_fido_dataset_tests": "8 passed; approved HTTPS sources, unique IDs, fixed unpublished metadata, official-URL evidence, uncertainty and prohibited commerce/rating/personal-location fields",
     "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
     "production_artifacts": "all 14 built and checked",
     "javascript_syntax": "passed",
@@ -72,7 +73,7 @@
   },
   "commercial_deployments": "not configured",
   "native_secret_scanning_and_push_protection": "unverified",
-  "next_task": "P003 owner prerequisites or unclaimed P007; P001 requires account administration; defer any direct learning-lab Pages link until P009 releases shared generator paths",
+  "next_task": "P003 owner prerequisites; P001 and P005 require account administration; P009 remains actively claimed; preserve every native site's established design",
   "tasks": {
     "P001": "deployment jobs success; central 403/HTTP redirect and mirror 404 require account administration",
     "P002": "complete in PR #35; merge 2bdb15e37746fbfa29ffc717187c5827da9b3673; lease released",
@@ -80,7 +81,7 @@
     "P004": "review build ready; final client process needed",
     "P005": "owner hosting connection needed",
     "P006": "complete in native PR #64; Pages run 37547571692 and live root/resume HTTP 200; production-source sync deferred while P009 owns shared generator/assets",
-    "P007": "ready",
+    "P007": "complete in PR #60; merge 2371fa8c70408514353062cae157a4be02aeb863; three PR workflows passed; unpublished dataset verified on main; no site design or generator change",
     "P008": "complete in PR #58; merge 4e63490ececa9f29d9dc4e54590fc7f01a4107f1; all three PR workflows passed; reviewed sources verified on main; shared Pages generator unchanged while P009 owns it",
     "P009": "owner experience needed",
     "P010": "ready",
@@ -96,6 +97,17 @@
     "checks": "5 offline lab tests, 5 release-boundary tests, 37-page preview artifact and all 14 separate production exports passed locally; PR workflow runs 37699124894, 37699124900 and 37699124837 passed",
     "main_verification": "learning-labs/README.md blob ad07880d62236cc9365629cd1ac4d99439260568 and .github/workflows/learning-labs.yml blob 2fdb1e7ef29c69c25a4f053d8c33fe82a7e67382 fetched from main; no main-push workflow run surfaced after API merge",
     "pages_scope": "unchanged to avoid collision with active P009 shared-generator claim"
+  },
+  "find_fido_dataset": {
+    "issue": 32,
+    "pull_request": 60,
+    "commit": "2371fa8c70408514353062cae157a4be02aeb863",
+    "status": "complete, merged and deliberately unpublished",
+    "listing_count": 4,
+    "checked_on": "2026-10-08",
+    "checks": "8 dataset tests and 13 portfolio tests passed; 37-page preview and all 14 separate production exports passed; workflow runs 37859633656, 37859633510 and 37859633564 passed",
+    "main_verification": "portfolio/find-fido-austin.json fetched from main; SHA-256 129c42e41b5a383bb349ccdafee33f04573a7b59d9ad5eb2b2378014355d799c",
+    "publication_gate": "recheck official sources and obtain owner approval for any presentation change after P009 releases shared generator paths"
   },
   "observed_security": "Gitleaks and active CodeQL scans passed in all five repositories; scanner dependency audit passed",
   "automation": {
