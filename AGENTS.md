@@ -27,3 +27,7 @@ GitHub Pages is an educational review surface: build `--mode preview`, with no i
 Run release-boundary tests, JavaScript syntax checks, preview artifact checks, and the affected production export check. Add tests for actual boundaries, not mirror tests for cosmetic changes. Where browser QA is available, test mobile/desktop, keyboard focus, local tools, print layouts, and console errors. Record skipped browser QA honestly.
 
 Before context exhaustion, commit/push completed work, update STATUS and the issue with task ID, branch, commit, tests, remaining steps, and blockers. Never claim push, merge, deployment, customer acquisition, or revenue without evidence. Limit public status to build/project facts. Do not publish Jordan's finances or family details.
+
+## Website design approval — owner instruction, October 8, 2026
+
+Preserve the established appearance, user interface, layout, typography, colors, imagery, and look and feel of every existing website. Do not redesign, restyle, or replace a live site's design as part of content, security, automation, monetization, or portfolio work. Jordan will communicate UI preferences when a redesign is needed. Obtain Jordan's explicit approval before making design changes; broad permission to continue project work does not authorize them. The original iamjordanrobison.com design was restored at Jordan's request after the October redesigns. Do not republish the central portfolio review over that native site.
