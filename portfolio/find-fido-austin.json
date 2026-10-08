@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "dataset_id": "find-fido-austin-starter",
+  "checked_on": "2026-10-08",
+  "editorial_status": "reviewed_source_dataset_not_published",
+  "website_integration": "deferred_until_shared_generator_claim_is_released",
+  "boundaries": {
+    "official_sources_only": true,
+    "business_or_park_locations_only": true,
+    "user_submissions": false,
+    "marketplace_booking": false,
+    "ratings_or_rankings": false,
+    "paid_placement": false
+  },
+  "listings": [
+    {
+      "id": "red-bud-isle",
+      "name": "Red Bud Isle",
+      "category": "parks",
+      "location": "3401 Red Bud Trl., Austin, TX 78746",
+      "official_url": "https://www.austintexas.gov/parks/locations/park-directory",
+      "dog_policy_status": "designated_off_leash",
+      "dog_policy_summary": "City materials identify Red Bud Isle as a designated off-leash area. Dogs must be leashed while entering and leaving, remain within sight and sound control, and handlers must remove waste.",
+      "availability": "verify_before_visit",
+      "sponsorship": "none",
+      "verification_state": "source_checked_not_live_tested",
+      "evidence": [
+        {
+          "url": "https://www.austintexas.gov/parks/locations/park-directory",
+          "checked_on": "2026-10-08",
+          "supports": "Official park name and public park street address."
+        },
+        {
+          "url": "https://www.austintexas.gov/parks/programs/dog-parks-leash-areas",
+          "checked_on": "2026-10-08",
+          "supports": "City off-leash rules, general park hours, and notice that access can change."
+        },
+        {
+          "url": "https://austin.widen.net/s/skvmtsprpv/off-leash-area-map-2026_02",
+          "checked_on": "2026-10-08",
+          "supports": "Current City-linked 2026 off-leash area map."
+        },
+        {
+          "url": "https://www.austintexas.gov/watershed-protection/algae-austins-waterways",
+          "checked_on": "2026-10-08",
+          "supports": "Current City waterway advisory reporting blue-green algae at Red Bud Isle and explaining the risk to dogs."
+        }
+      ],
+      "uncertainty": [
+        "The City reported blue-green algae at Red Bud Isle on October 6, 2026; some blue-green algae can produce toxins that harm or kill dogs.",
+        "Keep dogs away from visible algae and check the current City algae advisory before any water contact.",
+        "Maintenance, events, water conditions, or posted notices can also limit access.",
+        "Confirm current City notices and signs before allowing a dog off leash."
+      ]
+    },
+    {
+      "id": "great-northern-dam-far-west",
+      "name": "Great Northern Dam Far West Off Leash Area",
+      "category": "parks",
+      "location": "7001 Great Northern Blvd., Austin, TX 78757",
+      "official_url": "https://www.austintexas.gov/parks/locations/park-directory",
+      "dog_policy_status": "designated_off_leash",
+      "dog_policy_summary": "The City park directory identifies this as an off-leash area. Dogs must be leashed while entering and leaving, remain within sight and sound control, and handlers must remove waste.",
+      "availability": "verify_before_visit",
+      "sponsorship": "none",
+      "verification_state": "source_checked_not_live_tested",
+      "evidence": [
+        {
+          "url": "https://www.austintexas.gov/parks/locations/park-directory",
+          "checked_on": "2026-10-08",
+          "supports": "Official off-leash-area name and public park street address."
+        },
+        {
+          "url": "https://www.austintexas.gov/parks/programs/dog-parks-leash-areas",
+          "checked_on": "2026-10-08",
+          "supports": "City off-leash rules, general park hours, and notice that access can change."
+        }
+      ],
+      "uncertainty": [
+        "The directory does not establish fencing, surface condition, water access, or current crowding.",
+        "Confirm current City notices and signs before allowing a dog off leash."
+      ]
+    },
+    {
+      "id": "meanwhile-brewing",
+      "name": "Meanwhile Brewing Company",
+      "category": "patios",
+      "location": "3901 Promontory Point Dr., Austin, TX 78744",
+      "official_url": "https://www.meanwhilebeer.com/contact",
+      "dog_policy_status": "leashed_welcome",
+      "dog_policy_summary": "The official FAQ welcomes well-behaved dogs when they remain leashed, excludes dogs from the soccer field, and says misbehaving dogs may be asked to leave.",
+      "availability": "verify_before_visit",
+      "sponsorship": "none",
+      "verification_state": "source_checked_not_live_tested",
+      "evidence": [
+        {
+          "url": "https://www.meanwhilebeer.com/contact",
+          "checked_on": "2026-10-08",
+          "supports": "Official dog policy and business-level street address."
+        }
+      ],
+      "uncertainty": [
+        "The FAQ does not guarantee space, event access, weather suitability, or service at a particular time.",
+        "Recheck the official FAQ and current hours before visiting."
+      ]
+    },
+    {
+      "id": "mckinney-falls-state-park",
+      "name": "McKinney Falls State Park",
+      "category": "travel",
+      "location": "5808 McKinney Falls Pkwy., Austin, TX 78744",
+      "official_url": "https://tpwd.texas.gov/state-parks/mckinney-falls",
+      "dog_policy_status": "leashed_with_restrictions",
+      "dog_policy_summary": "The current park map requires pets to remain attended on a leash no longer than six feet. Pets are not allowed in the water, public buildings, cabin area, or youth group area.",
+      "availability": "verify_before_visit",
+      "sponsorship": "none",
+      "verification_state": "source_checked_not_live_tested",
+      "evidence": [
+        {
+          "url": "https://tpwd.texas.gov/state-parks/mckinney-falls",
+          "checked_on": "2026-10-08",
+          "supports": "Official park identity, public park street address, capacity warning, hours, and restriction against pets in the water."
+        },
+        {
+          "url": "https://tpwd.texas.gov/publications/pwdpubs/media/park_maps/pwd_mp_p4505_090d.pdf",
+          "checked_on": "2026-10-08",
+          "supports": "Current facility-map rules for leash length, attendance, water, buildings, cabins, and youth areas."
+        }
+      ],
+      "uncertainty": [
+        "The park can reach capacity and creek conditions can change after rainfall.",
+        "Confirm current conditions and entry availability with the park before travel."
+      ]
+    }
+  ]
+}
