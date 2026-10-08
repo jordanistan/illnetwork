@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 7, 2026
+# Portfolio checkpoint — October 8, 2026
 
 ## Shipped
 
@@ -64,3 +64,11 @@ Five offline lab tests passed, including create-only output behavior, selected-f
 All three PR workflow runs passed: [learning labs](https://github.com/jordanistan/illnetwork/actions/runs/37699124894), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/37699124900) and [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/37699124837). The merged lab guide and workflow were fetched back from `main` at their reviewed blob SHAs. No main-push workflow run surfaced through the connector after the API merge; the source-only change does not require or claim a Pages deployment.
 
 The shared generator and Pages artifact were deliberately unchanged because P009 owns those paths. Illnet Rx scanner/runtime/downloads, Birdy media, DNS and held domains remain untouched. After P009 releases the generator, the owner can decide whether to add a direct Pages link to the repository labs.
+
+## P007 verified Find Fido Austin dataset — October 8, 2026
+
+[PR #60](https://github.com/jordanistan/illnetwork/pull/60) merged as `2371fa8c70408514353062cae157a4be02aeb863`. It adds an unpublished four-place Austin starter dataset covering Red Bud Isle, Great Northern Dam Far West Off Leash Area, Meanwhile Brewing Company and McKinney Falls State Park. Each entry records official government/operator evidence, a public park or business address, dog-policy summary, 2026-10-08 check date, uncertainty and a verify-before-visit state.
+
+Eight dataset tests enforce approved HTTPS source hosts, unique IDs, fixed unpublished/deferred metadata, official-URL evidence, uncertainty and prohibitions on ratings, personal-location fields and root commerce/publication fields. All 13 portfolio tests, the 37-page preview and all 14 separate production export checks passed. PR runs for [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/37859633656), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/37859633510) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/37859633564) succeeded. Independent review approved merge after an explicit current Red Bud Isle blue-green algae warning and stricter schema tests were added.
+
+The reviewed dataset was fetched back from `main` with SHA-256 `129c42e41b5a383bb349ccdafee33f04573a7b59d9ad5eb2b2378014355d799c`. It is not integrated into the website, so no Pages deployment or UI change is claimed. P009 still owns the shared generator/assets, and Jordan's October 8 design-preservation instruction remains in force. Recheck every official source before future publication.
