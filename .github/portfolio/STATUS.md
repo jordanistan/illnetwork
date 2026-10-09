@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 8, 2026
+# Portfolio checkpoint — October 9, 2026
 
 ## Shipped
 
@@ -72,3 +72,11 @@ The shared generator and Pages artifact were deliberately unchanged because P009
 Eight dataset tests enforce approved HTTPS source hosts, unique IDs, fixed unpublished/deferred metadata, official-URL evidence, uncertainty and prohibitions on ratings, personal-location fields and root commerce/publication fields. All 13 portfolio tests, the 37-page preview and all 14 separate production export checks passed. PR runs for [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/37859633656), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/37859633510) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/37859633564) succeeded. Independent review approved merge after an explicit current Red Bud Isle blue-green algae warning and stricter schema tests were added.
 
 The reviewed dataset was fetched back from `main` with SHA-256 `129c42e41b5a383bb349ccdafee33f04573a7b59d9ad5eb2b2378014355d799c`. It is not integrated into the website, so no Pages deployment or UI change is claimed. P009 still owns the shared generator/assets, and Jordan's October 8 design-preservation instruction remains in force. Recheck every official source before future publication.
+
+## P014 artifact allowlist hardening — October 9, 2026
+
+[PR #62](https://github.com/jordanistan/illnetwork/pull/62) merged as `cbcdb733256c6e6bf610f856723ff3cc164e67d2` and closes [issue #37](https://github.com/jordanistan/illnetwork/issues/37). The artifact checker now rejects builds with no HTML and every file outside the documented generated-output allowlist. Domain-specific ILL lab downloads, Starfield studies and Birdy media/assets are restricted to their matching domains, and every isolated production check must declare its domain explicitly.
+
+Twenty portfolio tests passed, including new negative coverage for empty artifacts, arbitrary text, held-domain paths, cross-brand files and a nested active-domain bypass. The 37-page educational review and all 14 separate production exports passed with zero errors. PR runs for [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38002612754), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38002612713) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/38002612825) succeeded. Independent review found two cross-domain scoping gaps in draft code; both were fixed and regression-tested before approval and merge.
+
+No website content, appearance, generator assets, scanner, DNS, inquiry path, held domain or unreleased product changed. Pages remains an educational review and production exports remain separate.
