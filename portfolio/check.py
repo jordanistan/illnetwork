@@ -1,10 +1,60 @@
 #!/usr/bin/env python3
-"""Validate the publish artifact: links, fragments, CSP, and preview boundaries."""
+"""Validate publish artifacts, including an explicit file allowlist."""
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 import re, sys, json
 import xml.etree.ElementTree as ET
+
+ROOT = Path(__file__).resolve().parent
+CONFIG = json.loads((ROOT / 'sites.json').read_text())
+ACTIVE_DOMAINS = frozenset(
+    site['domain'] for site in CONFIG['sites'] + CONFIG['aliases']
+)
+STARFIELD_DOMAINS = frozenset(
+    domain for domain in ACTIVE_DOMAINS if domain.startswith('starfieldstudio.')
+)
+
+SITE_FILES = frozenset({
+    '.nojekyll',
+    '_headers',
+    'index.html',
+    'privacy.html',
+    'robots.txt',
+    'sitemap.xml',
+    'assets/favicon.svg',
+    'assets/hero.svg',
+    'assets/site.css',
+    'assets/site.js',
+})
+LAB_FILE = re.compile(r'labs/(?:ai|infrastructure|linux)\.(?:html|txt)\Z')
+STUDY_FILE = re.compile(r'assets/study-[1-3]\.svg\Z')
+BIRDY_MEDIA = re.compile(r'assets/birdy/birdy-[0-9a-f]{16}\.(?:mp4|webp)\Z')
+BIRDY_ASSET = re.compile(r'assets/site-[0-9a-f]{12}\.(?:css|js)\Z')
+
+
+def allowed_artifact_file(relative, root_domain=None):
+    """Return whether *relative* is an approved generated artifact path.
+
+    Full previews contain one directory for each configured active domain. A
+    single-domain production export contains the same site files at its root.
+    The review catalog is allowed only at the artifact root.
+    """
+    relative = relative.as_posix()
+    parts = relative.split('/')
+    artifact_domain = root_domain or 'ill.network'
+    if root_domain is None and parts[0] in ACTIVE_DOMAINS:
+        artifact_domain = parts[0]
+        relative = '/'.join(parts[1:])
+    if relative == 'review.html' and len(parts) == 1 and root_domain is None:
+        return True
+    return (
+        relative in SITE_FILES
+        or (artifact_domain == 'ill.network' and bool(LAB_FILE.fullmatch(relative)))
+        or (artifact_domain in STARFIELD_DOMAINS and bool(STUDY_FILE.fullmatch(relative)))
+        or (artifact_domain == 'iambirdy.com' and bool(BIRDY_MEDIA.fullmatch(relative)))
+        or (artifact_domain == 'iambirdy.com' and bool(BIRDY_ASSET.fullmatch(relative)))
+    )
 
 class Page(HTMLParser):
     def __init__(self):
@@ -29,8 +79,10 @@ class Page(HTMLParser):
         if key and a.get(key): self.refs.append(('canonical' if tag=='link' and a.get('rel')=='canonical' else tag,a[key]))
 
 
-def check(root):
+def check(root, domain=None):
     root=root.resolve(); errors=[]; pages={}
+    if domain is not None and domain not in ACTIVE_DOMAINS:
+        errors.append(f'Unknown artifact domain: {domain}')
     for p in root.rglob('*.html'):
         d=Page(); d.feed(p.read_text()); pages[p]=d
         for e in d.errors: errors.append(f'{p.relative_to(root)}: {e}')
@@ -50,10 +102,16 @@ def check(root):
             if not target.is_relative_to(root): errors.append(f'{p.name}: reference leaves artifact'); continue
             if not target.is_file(): errors.append(f'{p.relative_to(root)}: missing {ref}'); continue
             if u.fragment and target.suffix=='.html' and unquote(u.fragment) not in pages[target].ids: errors.append(f'{p.name}: missing fragment {ref}')
-    banned={'.env','.git','AGENTS.md','README.md','STATUS.md','sites.json','build.py','check.py','requirements.txt','compose.yaml'}
+    if not pages:
+        errors.append('Artifact contains no HTML pages')
     for p in root.rglob('*'):
-        if p.name in banned or p.name.startswith('.env') or p.is_symlink(): errors.append(f'Internal file/symlink in artifact: {p.relative_to(root)}')
+        relative=p.relative_to(root)
+        if p.is_symlink():
+            errors.append(f'Internal file/symlink in artifact: {relative}')
+            continue
         if not p.is_file(): continue
+        if not allowed_artifact_file(relative, domain):
+            errors.append(f'Unexpected file in artifact: {relative}')
         if p.suffix=='.js':
             js=p.read_text()
             if re.search(r'\b(eval|fetch|localStorage|sessionStorage)\b|innerHTML|document\.write|new Function',js): errors.append(f'Unsafe JS sink/network/storage in {p.name}')
@@ -67,5 +125,9 @@ def check(root):
     print(f'Artifact check: {len(pages)} pages, {len(errors)} errors')
     return errors
 if __name__=='__main__':
-    if len(sys.argv)!=2: raise SystemExit('Usage: check.py <artifact-directory>')
-    raise SystemExit(bool(check(Path(sys.argv[1]))))
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('artifact_directory')
+    parser.add_argument('--domain', choices=sorted(ACTIVE_DOMAINS))
+    args=parser.parse_args()
+    raise SystemExit(bool(check(Path(args.artifact_directory), args.domain)))

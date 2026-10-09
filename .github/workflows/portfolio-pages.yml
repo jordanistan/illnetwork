@@ -39,7 +39,7 @@ jobs:
           for site in config['sites'] + config['aliases']:
               output=f"_production/{site['domain']}"
               subprocess.run(['python3','portfolio/build.py','--mode','production','--domain',site['domain'],'--output',output],check=True)
-              subprocess.run(['python3','portfolio/check.py',output],check=True)
+              subprocess.run(['python3','portfolio/check.py',output,'--domain',site['domain']],check=True)
           PY
       - name: Upload only the review artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
