@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -16,6 +16,7 @@
     "release_boundary_tests": "5 passed",
     "learning_lab_tests": "5 passed; local-only inventory, create-only output, synthetic restore integrity, cross-platform traversal rejection and deterministic review-gate detection",
     "find_fido_dataset_tests": "8 passed; approved HTTPS sources, unique IDs, fixed unpublished metadata, official-URL evidence, uncertainty and prohibited commerce/rating/personal-location fields",
+    "artifact_allowlist_tests": "7 passed; empty, arbitrary, held-domain, cross-brand and nested active-domain artifacts rejected; matching generated paths accepted",
     "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
     "production_artifacts": "all 14 built and checked",
     "javascript_syntax": "passed",
@@ -86,7 +87,8 @@
     "P009": "owner experience needed",
     "P010": "ready",
     "P011": "clearance/fulfillment needed",
-    "P012": "professional review needed"
+    "P012": "professional review needed",
+    "P014": "complete in PR #62; merge cbcdb733256c6e6bf610f856723ff3cc164e67d2; all three PR workflows passed; no website content or design change"
   },
   "learning_labs": {
     "issue": 33,
@@ -109,6 +111,15 @@
     "main_verification": "portfolio/find-fido-austin.json fetched from main; SHA-256 129c42e41b5a383bb349ccdafee33f04573a7b59d9ad5eb2b2378014355d799c",
     "publication_gate": "recheck official sources and obtain owner approval for any presentation change after P009 releases shared generator paths"
   },
+  "artifact_allowlist": {
+    "issue": 37,
+    "pull_request": 62,
+    "commit": "cbcdb733256c6e6bf610f856723ff3cc164e67d2",
+    "status": "complete and merged",
+    "checks": "20 portfolio tests, 37-page educational preview and all 14 isolated production exports passed; workflow runs 38002612754, 38002612713 and 38002612825 passed",
+    "boundaries": "requires HTML, rejects unexpected files, scopes brand-specific outputs, and requires explicit domain context for isolated production checks",
+    "design_scope": "no website content, appearance, shared assets, DNS or deployment audience change"
+  },
   "observed_security": "Gitleaks and active CodeQL scans passed in all five repositories; scanner dependency audit passed",
   "automation": {
     "cadence": "daily, approximately 19:00 America/Chicago",
@@ -122,7 +133,8 @@
     "P005": 31,
     "P006": 56,
     "P007": 32,
-    "P008": 33
+    "P008": 33,
+    "P014": 37
   },
   "pawsfect_walks": {
     "native_repository": "jordanistan/PawfectWalks",
