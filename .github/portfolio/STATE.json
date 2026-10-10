@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -17,6 +17,7 @@
     "learning_lab_tests": "5 passed; local-only inventory, create-only output, synthetic restore integrity, cross-platform traversal rejection and deterministic review-gate detection",
     "find_fido_dataset_tests": "8 passed; approved HTTPS sources, unique IDs, fixed unpublished metadata, official-URL evidence, uncertainty and prohibited commerce/rating/personal-location fields",
     "artifact_allowlist_tests": "7 passed; empty, arbitrary, held-domain, cross-brand and nested active-domain artifacts rejected; matching generated paths accepted",
+    "approval_pilot_tests": "14 passed; request-bound deterministic plans, integrity-bound reviews, sensitive-data screening, type safety, traversal/overwrite and symlink-ancestor rejection",
     "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
     "production_artifacts": "all 14 built and checked",
     "javascript_syntax": "passed",
@@ -85,7 +86,7 @@
     "P007": "complete in PR #60; merge 2371fa8c70408514353062cae157a4be02aeb863; three PR workflows passed; unpublished dataset verified on main; no site design or generator change",
     "P008": "complete in PR #58; merge 4e63490ececa9f29d9dc4e54590fc7f01a4107f1; all three PR workflows passed; reviewed sources verified on main; shared Pages generator unchanged while P009 owns it",
     "P009": "owner experience needed",
-    "P010": "ready",
+    "P010": "complete in PR #65; merge cca3146658327a6462c60442e1bed77d30f3af8d; all three PR workflows passed; offline synthetic-data demonstration only",
     "P011": "clearance/fulfillment needed",
     "P012": "professional review needed",
     "P014": "complete in PR #62; merge cbcdb733256c6e6bf610f856723ff3cc164e67d2; all three PR workflows passed; no website content or design change"
@@ -120,6 +121,16 @@
     "boundaries": "requires HTML, rejects unexpected files, scopes brand-specific outputs, and requires explicit domain context for isolated production checks",
     "design_scope": "no website content, appearance, shared assets, DNS or deployment audience change"
   },
+  "approval_pilot": {
+    "issue": 64,
+    "pull_request": 65,
+    "commit": "cca3146658327a6462c60442e1bed77d30f3af8d",
+    "status": "complete, merged and offline-only",
+    "checks": "14 pilot tests, complete prepare/review/verify sequence, 20 portfolio tests, 37-page educational preview and all 14 isolated production exports passed; workflow runs 38096613901, 38096613827 and 38096613880 passed",
+    "trust_boundary": "request-to-plan equality and hashes provide local integrity binding; reviewer_label is unauthenticated; synthetic classification is self-declared and filtering is best-effort",
+    "production_gate": "owner must separately approve one real workflow, data inventory, outside-work rules, permissions, authentication, vendor terms, cost, retention/deletion, monitoring, rollback, human authority, support and acceptance tests",
+    "design_scope": "no website content or appearance, shared generator/assets, scanner/downloads, DNS, inquiry path, held domain or unreleased product changed"
+  },
   "observed_security": "Gitleaks and active CodeQL scans passed in all five repositories; scanner dependency audit passed",
   "automation": {
     "cadence": "daily, approximately 19:00 America/Chicago",
@@ -134,6 +145,7 @@
     "P006": 56,
     "P007": 32,
     "P008": 33,
+    "P010": 64,
     "P014": 37
   },
   "pawsfect_walks": {
