@@ -1,0 +1,22 @@
+{
+  "allowed_outputs": [
+    "summary",
+    "review_checklist"
+  ],
+  "data_classification": "synthetic",
+  "human_owner": "demo-reviewer",
+  "inputs": [
+    {
+      "name": "ticket_summary",
+      "value": "Synthetic user cannot open the demo report."
+    },
+    {
+      "name": "observed_state",
+      "value": "Synthetic service health is normal."
+    }
+  ],
+  "objective": "Prepare a synthetic support summary and review checklist.",
+  "request_id": "demo-support-001",
+  "schema_version": 1,
+  "workflow": "support_summary"
+}
