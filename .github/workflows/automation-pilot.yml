@@ -1,0 +1,49 @@
+name: ILLNET AI approval pilot
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'automation-pilot/**'
+      - '.github/workflows/automation-pilot.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'automation-pilot/**'
+      - '.github/workflows/automation-pilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: automation-pilot-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Offline tests
+        run: python3 -m unittest discover -s automation-pilot -p 'test_*.py' -v
+      - name: Synthetic approval sequence
+        run: |
+          python3 automation-pilot/pilot.py prepare \
+            --request automation-pilot/examples/request.json \
+            --workspace "$RUNNER_TEMP/illnet-ai-demo" \
+            --output plan.json
+          python3 automation-pilot/pilot.py review \
+            --request automation-pilot/examples/request.json \
+            --workspace "$RUNNER_TEMP/illnet-ai-demo" \
+            --plan plan.json \
+            --output review.json \
+            --decision approve \
+            --reviewer-label demo-reviewer \
+            --reason "The synthetic output meets the documented demo criteria."
+          python3 automation-pilot/pilot.py verify \
+            --request automation-pilot/examples/request.json \
+            --workspace "$RUNNER_TEMP/illnet-ai-demo" \
+            --plan plan.json \
+            --review review.json
