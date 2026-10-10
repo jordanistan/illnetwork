@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 9, 2026
+# Portfolio checkpoint — October 10, 2026
 
 ## Shipped
 
@@ -80,3 +80,13 @@ The reviewed dataset was fetched back from `main` with SHA-256 `129c42e41b5a383b
 Twenty portfolio tests passed, including new negative coverage for empty artifacts, arbitrary text, held-domain paths, cross-brand files and a nested active-domain bypass. The 37-page educational review and all 14 separate production exports passed with zero errors. PR runs for [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38002612754), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38002612713) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/38002612825) succeeded. Independent review found two cross-domain scoping gaps in draft code; both were fixed and regression-tested before approval and merge.
 
 No website content, appearance, generator assets, scanner, DNS, inquiry path, held domain or unreleased product changed. Pages remains an educational review and production exports remain separate.
+
+## P010 ILLNET AI approval pilot — October 10, 2026
+
+[PR #65](https://github.com/jordanistan/illnetwork/pull/65) merged as `cca3146658327a6462c60442e1bed77d30f3af8d` and closes [issue #64](https://github.com/jordanistan/illnetwork/issues/64). It adds a standard-library, offline demonstration that turns exact-schema synthetic JSON into a deterministic pending plan, records an explicit approve or reject decision, and verifies the plan against both the original request and the review hash. Approval is limited to `approved_for_demo_handoff`; `live_execution_authorized` is always false.
+
+Fourteen focused pilot tests passed, including full-schema forged artifacts, common secret/PII patterns, malformed types, traversal, overwrites and symlink ancestors. The complete prepare/review/verify example passed with a `0700` workspace and `0600` files. The existing 20 portfolio tests, 37-page educational preview and all 14 isolated production exports also passed. PR runs for the [approval pilot](https://github.com/jordanistan/illnetwork/actions/runs/38096613901), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38096613827) and [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38096613880) succeeded. Independent adversarial re-review found no high- or medium-severity issue after the trust-boundary fixes.
+
+The `reviewer_label` is unauthenticated: hashing binds local files for integrity but does not prove identity, authorship or non-repudiation. Synthetic classification is self-declared and sensitive-data filtering is best-effort, so a human must inspect every input. The pilot performs no model or network call, external action, scheduling, payment, deployment or live-account access. No website content/design, shared generator/assets, scanner/download, DNS, inquiry path, held domain or unreleased product changed.
+
+Before any real integration, Jordan must choose one workflow and separately approve its data inventory, outside-work boundary, permissions, authentication, vendor/processor terms, cost, retention/deletion, error handling, monitoring, rollback, human authority, support owner and written acceptance tests. The demo approval is not production authorization.
