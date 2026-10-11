@@ -1,0 +1,49 @@
+name: Public review catalog verification
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'portfolio/review_probe.py'
+      - 'portfolio/test_review_probe.py'
+      - 'portfolio/sites.json'
+      - '.github/workflows/review-availability.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'portfolio/review_probe.py'
+      - 'portfolio/test_review_probe.py'
+      - 'portfolio/sites.json'
+      - '.github/workflows/review-availability.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: public-review-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Offline boundary tests
+        run: python3 -m unittest portfolio.test_review_probe -v
+  live:
+    if: github.event_name == 'workflow_dispatch'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Verify public educational review catalog
+        run: >-
+          python3 portfolio/review_probe.py
+          --url https://iamjordanrobison.com/domain-previews/review.html
