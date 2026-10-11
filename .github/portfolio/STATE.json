@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -18,6 +18,7 @@
     "find_fido_dataset_tests": "8 passed; approved HTTPS sources, unique IDs, fixed unpublished metadata, official-URL evidence, uncertainty and prohibited commerce/rating/personal-location fields",
     "artifact_allowlist_tests": "7 passed; empty, arbitrary, held-domain, cross-brand and nested active-domain artifacts rejected; matching generated paths accepted",
     "approval_pilot_tests": "14 passed; request-bound deterministic plans, integrity-bound reviews, sensitive-data screening, type safety, traversal/overwrite and symlink-ancestor rejection",
+    "public_review_verifier_tests": "19 passed; approved HTTPS/redirect boundaries, exact resources/CSP/domain set, and negative coverage for capture, held-domain, inline, hidden and injected content",
     "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
     "production_artifacts": "all 14 built and checked",
     "javascript_syntax": "passed",
@@ -54,7 +55,7 @@
         "pages_run": 37183894420,
         "deployment": "success",
         "url": "https://iamjordanrobison.com/domain-previews/review.html",
-        "http_verification": "403 initially; 404 on follow-up with browser user-agent; owner Pages source/admin check needed"
+        "http_verification": "October 11: HTTPS 200 with expected title and all 14 links; strict probe failed because Cloudflare Rocket Loader and Insights were injected; owner Pages/Cloudflare admin review needed"
       },
       "recruiter_review": {
         "pr": 64,
@@ -75,9 +76,9 @@
   },
   "commercial_deployments": "not configured",
   "native_secret_scanning_and_push_protection": "unverified",
-  "next_task": "P003 owner prerequisites; P001 and P005 require account administration; P009 remains actively claimed; preserve every native site's established design",
+  "next_task": "P003 owner prerequisites; P001 needs owner Pages/Cloudflare review and a passing manual strict run; P005 requires account administration; P009 remains actively claimed; preserve every native site's established design",
   "tasks": {
-    "P001": "deployment jobs success; central 403/HTTP redirect and mirror 404 require account administration",
+    "P001": "verifier complete in PR #67; mirror HTTPS 200 with all 14 links but strict check fails on injected Cloudflare Rocket Loader/Insights; central endpoints return 403; owner/admin review and passing manual live run required",
     "P002": "complete in PR #35; merge 2bdb15e37746fbfa29ffc717187c5827da9b3673; lease released",
     "P003": "documentation prepared: 10 native notes and 7 tasks #39–#45; owner confirmation, insurer/legal review and live operational tests pending",
     "P004": "review build ready; final client process needed",
@@ -129,6 +130,16 @@
     "checks": "14 pilot tests, complete prepare/review/verify sequence, 20 portfolio tests, 37-page educational preview and all 14 isolated production exports passed; workflow runs 38096613901, 38096613827 and 38096613880 passed",
     "trust_boundary": "request-to-plan equality and hashes provide local integrity binding; reviewer_label is unauthenticated; synthetic classification is self-declared and filtering is best-effort",
     "production_gate": "owner must separately approve one real workflow, data inventory, outside-work rules, permissions, authentication, vendor terms, cost, retention/deletion, monitoring, rollback, human authority, support and acceptance tests",
+    "design_scope": "no website content or appearance, shared generator/assets, scanner/downloads, DNS, inquiry path, held domain or unreleased product changed"
+  },
+  "public_review_verifier": {
+    "issue": 34,
+    "pull_request": 67,
+    "commit": "d5bb4f3e747c0717c34f6c80ca757df894ff7f2d",
+    "status": "verifier merged; deployment boundary remains owner-blocked",
+    "checks": "19 focused verifier tests and 39 portfolio tests passed; 37-page educational review and all 14 isolated production exports passed; workflow runs 38183924711, 38183924680, 38183924658 and 38183924707 succeeded",
+    "live_observation": "October 11 mirror HTTPS 200 with expected title and all 14 links; strict probe exited 2 for injected Cloudflare Rocket Loader and Insights; central ill.network endpoints returned 403",
+    "owner_gate": "inspect GitHub Pages source/custom-domain/HTTPS state and Cloudflare Web Analytics, Browser Insights, Rocket Loader and access controls; preserve DNS email records and protections; rerun the manual live Action",
     "design_scope": "no website content or appearance, shared generator/assets, scanner/downloads, DNS, inquiry path, held domain or unreleased product changed"
   },
   "observed_security": "Gitleaks and active CodeQL scans passed in all five repositories; scanner dependency audit passed",

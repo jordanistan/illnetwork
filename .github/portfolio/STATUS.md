@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 10, 2026
+# Portfolio checkpoint — October 11, 2026
 
 ## Shipped
 
@@ -16,7 +16,7 @@ Pawsfect Walks has a weekly estimator; Find Fido has category filters without in
 | iamjordanrobison | [62](https://github.com/jordanistan/iamjordanrobison/pull/62) | [37183382850](https://github.com/jordanistan/iamjordanrobison/actions/runs/37183382850) | https://iamjordanrobison.com/ returned 200 |
 | starfieldstudio | [4](https://github.com/jordanistan/starfieldstudio/pull/4) | [37183169673](https://github.com/jordanistan/starfieldstudio/actions/runs/37183169673) | https://jordanistan.github.io/starfieldstudio/ returned 200 |
 
-Personal-site PR #63 adds `/domain-previews/review.html`, a complete review mirror generated from pinned source commit `449f214ee483b01607d76bf75363209846d27b94`. Its 39-page artifact check and all PR build/security/CodeQL checks passed. Post-merge Pages run [37183894420](https://github.com/jordanistan/iamjordanrobison/actions/runs/37183894420) succeeded, but the mirror URL returned 403 then 404 from this environment; personal root still returned 200. A separate native `pages build and deployment` run also completed. Inspect Settings → Pages → Source and serving artifact with owner access; competing deployments are a possibility, not an established cause. Do not mark the mirror accessible until verified. The pin must be updated deliberately after future source changes.
+Personal-site PR #63 adds `/domain-previews/review.html`, a complete review mirror generated from pinned source commit `449f214ee483b01607d76bf75363209846d27b94`. Its 39-page artifact check and all PR build/security/CodeQL checks passed. Post-merge Pages run [37183894420](https://github.com/jordanistan/iamjordanrobison/actions/runs/37183894420) succeeded. On October 11 the mirror returned HTTPS 200 with the correct title and all 14 catalog links, but its served HTML also contained injected Cloudflare Rocket Loader and Insights scripts. It is reachable from this environment but does not pass the repository's no-tracker/no-external-script boundary. The central `ill.network` endpoints still returned 403. Inspect both repositories' Settings → Pages and Cloudflare settings with owner access. The pin must be updated deliberately after future source changes.
 
 ## Validation and security
 
@@ -31,7 +31,7 @@ Personal-site PR #63 adds `/domain-previews/review.html`, a complete review mirr
 
 Daily continuation is enabled for approximately 7 PM America/Chicago. Each run must inspect current GitHub state, select one unblocked task, coordinate claims, test changes and checkpoint. This does not start Codex on either personal machine. Local agent roles are instructions, not already-running employees.
 
-Read AGENTS, STATE, DECISIONS, ROADMAP, LAUNCH, TEAM and actual issues/PRs. The full local prompt is CEO_STAFF_PROMPT.md. Laptop: prepare P003 prerequisites (#29). Desktop: select an unclaimed desktop-lane task; P008 (#33) is ready. P001 (#34) requires owner/admin inspection of HTTPS/access settings; preserve Cloudflare protections and DNS/email. Shared generator/assets belong to one integration lead. Use atomic claims and separate branches/worktrees.
+Read AGENTS, STATE, DECISIONS, ROADMAP, LAUNCH, TEAM and actual issues/PRs. The full local prompt is CEO_STAFF_PROMPT.md. Laptop: prepare P003 prerequisites (#29). Desktop: select an unclaimed desktop-lane task. P001 (#34) requires owner/admin inspection of Pages and Cloudflare script injection/access settings; preserve Cloudflare protections and DNS/email. Shared generator/assets belong to one integration lead. Use atomic claims and separate branches/worktrees.
 
 No commercial DNS, checkout, subscriptions, company formation, outside messages or paid launch is completed or claimed. Owner launch inputs are in LAUNCH.md. No revenue or customer acquisition is claimed.
 
@@ -90,3 +90,11 @@ Fourteen focused pilot tests passed, including full-schema forged artifacts, com
 The `reviewer_label` is unauthenticated: hashing binds local files for integrity but does not prove identity, authorship or non-repudiation. Synthetic classification is self-declared and sensitive-data filtering is best-effort, so a human must inspect every input. The pilot performs no model or network call, external action, scheduling, payment, deployment or live-account access. No website content/design, shared generator/assets, scanner/download, DNS, inquiry path, held domain or unreleased product changed.
 
 Before any real integration, Jordan must choose one workflow and separately approve its data inventory, outside-work boundary, permissions, authentication, vendor/processor terms, cost, retention/deletion, error handling, monitoring, rollback, human authority, support owner and written acceptance tests. The demo approval is not production authorization.
+
+## P001 public review availability verifier — October 11, 2026
+
+[PR #67](https://github.com/jordanistan/illnetwork/pull/67) merged as `d5bb4f3e747c0717c34f6c80ca757df894ff7f2d`. It adds a dependency-free verifier for the public 14-domain educational-review catalog and a least-privilege Action. The verifier permits only approved credential-free HTTPS endpoints and redirects, bounds response size and type, requires the exact domain set, boundary notice, active resources and CSP, and rejects capture/payment paths, held domains, unsafe URLs, inline handlers/content, resource hints and hidden active content.
+
+Nineteen focused security tests and all 39 portfolio tests passed. The 37-page educational review and all 14 isolated production exports passed with zero errors. PR runs for [catalog verification](https://github.com/jordanistan/illnetwork/actions/runs/38183924711), [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38183924680), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38183924658) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/38183924707) succeeded. Independent review found no remaining high- or medium-severity issue.
+
+The October 11 strict live probe exited `2` because the reachable mirror served Cloudflare Rocket Loader and Insights in addition to the expected `assets/site.js`; it did not loosen the allowlist or claim a clean deployment. The central `ill.network` endpoints returned 403. Owner/admin action is still required to inspect Pages source/custom-domain/HTTPS state and Cloudflare Web Analytics, Browser Insights, Rocket Loader and access controls, then manually rerun the live Action. Do not disable protections or change DNS without a reviewed cutover and rollback. No website design/source, shared generator/assets, scanner/downloads, production inquiry path, held domain or unreleased product changed.
