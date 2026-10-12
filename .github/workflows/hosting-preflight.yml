@@ -1,0 +1,54 @@
+name: Commercial hosting preflight
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'portfolio/hosting_preflight.py'
+      - 'portfolio/test_hosting_preflight.py'
+      - 'portfolio/build.py'
+      - 'portfolio/check.py'
+      - 'portfolio/sites.json'
+      - 'portfolio/assets/site.css'
+      - 'portfolio/assets/site.js'
+      - '.github/portfolio/hosting/**'
+      - '.github/workflows/hosting-preflight.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'portfolio/hosting_preflight.py'
+      - 'portfolio/test_hosting_preflight.py'
+      - 'portfolio/build.py'
+      - 'portfolio/check.py'
+      - 'portfolio/sites.json'
+      - 'portfolio/assets/site.css'
+      - 'portfolio/assets/site.js'
+      - '.github/portfolio/hosting/**'
+      - '.github/workflows/hosting-preflight.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: hosting-preflight-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Offline hosting boundary tests
+        run: python3 -m unittest portfolio.test_hosting_preflight -v
+      - name: Validate reviewed targets and pending evidence
+        run: |
+          python3 portfolio/hosting_preflight.py manifest
+          python3 portfolio/hosting_preflight.py evidence
+      - name: Build and verify the Pawsfect production artifact
+        run: |
+          output="$(mktemp -d)/pawsfectwalks.com"
+          python3 portfolio/build.py --mode production --domain pawsfectwalks.com --output "$output"
+          python3 portfolio/check.py "$output" --domain pawsfectwalks.com
+          python3 portfolio/hosting_preflight.py artifact --domain pawsfectwalks.com --artifact "$output"

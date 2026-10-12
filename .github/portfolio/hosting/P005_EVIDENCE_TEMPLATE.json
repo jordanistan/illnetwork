@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "cutover_approved": false,
+  "owner_approval_date": null,
+  "targets": [
+    {
+      "domain": "pawsfectwalks.com",
+      "status": "pending",
+      "staging_url": "",
+      "production_url": "",
+      "deployment_sha": "",
+      "checked_at": "",
+      "http_200": false,
+      "headers_verified": false,
+      "inquiry_link_verified": false,
+      "inbox_receipt_verified": false,
+      "dns_snapshot_reviewed": false,
+      "rollback_recorded": false,
+      "notes": "Account connection, staging deployment and owner decisions remain pending."
+    },
+    {
+      "domain": "spaceghostkilla.com",
+      "status": "pending",
+      "staging_url": "",
+      "production_url": "",
+      "deployment_sha": "",
+      "checked_at": "",
+      "http_200": false,
+      "headers_verified": false,
+      "inquiry_link_verified": false,
+      "inbox_receipt_verified": false,
+      "dns_snapshot_reviewed": false,
+      "rollback_recorded": false,
+      "notes": "Native services export is prepared; commercial staging and inbox receipt remain pending."
+    }
+  ]
+}
