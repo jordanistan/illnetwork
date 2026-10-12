@@ -152,7 +152,7 @@
       "pawsfectwalks.com",
       "spaceghostkilla.com"
     ],
-    "checks": "23 focused hosting tests and 60 portfolio tests passed; 37-page educational review and all 14 isolated production exports passed; real Pawsfect and native SpaceGhostKilla artifacts passed; workflow runs 38321629620, 38321629442, 38321629591 and 38321629429 succeeded",
+    "checks": "23 focused hosting tests and 62 portfolio tests passed; 37-page educational review and all 14 isolated production exports passed; real Pawsfect and native SpaceGhostKilla artifacts passed; workflow runs 38321629620, 38321629442, 38321629591 and 38321629429 succeeded",
     "artifact_boundary": "exact reviewed file sets, no Worker/Functions/environment extras, fixed inquiry recipients and subjects, no submission or checkout, exact static security headers, and held-domain exclusion across deployable text including SVG",
     "owner_gate": "create distinct authenticated previews, record exact source SHAs, verify served responses and headers, test harmless inbox routing, preserve private DNS/email snapshots and rollback steps, then approve and perform one reviewed custom-domain cutover at a time",
     "production_gate": "Pawsfect seven operating confirmations and SpaceGhostKilla outside-work, scope, authorization, evidence, terms, capacity and invoicing decisions remain separate blockers",
