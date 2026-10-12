@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "targets": [
+    {
+      "domain": "pawsfectwalks.com",
+      "repository": "jordanistan/illnetwork",
+      "build_command": [
+        "python3",
+        "portfolio/build.py",
+        "--mode",
+        "production",
+        "--domain",
+        "pawsfectwalks.com",
+        "--output",
+        "<fresh-output>"
+      ],
+      "output_directory": "<fresh-output>",
+      "entrypoint": "index.html",
+      "script_source": "assets/site.js",
+      "stylesheet_source": "assets/site.css",
+      "canonical_url": "https://pawsfectwalks.com/",
+      "headers_rule": "/*",
+      "inquiry_email": "jordan.robison@gmail.com",
+      "inquiry_subject": "Pawsfect Walks availability",
+      "identity_text": "Pawsfect Walks",
+      "required_notice": "Nothing is submitted by this website",
+      "allowed_files": [
+        ".nojekyll",
+        "_headers",
+        "assets/favicon.svg",
+        "assets/hero.svg",
+        "assets/site.css",
+        "assets/site.js",
+        "index.html",
+        "privacy.html",
+        "robots.txt",
+        "sitemap.xml"
+      ]
+    },
+    {
+      "domain": "spaceghostkilla.com",
+      "repository": "jordanistan/spaceghostkilla",
+      "build_command": [
+        "bash",
+        "scripts/build_production.sh",
+        "<fresh-output>"
+      ],
+      "output_directory": "<fresh-output>",
+      "entrypoint": "services.html",
+      "script_source": "service-assets/site.js",
+      "stylesheet_source": "service-assets/site.css",
+      "canonical_url": "https://spaceghostkilla.com/services.html",
+      "headers_rule": "/services.html",
+      "inquiry_email": "support@spaceghostkilla.com",
+      "inquiry_subject": "SpaceGhostKilla security review",
+      "identity_text": "SpaceGhostKilla",
+      "required_notice": "Nothing is submitted by this website",
+      "allowed_files": [
+        ".well-known/security.txt",
+        "404.html",
+        "CNAME",
+        "_headers",
+        "assets/downloads/SpaceGhostKilla-Cloud-Security-Quick-Audit-v1.2.pdf",
+        "assets/downloads/sgk-quick-audit-v1.2.zip",
+        "assets/favicon.png",
+        "assets/spaceghostkilla-emblem.png",
+        "assets/spaceghostkilla-wallpaper.png",
+        "index.html",
+        "legal.html",
+        "robots.txt",
+        "script.js",
+        "service-assets/favicon.svg",
+        "service-assets/hero.svg",
+        "service-assets/site.css",
+        "service-assets/site.js",
+        "services.html",
+        "site.webmanifest",
+        "sitemap.xml",
+        "styles.css",
+        "thanks.html"
+      ]
+    }
+  ]
+}
