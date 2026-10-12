@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 11, 2026
+# Portfolio checkpoint — October 12, 2026
 
 ## Shipped
 
@@ -27,9 +27,9 @@ Personal-site PR #63 adds `/domain-previews/review.html`, a complete review mirr
 - New Actions are pinned and have restricted permissions; deployments upload allowlisted review artifacts. Native secret scanning, push protection and branch/environment protections remain unverified account settings.
 - P002 browser QA shipped in [PR #35](https://github.com/jordanistan/illnetwork/pull/35), merge `2bdb15e37746fbfa29ffc717187c5827da9b3673`: Chromium 143 covered all 14 domains at 1440, 390 and 320 CSS pixels (42 combinations), with desktop/mobile screenshots and worksheet PDFs. No console errors or horizontal overflow remained. Keyboard focus, skip links, FAQs, estimator, filters, workflow planner, worksheet clearing and print output passed. The task fixed invisible dark-theme secondary actions, clipped worksheet print output and inaccurate browser-retention wording. Screen-reader, physical-printer and non-Chromium testing remain unperformed; this evidence does not claim full accessibility conformance.
 
-## Scheduled continuation and handoff
+## Continuation and handoff
 
-Daily continuation is enabled for approximately 7 PM America/Chicago. Each run must inspect current GitHub state, select one unblocked task, coordinate claims, test changes and checkpoint. This does not start Codex on either personal machine. Local agent roles are instructions, not already-running employees.
+Each work session must inspect current GitHub state, select one unblocked task, coordinate claims, test changes and checkpoint. Local agent roles are instructions, not already-running employees.
 
 Read AGENTS, STATE, DECISIONS, ROADMAP, LAUNCH, TEAM and actual issues/PRs. The full local prompt is CEO_STAFF_PROMPT.md. Laptop: prepare P003 prerequisites (#29). Desktop: select an unclaimed desktop-lane task. P001 (#34) requires owner/admin inspection of Pages and Cloudflare script injection/access settings; preserve Cloudflare protections and DNS/email. Shared generator/assets belong to one integration lead. Use atomic claims and separate branches/worktrees.
 
@@ -98,3 +98,11 @@ Before any real integration, Jordan must choose one workflow and separately appr
 Nineteen focused security tests and all 39 portfolio tests passed. The 37-page educational review and all 14 isolated production exports passed with zero errors. PR runs for [catalog verification](https://github.com/jordanistan/illnetwork/actions/runs/38183924711), [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38183924680), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38183924658) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/38183924707) succeeded. Independent review found no remaining high- or medium-severity issue.
 
 The October 11 strict live probe exited `2` because the reachable mirror served Cloudflare Rocket Loader and Insights in addition to the expected `assets/site.js`; it did not loosen the allowlist or claim a clean deployment. The central `ill.network` endpoints returned 403. Owner/admin action is still required to inspect Pages source/custom-domain/HTTPS state and Cloudflare Web Analytics, Browser Insights, Rocket Loader and access controls, then manually rerun the live Action. Do not disable protections or change DNS without a reviewed cutover and rollback. No website design/source, shared generator/assets, scanner/downloads, production inquiry path, held domain or unreleased product changed.
+
+## P005 commercial hosting preflight — October 12, 2026
+
+[PR #69](https://github.com/jordanistan/illnetwork/pull/69) merged as `c5e6981856e0c2e8bc764a340401980b5bbadc01`. It adds a review-only hosting boundary for the Pawsfect Walks central production export and preserved native SpaceGhostKilla production export. The validator requires the exact reviewed file sets, fixed inquiry recipients and subjects, no forms, checkout, external/inline scripts or held-domain references, and exact static security headers. It rejects extra environment, Worker and Functions files. The evidence schema requires distinct root-level HTTPS preview hosts, full source SHAs, non-future timestamps, served-response/header checks, inbox receipt, DNS snapshot and rollback evidence.
+
+Twenty-three focused tests and all 60 portfolio tests passed. The 37-page educational review and all 14 isolated production exports passed with zero errors. Both real target exports passed the new preflight; SpaceGhostKilla's existing research, PDF and ZIP downloads remain in its exact allowlist. PR runs for [commercial hosting](https://github.com/jordanistan/illnetwork/actions/runs/38321629620), [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38321629442), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38321629591) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/38321629429) succeeded. Independent security review found no remaining high- or medium-severity issue.
+
+No Cloudflare account was connected, no DNS changed, no inquiry was sent and no production deployment or revenue is claimed. Both evidence records remain `pending`. Jordan must complete the authenticated preview, response, inbox, DNS and rollback checks in `.github/portfolio/hosting/P005_CUTOVER_RUNBOOK.md`. Pawsfect paid care remains separately blocked on all seven operating confirmations; SpaceGhostKilla still requires its outside-work, scope, authorization, evidence, terms, capacity and invoicing decisions.

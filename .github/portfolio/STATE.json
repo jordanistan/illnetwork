@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -19,6 +19,7 @@
     "artifact_allowlist_tests": "7 passed; empty, arbitrary, held-domain, cross-brand and nested active-domain artifacts rejected; matching generated paths accepted",
     "approval_pilot_tests": "14 passed; request-bound deterministic plans, integrity-bound reviews, sensitive-data screening, type safety, traversal/overwrite and symlink-ancestor rejection",
     "public_review_verifier_tests": "19 passed; approved HTTPS/redirect boundaries, exact resources/CSP/domain set, and negative coverage for capture, held-domain, inline, hidden and injected content",
+    "commercial_hosting_preflight_tests": "23 passed; exact two-target/file allowlists, strict inquiry links and headers, held-domain decoding across deployable text, distinct root-only preview hosts and non-future evidence",
     "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
     "production_artifacts": "all 14 built and checked",
     "javascript_syntax": "passed",
@@ -76,13 +77,13 @@
   },
   "commercial_deployments": "not configured",
   "native_secret_scanning_and_push_protection": "unverified",
-  "next_task": "P003 owner prerequisites; P001 needs owner Pages/Cloudflare review and a passing manual strict run; P005 requires account administration; P009 remains actively claimed; preserve every native site's established design",
+  "next_task": "P003 owner prerequisites; P001 needs owner Pages/Cloudflare review and a passing manual strict run; P005 requires authenticated Cloudflare preview, response, inbox, DNS and rollback evidence; P009 remains actively claimed; preserve every native site's established design",
   "tasks": {
     "P001": "verifier complete in PR #67; mirror HTTPS 200 with all 14 links but strict check fails on injected Cloudflare Rocket Loader/Insights; central endpoints return 403; owner/admin review and passing manual live run required",
     "P002": "complete in PR #35; merge 2bdb15e37746fbfa29ffc717187c5827da9b3673; lease released",
     "P003": "documentation prepared: 10 native notes and 7 tasks #39–#45; owner confirmation, insurer/legal review and live operational tests pending",
     "P004": "review build ready; final client process needed",
-    "P005": "owner hosting connection needed",
+    "P005": "secure preflight complete in PR #69; merge c5e6981856e0c2e8bc764a340401980b5bbadc01; all four PR workflows passed; both evidence records remain pending until owner-authenticated staging and cutover checks",
     "P006": "complete in native PR #64; Pages run 37547571692 and live root/resume HTTP 200; production-source sync deferred while P009 owns shared generator/assets",
     "P007": "complete in PR #60; merge 2371fa8c70408514353062cae157a4be02aeb863; three PR workflows passed; unpublished dataset verified on main; no site design or generator change",
     "P008": "complete in PR #58; merge 4e63490ececa9f29d9dc4e54590fc7f01a4107f1; all three PR workflows passed; reviewed sources verified on main; shared Pages generator unchanged while P009 owns it",
@@ -142,11 +143,22 @@
     "owner_gate": "inspect GitHub Pages source/custom-domain/HTTPS state and Cloudflare Web Analytics, Browser Insights, Rocket Loader and access controls; preserve DNS email records and protections; rerun the manual live Action",
     "design_scope": "no website content or appearance, shared generator/assets, scanner/downloads, DNS, inquiry path, held domain or unreleased product changed"
   },
-  "observed_security": "Gitleaks and active CodeQL scans passed in all five repositories; scanner dependency audit passed",
-  "automation": {
-    "cadence": "daily, approximately 19:00 America/Chicago",
-    "scope": "one unblocked task; inspect GitHub state and task claims"
+  "commercial_hosting_preflight": {
+    "issue": 31,
+    "pull_request": 69,
+    "commit": "c5e6981856e0c2e8bc764a340401980b5bbadc01",
+    "status": "preflight merged; both target evidence records remain pending",
+    "targets": [
+      "pawsfectwalks.com",
+      "spaceghostkilla.com"
+    ],
+    "checks": "23 focused hosting tests and 60 portfolio tests passed; 37-page educational review and all 14 isolated production exports passed; real Pawsfect and native SpaceGhostKilla artifacts passed; workflow runs 38321629620, 38321629442, 38321629591 and 38321629429 succeeded",
+    "artifact_boundary": "exact reviewed file sets, no Worker/Functions/environment extras, fixed inquiry recipients and subjects, no submission or checkout, exact static security headers, and held-domain exclusion across deployable text including SVG",
+    "owner_gate": "create distinct authenticated previews, record exact source SHAs, verify served responses and headers, test harmless inbox routing, preserve private DNS/email snapshots and rollback steps, then approve and perform one reviewed custom-domain cutover at a time",
+    "production_gate": "Pawsfect seven operating confirmations and SpaceGhostKilla outside-work, scope, authorization, evidence, terms, capacity and invoicing decisions remain separate blockers",
+    "design_scope": "no website content or appearance, shared generator/assets, scanner/downloads, DNS, account connection, inquiry sending, payment or held domain changed"
   },
+  "observed_security": "Gitleaks and active CodeQL scans passed in all five repositories; scanner dependency audit passed",
   "issue_map": {
     "P001": 34,
     "P002": 28,
