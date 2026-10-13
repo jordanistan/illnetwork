@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "checked_on": "2026-10-13",
+  "sources": [
+    {
+      "id": "uspto-trademark-search",
+      "url": "https://www.uspto.gov/trademarks/search",
+      "purpose": "Search guidance only; a search result is not a clearance conclusion."
+    },
+    {
+      "id": "copyright-visual-arts",
+      "url": "https://www.copyright.gov/registration/visual-arts/",
+      "purpose": "Official visual-art registration information; ownership and licensing still require project-specific evidence."
+    },
+    {
+      "id": "ftc-mail-internet-order-rule",
+      "url": "https://www.ftc.gov/legal-library/browse/rules/mail-internet-or-telephone-order-merchandise-rule",
+      "purpose": "Official shipping-promise, delay-consent and refund rule reference."
+    },
+    {
+      "id": "texas-online-orders",
+      "url": "https://comptroller.texas.gov/taxes/publications/94-171.php",
+      "purpose": "Official Texas online-order sales-tax starting point; obtain qualified advice for the actual sales model."
+    }
+  ]
+}

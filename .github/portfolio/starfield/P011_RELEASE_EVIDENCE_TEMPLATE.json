@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "project": "Starfield Studio",
+  "release_approved": false,
+  "owner_approval_date": null,
+  "catalog_version": "",
+  "owner_attested_release_repository": "",
+  "owner_attested_release_sha": "",
+  "owner_attested_checkout_record": "",
+  "gates": [
+    {
+      "id": "brand_clearance",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "evidence_recorded": false,
+      "notes": "Pending qualified review; no clearance is claimed."
+    },
+    {
+      "id": "artwork_rights",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "evidence_recorded": false,
+      "notes": "Pending ownership and license inventory."
+    },
+    {
+      "id": "samples_quality",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "evidence_recorded": false,
+      "notes": "Pending physical sample and quality review."
+    },
+    {
+      "id": "catalog",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "evidence_recorded": false,
+      "notes": "Pending exact product and SKU approval."
+    },
+    {
+      "id": "fulfillment_shipping",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "evidence_recorded": false,
+      "notes": "Pending provider, packaging, delivery and rollback review."
+    },
+    {
+      "id": "pricing_tax",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "evidence_recorded": false,
+      "notes": "Pending landed-cost, pricing and tax review."
+    },
+    {
+      "id": "customer_terms",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "evidence_recorded": false,
+      "notes": "Pending terms, privacy, returns, refunds and support review."
+    },
+    {
+      "id": "commercial_hosting",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "evidence_recorded": false,
+      "notes": "Pending reviewed commercial staging and cutover evidence."
+    },
+    {
+      "id": "checkout",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "evidence_recorded": false,
+      "notes": "Pending owner-controlled end-to-end checkout and refund test."
+    }
+  ]
+}
