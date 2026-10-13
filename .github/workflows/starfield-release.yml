@@ -1,0 +1,38 @@
+name: Starfield release gate
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/portfolio/starfield/**'
+      - '.github/workflows/starfield-release.yml'
+      - 'portfolio/starfield_release.py'
+      - 'portfolio/test_starfield_release.py'
+  push:
+    branches: [main]
+    paths:
+      - '.github/portfolio/starfield/**'
+      - '.github/workflows/starfield-release.yml'
+      - 'portfolio/starfield_release.py'
+      - 'portfolio/test_starfield_release.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: starfield-release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Test release boundaries
+        run: python3 -m unittest portfolio.test_starfield_release -v
+      - name: Validate official sources and pending evidence
+        run: |
+          python3 portfolio/starfield_release.py sources
+          python3 portfolio/starfield_release.py evidence
