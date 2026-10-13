@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 12, 2026
+# Portfolio checkpoint — October 13, 2026
 
 ## Shipped
 
@@ -106,3 +106,11 @@ The October 11 strict live probe exited `2` because the reachable mirror served 
 Twenty-three focused tests and all 62 portfolio tests passed. The 37-page educational review and all 14 isolated production exports passed with zero errors. Both real target exports passed the new preflight; SpaceGhostKilla's existing research, PDF and ZIP downloads remain in its exact allowlist. PR runs for [commercial hosting](https://github.com/jordanistan/illnetwork/actions/runs/38321629620), [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38321629442), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38321629591) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/38321629429) succeeded. Independent security review found no remaining high- or medium-severity issue.
 
 No Cloudflare account was connected, no DNS changed, no inquiry was sent and no production deployment or revenue is claimed. Both evidence records remain `pending`. Jordan must complete the authenticated preview, response, inbox, DNS and rollback checks in `.github/portfolio/hosting/P005_CUTOVER_RUNBOOK.md`. Pawsfect paid care remains separately blocked on all seven operating confirmations; SpaceGhostKilla still requires its outside-work, scope, authorization, evidence, terms, capacity and invoicing decisions.
+
+## P011 Starfield release-readiness gate — October 13, 2026
+
+[PR #76](https://github.com/jordanistan/illnetwork/pull/76) merged as `909c7cadec71e2b4afe00170984fca8fd3b3f6c1` and adds a pending-by-default evidence packet for Starfield Studio. Nine ordered gates cover name clearance, artwork rights, physical samples, catalog, fulfillment/shipping, pricing/tax, customer terms, commercial hosting and checkout. Four official trademark, copyright, shipping and Texas tax starting points were recorded with an October 13 check date. The checklist explicitly does not replace qualified legal or tax review.
+
+Fifteen focused tests and all 77 portfolio tests passed. The 37-page educational review, all 14 isolated production exports and the native two-page Starfield review artifact passed with zero errors. PR runs for the [Starfield gate](https://github.com/jordanistan/illnetwork/actions/runs/38484230664), [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38484230835), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38484230849) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/38484230727) succeeded. Independent review approved the fixed public notes, sensitive-data rejection, dependency chronology and owner-attestation boundaries with no remaining high- or medium-severity finding.
+
+Every release gate remains `pending`. No name clearance, rights conclusion, supplier, sample, catalog, terms, checkout, launch, sale or revenue is claimed. The native and central Starfield designs, vector studies and unreleased state remain unchanged. Jordan's exact next actions are in `.github/portfolio/starfield/README.md`; private evidence, contracts, supplier credentials, orders and payment data must stay out of GitHub.
