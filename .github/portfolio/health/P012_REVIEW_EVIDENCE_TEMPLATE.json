@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "project": "Health education portfolio",
+  "source_repository": "jordanistan/illnetwork",
+  "publication_approved": false,
+  "owner_approval_date": null,
+  "owner_attested_reviewed_source_sha": "",
+  "reviewed_artifacts": [
+    {
+      "domain": "hearty.fit",
+      "mode": "preview",
+      "sha256": ""
+    },
+    {
+      "domain": "hearty.fit",
+      "mode": "production",
+      "sha256": ""
+    },
+    {
+      "domain": "healthyheart.clinic",
+      "mode": "preview",
+      "sha256": ""
+    },
+    {
+      "domain": "healthyheart.clinic",
+      "mode": "production",
+      "sha256": ""
+    }
+  ],
+  "gates": [
+    {
+      "id": "content_inventory",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending exact two-site content inventory."
+    },
+    {
+      "id": "healthyheart_qualified_review",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending qualified review; no clinical-content approval is claimed."
+    },
+    {
+      "id": "hearty_qualified_review",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending qualified review; no health-outcome approval is claimed."
+    },
+    {
+      "id": "claims_net_impression",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending express, implied and whole-impression claims review."
+    },
+    {
+      "id": "data_flow_review",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending verification of no site-operated health-data capture, storage, upload, intake, appointment or analytics path; production email remains user initiated."
+    },
+    {
+      "id": "owner_publication",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending owner approval of the exact reviewed educational content."
+    }
+  ]
+}
