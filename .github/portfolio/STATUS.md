@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 13, 2026
+# Portfolio checkpoint — October 14, 2026
 
 ## Shipped
 
@@ -114,3 +114,11 @@ No Cloudflare account was connected, no DNS changed, no inquiry was sent and no 
 Fifteen focused tests and all 77 portfolio tests passed. The 37-page educational review, all 14 isolated production exports and the native two-page Starfield review artifact passed with zero errors. PR runs for the [Starfield gate](https://github.com/jordanistan/illnetwork/actions/runs/38484230664), [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38484230835), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38484230849) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/38484230727) succeeded. Independent review approved the fixed public notes, sensitive-data rejection, dependency chronology and owner-attestation boundaries with no remaining high- or medium-severity finding.
 
 Every release gate remains `pending`. No name clearance, rights conclusion, supplier, sample, catalog, terms, checkout, launch, sale or revenue is claimed. The native and central Starfield designs, vector studies and unreleased state remain unchanged. Jordan's exact next actions are in `.github/portfolio/starfield/README.md`; private evidence, contracts, supplier credentials, orders and payment data must stay out of GitHub.
+
+## P012 qualified health-content review gate — October 14, 2026
+
+[PR #79](https://github.com/jordanistan/illnetwork/pull/79) merged as `c2da73d38fc8c47d4a40b6581254ddad19f9972a`. It adds a pending-by-default review packet for the existing `hearty.fit` general routine planner and `healthyheart.clinic` educational visit worksheet. The validator freshly builds and checks preview and production artifacts for both domains, fixes the complete artifact-tree digests, enforces a qualified licensed health-content reviewer role, separates owner and reviewer gates, rejects sensitive evidence and prevents an approval when content changes or any gate is pending. Four FTC, FDA and HHS starting points were checked on October 14; they are guidance, not professional approval.
+
+Twenty focused tests and all 97 portfolio tests passed. The 37-page educational review and all 14 isolated production exports passed with zero artifact errors; shared JavaScript syntax passed. PR runs for the [health review gate](https://github.com/jordanistan/illnetwork/actions/runs/38656314387), [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38656314064), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38656314203) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/38656314212) succeeded. Independent clinical-boundary and security reviews found no remaining high-severity issue; source attestation wording, professional-qualification instructions, mailto/data-flow precision and artifact path-shape findings were resolved before merge.
+
+All six review gates remain `pending`. No professional review, health or clinical claim, clinic status, intake, advice, commercial deployment or revenue is claimed. No website source, appearance, shared asset, scanner, download, DNS, checkout, held domain or other task claim changed. Jordan's exact review sequence and private-evidence boundary are in `.github/portfolio/health/README.md`; reviewer identity, license details, advice and any health information must stay out of GitHub.

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -21,6 +21,7 @@
     "public_review_verifier_tests": "19 passed; approved HTTPS/redirect boundaries, exact resources/CSP/domain set, and negative coverage for capture, held-domain, inline, hidden and injected content",
     "commercial_hosting_preflight_tests": "23 passed; exact two-target/file allowlists, strict inquiry links and headers, held-domain decoding across deployable text, distinct root-only preview hosts and non-future evidence",
     "starfield_release_tests": "15 passed; fixed public notes, sensitive-data rejection, ordered dependencies and chronology, exact reviewer roles, pending-by-default approval and owner-attestation boundaries",
+    "health_review_tests": "20 passed; four fresh artifact-tree digests, strict JSON and fixed inventory, licensed-reviewer and owner separation, chronology, stale-review and sensitive-data rejection",
     "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
     "production_artifacts": "all 14 built and checked",
     "javascript_syntax": "passed",
@@ -78,7 +79,7 @@
   },
   "commercial_deployments": "not configured",
   "native_secret_scanning_and_push_protection": "unverified",
-  "next_task": "P003 owner prerequisites; P001 needs owner Pages/Cloudflare review and a passing manual strict run; P005 requires authenticated Cloudflare preview, response, inbox, DNS and rollback evidence; P009 remains actively claimed; P011 requires real owner evidence for nine gates; preserve every native site's established design",
+  "next_task": "P003 owner prerequisites; P001 needs owner Pages/Cloudflare review and a passing manual strict run; P005 requires authenticated Cloudflare preview, response, inbox, DNS and rollback evidence; P009 remains actively claimed; P011 and P012 require real qualified owner evidence; preserve every native site's established design",
   "tasks": {
     "P001": "verifier complete in PR #67; mirror HTTPS 200 with all 14 links but strict check fails on injected Cloudflare Rocket Loader/Insights; central endpoints return 403; owner/admin review and passing manual live run required",
     "P002": "complete in PR #35; merge 2bdb15e37746fbfa29ffc717187c5827da9b3673; lease released",
@@ -91,7 +92,7 @@
     "P009": "owner experience needed",
     "P010": "complete in PR #65; merge cca3146658327a6462c60442e1bed77d30f3af8d; all three PR workflows passed; offline synthetic-data demonstration only",
     "P011": "release-readiness gate complete in PR #76; merge 909c7cadec71e2b4afe00170984fca8fd3b3f6c1; all four PR workflows passed; all nine evidence gates remain pending and no release is approved",
-    "P012": "professional review needed",
+    "P012": "qualified review gate complete in PR #79; merge c2da73d38fc8c47d4a40b6581254ddad19f9972a; all four PR workflows passed; all six evidence gates remain pending and no professional approval is claimed",
     "P014": "complete in PR #62; merge cbcdb733256c6e6bf610f856723ff3cc164e67d2; all three PR workflows passed; no website content or design change"
   },
   "learning_labs": {
@@ -169,6 +170,16 @@
     "owner_gate": "obtain qualified name and rights review; approve samples, catalog, fulfillment, landed pricing/tax treatment and customer terms; then verify commercial hosting and an owner-controlled purchase/refund flow with private evidence",
     "design_scope": "no native or central website content, appearance, generator/assets, scanner/downloads, DNS, checkout, product publication, held domain or unreleased product changed"
   },
+  "health_review_gate": {
+    "issue": 78,
+    "pull_request": 79,
+    "commit": "c2da73d38fc8c47d4a40b6581254ddad19f9972a",
+    "status": "pending-by-default gate merged; all six gates pending; no qualified review or publication approval claimed",
+    "checks": "20 focused tests and 97 portfolio tests passed; 37-page educational review and all 14 isolated production exports passed; workflow runs 38656314387, 38656314064, 38656314203 and 38656314212 succeeded",
+    "boundaries": "fixed two-domain/two-mode artifact trees, fresh build and allowlist checks, strict JSON and neutral public notes, active licensed health-content reviewer role, owner/reviewer separation, chronology and sensitive-data rejection",
+    "owner_gate": "privately select and verify a currently licensed healthcare professional with relevant consumer-health and patient-education competence; inventory exact artifacts; complete both content and net-impression reviews; verify no site-operated health-data path; resolve revisions; then attest the exact source and artifact digests",
+    "design_scope": "no website content or appearance, shared generator/assets, scanner/downloads, DNS, intake, checkout, commercial deployment, held domain or other task claim changed"
+  },
   "observed_security": "Gitleaks and active CodeQL scans passed in all five repositories; scanner dependency audit passed",
   "issue_map": {
     "P001": 34,
@@ -181,6 +192,7 @@
     "P008": 33,
     "P010": 64,
     "P011": 75,
+    "P012": 78,
     "P014": 37
   },
   "pawsfect_walks": {
