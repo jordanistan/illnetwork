@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "checked_on": "2026-10-14",
+  "sources": [
+    {
+      "id": "ftc-health-products-compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "purpose": "Official guidance on express and implied health claims, net impression and substantiation; not an approval of this content."
+    },
+    {
+      "id": "fda-general-wellness",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/general-wellness-policy-low-risk-devices",
+      "purpose": "Official general-wellness starting point; changed functions or intended uses require project-specific review."
+    },
+    {
+      "id": "hhs-health-literacy-online",
+      "url": "https://odphp.health.gov/healthliteracyonline/",
+      "purpose": "Official people-first, understandable, accessible content and governance guidance."
+    },
+    {
+      "id": "hhs-hipaa-privacy-rule",
+      "url": "https://www.hhs.gov/hipaa/for-professionals/privacy/index.html",
+      "purpose": "Official Privacy Rule scope reference; does not establish covered-entity status or authorize health-data collection."
+    }
+  ]
+}
