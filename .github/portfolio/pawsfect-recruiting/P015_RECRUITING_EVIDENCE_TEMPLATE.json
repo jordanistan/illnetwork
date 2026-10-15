@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "project": "Pawsfect Walks pilot recruiting",
+  "source_repository": "jordanistan/illnetwork",
+  "owner_attested_packet_sha": "",
+  "role_policy_version": "",
+  "recruiting_approved": false,
+  "hire_authorized": false,
+  "dispatch_authorized": false,
+  "paid_care_launch_ready": false,
+  "owner_approval_date": null,
+  "pilot": {
+    "target_walkers": "2-3",
+    "included_services": [
+      "individual household dog walks",
+      "simple drop-ins"
+    ],
+    "excluded_services": [
+      "routine dog transportation",
+      "boarding",
+      "group or off-leash walks",
+      "medication administration"
+    ]
+  },
+  "gates": [
+    {
+      "id": "pilot_role_scope",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending owner confirmation of the proposed pilot duties, exclusions, pay and control facts."
+    },
+    {
+      "id": "classification_model_review",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending qualified worker-classification review of the frozen facts; no classification is claimed."
+    },
+    {
+      "id": "pay_control_terms_reviewed",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending approved pay, expenses, scheduling, control, training, recordkeeping and termination terms."
+    },
+    {
+      "id": "insurance_worker_coverage",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending insurer confirmation for the actual worker model and approved duties; no coverage is claimed."
+    },
+    {
+      "id": "screening_consent_process",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending qualified review of consistent screening, consent, notice, dispute, access and retention controls."
+    },
+    {
+      "id": "private_candidate_data_controls",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending verification of restricted storage, access, authentication, retention, deletion and incident controls."
+    },
+    {
+      "id": "structured_interview_process",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending owner approval of structured interviews, decision rules and interviewer guidance."
+    },
+    {
+      "id": "recruiting_authorization",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending owner authorization; no posting, outreach, screening, interview or offer is approved."
+    }
+  ]
+}

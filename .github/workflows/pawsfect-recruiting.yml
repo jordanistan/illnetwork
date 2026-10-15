@@ -1,0 +1,38 @@
+name: Pawsfect recruiting gate
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/portfolio/pawsfect-recruiting/**'
+      - '.github/workflows/pawsfect-recruiting.yml'
+      - 'portfolio/pawsfect_recruiting.py'
+      - 'portfolio/test_pawsfect_recruiting.py'
+  push:
+    branches: [main]
+    paths:
+      - '.github/portfolio/pawsfect-recruiting/**'
+      - '.github/workflows/pawsfect-recruiting.yml'
+      - 'portfolio/pawsfect_recruiting.py'
+      - 'portfolio/test_pawsfect_recruiting.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pawsfect-recruiting-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Test recruiting boundaries
+        run: python3 -m unittest portfolio.test_pawsfect_recruiting -v
+      - name: Validate sources and pending evidence
+        run: |
+          python3 portfolio/pawsfect_recruiting.py sources
+          python3 portfolio/pawsfect_recruiting.py evidence
