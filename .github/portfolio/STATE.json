@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14",
+  "updated": "2026-10-15",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -22,6 +22,7 @@
     "commercial_hosting_preflight_tests": "23 passed; exact two-target/file allowlists, strict inquiry links and headers, held-domain decoding across deployable text, distinct root-only preview hosts and non-future evidence",
     "starfield_release_tests": "15 passed; fixed public notes, sensitive-data rejection, ordered dependencies and chronology, exact reviewer roles, pending-by-default approval and owner-attestation boundaries",
     "health_review_tests": "20 passed; four fresh artifact-tree digests, strict JSON and fixed inventory, licensed-reviewer and owner separation, chronology, stale-review and sensitive-data rejection",
+    "pawsfect_recruiting_tests": "16 passed; frozen packet binding, ordered reviewer roles and chronology, strict JSON/file safety, PII/secret/held-domain rejection and explicit no-hire/no-dispatch/no-paid-launch boundaries",
     "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
     "production_artifacts": "all 14 built and checked",
     "javascript_syntax": "passed",
@@ -79,7 +80,7 @@
   },
   "commercial_deployments": "not configured",
   "native_secret_scanning_and_push_protection": "unverified",
-  "next_task": "P003 owner prerequisites; P001 needs owner Pages/Cloudflare review and a passing manual strict run; P005 requires authenticated Cloudflare preview, response, inbox, DNS and rollback evidence; P009 remains actively claimed; P011 and P012 require real qualified owner evidence; preserve every native site's established design",
+  "next_task": "P003 and P015 owner prerequisites; P001 needs owner Pages/Cloudflare review and a passing manual strict run; P005 requires authenticated Cloudflare preview, response, inbox, DNS and rollback evidence; P009 remains actively claimed; P011 and P012 require real qualified owner evidence; preserve every native site's established design",
   "tasks": {
     "P001": "verifier complete in PR #67; mirror HTTPS 200 with all 14 links but strict check fails on injected Cloudflare Rocket Loader/Insights; central endpoints return 403; owner/admin review and passing manual live run required",
     "P002": "complete in PR #35; merge 2bdb15e37746fbfa29ffc717187c5827da9b3673; lease released",
@@ -93,7 +94,8 @@
     "P010": "complete in PR #65; merge cca3146658327a6462c60442e1bed77d30f3af8d; all three PR workflows passed; offline synthetic-data demonstration only",
     "P011": "release-readiness gate complete in PR #76; merge 909c7cadec71e2b4afe00170984fca8fd3b3f6c1; all four PR workflows passed; all nine evidence gates remain pending and no release is approved",
     "P012": "qualified review gate complete in PR #79; merge c2da73d38fc8c47d4a40b6581254ddad19f9972a; all four PR workflows passed; all six evidence gates remain pending and no professional approval is claimed",
-    "P014": "complete in PR #62; merge cbcdb733256c6e6bf610f856723ff3cc164e67d2; all three PR workflows passed; no website content or design change"
+    "P014": "complete in PR #62; merge cbcdb733256c6e6bf610f856723ff3cc164e67d2; all three PR workflows passed; no website content or design change",
+    "P015": "recruiting-readiness gate complete in PR #82; merge 301a74ed6bd60379ca9a43fed1c68bf38fa1a374; all four PR workflows passed; all eight gates remain pending and hiring, dispatch and paid care remain unauthorized"
   },
   "learning_labs": {
     "issue": 33,
@@ -180,6 +182,16 @@
     "owner_gate": "privately select and verify a currently licensed healthcare professional with relevant consumer-health and patient-education competence; inventory exact artifacts; complete both content and net-impression reviews; verify no site-operated health-data path; resolve revisions; then attest the exact source and artifact digests",
     "design_scope": "no website content or appearance, shared generator/assets, scanner/downloads, DNS, intake, checkout, commercial deployment, held domain or other task claim changed"
   },
+  "pawsfect_recruiting_gate": {
+    "issue": 81,
+    "pull_request": 82,
+    "commit": "301a74ed6bd60379ca9a43fed1c68bf38fa1a374",
+    "status": "pending-by-default gate merged; all eight gates pending; recruiting, hiring, dispatch and paid care not approved",
+    "checks": "16 focused tests and 113 portfolio tests passed; 37-page educational preview and all 14 isolated production exports passed; workflow runs 38823922471, 38823921939, 38823922134 and 38823921909 succeeded",
+    "boundaries": "fixed pilot scope, commit-bound facts packet, exact reviewer roles and dependency chronology, fixed neutral notes, strict JSON/file safety, candidate PII and sensitive-result rejection, and permanent no-hire/no-dispatch/no-paid-launch fields",
+    "owner_gate": "freeze the actual pilot facts; obtain qualified classification and employment/tax review; approve matching pay/control terms; confirm coverage with the insurer; approve screening/consent and restricted candidate-data controls; approve interviewer guidance; then Jordan may separately authorize recruiting",
+    "design_scope": "no website content or appearance, P003/native launch document, shared generator/assets, scanner/downloads, DNS, inquiry path, held domain or candidate data changed"
+  },
   "observed_security": "Gitleaks and active CodeQL scans passed in all five repositories; scanner dependency audit passed",
   "issue_map": {
     "P001": 34,
@@ -193,7 +205,8 @@
     "P010": 64,
     "P011": 75,
     "P012": 78,
-    "P014": 37
+    "P014": 37,
+    "P015": 81
   },
   "pawsfect_walks": {
     "native_repository": "jordanistan/PawfectWalks",
@@ -214,6 +227,9 @@
     "claim_status": "retained with exact local release/handoff command; connector lacks deletion",
     "documentation_pr": 2,
     "documentation_commit": "0d62c23a0141344967d7c13174a573da80ae1214",
-    "documentation_checks": "10 notes; relative links and issue references passed; documentation-only privacy review"
+    "documentation_checks": "10 notes; relative links and issue references passed; documentation-only privacy review",
+    "recruiting_gate_issue": 81,
+    "recruiting_gate_pr": 82,
+    "recruiting_status": "all eight recruiting gates pending; no candidate collection, hiring, dispatch or paid care authorized"
   }
 }
