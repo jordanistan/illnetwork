@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "checked_on": "2026-10-15",
+  "sources": [
+    {
+      "id": "twc-worker-classification",
+      "url": "https://www.twc.texas.gov/programs/unemployment-tax/classifying-employees-independent-contractors",
+      "purpose": "Texas worker-classification starting point; not a project-specific classification decision."
+    },
+    {
+      "id": "irs-worker-classification",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee",
+      "purpose": "Federal tax classification and control-factor starting point; document the complete actual relationship."
+    },
+    {
+      "id": "ftc-employer-background-checks",
+      "url": "https://www.ftc.gov/business-guidance/resources/background-checks-what-employers-need-know",
+      "purpose": "FCRA disclosure, authorization and notice starting point when a reporting company is used."
+    },
+    {
+      "id": "eeoc-employer-background-checks",
+      "url": "https://www.eeoc.gov/laws/guidance/background-checks-what-employers-need-know",
+      "purpose": "Equal-treatment and nondiscrimination starting point for background information and employment decisions."
+    }
+  ]
+}
