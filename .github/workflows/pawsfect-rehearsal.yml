@@ -1,0 +1,58 @@
+name: Pawsfect rehearsal checks
+
+on:
+  pull_request:
+    paths:
+      - '.github/portfolio/pawsfect-rehearsal/**'
+      - '.github/workflows/pawsfect-rehearsal.yml'
+      - 'portfolio/pawsfect_rehearsal.py'
+      - 'portfolio/test_pawsfect_rehearsal.py'
+  push:
+    branches: [main]
+    paths:
+      - '.github/portfolio/pawsfect-rehearsal/**'
+      - '.github/workflows/pawsfect-rehearsal.yml'
+      - 'portfolio/pawsfect_rehearsal.py'
+      - 'portfolio/test_pawsfect_rehearsal.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pawsfect-rehearsal-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out reviewed source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Run focused tests
+        run: python3 -m unittest portfolio/test_pawsfect_rehearsal.py -v
+      - name: Verify deterministic offline artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          first="$(mktemp -d)"
+          second="$(mktemp -d)"
+          for directory in "$first" "$second"; do
+            python3 portfolio/pawsfect_rehearsal.py run \
+              .github/portfolio/pawsfect-rehearsal/example.json \
+              "$directory/report.json"
+            python3 portfolio/pawsfect_rehearsal.py review \
+              .github/portfolio/pawsfect-rehearsal/example.json \
+              "$directory/report.json" "$directory/review.json" \
+              --decision accept_offline_result \
+              --reason synthetic_controls_match
+            python3 portfolio/pawsfect_rehearsal.py verify \
+              .github/portfolio/pawsfect-rehearsal/example.json \
+              "$directory/report.json" "$directory/review.json"
+          done
+          cmp "$first/report.json" "$second/report.json"
+          cmp "$first/review.json" "$second/review.json"
+          rm "$first/report.json" "$first/review.json" "$second/report.json" "$second/review.json"
+          rmdir "$first" "$second"
