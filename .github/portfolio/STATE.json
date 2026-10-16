@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -23,6 +23,7 @@
     "starfield_release_tests": "15 passed; fixed public notes, sensitive-data rejection, ordered dependencies and chronology, exact reviewer roles, pending-by-default approval and owner-attestation boundaries",
     "health_review_tests": "20 passed; four fresh artifact-tree digests, strict JSON and fixed inventory, licensed-reviewer and owner separation, chronology, stale-review and sensitive-data rejection",
     "pawsfect_recruiting_tests": "16 passed; frozen packet binding, ordered reviewer roles and chronology, strict JSON/file safety, PII/secret/held-domain rejection and explicit no-hire/no-dispatch/no-paid-launch boundaries",
+    "pawsfect_rehearsal_tests": "18 passed; frozen 11-scenario source, every reviewed variant, exact-byte/canonical/report hash chain, deterministic artifacts, strict schemas, PII/held-domain screening, traversal/symlink/overwrite rejection and permanent non-authorization boundaries",
     "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
     "production_artifacts": "all 14 built and checked",
     "javascript_syntax": "passed",
@@ -95,7 +96,8 @@
     "P011": "release-readiness gate complete in PR #76; merge 909c7cadec71e2b4afe00170984fca8fd3b3f6c1; all four PR workflows passed; all nine evidence gates remain pending and no release is approved",
     "P012": "qualified review gate complete in PR #79; merge c2da73d38fc8c47d4a40b6581254ddad19f9972a; all four PR workflows passed; all six evidence gates remain pending and no professional approval is claimed",
     "P014": "complete in PR #62; merge cbcdb733256c6e6bf610f856723ff3cc164e67d2; all three PR workflows passed; no website content or design change",
-    "P015": "recruiting-readiness gate complete in PR #82; merge 301a74ed6bd60379ca9a43fed1c68bf38fa1a374; all four PR workflows passed; all eight gates remain pending and hiring, dispatch and paid care remain unauthorized"
+    "P015": "recruiting-readiness gate complete in PR #82; merge 301a74ed6bd60379ca9a43fed1c68bf38fa1a374; all four PR workflows passed; all eight gates remain pending and hiring, dispatch and paid care remain unauthorized",
+    "P016": "offline synthetic rehearsal complete in PR #85; merge 4a0e8c732014f53a33d88b9cf37c5e6993251580; all four PR workflows passed; real prerequisites remain unevaluated and no live action is authorized"
   },
   "learning_labs": {
     "issue": 33,
@@ -192,6 +194,16 @@
     "owner_gate": "freeze the actual pilot facts; obtain qualified classification and employment/tax review; approve matching pay/control terms; confirm coverage with the insurer; approve screening/consent and restricted candidate-data controls; approve interviewer guidance; then Jordan may separately authorize recruiting",
     "design_scope": "no website content or appearance, P003/native launch document, shared generator/assets, scanner/downloads, DNS, inquiry path, held domain or candidate data changed"
   },
+  "pawsfect_offline_rehearsal": {
+    "issue": 84,
+    "pull_request": 85,
+    "commit": "4a0e8c732014f53a33d88b9cf37c5e6993251580",
+    "status": "offline synthetic harness merged; all real launch and recruiting prerequisites remain unevaluated; no live action authorized",
+    "checks": "18 focused tests and 131 portfolio tests passed; 37-page educational preview and all 14 isolated production exports passed; workflow runs 38978785809, 38978785782, 38978785759 and 38978785854 succeeded",
+    "boundaries": "fixed source path/blob and 11 scenarios, closed variants/controls, raw and canonical request hashes, report-bound offline review, deterministic create-only artifacts, strict JSON/path/data rejection and permanent false authorization fields",
+    "owner_gate": "complete P003's seven decisions; complete P015 before recruiting; separately approve engagement, hire, assignment and dispatch; verify hosting/inbox; run controlled drills with rollback; cap and confirm the first pilot; review completed visits before expansion",
+    "design_scope": "no website content or appearance, native Pawsfect document, shared generator/assets, scanner/downloads, DNS, hosting, inquiry, payment, customer/worker record, held domain or unreleased product changed"
+  },
   "observed_security": "Gitleaks and active CodeQL scans passed in all five repositories; scanner dependency audit passed",
   "issue_map": {
     "P001": 34,
@@ -206,7 +218,8 @@
     "P011": 75,
     "P012": 78,
     "P014": 37,
-    "P015": 81
+    "P015": 81,
+    "P016": 84
   },
   "pawsfect_walks": {
     "native_repository": "jordanistan/PawfectWalks",
@@ -230,6 +243,9 @@
     "documentation_checks": "10 notes; relative links and issue references passed; documentation-only privacy review",
     "recruiting_gate_issue": 81,
     "recruiting_gate_pr": 82,
-    "recruiting_status": "all eight recruiting gates pending; no candidate collection, hiring, dispatch or paid care authorized"
+    "recruiting_status": "all eight recruiting gates pending; no candidate collection, hiring, dispatch or paid care authorized",
+    "rehearsal_issue": 84,
+    "rehearsal_pr": 85,
+    "rehearsal_status": "offline synthetic harness merged; prerequisites not evaluated; no launch, booking, dispatch, payment, refund or external action authorized"
   }
 }
