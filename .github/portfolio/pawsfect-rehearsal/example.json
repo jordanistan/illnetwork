@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "project": "Pawsfect Walks offline synthetic rehearsal",
+  "request_id": "pawsfect-synthetic-001",
+  "data_classification": "synthetic",
+  "offline_only": true,
+  "live_execution_authorized": false,
+  "source_path": "docs/launch/09_Launch_Test_and_Agent_Handoff.md",
+  "source_blob_sha": "b62e010eedbc42f7d110ff3e903efae15a670e76",
+  "prerequisites": [
+    {"id": "p003_insurance_coverage", "status": "not_evaluated_by_p016"},
+    {"id": "p003_service_area_capacity", "status": "not_evaluated_by_p016"},
+    {"id": "p003_intake_meet_greet", "status": "not_evaluated_by_p016"},
+    {"id": "p003_handling_transport", "status": "not_evaluated_by_p016"},
+    {"id": "p003_service_agreement", "status": "not_evaluated_by_p016"},
+    {"id": "p003_cancellation_refunds", "status": "not_evaluated_by_p016"},
+    {"id": "p003_payment_booking", "status": "not_evaluated_by_p016"},
+    {"id": "p015_recruiting_authorization", "status": "not_evaluated_by_p016"}
+  ],
+  "scenarios": [
+    {"id": "p016-s01-qualified-inquiry", "variant": "controlled-inquiry", "observed_control": "hold_for_human_fit_review"},
+    {"id": "p016-s02-outside-area-no-capacity", "variant": "outside-zone", "observed_control": "decline_or_waitlist_without_charge"},
+    {"id": "p016-s03-meet-greet-safety-fail", "variant": "unsafe-fit", "observed_control": "decline_care_without_charge"},
+    {"id": "p016-s04-ready-client", "variant": "all-ready", "observed_control": "hold_for_human_booking_confirmation"},
+    {"id": "p016-s05-payment-failed-pending", "variant": "pending-payment", "observed_control": "keep_visit_unconfirmed"},
+    {"id": "p016-s06-worker-unavailable", "variant": "no-ready-backup", "observed_control": "notify_and_record_full_refund_due"},
+    {"id": "p016-s07-unsafe-weather-no-access", "variant": "unsafe-weather", "observed_control": "use_preapproved_safe_alternative_or_stop_and_record_full_refund_due"},
+    {"id": "p016-s08-injury-escape", "variant": "injury", "observed_control": "contain_contact_escalate_and_keep_report_private"},
+    {"id": "p016-s09-late-cancellation-refund-failure", "variant": "refund-failure", "observed_control": "escalate_refund_failure_for_reconciliation"},
+    {"id": "p016-s10-complete-visit", "variant": "completed-visit", "observed_control": "record_synthetic_completion_and_reconcile"},
+    {"id": "p016-s11-client-worker-offboarding", "variant": "worker-offboarding", "observed_control": "revoke_synthetic_access_and_permissions"}
+  ]
+}
