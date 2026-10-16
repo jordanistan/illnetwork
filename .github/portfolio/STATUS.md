@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 15, 2026
+# Portfolio checkpoint — October 16, 2026
 
 ## Shipped
 
@@ -130,3 +130,11 @@ All six review gates remain `pending`. No professional review, health or clinica
 Sixteen focused tests and all 113 portfolio tests passed. The 37-page educational preview and all 14 isolated production exports passed with zero artifact errors; shared JavaScript syntax passed. PR runs for the [Pawsfect recruiting gate](https://github.com/jordanistan/illnetwork/actions/runs/38823922471), [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38823921939), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38823922134) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/38823921909) succeeded. Independent recruiting-boundary and schema/security reviews caused the proposed facts to be frozen before classification review and added separate pay/control and candidate-data gates.
 
 All eight gates remain `pending`; `recruiting_approved`, `hire_authorized`, `dispatch_authorized` and `paid_care_launch_ready` remain false. No posting, outreach, candidate collection, screening, interview, offer, agreement, policy purchase, hire, assignment, booking or paid care is authorized or claimed. No website source, appearance, shared asset, scanner, download, DNS, inquiry path, held domain or P003/native launch document changed. Exact owner actions and the public/private data boundary are in `.github/portfolio/pawsfect-recruiting/README.md`.
+
+## P016 Pawsfect offline synthetic rehearsal — October 16, 2026
+
+[PR #85](https://github.com/jordanistan/illnetwork/pull/85) merged as `4a0e8c732014f53a33d88b9cf37c5e6993251580`. It adds an offline harness for the eleven synthetic scenarios in the frozen native launch-test handoff. The tool compares closed-enum synthetic controls, records exact-byte and canonical request hashes, creates a deterministic report and binds a separate offline review to the report hash. P003 and P015 prerequisites remain permanently `not_evaluated_by_p016`; every launch, booking, dispatch, payment, refund and external-action authorization remains false. Hashes provide artifact integrity, not reviewer authentication or owner approval.
+
+Eighteen focused tests and all 131 portfolio tests passed. The 37-page educational preview, all 14 isolated production exports, shared JavaScript syntax and diff checks passed. PR runs for the [Pawsfect rehearsal](https://github.com/jordanistan/illnetwork/actions/runs/38978785809), [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/38978785782), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/38978785759) and [domain security](https://github.com/jordanistan/illnetwork/actions/runs/38978785854) succeeded. Independent process and security rereviews found no remaining high- or medium-severity issue.
+
+No site, design, native Pawsfect document, scanner, download, DNS, hosting, inquiry, payment, customer or worker record changed. This rehearsal does not make paid care ready. Jordan must still complete P003's seven decisions, P015 before recruiting, separate lawful engagement/hire/assignment/dispatch steps, authenticated hosting/inbox evidence, controlled drills, rollback, a capped pilot, per-client confirmation and post-visit review before expansion.
