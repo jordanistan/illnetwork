@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -97,7 +97,8 @@
     "P012": "qualified review gate complete in PR #79; merge c2da73d38fc8c47d4a40b6581254ddad19f9972a; all four PR workflows passed; all six evidence gates remain pending and no professional approval is claimed",
     "P014": "complete in PR #62; merge cbcdb733256c6e6bf610f856723ff3cc164e67d2; all three PR workflows passed; no website content or design change",
     "P015": "recruiting-readiness gate complete in PR #82; merge 301a74ed6bd60379ca9a43fed1c68bf38fa1a374; all four PR workflows passed; all eight gates remain pending and hiring, dispatch and paid care remain unauthorized",
-    "P016": "offline synthetic rehearsal complete in PR #85; merge 4a0e8c732014f53a33d88b9cf37c5e6993251580; all four PR workflows passed; real prerequisites remain unevaluated and no live action is authorized"
+    "P016": "offline synthetic rehearsal complete in PR #85; merge 4a0e8c732014f53a33d88b9cf37c5e6993251580; all four PR workflows passed; real prerequisites remain unevaluated and no live action is authorized",
+    "P017": "pinned Gitleaks v3 / Node 24 workflow references merged in illnetwork PR #52, SpaceGhostKilla PR #13 and I Am Birdy PR #2; associated PR checks passed, with fresh October 17 rebases for central/Birdy and unchanged-base October 9 evidence for SpaceGhostKilla; site, scanner and product files unchanged"
   },
   "learning_labs": {
     "issue": 33,
@@ -204,6 +205,19 @@
     "owner_gate": "complete P003's seven decisions; complete P015 before recruiting; separately approve engagement, hire, assignment and dispatch; verify hosting/inbox; run controlled drills with rollback; cap and confirm the first pilot; review completed visits before expansion",
     "design_scope": "no website content or appearance, native Pawsfect document, shared generator/assets, scanner/downloads, DNS, hosting, inquiry, payment, customer/worker record, held domain or unreleased product changed"
   },
+  "secret_scanning_runtime": {
+    "issue": 87,
+    "upstream_commit": "e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e",
+    "upstream_runtime": "node24",
+    "merges": {
+      "illnetwork": {"pull_request": 52, "commit": "bd6fc89409fe69d5f39ddc38ffef9f6a7699744d", "workflow_blob": "3c20a0eb8f7d0eda43b1da47702e1dc275e10261"},
+      "spaceghostkilla": {"pull_request": 13, "commit": "00bb57e8aad3abbd8ba693a6e34a858380889976", "workflow_blob": "4736893dc0076790f653b488c1d1cc7801c5e6b6"},
+      "iambirdy": {"pull_request": 2, "commit": "d17b07518c988078dfc853a8ec510a48abf17336", "workflow_blob": "07f3876426a9732da8ddbe40bd61e58809ab30ff"}
+    },
+    "checks": "central runs 39078281208, 39078281201 and 39078281220; Birdy runs 39078277651 and 39078277666; SpaceGhostKilla runs 37915866202, 37915866058 and 37915865869 all succeeded",
+    "boundaries": "full-SHA action pin, Node 24 runtime, read-only default permissions, persisted credentials disabled, comments and artifact uploads disabled; account-level secret scanning/push protection unverified",
+    "design_scope": "no website content or appearance, gallery, security research/download, scanner/runtime dependency, Pages audience, production export, DNS, inquiry, payment, customer/worker data, held domain or unreleased product changed"
+  },
   "observed_security": "Gitleaks and active CodeQL scans passed in all five repositories; scanner dependency audit passed",
   "issue_map": {
     "P001": 34,
@@ -219,7 +233,8 @@
     "P012": 78,
     "P014": 37,
     "P015": 81,
-    "P016": 84
+    "P016": 84,
+    "P017": 87
   },
   "pawsfect_walks": {
     "native_repository": "jordanistan/PawfectWalks",
