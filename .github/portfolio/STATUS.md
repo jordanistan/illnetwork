@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 17, 2026
+# Portfolio checkpoint — October 18, 2026
 
 ## Shipped
 
@@ -146,3 +146,11 @@ The reviewed full-SHA Gitleaks Action v3 update was merged in [illnetwork PR #52
 Associated PR checks passed. The central and Birdy branches were freshly rebased on October 17: central [domain security](https://github.com/jordanistan/illnetwork/actions/runs/39078281208), [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/39078281201) and [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/39078281220); Birdy [site/Pages](https://github.com/jordanistan/iambirdy/actions/runs/39078277651) and [domain security](https://github.com/jordanistan/iambirdy/actions/runs/39078277666). SpaceGhostKilla's unchanged-base exact PR head had successful October 9 [site checks](https://github.com/jordanistan/spaceghostkilla/actions/runs/37915866202), [secret scan](https://github.com/jordanistan/spaceghostkilla/actions/runs/37915866058) and [CodeQL](https://github.com/jordanistan/spaceghostkilla/actions/runs/37915865869). No new post-merge run surfaced through the connector; all three reviewed workflow files were fetched back from `main` at their expected blobs.
 
 Only secret-scan workflow references changed. No website content/design, gallery, security research, downloads, scanner/runtime dependency, Pages audience, production export, DNS, inquiry, payment, customer/worker data, held domain or unreleased product changed. Native secret-scanning enforcement and push protection remain account settings and are still unverified.
+
+## P018 multi-agent claim audit — October 18, 2026
+
+[PR #90](https://github.com/jordanistan/illnetwork/pull/90) merged as `afdeafdfa281daeb530dc56d6d6f670a560951c9`. It adds a canonical claim-lifecycle ledger, a read-only offline auditor, operating guidance and a pinned least-privilege Action. The auditor consumes saved `git ls-remote` output and never creates, moves or deletes a ref. It prints an exact-SHA `--force-with-lease` command only for a reviewed `release_ready` entry whose current remote SHA matches. An unknown, missing, changed, malformed or contradictory claim suppresses every release command and fails the audit.
+
+Thirteen focused tests and all 144 portfolio tests passed locally. The 37-page educational review and all 14 isolated production exports passed with zero errors. PR runs for [claim audit](https://github.com/jordanistan/illnetwork/actions/runs/39176519367), [domain security](https://github.com/jordanistan/illnetwork/actions/runs/39176519306), [dependency security](https://github.com/jordanistan/illnetwork/actions/runs/39176519213) and [domain/Pages validation](https://github.com/jordanistan/illnetwork/actions/runs/39176519295) succeeded. Independent security review found and resolved one fail-closed command-suppression issue; final review found no remaining high- or medium-severity issue.
+
+The reviewed live snapshot identifies 14 exact-match completed leases as release-ready. P001 remains retained for owner Pages/Cloudflare work; P009 and P013 remain active and receive no deletion commands. No claim ref was deleted or moved. No website content/design, scanner code/dependency, media, research/download, Pages audience, production export, DNS, inquiry, payment, customer/worker data, held domain or unreleased product changed.
