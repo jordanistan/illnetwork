@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "repository": "jordanistan/illnetwork",
+  "claims": [
+    {"task": "P001", "status": "retain_owner_blocked", "expected_sha": "6c67d176b3a23a8eb3a15710a7238c27cb24783e", "issue": 34, "reason": "Owner-authenticated Pages and Cloudflare inspection plus a passing strict live run remain required."},
+    {"task": "P002", "status": "released", "expected_sha": "", "issue": 28, "reason": "Browser QA was merged and its lease was released."},
+    {"task": "P003", "status": "release_ready", "expected_sha": "69b36376f2fb7d24dda339ea3958812a091188f3", "issue": 29, "reason": "The documentation session is complete; owner decisions require a fresh laptop lease after exact release."},
+    {"task": "P004", "status": "release_ready", "expected_sha": "5d6305a022eb7dcabc89e23c309a03439f5125fa", "issue": 30, "reason": "The consulting review packet was integrated; owner commercial decisions remain outside this lease."},
+    {"task": "P005", "status": "release_ready", "expected_sha": "fc47b460074d505e470104529865e1f999ca293b", "issue": 31, "reason": "The hosting preflight was integrated; authenticated Cloudflare and cutover evidence remains owner work."},
+    {"task": "P006", "status": "release_ready", "expected_sha": "a444c99e69c3fcb1326bc3bf8f160d88c82108a8", "issue": 56, "reason": "The professional portfolio polish was merged and verified live."},
+    {"task": "P007", "status": "release_ready", "expected_sha": "bded080f43e9357ab67b8d4138b74d459bd8a415", "issue": 32, "reason": "The verified source dataset was merged and intentionally remains unpublished."},
+    {"task": "P008", "status": "release_ready", "expected_sha": "9be2f72ee9679f42a438ee709f2ac32177d9826e", "issue": 33, "reason": "The learning labs were merged and verified."},
+    {"task": "P009", "status": "active", "expected_sha": "b552641437913b551d32b156a475007480082c4f", "issue": 47, "reason": "The Birdy gallery import remains under its existing active shared-generator claim."},
+    {"task": "P010", "status": "release_ready", "expected_sha": "a65e6d7e7c40ec2002ab9b3c256f8f8445ad965f", "issue": 64, "reason": "The offline synthetic approval pilot was merged and verified."},
+    {"task": "P011", "status": "release_ready", "expected_sha": "ac713ee772f1ceab2d245692c6af423d752b6d35", "issue": 75, "reason": "The pending-by-default Starfield gate was merged; qualified owner evidence remains separate."},
+    {"task": "P012", "status": "release_ready", "expected_sha": "5f96385eb22c44807888743ad1e36b43a9948863", "issue": 78, "reason": "The health review gate was merged; qualified review remains separate."},
+    {"task": "P013", "status": "active", "expected_sha": "45c397150ad0c22760d30df4eb48178e1d65d69d", "issue": 38, "reason": "The scanner CodeQL remediation remains separately claimed and must not be disturbed."},
+    {"task": "P014", "status": "release_ready", "expected_sha": "e305f8c50b51fb3c91826f639f56e35a4f8b116f", "issue": 37, "reason": "Artifact allowlist hardening was merged and verified."},
+    {"task": "P015", "status": "release_ready", "expected_sha": "87b695ec2b79abc4578dbcaf4671322960e3d7b8", "issue": 81, "reason": "The recruiting gate was merged; every real approval remains owner work."},
+    {"task": "P016", "status": "release_ready", "expected_sha": "6426e071ec42afc8a16463a58e3baba399d31f3b", "issue": 84, "reason": "The offline Pawsfect rehearsal was merged and verified."},
+    {"task": "P017", "status": "release_ready", "expected_sha": "d8fa11560e34345abc486af245013e8affe49933", "issue": 87, "reason": "The Gitleaks Node 24 runtime refresh and checkpoint were merged."},
+    {"task": "P018", "status": "active", "expected_sha": "78dde3787dcff416e1c4f8f1ecc8141c2455df36", "issue": 89, "reason": "Claim-hygiene audit implementation and review are in progress."}
+  ]
+}
