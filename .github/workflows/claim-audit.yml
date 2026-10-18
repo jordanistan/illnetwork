@@ -1,0 +1,43 @@
+name: Portfolio claim audit
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'portfolio/claim_audit.py'
+      - 'portfolio/test_claim_audit.py'
+      - '.github/portfolio/CLAIMS.json'
+      - '.github/portfolio/CLAIMS.md'
+      - '.github/workflows/claim-audit.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'portfolio/claim_audit.py'
+      - 'portfolio/test_claim_audit.py'
+      - '.github/portfolio/CLAIMS.json'
+      - '.github/portfolio/CLAIMS.md'
+      - '.github/workflows/claim-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: claim-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Run focused claim-audit tests
+        run: python3 -m unittest portfolio.test_claim_audit -v
+      - name: Read remote coordination refs without credentials
+        run: git ls-remote https://github.com/jordanistan/illnetwork.git 'refs/heads/claims/*' > /tmp/portfolio-claim-refs.txt
+      - name: Audit exact claim lifecycle and lease SHAs
+        run: python3 portfolio/claim_audit.py --refs /tmp/portfolio-claim-refs.txt
