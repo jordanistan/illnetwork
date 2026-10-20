@@ -20,6 +20,7 @@
     {"task": "P016", "status": "release_ready", "expected_sha": "6426e071ec42afc8a16463a58e3baba399d31f3b", "issue": 84, "reason": "The offline Pawsfect rehearsal was merged and verified."},
     {"task": "P017", "status": "release_ready", "expected_sha": "d8fa11560e34345abc486af245013e8affe49933", "issue": 87, "reason": "The Gitleaks Node 24 runtime refresh and checkpoint were merged."},
     {"task": "P018", "status": "release_ready", "expected_sha": "78dde3787dcff416e1c4f8f1ecc8141c2455df36", "issue": 89, "reason": "The fail-closed claim-hygiene auditor was merged and all four feature PR workflows passed."},
-    {"task": "P019", "status": "release_ready", "expected_sha": "106f6f24a5e127fdd4df670d01147d2cb2e43e35", "issue": 93, "reason": "The professional-repository Alpine runtime consolidation was merged and its two native PR workflows passed."}
+    {"task": "P019", "status": "release_ready", "expected_sha": "106f6f24a5e127fdd4df670d01147d2cb2e43e35", "issue": 93, "reason": "The professional-repository Alpine runtime consolidation was merged and its two native PR workflows passed."},
+    {"task": "P020", "status": "release_ready", "expected_sha": "cc264fd93172300eece66b7ba7525c6d6b79cfe6", "issue": 95, "reason": "The native CodeQL v4.39.0 consolidation was merged in both repositories and all five native PR workflows passed."}
   ]
 }
