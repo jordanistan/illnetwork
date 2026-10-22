@@ -1,0 +1,57 @@
+name: Pawsfect public boundary audit
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'portfolio/pawsfect_public_audit.py'
+      - 'portfolio/test_pawsfect_public_audit.py'
+      - '.github/portfolio/pawsfect-public/**'
+      - '.github/portfolio/pawsfect-recruiting/P015_RECRUITING_EVIDENCE_TEMPLATE.json'
+      - '.github/portfolio/STATE.json'
+      - '.github/workflows/pawsfect-public-audit.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'portfolio/pawsfect_public_audit.py'
+      - 'portfolio/test_pawsfect_public_audit.py'
+      - '.github/portfolio/pawsfect-public/**'
+      - '.github/portfolio/pawsfect-recruiting/P015_RECRUITING_EVIDENCE_TEMPLATE.json'
+      - '.github/portfolio/STATE.json'
+      - '.github/workflows/pawsfect-public-audit.yml'
+  schedule:
+    - cron: '41 14 * * 4'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pawsfect-public-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Run offline boundary tests
+        run: python3 -m unittest portfolio.test_pawsfect_public_audit -v
+
+  live:
+    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          ref: ${{ github.sha }}
+      - name: Audit the fixed public root and module
+        run: python3 portfolio/pawsfect_public_audit.py

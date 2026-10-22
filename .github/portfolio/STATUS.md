@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 18, 2026
+# Portfolio checkpoint — October 22, 2026
 
 ## Shipped
 
@@ -180,3 +180,13 @@ Eleven focused tests, Python compilation, JavaScript syntax, the native 40-page 
 The October 21 local strict probe did not pass: the served root included Cloudflare Email Decode, Rocket Loader and Insights scripts beyond the two reviewed local scripts. The allowlist was not weakened, and no clean live deployment is claimed. The unrelated dormant EthicalCheck starter workflow—containing a placeholder email, unrelated third-party API target and write permission—was removed. Jordan must review those three Cloudflare features for this hostname while preserving unrelated access, DNS, email and security controls, then manually dispatch **Professional site live integrity**. Issue #97 and the P021 claim remain owner-blocked until that run succeeds.
 
 No HTML, CSS, JavaScript, image, PDF, DNS, Pages audience, inquiry path, held domain or unreleased product changed.
+
+## P022 Pawsfect public launch-boundary audit — October 22, 2026
+
+The fixed public root returned HTTPS 200 with HSTS and one same-origin module, but the public root metadata and compiled site currently cross the pending P003/P015 boundary. The SEO metadata says Pawsfect provides walking and sitting services; the module advertises `Hiring now`, `Apply in minutes`, walker earnings and applications, `$50` services, broad Austin zones, dog sitting and pickup/return oversight. It does not say that the site is prelaunch, a waitlist request is not a booking, paid care and recruiting are unavailable, or sensitive details should be kept out of the initial inquiry. This is a public-copy mismatch, not evidence that recruiting, insurance, bookings, service capacity or revenue exist.
+
+P022 adds a standard-library, credential-free verifier for exactly `https://pawsfectwalks.com/` and one validated same-origin hashed module. Requests and redirects are bounded by exact endpoints, time, byte size, MIME and strict UTF-8 checks; the root uses a fail-closed element/resource inventory and prelaunch-safe metadata; the module is compared with the canonical pending P003/P015 state. Pull requests run 22 deterministic offline tests only. Scheduled/manual runs on trusted `main` make at most two public GETs and intentionally fail on the current site. See [issue #99](https://github.com/jordanistan/illnetwork/issues/99) and [the owner handoff](pawsfect-public/P022_HANDOFF.md).
+
+Jordan must preserve the visual design but replace unsupported content in a separate native-site change: remove hiring/application/earnings language, public rates, broad availability, sitting and transport claims; replace the service-availability SEO metadata; remove the `any special needs` ordinary-email prompt; add a clear prelaunch state, no-paid-care/no-recruiting boundary, waitlist-not-booking disclosure and initial-inquiry privacy warning. After native checks and deployment, manually dispatch **Pawsfect public boundary audit** and attach the passing run to issue #99. The seven P003 decisions and eight P015 gates remain separately pending; a passing content audit does not approve launch or recruiting.
+
+No native website, design, P003/P015 evidence, inbox, DNS, hosting, payment, customer/worker data, scanner, download, held domain or unreleased product changed.
