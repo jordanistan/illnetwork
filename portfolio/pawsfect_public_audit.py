@@ -94,7 +94,9 @@ PROHIBITED_COMMERCE = re.compile(
     re.IGNORECASE,
 )
 PROHIBITED_RECRUITING = re.compile(
-    r"(?:\bapply\b|application|\bcareers?\b|\bresume\b|\bcandidates?\b|\bhiring\b|\brecruiting\b|become a walker)",
+    r"(?:\bapply\s+(?:now|by email|for|to)\b|(?:\b|%20)applications?\b|\bcareers?\b|"
+    r"\b(?:send|upload)\s+(?:(?:a|your)\s+)?resume\b|\bcandidates?\b|\bhiring\b|"
+    r"\brecruiting\b|become a walker)",
     re.IGNORECASE,
 )
 
@@ -391,6 +393,8 @@ def _policy_errors(text: str, *, require_boundaries: bool) -> list[str]:
     # The required negative recruiting statement is the sole approved use of
     # that token while P015 is pending. Candidate/application paths remain
     # prohibited even when their mailto subject is encoded or built at runtime.
+    # Match phrases rather than the bare JavaScript method name ``apply`` so a
+    # normal minified framework bundle cannot create a false staffing finding.
     recruiting_text = normalized
     for approved_negative in (
         "recruiting is not open.",
