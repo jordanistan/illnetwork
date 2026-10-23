@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 22, 2026
+# Portfolio checkpoint — October 23, 2026
 
 ## Shipped
 
@@ -190,3 +190,11 @@ P022 adds a standard-library, credential-free verifier for exactly `https://paws
 Jordan must preserve the visual design but replace unsupported content in a separate native-site change: remove hiring/application/earnings language, public rates, broad availability, sitting and transport claims; replace the service-availability SEO metadata; remove the `any special needs` ordinary-email prompt; add a clear prelaunch state, no-paid-care/no-recruiting boundary, waitlist-not-booking disclosure and initial-inquiry privacy warning. After native checks and deployment, manually dispatch **Pawsfect public boundary audit** and attach the passing run to issue #99. The seven P003 decisions and eight P015 gates remain separately pending; a passing content audit does not approve launch or recruiting.
 
 No native website, design, P003/P015 evidence, inbox, DNS, hosting, payment, customer/worker data, scanner, download, held domain or unreleased product changed.
+
+## P023 Pawsfect pre-launch copy remediation — October 23, 2026
+
+[Native PR #6](https://github.com/jordanistan/PawfectWalks/pull/6) merged as `987fadf8f6687e154ee0426808bb9a31c6147c04` after [native Action run 40036899936](https://github.com/jordanistan/PawfectWalks/actions/runs/40036899936) succeeded. The existing amber/gray design and layout were preserved; no CSS changed. The public source now uses exact pre-launch metadata, removes unsupported rates, broad coverage, sitting, transport and staffing claims, and states that a waitlist submission is not a booking, paid care is unavailable and recruiting is closed. The email handoff now asks only for general interest, has associated accessible labels and warns against sending addresses, access codes, payment details, IDs or medical records.
+
+The native repository now has a pinned, least-privilege Action and a built-artifact verifier with six negative tests. Local lint, typecheck, production build, native boundary checks and diff checks passed. The central P022 verifier now has 23 offline tests; its staffing matcher still rejects real application, résumé, hiring and candidate paths but no longer treats React's ordinary `.apply(...)` method as a worker application.
+
+The existing host deployed the merged native commit without a DNS or hosting change. On October 23 the strict credential-free P022 probe passed against `https://pawsfectwalks.com/`: root 1,039 bytes, bundle 173,369 bytes, bundle SHA-256 `48f9cb792c03fef579e894ffc59c7cc5580e62cade5455c31c2aeb4de92c3faf`. This verifies the public content boundary only. All seven P003 operating confirmations and all eight P015 recruiting gates remain pending; no insurance, availability, booking, hiring, paid care, customer, payment or revenue is claimed.

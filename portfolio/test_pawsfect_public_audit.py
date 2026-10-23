@@ -341,6 +341,10 @@ class BoundaryTests(unittest.TestCase):
             ):
                 verify_bundle(safe_bundle() + path.encode())
 
+    def test_framework_apply_method_is_not_a_candidate_path(self) -> None:
+        bundle = safe_bundle() + b";callbacks[0].apply(this,args)"
+        self.assertEqual(len(verify_bundle(bundle)), 64)
+
     def test_invalid_bundle_utf8_is_rejected(self) -> None:
         with self.assertRaises(AuditError):
             verify_bundle(b"\xff")

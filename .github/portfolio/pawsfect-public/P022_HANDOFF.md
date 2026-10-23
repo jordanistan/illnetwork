@@ -4,7 +4,7 @@
 
 The public Pawsfect site must remain visibly prelaunch while P003's seven operating decisions and P015's eight recruiting gates are pending. This audit observes the fixed public root and its one same-origin JavaScript module. It does not change the native site, approve launch, send an inquiry, recruit a worker, or inspect any account.
 
-## Current observation — October 22, 2026
+## Initial observation — October 22, 2026
 
 `https://pawsfectwalks.com/` returned HTTPS 200 from Netlify with HSTS and one local module. The public module still contains recruiting and operating claims that conflict with the canonical pending state, including:
 
@@ -37,3 +37,11 @@ The strict live audit therefore fails by design. This is evidence of a public-bo
 - Bundle substring review detects known drift but cannot prove every rendered JavaScript semantic. A separate browser review remains required after remediation.
 
 No website, design, P003/P015 evidence, shared generator/assets, inbox, DNS, hosting, payment, customer/worker data, scanner, download, held domain, or other task claim changed in P022.
+
+## Remediation verification — October 23, 2026
+
+Native [PR #6](https://github.com/jordanistan/PawfectWalks/pull/6) merged as `987fadf8f6687e154ee0426808bb9a31c6147c04` with the established design preserved. Its pinned Action passed. The public host then served the exact pre-launch metadata and all required waitlist, no-booking, no-paid-care, no-recruiting and initial-inquiry privacy boundaries without the prohibited rate, coverage, sitting, transport or staffing claims.
+
+The local strict probe passed: root 1,039 bytes; module 173,369 bytes; module SHA-256 `48f9cb792c03fef579e894ffc59c7cc5580e62cade5455c31c2aeb4de92c3faf`. The verifier's staffing matcher also gained a regression test so React's internal `.apply(...)` method is not mistaken for a worker application; real application and candidate paths remain rejected.
+
+This completes the public-copy boundary only. P003's seven operating confirmations and P015's eight recruiting gates remain pending, so the site is still a waitlist—not a booking, hiring, dispatch or paid-care authorization.
