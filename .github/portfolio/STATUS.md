@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 23, 2026
+# Portfolio checkpoint — October 24, 2026
 
 ## Shipped
 
@@ -198,3 +198,11 @@ No native website, design, P003/P015 evidence, inbox, DNS, hosting, payment, cus
 The native repository now has a pinned, least-privilege Action and a built-artifact verifier with six negative tests. Local lint, typecheck, production build, native boundary checks and diff checks passed. The central P022 verifier now has 23 offline tests; its staffing matcher still rejects real application, résumé, hiring and candidate paths but no longer treats React's ordinary `.apply(...)` method as a worker application.
 
 The existing host deployed the merged native commit without a DNS or hosting change. On October 23 the strict credential-free P022 probe passed against `https://pawsfectwalks.com/`: root 1,039 bytes, bundle 173,369 bytes, bundle SHA-256 `48f9cb792c03fef579e894ffc59c7cc5580e62cade5455c31c2aeb4de92c3faf`. This verifies the public content boundary only. All seven P003 operating confirmations and all eight P015 recruiting gates remain pending; no insurance, availability, booking, hiring, paid care, customer, payment or revenue is claimed.
+
+## P024 Pawsfect public inquiry handoff — October 24, 2026
+
+[Native PR #7](https://github.com/jordanistan/PawfectWalks/pull/7) merged as `ea5e02497e9b5d846be3e19e6ab18b68970114e3` after [native Action run 40140603830](https://github.com/jordanistan/PawfectWalks/actions/runs/40140603830) succeeded. The public waitlist, partnership, general contact and policy mailto routes now use the already-approved public `jordan.robison@gmail.com` recipient instead of the unverified `hello@pawsfectwalks.com` alias. No CSS or layout changed; the current user-initiated email-app behavior, exact subjects, no-storage disclosure and sensitive-data warning remain intact.
+
+The native repository adds five inquiry regression tests plus a fail-closed built-artifact checker. The central repository adds six offline verifier tests and a pinned least-privilege Action; scheduled/manual trusted-main runs make only the same two bounded credential-free GETs as P022. On October 24 both the P022 content audit and P024 inquiry audit passed against the deployed site: root 1,039 bytes, bundle 173,376 bytes, bundle SHA-256 `ccf7f50dbcc690e8da20170669b7ef199e81fe240c81729e36623f41fb5c6e7e`.
+
+Public DNS observation found no MX answer for `pawsfectwalks.com`, no root TXT answer and NXDOMAIN for `_dmarc.pawsfectwalks.com`; those observations do not prove a working branded mailbox. No email was sent, no inbox was accessed and no receipt is claimed. Jordan must personally send one harmless synthetic inquiry, verify receipt/reply privately and record only the date, source SHA and pass/fail result. P003's seven operating confirmations and P015's eight recruiting gates remain pending; this handoff does not authorize bookings, recruiting, dispatch, paid care or revenue.

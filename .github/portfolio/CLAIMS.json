@@ -24,6 +24,7 @@
     {"task": "P020", "status": "release_ready", "expected_sha": "cc264fd93172300eece66b7ba7525c6d6b79cfe6", "issue": 95, "reason": "The native CodeQL v4.39.0 consolidation was merged in both repositories and all five native PR workflows passed."},
     {"task": "P021", "status": "retain_owner_blocked", "expected_sha": "2b9f5f671645e30721a9d9918c67716e16a67382", "issue": 97, "reason": "The bounded professional-site verifier merged, but the live root contains three Cloudflare-injected scripts; owner/admin review and a passing manual live run remain required."},
     {"task": "P022", "status": "release_ready", "expected_sha": "ac38575cb7926e28cd77fce8c6e1a4d91e6f4502", "issue": 99, "reason": "The public verifier, native remediation and October 23 strict live probe are complete; P003/P015 remain separate launch gates."},
-    {"task": "P023", "status": "release_ready", "expected_sha": "f87bd01a8efa67595b2cd1d5d48333542d15ebc2", "issue": 101, "reason": "The native pre-launch remediation merged and the strict public audit passed; the lease may be released by exact compare-and-swap."}
+    {"task": "P023", "status": "release_ready", "expected_sha": "f87bd01a8efa67595b2cd1d5d48333542d15ebc2", "issue": 101, "reason": "The native pre-launch remediation merged and the strict public audit passed; the lease may be released by exact compare-and-swap."},
+    {"task": "P024", "status": "release_ready", "expected_sha": "b06d764325767ff9966da74f7841c4d48cac4bee", "issue": 103, "reason": "The approved-recipient handoff merged, deployed and passed both strict public audits; private receipt/reply acceptance remains owner work."}
   ]
 }

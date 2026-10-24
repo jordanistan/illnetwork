@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -123,7 +123,8 @@
     "P020": "native CodeQL v4.39.0 consolidation merged in SpaceGhostKilla PR #16 as c7fe5d9c67748eb08b28d43a559528f5d6a9c5d5 and Birdy PR #10 as af05683115337bf9ad4a12cf7096ade3c8aa0022; all five native PR workflows passed; four superseded Dependabot PRs closed; site, gallery, scanner, downloads and product state unchanged",
     "P021": "bounded professional-site verifier merged in native PR #67 as 2f69d67d17c3bd22f18188802e144e4ff7774691; all three PR workflows passed; live root still fails strict review on three Cloudflare-injected scripts; owner/admin review and passing manual live run required",
     "P022": "public Pawsfect boundary verifier complete with 23 offline tests; October 23 strict live probe passed after native remediation; P003/P015 remain separate pending gates",
-    "P023": "native PR #6 merged as 987fadf8f6687e154ee0426808bb9a31c6147c04; pinned Action run 40036899936 passed; established design preserved; public strict probe passed; no launch, hiring or paid-care authorization"
+    "P023": "native PR #6 merged as 987fadf8f6687e154ee0426808bb9a31c6147c04; pinned Action run 40036899936 passed; established design preserved; public strict probe passed; no launch, hiring or paid-care authorization",
+    "P024": "native PR #7 merged as ea5e02497e9b5d846be3e19e6ab18b68970114e3 after Action run 40140603830 passed; public email-app handoffs use the approved address and strict live inquiry/public audits pass; inbox receipt remains owner-unverified"
   },
   "learning_labs": {
     "issue": 33,
@@ -287,7 +288,7 @@
     "status": "fail-closed read-only claim auditor merged; P018 is release-ready at its exact acquired SHA",
     "checks": "13 focused tests and 144 portfolio tests passed locally; 37-page educational preview and all 14 isolated production exports passed; PR workflow runs 39176519367, 39176519306, 39176519213 and 39176519295 succeeded",
     "boundaries": "strict ASCII task and full-SHA schema, exact current-ref matching, no network mutation, no command on any audit inconsistency, active and owner-blocked claims protected, exact force-with-lease commands only for reviewed release-ready entries",
-    "release_ready_count": 18,
+    "release_ready_count": 19,
     "retained_claims": ["P001", "P009", "P013", "P021"],
     "design_scope": "no claim ref was deleted or moved; no website content or appearance, scanner code/dependency, media, research/download, Pages audience, production export, DNS, inquiry, payment, customer/worker data, held domain or unreleased product changed"
   },
@@ -313,7 +314,8 @@
     "P020": 95,
     "P021": 97,
     "P022": 99,
-    "P023": 101
+    "P023": 101,
+    "P024": 103
   },
   "pawsfect_walks": {
     "native_repository": "jordanistan/PawfectWalks",
@@ -342,6 +344,9 @@
     "rehearsal_pr": 85,
     "rehearsal_status": "offline synthetic harness merged; prerequisites not evaluated; no launch, booking, dispatch, payment, refund or external action authorized",
     "public_boundary_issue": 99,
-    "public_boundary_status": "October 22 strict live audit fails on unsupported recruiting and paid-service claims; content-only native remediation and passing manual run required"
+    "public_boundary_status": "October 24 strict public and inquiry audits pass against bundle ccf7f50dbcc690e8da20170669b7ef199e81fe240c81729e36623f41fb5c6e7e; content and handoff boundaries verified, while P003/P015 and owner inbox acceptance remain pending",
+    "inquiry_handoff_issue": 103,
+    "inquiry_handoff_pr": 7,
+    "inquiry_handoff_status": "public mailto routes use the approved address and pass bounded credential-free checks; no email was sent and receipt/reply remain owner-unverified"
   }
 }

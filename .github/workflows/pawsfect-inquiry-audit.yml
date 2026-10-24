@@ -1,0 +1,55 @@
+name: Pawsfect inquiry handoff audit
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'portfolio/pawsfect_inquiry_audit.py'
+      - 'portfolio/test_pawsfect_inquiry_audit.py'
+      - 'portfolio/pawsfect_public_audit.py'
+      - '.github/portfolio/pawsfect-inquiry/**'
+      - '.github/workflows/pawsfect-inquiry-audit.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'portfolio/pawsfect_inquiry_audit.py'
+      - 'portfolio/test_pawsfect_inquiry_audit.py'
+      - 'portfolio/pawsfect_public_audit.py'
+      - '.github/portfolio/pawsfect-inquiry/**'
+      - '.github/workflows/pawsfect-inquiry-audit.yml'
+  schedule:
+    - cron: '17 15 * * 5'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pawsfect-inquiry-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Run offline inquiry tests
+        run: python3 -m unittest portfolio.test_pawsfect_inquiry_audit -v
+
+  live:
+    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          ref: ${{ github.sha }}
+      - name: Audit the fixed public inquiry handoff
+        run: python3 -m portfolio.pawsfect_inquiry_audit
