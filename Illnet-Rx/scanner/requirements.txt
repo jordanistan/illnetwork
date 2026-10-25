@@ -3,4 +3,4 @@ Werkzeug>=3.0.0
 openai>=2.44.0
 requests>=2.32.3
 mistune>=3.0.0
-APScheduler>=3.10.0
+APScheduler>=3.11.3
