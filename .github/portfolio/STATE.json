@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -29,6 +29,7 @@
     "native_codeql_checks": "SpaceGhostKilla site, staged review, production export, download integrity and JavaScript checks passed; Birdy JavaScript and two-page review artifact checks passed; exact full-SHA workflow assertions and diff checks passed in both repositories",
     "professional_live_tests": "11 offline verifier tests passed; native 40-page artifact and central 37-page mirror passed with zero errors; checked-in root and resume hashes remained unchanged; PR live job correctly skipped",
     "pawsfect_public_tests": "23 offline verifier tests passed; native lint, typecheck, production build and 6 focused artifact tests passed; strict local live probe passed on October 23 after native deployment",
+    "spaceghostkilla_live_review_tests": "14 offline verifier tests and a bounded seven-resource live audit passed; services HTML, four local assets and both free downloads matched the checked-in main artifacts byte-for-byte",
     "preview_artifact": "37 pages; 0 local-link/security-boundary errors",
     "production_artifacts": "all 14 built and checked",
     "javascript_syntax": "passed",
@@ -43,10 +44,18 @@
       "result": "success; Cloudflare URL access blocked from this environment"
     },
     "spaceghostkilla": {
-      "pr": 11,
-      "sha": "3d2d43a7200dff2ad4e763cea1084094e07d001d",
-      "pages_run": 37183147846,
-      "result": "success; HTTP 200"
+      "pr": 17,
+      "sha": "57e38f934a6ab5feedb7e855ac4472966af895cd",
+      "pages_run": 40245186222,
+      "result": "P025 native PR checks, trusted-main live audit and post-merge Pages deployment passed",
+      "live_review": {
+        "issue": 105,
+        "pull_request": 17,
+        "workflow_runs": [40245077629, 40245077669, 40245077705, 40245077576, 40245186323, 40245186360, 40245186216, 40245186301, 40245186222],
+        "services_sha256": "0776db0ffd28c7c92f447b815fd2c338b26c47010ef6e88bb846b8999a8f3426",
+        "pdf_sha256": "334731e306530ebb80438d0b606ca49e87eb6826faaaf991682758dd5c6067cc",
+        "zip_sha256": "230a465d9370249c03b61fee3387ceb03765b569608ab37403536737bba04957"
+      }
     },
     "iambirdy": {
       "pr": 1,
@@ -100,7 +109,7 @@
   },
   "commercial_deployments": "not configured",
   "native_secret_scanning_and_push_protection": "unverified",
-  "next_task": "P003 still needs seven real operating confirmations before paid care and P015 remains pending before recruiting; P001 and P021 need owner Pages/Cloudflare review and passing manual strict runs; P005 requires authenticated Cloudflare preview, response, inbox, DNS and rollback evidence; P009 remains actively claimed; P011 and P012 require real qualified owner evidence; preserve every native site's established design",
+  "next_task": "P004 still needs owner-approved outside-work boundaries, one actual offer/capacity/fee, client terms, a private evidence channel, and invoice/payment decisions; P003 still needs seven real operating confirmations before paid care and P015 remains pending before recruiting; P001 and P021 need owner Pages/Cloudflare review and passing manual strict runs; P005 requires authenticated Cloudflare preview, response, inbox, DNS and rollback evidence; P009 remains actively claimed; P011 and P012 require real qualified owner evidence; preserve every native site's established design",
   "tasks": {
     "P001": "verifier complete in PR #67; mirror HTTPS 200 with all 14 links but strict check fails on injected Cloudflare Rocket Loader/Insights; central endpoints return 403; owner/admin review and passing manual live run required",
     "P002": "complete in PR #35; merge 2bdb15e37746fbfa29ffc717187c5827da9b3673; lease released",
@@ -124,7 +133,8 @@
     "P021": "bounded professional-site verifier merged in native PR #67 as 2f69d67d17c3bd22f18188802e144e4ff7774691; all three PR workflows passed; live root still fails strict review on three Cloudflare-injected scripts; owner/admin review and passing manual live run required",
     "P022": "public Pawsfect boundary verifier complete with 23 offline tests; October 23 strict live probe passed after native remediation; P003/P015 remain separate pending gates",
     "P023": "native PR #6 merged as 987fadf8f6687e154ee0426808bb9a31c6147c04; pinned Action run 40036899936 passed; established design preserved; public strict probe passed; no launch, hiring or paid-care authorization",
-    "P024": "native PR #7 merged as ea5e02497e9b5d846be3e19e6ab18b68970114e3 after Action run 40140603830 passed; public email-app handoffs use the approved address and strict live inquiry/public audits pass; inbox receipt remains owner-unverified"
+    "P024": "native PR #7 merged as ea5e02497e9b5d846be3e19e6ab18b68970114e3 after Action run 40140603830 passed; public email-app handoffs use the approved address and strict live inquiry/public audits pass; inbox receipt remains owner-unverified",
+    "P025": "native PR #17 merged as 57e38f934a6ab5feedb7e855ac4472966af895cd; four PR workflows and trusted-main live run 40245186323 passed; seven public resources match checked-in artifacts; commercial gates remain owner work"
   },
   "learning_labs": {
     "issue": 33,
@@ -281,6 +291,17 @@
     "boundaries": "fixed credential-free HTTPS root and one same-origin hashed module; fail-closed root markup/resource inventory; bounded redirects, time, bytes, MIME and strict UTF-8; no PR external request, submission, credential, cookie, referrer, inbox, account or data access",
     "design_scope": "native copy and metadata changed with no CSS/layout redesign; no P003/P015 evidence, shared generator/assets, scanner/downloads, DNS setting, inbox submission, payment, customer/worker data, held domain or unreleased product changed"
   },
+  "spaceghostkilla_live_review": {
+    "issue": 105,
+    "native_pull_request": 17,
+    "native_commit": "57e38f934a6ab5feedb7e855ac4472966af895cd",
+    "status": "native verifier merged; four PR workflows and the trusted-main live audit passed",
+    "checks": "14 offline regression tests, site check, JavaScript syntax, 21-file review stage, 22-file production stage and byte-identical staged downloads passed; native PR runs 40245077629, 40245077669, 40245077705 and 40245077576 succeeded; trusted-main live run 40245186323 and Pages run 40245186222 succeeded",
+    "live_observation": "October 25: services HTML 6897 bytes and SHA-256 0776db0ffd28c7c92f447b815fd2c338b26c47010ef6e88bb846b8999a8f3426; PDF 973718 bytes and SHA-256 334731e306530ebb80438d0b606ca49e87eb6826faaaf991682758dd5c6067cc; ZIP 9586 bytes and SHA-256 230a465d9370249c03b61fee3387ceb03765b569608ab37403536737bba04957; all four active local services assets also matched main byte-for-byte",
+    "boundaries": "fixed seven same-origin HTTPS resources, bounded redirects/time/bytes/MIME, strict UTF-8 for text, exact active-resource inventory, no ambient credentials/cookies/referrer, no forms/capture/payment/tracker/storage/XHR/held-domain paths, and PDF/ZIP magic plus exact-byte checks",
+    "owner_gate": "approve outside-work boundaries, one actual offer with capacity and fee, client terms, a private evidence channel, invoice/payment handling, authenticated commercial staging and one harmless inquiry receipt test before representing the funnel as commercially ready",
+    "design_scope": "no website design, copy, pricing, research, downloads, production export, DNS, inquiry, payment, customer data, held domain or unreleased product changed; the research root remains outside P025 because the hosting edge injects Cloudflare Insights"
+  },
   "claim_hygiene": {
     "issue": 89,
     "pull_request": 90,
@@ -288,7 +309,7 @@
     "status": "fail-closed read-only claim auditor merged; P018 is release-ready at its exact acquired SHA",
     "checks": "13 focused tests and 144 portfolio tests passed locally; 37-page educational preview and all 14 isolated production exports passed; PR workflow runs 39176519367, 39176519306, 39176519213 and 39176519295 succeeded",
     "boundaries": "strict ASCII task and full-SHA schema, exact current-ref matching, no network mutation, no command on any audit inconsistency, active and owner-blocked claims protected, exact force-with-lease commands only for reviewed release-ready entries",
-    "release_ready_count": 19,
+    "release_ready_count": 20,
     "retained_claims": ["P001", "P009", "P013", "P021"],
     "design_scope": "no claim ref was deleted or moved; no website content or appearance, scanner code/dependency, media, research/download, Pages audience, production export, DNS, inquiry, payment, customer/worker data, held domain or unreleased product changed"
   },
@@ -315,7 +336,8 @@
     "P021": 97,
     "P022": 99,
     "P023": 101,
-    "P024": 103
+    "P024": 103,
+    "P025": 105
   },
   "pawsfect_walks": {
     "native_repository": "jordanistan/PawfectWalks",
