@@ -30,7 +30,7 @@ Add each custom domain through Cloudflare's project UI and follow the exact DNS 
 
 ## Owner inputs before accepting money
 
-- Pawsfect Walks: verify insurance including care/custody/control coverage, approved service area and availability, intake/meet-and-greet process, handling/transport policy, signed service agreement, cancellation/refund terms, and payment method. Do not represent coverage as active until verified. No door codes in GitHub or initial email.
+- Pawsfect Walks: verify insurance including care/custody/control coverage, approved service area and availability, intake/meet-and-greet process, handling/transport policy, signed service agreement, cancellation/refund terms, and payment method. Record only public-safe status through `.github/portfolio/pawsfect-launch/`; the validator cannot prove the private evidence or authorize launch. Do not represent coverage as active until verified. No door codes in GitHub or initial email.
 - SpaceGhostKilla: confirm employer outside-work boundaries, final paid-review scope, written authorization, evidence handling, invoicing/payment method, and client terms. No accreditation claims. Leave Field Manual/KubeScan unreleased until their criteria pass.
 - Digital products: verified merchant account, catalog, product files/rights, refund/delivery terms, and a real checkout test. No placeholder purchase button or static order confirmation.
 - Find Fido: official sources and dates for each listing; distinguish sponsorship from verification. No user submissions, lost-pet personal data, or marketplace bookings until storage/moderation/security are implemented.
