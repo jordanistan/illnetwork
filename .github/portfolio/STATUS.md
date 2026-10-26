@@ -1,4 +1,4 @@
-# Portfolio checkpoint — October 24, 2026
+# Portfolio checkpoint — October 26, 2026
 
 ## Shipped
 
@@ -214,3 +214,11 @@ Public DNS observation found no MX answer for `pawsfectwalks.com`, no root TXT a
 The fail-closed verifier compares all seven resources byte-for-byte with the reviewed `main` artifacts. On October 25 the live services HTML was 6,897 bytes with SHA-256 `0776db0ffd28c7c92f447b815fd2c338b26c47010ef6e88bb846b8999a8f3426`; the 973,718-byte PDF matched `334731e306530ebb80438d0b606ca49e87eb6826faaaf991682758dd5c6067cc`; and the 9,586-byte ZIP matched `230a465d9370249c03b61fee3387ceb03765b569608ab37403536737bba04957`. Fourteen offline regression tests cover redirect and resource drift, hidden capture/payment/tracker surfaces, anchor `ping` and download tampering.
 
 No website design, copy, pricing, research, downloads, production export, DNS, inquiry, payment, customer data, held domain or unreleased product changed. The research root is deliberately outside P025 because the hosting edge injects Cloudflare Insights; no clean-root claim is made. Commercial readiness remains blocked on owner approval of outside-work boundaries, one actual offer with capacity and fee, client terms, a private evidence channel, invoice/payment handling, authenticated staging and one harmless inquiry receipt test. No booking, customer or revenue is claimed.
+
+## P026 Pawsfect operating-readiness evidence gate — October 26, 2026
+
+P026 adds one strict, pending-by-default public status record for the seven existing P003 requirements: insurance including care/custody/control, service area and genuine availability, intake/meet-and-greet, handling/transportation, service agreement, cancellation/refunds, and payment/booking controls. It is bound to native Pawsfect commit `ea5e02497e9b5d846be3e19e6ab18b68970114e3` and issues #39–#45. Every gate remains pending.
+
+The validator requires the exact gate identity, issue, order, allowed reviewer-role label, non-future timestamp, dependency chronology, boolean private-evidence marker and fixed neutral public note. It rejects extra fields, duplicate keys, non-finite constants, oversized or symlinked files and ancestors, sensitive-looking data and all held domains. Seventeen focused tests cover partial progress, forged completion, unsafe files, gate dependency and chronology bypasses, sensitive data and permanent non-authorization fields. Independent review found and resolved two medium gaps in transitive gate order and same-day approval chronology; final review found no remaining high- or medium-severity issue. The workflow is offline, full-SHA pinned, read-only and receives no secrets.
+
+P026 can record that the seven P003 operating requirements are complete only when all seven public status gates are verified in sequence and Jordan records an offset-aware approval timestamp after the final gate. The record is self-attested and cannot prove insurance, reviewer identity, legal review, capacity, a signed agreement, payment settlement or private evidence. It permanently keeps commercial hosting, inbox receipt, go-live, bookings, payment collection, recruiting and paid-care launch authorization false. No website source or appearance, native Pawsfect note, inquiry path, DNS, account, customer/worker data, scanner, Birdy media, SpaceGhostKilla research/download, held domain or unreleased product changed.

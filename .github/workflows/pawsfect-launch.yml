@@ -1,0 +1,36 @@
+name: Pawsfect operating launch gate
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/portfolio/pawsfect-launch/**'
+      - '.github/workflows/pawsfect-launch.yml'
+      - 'portfolio/pawsfect_launch.py'
+      - 'portfolio/test_pawsfect_launch.py'
+  push:
+    branches: [main]
+    paths:
+      - '.github/portfolio/pawsfect-launch/**'
+      - '.github/workflows/pawsfect-launch.yml'
+      - 'portfolio/pawsfect_launch.py'
+      - 'portfolio/test_pawsfect_launch.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pawsfect-operating-launch-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Test operating-readiness boundaries
+        run: python3 -m unittest portfolio.test_pawsfect_launch -v
+      - name: Validate pending evidence template
+        run: python3 portfolio/pawsfect_launch.py

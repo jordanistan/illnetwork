@@ -26,6 +26,7 @@
     {"task": "P022", "status": "release_ready", "expected_sha": "ac38575cb7926e28cd77fce8c6e1a4d91e6f4502", "issue": 99, "reason": "The public verifier, native remediation and October 23 strict live probe are complete; P003/P015 remain separate launch gates."},
     {"task": "P023", "status": "release_ready", "expected_sha": "f87bd01a8efa67595b2cd1d5d48333542d15ebc2", "issue": 101, "reason": "The native pre-launch remediation merged and the strict public audit passed; the lease may be released by exact compare-and-swap."},
     {"task": "P024", "status": "release_ready", "expected_sha": "b06d764325767ff9966da74f7841c4d48cac4bee", "issue": 103, "reason": "The approved-recipient handoff merged, deployed and passed both strict public audits; private receipt/reply acceptance remains owner work."},
-    {"task": "P025", "status": "release_ready", "expected_sha": "678c800e2e187bad2781d5284b6f410b997bceb8", "issue": 105, "reason": "The SpaceGhostKilla live-review verifier merged and passed its trusted-main audit; commercial offer, terms, evidence and invoicing decisions remain owner work."}
+    {"task": "P025", "status": "release_ready", "expected_sha": "678c800e2e187bad2781d5284b6f410b997bceb8", "issue": 105, "reason": "The SpaceGhostKilla live-review verifier merged and passed its trusted-main audit; commercial offer, terms, evidence and invoicing decisions remain owner work."},
+    {"task": "P026", "status": "release_ready", "expected_sha": "e15c88d167a4d833a79460671048f1c23d52637d", "issue": 108, "reason": "The pending-by-default Pawsfect operating-readiness gate was merged and verified; all seven real operating confirmations and separate launch authorization remain owner work."}
   ]
 }

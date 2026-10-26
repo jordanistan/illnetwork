@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "project": "Pawsfect Walks operating readiness",
+  "source_repository": "jordanistan/PawfectWalks",
+  "native_source_commit": "ea5e02497e9b5d846be3e19e6ab18b68970114e3",
+  "coordinator_issues": [39, 40, 41, 42, 43, 44, 45],
+  "proposed_pilot": {
+    "status": "proposal_pending_owner_approval",
+    "service_model": "managed-walker pilot",
+    "included_services": ["individual household dog walks", "simple drop-ins"],
+    "excluded_services": [
+      "routine pet transportation",
+      "boarding",
+      "group or off-leash walks",
+      "medication administration",
+      "in-home sitting"
+    ]
+  },
+  "p003_operating_requirements_complete": false,
+  "owner_operating_approved_at": null,
+  "commercial_hosting_verified": false,
+  "public_inquiry_receipt_verified": false,
+  "owner_go_live_authorized": false,
+  "bookings_authorized": false,
+  "payment_collection_authorized": false,
+  "recruiting_authorized": false,
+  "paid_care_launch_ready": false,
+  "gates": [
+    {
+      "id": "insurance_and_ccc",
+      "issue": 39,
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending insurer confirmation of in-force coverage for the approved model, including care, custody or control; no coverage is claimed."
+    },
+    {
+      "id": "service_area_and_availability",
+      "issue": 40,
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending owner approval of one initial zone, genuine capacity, travel buffers and private primary or backup coverage."
+    },
+    {
+      "id": "intake_and_meet_and_greet",
+      "issue": 41,
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending approval and rehearsal of restricted intake, meet-and-greet acceptance criteria and secure access handling."
+    },
+    {
+      "id": "handling_and_transportation",
+      "issue": 42,
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending approval and rehearsal of handling, weather, escape, injury, no-access and transportation boundaries."
+    },
+    {
+      "id": "service_agreement",
+      "issue": 43,
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending qualified review, owner approval and a private signature process for the final service agreement."
+    },
+    {
+      "id": "cancellation_and_refunds",
+      "issue": 44,
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending one approved cancellation and refund policy aligned across the agreement, invoices and support procedure."
+    },
+    {
+      "id": "payment_method_and_booking_controls",
+      "issue": 45,
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending owner-controlled processor activation and private receipt, refund, settlement and reconciliation tests."
+    }
+  ]
+}
