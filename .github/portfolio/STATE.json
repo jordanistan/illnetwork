@@ -318,10 +318,12 @@
   },
   "spaceghostkilla_consulting_gate": {
     "issue": 110,
+    "pull_request": 111,
+    "merge_commit": "3b58507134872ee43f2bbbd8b562c67d1ce959ea",
     "source_repository": "jordanistan/spaceghostkilla",
     "native_source_commit": "57e38f934a6ab5feedb7e855ac4472966af895cd",
-    "status": "pending-by-default global evidence gate prepared; all eight owner-process gates remain pending; no commercial or engagement authority",
-    "checks": "17 focused tests cover strict schema/types, exact six-source pin, eight gate order, transitive dependencies and timestamp chronology, per-engagement separation, unsafe files and symlink ancestors, invalid UTF-8, sensitive/held content and permanent non-authorization fields; 207 total portfolio tests, 37-page preview and all 14 production exports passed locally",
+    "status": "merged pending-by-default global evidence gate; all eight owner-process gates remain pending; no commercial or engagement authority",
+    "checks": "17 focused tests cover strict schema/types, exact six-source pin, eight gate order, transitive dependencies and timestamp chronology, per-engagement separation, unsafe files and symlink ancestors, invalid UTF-8, sensitive/held content and permanent non-authorization fields; 207 total portfolio tests, 37-page preview and all 14 production exports passed; PR workflow runs 40601516213, 40601516216, 40601516266, 40601516259, 40601516347 and 40601516168 succeeded; no new trusted-main workflow run surfaced after the API merge and no Pages deployment is claimed",
     "boundaries": "public status contains only fixed gate state, approved role label, timestamp, boolean private-evidence marker and neutral note; validator cannot authenticate the owner or prove outside-work permission, account settings, a client agreement, secure channel, inbox receipt, invoice, payment or private evidence",
     "owner_gate": "privately verify outside-work boundaries, account protections, one offer and real capacity, quote process, commercial-terms framework, evidence channel, invoice/payment process and commercial staging/inquiry receipt; separately authorize every client engagement and any access in writing",
     "design_scope": "no native repository, website source/appearance, pricing, research, PDF/ZIP, production export, DNS, inbox, payment system, customer data, scanner, Birdy media, held domain or unreleased product changed"
