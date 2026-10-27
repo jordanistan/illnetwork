@@ -32,3 +32,5 @@ After releasing a lease, change its ledger status to `released` and clear `expec
 ## Boundaries
 
 The ledger is a coordination record, not evidence of deployment, insurance, legal review, brand clearance, customer activity, revenue, or authorization for live work. Keep credentials and private evidence out of this file.
+
+P027 was acquired at `963e492d03fa294bedfea1ffb9effeca858fbdd0` for issue #110. After its reviewed implementation is merged, that exact lease is release-ready; no owner decision or per-engagement authorization is transferred to the lease.

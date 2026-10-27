@@ -1,0 +1,36 @@
+name: SpaceGhostKilla consulting readiness gate
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/portfolio/spaceghostkilla-consulting/**'
+      - '.github/workflows/spaceghostkilla-consulting.yml'
+      - 'portfolio/spaceghostkilla_consulting.py'
+      - 'portfolio/test_spaceghostkilla_consulting.py'
+  push:
+    branches: [main]
+    paths:
+      - '.github/portfolio/spaceghostkilla-consulting/**'
+      - '.github/workflows/spaceghostkilla-consulting.yml'
+      - 'portfolio/spaceghostkilla_consulting.py'
+      - 'portfolio/test_spaceghostkilla_consulting.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sgk-consulting-readiness-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Test consulting-readiness boundaries
+        run: python3 -m unittest portfolio.test_spaceghostkilla_consulting -v
+      - name: Validate pending evidence template
+        run: python3 portfolio/spaceghostkilla_consulting.py
