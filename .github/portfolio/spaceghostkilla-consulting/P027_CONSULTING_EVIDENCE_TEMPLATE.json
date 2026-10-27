@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "project": "SpaceGhostKilla consulting readiness",
+  "source_repository": "jordanistan/spaceghostkilla",
+  "native_source_commit": "57e38f934a6ab5feedb7e855ac4472966af895cd",
+  "source_paths": [
+    "docs/consulting/00_Consulting_Launch.md",
+    "docs/consulting/01_Inquiry_and_Fit.md",
+    "docs/consulting/02_Scope_and_Authorization.md",
+    "docs/consulting/03_Evidence_Handling.md",
+    "docs/consulting/04_Delivery_and_Closeout.md",
+    "docs/consulting/05_Owner_Decisions.md"
+  ],
+  "coordinator_issue": 110,
+  "proposed_offer": {
+    "status": "proposal_pending_owner_approval",
+    "boundary": "one Entra identity OR one CI/CD evidence review",
+    "direct_system_access": "excluded_by_default",
+    "production_changes": "excluded",
+    "certification": "not_offered"
+  },
+  "engagement_boundary": {
+    "status": "not_evaluated_by_p027",
+    "required_for_each_engagement": true,
+    "requirements": [
+      "verified client authority and asset control",
+      "written approved activities and time window",
+      "applicable third-party permissions",
+      "approved stop and revocation path"
+    ]
+  },
+  "per_engagement_authorization_required": true,
+  "p004_global_requirements_complete": false,
+  "owner_global_approved_at": null,
+  "commercial_launch_ready": false,
+  "owner_go_live_authorized": false,
+  "outreach_authorized": false,
+  "client_authority_verified": false,
+  "client_engagement_authorized": false,
+  "system_access_authorized": false,
+  "evidence_received": false,
+  "client_work_started": false,
+  "invoice_issued": false,
+  "payment_received": false,
+  "customer_acquired": false,
+  "revenue_earned": false,
+  "field_manual_released": false,
+  "kubescan_released": false,
+  "other_paid_product_released": false,
+  "gates": [
+    {
+      "id": "outside_work_boundaries",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending private review of applicable employer, confidentiality and conflict boundaries; no permission is claimed."
+    },
+    {
+      "id": "account_protections",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending owner or administrator verification of applicable MFA, secret scanning, push protection and branch rules."
+    },
+    {
+      "id": "offer_and_capacity",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending owner approval of one evidence-review boundary, deliverables, exclusions, revision allowance and actual capacity."
+    },
+    {
+      "id": "final_fee_and_quote_process",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending owner approval of the quote process based on reviewed effort and costs; no final client fee is approved."
+    },
+    {
+      "id": "client_commercial_terms_framework",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending appropriate review and owner approval of the private commercial-terms framework; no client agreement is executed."
+    },
+    {
+      "id": "private_evidence_channel",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending verification of restricted transfer, storage, readers, tools, incident contact and retention or deletion controls."
+    },
+    {
+      "id": "invoice_and_payment_process",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending private verification of the owner-controlled invoice, payment, payout and refund process; no invoice or payment is claimed."
+    },
+    {
+      "id": "commercial_inquiry_hosting",
+      "status": "pending",
+      "checked_at": "",
+      "reviewer_role": "",
+      "private_evidence_recorded": false,
+      "notes": "Pending authenticated commercial staging, HTTPS and header checks, download checks, and harmless inquiry receipt and reply verification."
+    }
+  ]
+}
