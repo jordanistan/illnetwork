@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -27,6 +27,7 @@
     "claim_audit_tests": "13 passed; strict ASCII task and SHA schema, exact remote-ref matching, global command suppression on any inconsistency, active/owner-blocked protection and exact compare-and-swap release output",
     "professional_alpine_checks": "Dockerfile exact runtime digest/no-cache assertions passed; native 40-page and central 37-page review artifacts passed with zero errors; JavaScript syntax and diff checks passed; no container build claimed",
     "native_codeql_checks": "SpaceGhostKilla site, staged review, production export, download integrity and JavaScript checks passed; Birdy JavaScript and two-page review artifact checks passed; exact full-SHA workflow assertions and diff checks passed in both repositories",
+    "birdy_codeql_patch_checks": "v4.39.1 annotated tag dereferenced to the exact pinned commit; JavaScript syntax, Python compilation, exact workflow assertions, two-page review artifact and diff checks passed; 207 coordinator tests, 37-page preview and all 14 production exports passed; both native PR workflows succeeded",
     "professional_live_tests": "11 offline verifier tests passed; native 40-page artifact and central 37-page mirror passed with zero errors; checked-in root and resume hashes remained unchanged; PR live job correctly skipped",
     "pawsfect_public_tests": "23 offline verifier tests passed; native lint, typecheck, production build and 6 focused artifact tests passed; strict local live probe passed on October 23 after native deployment",
     "spaceghostkilla_live_review_tests": "14 offline verifier tests and a bounded seven-resource live audit passed; services HTML, four local assets and both free downloads matched the checked-in main artifacts byte-for-byte",
@@ -138,7 +139,8 @@
     "P024": "native PR #7 merged as ea5e02497e9b5d846be3e19e6ab18b68970114e3 after Action run 40140603830 passed; public email-app handoffs use the approved address and strict live inquiry/public audits pass; inbox receipt remains owner-unverified",
     "P025": "native PR #17 merged as 57e38f934a6ab5feedb7e855ac4472966af895cd; four PR workflows and trusted-main live run 40245186323 passed; seven public resources match checked-in artifacts; commercial gates remain owner work",
     "P026": "pending-by-default Pawsfect operating-readiness evidence gate prepared with 17 focused tests; all seven real confirmations, authenticated hosting/inbox evidence and final launch authorization remain owner work",
-    "P027": "pending-by-default SpaceGhostKilla global consulting-readiness evidence gate prepared with 17 focused tests; all eight real owner processes and every per-engagement authorization remain separate owner work"
+    "P027": "pending-by-default SpaceGhostKilla global consulting-readiness evidence gate prepared with 17 focused tests; all eight real owner processes and every per-engagement authorization remain separate owner work",
+    "P028": "Birdy CodeQL v4.39.1 consolidation merged in native PR #13 as f3f8f56584018dcb413190ffd537e8914c281d9e; both native workflows passed; superseded PRs #11 and #12 closed; gallery/media and product state unchanged"
   },
   "learning_labs": {
     "issue": 33,
@@ -272,6 +274,20 @@
     "boundaries": "full-SHA CodeQL init/analyze pins, least-privilege existing job permissions and no persisted checkout credentials; account-level secret scanning, push protection and branch protection remain unverified",
     "design_scope": "no website content or appearance, gallery/media, scanner code/dependency, security research/downloads, Pages audience, production export, DNS, inquiry, payment, customer/worker data, held domain or unreleased product changed"
   },
+  "birdy_codeql_patch": {
+    "issue": 113,
+    "native_pull_request": 13,
+    "native_commit": "f3f8f56584018dcb413190ffd537e8914c281d9e",
+    "upstream_tag": "v4.39.1",
+    "upstream_tag_object": "8498dc4c2b27cdd99baf0f87955b29ebbf30c78d",
+    "upstream_commit": "9b3254085494b55a0f7c4c2b3d2d52cc712ce370",
+    "upstream_verification": "official annotated tag fetched and dereferenced on 2026-10-28; no cryptographic signature was present, so none is claimed",
+    "workflow_runs": [40785806260, 40785806246],
+    "checks": "JavaScript syntax, Python compilation, exact pin assertions, two-page native review artifact and diff checks passed; 207 coordinator tests, 37-page educational preview and all 14 separate production exports passed; independent review found no high- or medium-severity issue; both native PR workflows succeeded",
+    "superseded_pull_requests": ["iambirdy#11", "iambirdy#12"],
+    "boundaries": "both CodeQL init/analyze actions use the same full SHA; triggers, languages, build mode, least-privilege permissions and disabled persisted credentials are preserved",
+    "design_scope": "only the Birdy security workflow changed; P009 gallery/media, website content/design, Pages audience, scanner/security research, downloads, DNS, inquiry, payment, customer data, held domains and unreleased products were unchanged"
+  },
   "professional_live_integrity": {
     "issue": 97,
     "native_pull_request": 67,
@@ -335,7 +351,7 @@
     "status": "fail-closed read-only claim auditor merged; P018 is release-ready at its exact acquired SHA",
     "checks": "13 focused tests and 144 portfolio tests passed locally; 37-page educational preview and all 14 isolated production exports passed; PR workflow runs 39176519367, 39176519306, 39176519213 and 39176519295 succeeded",
     "boundaries": "strict ASCII task and full-SHA schema, exact current-ref matching, no network mutation, no command on any audit inconsistency, active and owner-blocked claims protected, exact force-with-lease commands only for reviewed release-ready entries",
-    "release_ready_count": 22,
+    "release_ready_count": 23,
     "retained_claims": ["P001", "P009", "P013", "P021"],
     "design_scope": "no claim ref was deleted or moved; no website content or appearance, scanner code/dependency, media, research/download, Pages audience, production export, DNS, inquiry, payment, customer/worker data, held domain or unreleased product changed"
   },
@@ -365,7 +381,8 @@
     "P024": 103,
     "P025": 105,
     "P026": 108,
-    "P027": 110
+    "P027": 110,
+    "P028": 113
   },
   "pawsfect_walks": {
     "native_repository": "jordanistan/PawfectWalks",
