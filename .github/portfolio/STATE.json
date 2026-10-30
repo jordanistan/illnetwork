@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -31,6 +31,7 @@
     "professional_gitleaks_checks": "official v3 ref resolved to the exact pinned commit and its action.yml declared Node 24; JavaScript syntax, Python compilation, exact workflow assertions, 40-page combined review artifact and diff checks passed; 207 coordinator tests, 37-page preview and all 14 production exports passed; both native PR workflows succeeded",
     "professional_live_tests": "11 offline verifier tests passed; native 40-page artifact and central 37-page mirror passed with zero errors; checked-in root and resume hashes remained unchanged; PR live job correctly skipped",
     "pawsfect_public_tests": "23 offline verifier tests passed; native lint, typecheck, production build and 6 focused artifact tests passed; strict local live probe passed on October 23 after native deployment",
+    "spaceghostkilla_codeql_patch_checks": "v4.39.1 annotated tag dereferenced to the exact pinned commit; static-site, JavaScript, 14 offline live-review, exact workflow, 21-file review stage, 22-file production stage, download byte-comparison and diff checks passed; 207 coordinator tests, 37-page preview and all 14 production exports passed; all three native PR workflows succeeded",
     "spaceghostkilla_live_review_tests": "14 offline verifier tests and a bounded seven-resource live audit passed; services HTML, four local assets and both free downloads matched the checked-in main artifacts byte-for-byte",
     "pawsfect_launch_tests": "17 focused tests passed; strict seven-gate schema, dependency chronology, public/private boundary, unsafe-file handling, sensitive-data rejection and permanent non-authorization fields",
     "spaceghostkilla_consulting_tests": "17 focused tests passed; exact source and eight-gate schema, dependency chronology, per-engagement separation, unsafe-file handling, sensitive-data rejection and permanent non-authorization fields",
@@ -142,7 +143,8 @@
     "P026": "pending-by-default Pawsfect operating-readiness evidence gate prepared with 17 focused tests; all seven real confirmations, authenticated hosting/inbox evidence and final launch authorization remain owner work",
     "P027": "pending-by-default SpaceGhostKilla global consulting-readiness evidence gate prepared with 17 focused tests; all eight real owner processes and every per-engagement authorization remain separate owner work",
     "P028": "Birdy CodeQL v4.39.1 consolidation merged in native PR #13 as f3f8f56584018dcb413190ffd537e8914c281d9e; both native workflows passed; superseded PRs #11 and #12 closed; gallery/media and product state unchanged",
-    "P029": "professional Gitleaks v3 / Node 24 refresh merged in native PR #68 as 917e78be6c86d9b3753b25114af842b7cfca8f32; both native workflows passed; obsolete PRs #57, #59, #60 and #61 closed; site and résumé bytes unchanged"
+    "P029": "professional Gitleaks v3 / Node 24 refresh merged in native PR #68 as 917e78be6c86d9b3753b25114af842b7cfca8f32; both native workflows passed; obsolete PRs #57, #59, #60 and #61 closed; site and résumé bytes unchanged",
+    "P030": "SpaceGhostKilla CodeQL v4.39.1 consolidation merged in native PR #20 as a316ebadbf2447311e754f6916b36d3c5dc1146a; all three native workflows passed; superseded PRs #18 and #19 closed; site, research, downloads and product state unchanged"
   },
   "learning_labs": {
     "issue": 33,
@@ -290,6 +292,20 @@
     "boundaries": "both CodeQL init/analyze actions use the same full SHA; triggers, languages, build mode, least-privilege permissions and disabled persisted credentials are preserved",
     "design_scope": "only the Birdy security workflow changed; P009 gallery/media, website content/design, Pages audience, scanner/security research, downloads, DNS, inquiry, payment, customer data, held domains and unreleased products were unchanged"
   },
+  "spaceghostkilla_codeql_patch": {
+    "issue": 117,
+    "native_pull_request": 20,
+    "native_commit": "a316ebadbf2447311e754f6916b36d3c5dc1146a",
+    "upstream_tag": "v4.39.1",
+    "upstream_tag_object": "8498dc4c2b27cdd99baf0f87955b29ebbf30c78d",
+    "upstream_commit": "9b3254085494b55a0f7c4c2b3d2d52cc712ce370",
+    "upstream_verification": "official annotated tag fetched and dereferenced on 2026-10-30; no cryptographic signature was present, so none is claimed",
+    "workflow_runs": [41143669841, 41143669814, 41143669921],
+    "superseded_pull_requests": ["spaceghostkilla#18", "spaceghostkilla#19"],
+    "boundaries": "both CodeQL init/analyze actions use the same full SHA; triggers, job permissions, checkout boundary, JavaScript language and security-extended query pack are preserved",
+    "checks": "static-site and JavaScript checks, 14 live-review tests, exact workflow assertions, 21-file review stage, 22-file production stage, free-download byte comparisons and diff checks passed; 207 coordinator tests, 37-page educational preview and all 14 separate production exports passed; independent review found no high- or medium-severity issue; all three native PR workflows succeeded",
+    "design_scope": "only the SpaceGhostKilla CodeQL workflow changed; website content/design, services copy, pricing, research, free downloads, production export, scanner, Birdy media, Pages audience, DNS, inquiry, payment, customer data, held domains and unreleased products were unchanged"
+  },
   "professional_gitleaks_runtime": {
     "issue": 115,
     "native_pull_request": 68,
@@ -367,7 +383,7 @@
     "status": "fail-closed read-only claim auditor merged; P018 is release-ready at its exact acquired SHA",
     "checks": "13 focused tests and 144 portfolio tests passed locally; 37-page educational preview and all 14 isolated production exports passed; PR workflow runs 39176519367, 39176519306, 39176519213 and 39176519295 succeeded",
     "boundaries": "strict ASCII task and full-SHA schema, exact current-ref matching, no network mutation, no command on any audit inconsistency, active and owner-blocked claims protected, exact force-with-lease commands only for reviewed release-ready entries",
-    "release_ready_count": 24,
+    "release_ready_count": 25,
     "retained_claims": ["P001", "P009", "P013", "P021"],
     "design_scope": "no claim ref was deleted or moved; no website content or appearance, scanner code/dependency, media, research/download, Pages audience, production export, DNS, inquiry, payment, customer/worker data, held domain or unreleased product changed"
   },
@@ -399,7 +415,8 @@
     "P026": 108,
     "P027": 110,
     "P028": 113,
-    "P029": 115
+    "P029": 115,
+    "P030": 117
   },
   "pawsfect_walks": {
     "native_repository": "jordanistan/PawfectWalks",
