@@ -30,6 +30,7 @@
     {"task": "P026", "status": "release_ready", "expected_sha": "e15c88d167a4d833a79460671048f1c23d52637d", "issue": 108, "reason": "The pending-by-default Pawsfect operating-readiness gate was merged and verified; all seven real operating confirmations and separate launch authorization remain owner work."},
     {"task": "P027", "status": "release_ready", "expected_sha": "963e492d03fa294bedfea1ffb9effeca858fbdd0", "issue": 110, "reason": "The pending-by-default SpaceGhostKilla global consulting-readiness gate is complete; all real owner decisions and every per-engagement authorization remain separate."},
     {"task": "P028", "status": "release_ready", "expected_sha": "02a22c114759a54b86e2be029ee3a4d9669a875e", "issue": 113, "reason": "The Birdy CodeQL v4.39.1 full-SHA consolidation merged after both native workflows passed; the two superseded bot PRs were closed."},
-    {"task": "P029", "status": "release_ready", "expected_sha": "dc356cdd8c4ed9504db36cd698fbf1e6a34ef8c3", "issue": 115, "reason": "The professional Gitleaks v3 / Node 24 runtime refresh merged after both native workflows passed; four obsolete automation PRs were closed."}
+    {"task": "P029", "status": "release_ready", "expected_sha": "dc356cdd8c4ed9504db36cd698fbf1e6a34ef8c3", "issue": 115, "reason": "The professional Gitleaks v3 / Node 24 runtime refresh merged after both native workflows passed; four obsolete automation PRs were closed."},
+    {"task": "P030", "status": "release_ready", "expected_sha": "d7d6f3067f7b5d7822f969d418f2852ad7be026c", "issue": 117, "reason": "The SpaceGhostKilla CodeQL v4.39.1 full-SHA consolidation merged after all three native PR workflows passed; two superseded bot PRs were closed."}
   ]
 }
