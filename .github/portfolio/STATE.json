@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -33,6 +33,7 @@
     "pawsfect_public_tests": "23 offline verifier tests passed; native lint, typecheck, production build and 6 focused artifact tests passed; strict local live probe passed on October 23 after native deployment",
     "spaceghostkilla_codeql_patch_checks": "v4.39.1 annotated tag dereferenced to the exact pinned commit; static-site, JavaScript, 14 offline live-review, exact workflow, 21-file review stage, 22-file production stage, download byte-comparison and diff checks passed; 207 coordinator tests, 37-page preview and all 14 production exports passed; all three native PR workflows succeeded",
     "starfield_security_runtime_checks": "official Gitleaks v3 ref resolved to the exact pinned commit whose action.yml declares Node 24; official CodeQL v4.39.1 tag dereferenced to the exact pinned commit; JavaScript syntax, exact workflow assertions, a 13-file two-page native review artifact and diff checks passed; 207 coordinator tests, 37-page preview and all 14 production exports passed; both native PR workflows succeeded",
+    "starfield_vite_patch_checks": "official Vite v6.4.5 tag and registry metadata verified; clean script-disabled install, exact vite@6.4.5 top-level version, production build, JavaScript syntax, exact package/lock/tarball assertions, 13-file two-page review artifact, exact two-file scope and diff checks passed; audit no longer reports Vite but retains 28 unrelated findings; lint retains six pre-existing errors in untouched source; both native PR workflows succeeded",
     "spaceghostkilla_live_review_tests": "14 offline verifier tests and a bounded seven-resource live audit passed; services HTML, four local assets and both free downloads matched the checked-in main artifacts byte-for-byte",
     "pawsfect_launch_tests": "17 focused tests passed; strict seven-gate schema, dependency chronology, public/private boundary, unsafe-file handling, sensitive-data rejection and permanent non-authorization fields",
     "spaceghostkilla_consulting_tests": "17 focused tests passed; exact source and eight-gate schema, dependency chronology, per-engagement separation, unsafe-file handling, sensitive-data rejection and permanent non-authorization fields",
@@ -116,6 +117,12 @@
         "sha": "6ed26faebc56071ba7876451ce8325d3b0c511ff",
         "workflow_runs": [41251566696, 41251566707],
         "result": "both PR workflows succeeded; exact Gitleaks v3 / Node 24 and CodeQL v4.39.1 pins merged; no post-merge Pages deployment claimed or required"
+      },
+      "vite_patch": {
+        "pr": 6,
+        "sha": "7ae1b8d7c7204faf6670d6c115cd61295cf8d6d7",
+        "workflow_runs": [41368927507, 41368927456],
+        "result": "both PR workflows succeeded; Vite 6.4.5 package and exact lock record merged; stale PR #3 closed; no whole-tree vulnerability-free result or post-merge Pages deployment claimed"
       }
     }
   },
@@ -152,7 +159,8 @@
     "P028": "Birdy CodeQL v4.39.1 consolidation merged in native PR #13 as f3f8f56584018dcb413190ffd537e8914c281d9e; both native workflows passed; superseded PRs #11 and #12 closed; gallery/media and product state unchanged",
     "P029": "professional Gitleaks v3 / Node 24 refresh merged in native PR #68 as 917e78be6c86d9b3753b25114af842b7cfca8f32; both native workflows passed; obsolete PRs #57, #59, #60 and #61 closed; site and résumé bytes unchanged",
     "P030": "SpaceGhostKilla CodeQL v4.39.1 consolidation merged in native PR #20 as a316ebadbf2447311e754f6916b36d3c5dc1146a; all three native workflows passed; superseded PRs #18 and #19 closed; site, research, downloads and product state unchanged",
-    "P031": "Starfield Gitleaks v3 / Node 24 and CodeQL v4.39.1 refresh merged in native PR #5 as 6ed26faebc56071ba7876451ce8325d3b0c511ff; both native workflows passed; site, artwork, package and release state unchanged"
+    "P031": "Starfield Gitleaks v3 / Node 24 and CodeQL v4.39.1 refresh merged in native PR #5 as 6ed26faebc56071ba7876451ce8325d3b0c511ff; both native workflows passed; site, artwork, package and release state unchanged",
+    "P032": "Starfield Vite 6.4.5 patch merged in native PR #6 as 7ae1b8d7c7204faf6670d6c115cd61295cf8d6d7; both native workflows passed; stale PR #3 closed; unrelated audit/lint debt and every release gate remain explicit"
   },
   "learning_labs": {
     "issue": 33,
@@ -344,6 +352,23 @@
     "boundaries": "full-SHA Gitleaks v3 and CodeQL init/analyze pins; existing triggers, least-privilege permissions, checkout boundaries, disabled Gitleaks comments/uploads, languages and build mode preserved; account-level protections unverified",
     "design_scope": "only the Starfield security workflow changed; website content/design, artwork, package/dependency files, products, checkout, release evidence, production export, Pages audience, DNS, inquiry, payment, customer data, scanner, Birdy media, SpaceGhostKilla research/downloads, held domains and unreleased products were unchanged"
   },
+  "starfield_vite_patch": {
+    "issue": 121,
+    "native_pull_request": 6,
+    "native_commit": "7ae1b8d7c7204faf6670d6c115cd61295cf8d6d7",
+    "version": "6.4.5",
+    "upstream_tag": "v6.4.5",
+    "upstream_tag_object": "74d70cb68513178dd0af754b3867fe8203349756",
+    "upstream_commit": "83ab40b53969349d5c4ed259313fff367bb86827",
+    "registry_tarball": "https://registry.npmjs.org/vite/-/vite-6.4.5.tgz",
+    "registry_integrity": "sha512-4enwjFfi4IwtEh0w+jPzpLVOFQiPHmmzPxcHXQOyEur47o6u0jE573DmGpjA+7irXoMLYRZD5ZaFUEneS3abPg==",
+    "upstream_verification": "official v6.4.5 tag and registry package metadata were fetched on 2026-11-01; the tag contains an SSH signature but no trusted allowed-signers configuration was available, so cryptographic identity verification is not claimed",
+    "workflow_runs": [41368927507, 41368927456],
+    "checks": "clean npm ci with lifecycle scripts disabled, exact top-level vite@6.4.5, production build, JavaScript syntax, exact manifest and registry assertions, 13-file two-page review artifact, exact two-file scope and diff checks passed; current audit has no Vite finding but retains 28 unrelated findings; lint retains six pre-existing errors in untouched source; independent review found no high- or medium-severity issue in the patch; both native PR workflows succeeded",
+    "superseded_pull_request": 3,
+    "boundaries": "only package.json and package-lock.json changed; no whole-tree vulnerability-free claim and no post-merge Pages deployment claimed",
+    "design_scope": "website source/design, artwork, catalog, product, checkout, release evidence, production export, Pages audience, DNS, inquiry, payment, customer data, scanner, Birdy media, SpaceGhostKilla research/downloads, held domains and unreleased products were unchanged; P011 remains pending"
+  },
   "professional_live_integrity": {
     "issue": 97,
     "native_pull_request": 67,
@@ -407,7 +432,7 @@
     "status": "fail-closed read-only claim auditor merged; P018 is release-ready at its exact acquired SHA",
     "checks": "13 focused tests and 144 portfolio tests passed locally; 37-page educational preview and all 14 isolated production exports passed; PR workflow runs 39176519367, 39176519306, 39176519213 and 39176519295 succeeded",
     "boundaries": "strict ASCII task and full-SHA schema, exact current-ref matching, no network mutation, no command on any audit inconsistency, active and owner-blocked claims protected, exact force-with-lease commands only for reviewed release-ready entries",
-    "release_ready_count": 26,
+    "release_ready_count": 27,
     "retained_claims": ["P001", "P009", "P013", "P021"],
     "design_scope": "no claim ref was deleted or moved; no website content or appearance, scanner code/dependency, media, research/download, Pages audience, production export, DNS, inquiry, payment, customer/worker data, held domain or unreleased product changed"
   },
@@ -441,7 +466,8 @@
     "P028": 113,
     "P029": 115,
     "P030": 117,
-    "P031": 119
+    "P031": 119,
+    "P032": 121
   },
   "pawsfect_walks": {
     "native_repository": "jordanistan/PawfectWalks",
