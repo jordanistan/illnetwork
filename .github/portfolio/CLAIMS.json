@@ -32,6 +32,7 @@
     {"task": "P028", "status": "release_ready", "expected_sha": "02a22c114759a54b86e2be029ee3a4d9669a875e", "issue": 113, "reason": "The Birdy CodeQL v4.39.1 full-SHA consolidation merged after both native workflows passed; the two superseded bot PRs were closed."},
     {"task": "P029", "status": "release_ready", "expected_sha": "dc356cdd8c4ed9504db36cd698fbf1e6a34ef8c3", "issue": 115, "reason": "The professional Gitleaks v3 / Node 24 runtime refresh merged after both native workflows passed; four obsolete automation PRs were closed."},
     {"task": "P030", "status": "release_ready", "expected_sha": "d7d6f3067f7b5d7822f969d418f2852ad7be026c", "issue": 117, "reason": "The SpaceGhostKilla CodeQL v4.39.1 full-SHA consolidation merged after all three native PR workflows passed; two superseded bot PRs were closed."},
-    {"task": "P031", "status": "release_ready", "expected_sha": "ce22fa759cfdafcac0d01864162226cc73ece571", "issue": 119, "reason": "The Starfield Gitleaks v3 / Node 24 and CodeQL v4.39.1 runtime refresh merged after both native PR workflows passed; site, artwork, package and release state remained unchanged."}
+    {"task": "P031", "status": "release_ready", "expected_sha": "ce22fa759cfdafcac0d01864162226cc73ece571", "issue": 119, "reason": "The Starfield Gitleaks v3 / Node 24 and CodeQL v4.39.1 runtime refresh merged after both native PR workflows passed; site, artwork, package and release state remained unchanged."},
+    {"task": "P032", "status": "release_ready", "expected_sha": "3e054896b2255b32a4477b9e877f0a791e9b99f1", "issue": 121, "reason": "The Starfield Vite 6.4.5 patch merged after both native PR workflows passed; the stale Vite PR was closed and product/release state remained unchanged."}
   ]
 }
