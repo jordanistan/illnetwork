@@ -38,3 +38,7 @@ Continue authorized reversible implementation, testing, repo writes, fixes and d
 ## Stop condition for a work session
 
 Ship one measurable task or create a complete reviewable result with a precisely identified blocker. Report actual work, tests, PR/deploy links, next task, and owner action. No guaranteed financial outcomes, imaginary staff activity, or claimed background execution.
+
+## Current coordination checkpoint — November 4, 2026
+
+P035 is complete and release-ready at lease SHA `e98f6ba75a28a26b61c087dd6390c64b999c0f31`: Starfield native PR #10 merged as `dffd1c2cfbc06a21b04710ac6b6361167ee0ccc0`, and trusted-main Pages run 41945507058 passed its post-deploy exact-byte check. The educational review is verified; P011 production/release decisions remain pending. Laptop/desktop agents must continue to avoid active P009 Birdy and P013 scanner paths. P001 and P021 remain owner-blocked. Before new work, fetch the current ledger and claims; do not infer task availability from this prose alone.
