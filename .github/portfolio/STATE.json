@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -36,6 +36,7 @@
     "starfield_vite_patch_checks": "official Vite v6.4.5 tag and registry metadata verified; clean script-disabled install, exact vite@6.4.5 top-level version, production build, JavaScript syntax, exact package/lock/tarball assertions, 13-file two-page review artifact, exact two-file scope and diff checks passed; audit no longer reports Vite but retains 28 unrelated findings; lint retains six pre-existing errors in untouched source; both native PR workflows succeeded",
     "starfield_dependency_remediation_checks": "clean script-disabled install, Node 20 static build and real React source-graph bundle, exact router/tooling/removal assertions, 13-file two-page review artifact, JavaScript/Python syntax and diff checks passed; audit reduced from 28 findings including 16 high to 12 moderate fan-out entries rooted in one current minimatch advisory; Pages, dependency-quality and security PR workflows succeeded",
     "starfield_source_quality_checks": "clean script-disabled install, high/critical audit gate, lint, no-output application/config typecheck, static build, real React source-graph bundle, JavaScript syntax, two-page review artifact and diff checks passed; all three native PR workflows succeeded; tracked Pages review artifacts remained unchanged",
+    "starfield_live_review_tests": "14 offline fixed-origin tests, the 13-file two-page staged artifact, JavaScript syntax, lint and application/config typecheck passed; local and trusted-main checks matched all 12 HTTP-served review files byte-for-byte",
     "spaceghostkilla_live_review_tests": "14 offline verifier tests and a bounded seven-resource live audit passed; services HTML, four local assets and both free downloads matched the checked-in main artifacts byte-for-byte",
     "pawsfect_launch_tests": "17 focused tests passed; strict seven-gate schema, dependency chronology, public/private boundary, unsafe-file handling, sensitive-data rejection and permanent non-authorization fields",
     "spaceghostkilla_consulting_tests": "17 focused tests passed; exact source and eight-gate schema, dependency chronology, per-engagement separation, unsafe-file handling, sensitive-data rejection and permanent non-authorization fields",
@@ -131,6 +132,14 @@
         "sha": "062a39adc9fa99c6e79e9d608afe3eb279c8d0b3",
         "workflow_runs": [41747681319, 41747681239, 41747681530],
         "result": "all three PR workflows succeeded; behavior-neutral lint/typecheck repair merged; tracked Pages artifact and product/release state unchanged; no post-merge Pages deployment claimed"
+      },
+      "live_integrity": {
+        "issue": 128,
+        "pr": 10,
+        "sha": "dffd1c2cfbc06a21b04710ac6b6361167ee0ccc0",
+        "workflow_runs": [41945259301, 41945259277, 41945507058, 41945507093],
+        "pages_run": 41945507058,
+        "result": "PR checks and post-merge security passed; trusted-main validate, deploy and exact-byte verify_live jobs passed against the deployed commit"
       }
     }
   },
@@ -170,7 +179,8 @@
     "P031": "Starfield Gitleaks v3 / Node 24 and CodeQL v4.39.1 refresh merged in native PR #5 as 6ed26faebc56071ba7876451ce8325d3b0c511ff; both native workflows passed; site, artwork, package and release state unchanged",
     "P032": "Starfield Vite 6.4.5 patch merged in native PR #6 as 7ae1b8d7c7204faf6670d6c115cd61295cf8d6d7; both native workflows passed; stale PR #3 closed; unrelated audit/lint debt and every release gate remain explicit",
     "P033": "Starfield dependency remediation merged in native PR #8 as dbf8af6ef93598d10a0ec9e7278d8ae5a622f820; all three native workflows passed; superseded PR #7 closed; one upstream minimatch advisory and all release gates remain explicit",
-    "P034": "Starfield source quality gates restored in native PR #9 as 062a39adc9fa99c6e79e9d608afe3eb279c8d0b3; all three native workflows passed; lint and application/config typecheck are enforced; Pages and release state unchanged"
+    "P034": "Starfield source quality gates restored in native PR #9 as 062a39adc9fa99c6e79e9d608afe3eb279c8d0b3; all three native workflows passed; lint and application/config typecheck are enforced; Pages and release state unchanged",
+    "P035": "Starfield fixed-origin Pages verifier merged in native PR #10 as dffd1c2cfbc06a21b04710ac6b6361167ee0ccc0; trusted-main run 41945507058 deployed and matched all 12 served review files; production export and P011 remain separate"
   },
   "learning_labs": {
     "issue": 33,
@@ -402,6 +412,17 @@
     "boundaries": "unused imports and return bindings plus an unreachable null-controls update were removed; the pinned least-privilege Node 20 workflow now requires lint and typecheck before build/bundle; tracked Pages artifacts are unchanged and no post-merge deployment is claimed",
     "design_scope": "no design, copy, route, artwork, catalog, product, checkout, release evidence, production export, Pages audience, DNS, inquiry, payment, customer data, scanner, Birdy media, SpaceGhostKilla research/downloads, held domains or unreleased-product state changed; P011 remains pending"
   },
+  "starfield_live_integrity": {
+    "issue": 128,
+    "native_pull_request": 10,
+    "native_commit": "dffd1c2cfbc06a21b04710ac6b6361167ee0ccc0",
+    "fixed_origin": "https://jordanistan.github.io/starfieldstudio/",
+    "workflow_runs": [41945259301, 41945259277, 41945507058, 41945507093],
+    "checks": "14 offline verifier tests, a fresh exact 13-file/two-page review artifact, JavaScript syntax, lint and application/config typecheck passed; PR Pages and security runs passed; trusted-main validate, deploy and verify_live jobs passed; post-merge security passed",
+    "live_observation": "November 4: 12 HTTP-served files totaling 31367 bytes matched the staged main artifact byte-for-byte; root SHA-256 b3e1ff1f2ca09d692728af30159d793ca8cfac73b9ed6e301018d0eab13b0d6e; .nojekyll validated locally because GitHub Pages does not serve it",
+    "boundaries": "fixed credential-free HTTPS endpoints, exact redirects/final URLs, bounded time/content length/stream bytes, strict MIME sets, no ambient authorization/cookie/referrer, no-cache bounded retries, exact staged manifest and bytes; live requests occur only after trusted-main deployment",
+    "design_scope": "no HTML, CSS, JavaScript, SVG, React/Vite source, design, artwork, dependency, catalog, product, checkout, production export, DNS, inquiry, payment, customer data, scanner, Birdy media, SpaceGhostKilla research/downloads, held domain or unreleased-product state changed; P011 remains pending"
+  },
   "professional_live_integrity": {
     "issue": 97,
     "native_pull_request": 67,
@@ -465,7 +486,7 @@
     "status": "fail-closed read-only claim auditor merged; P018 is release-ready at its exact acquired SHA",
     "checks": "13 focused tests and 144 portfolio tests passed locally; 37-page educational preview and all 14 isolated production exports passed; PR workflow runs 39176519367, 39176519306, 39176519213 and 39176519295 succeeded",
     "boundaries": "strict ASCII task and full-SHA schema, exact current-ref matching, no network mutation, no command on any audit inconsistency, active and owner-blocked claims protected, exact force-with-lease commands only for reviewed release-ready entries",
-    "release_ready_count": 29,
+    "release_ready_count": 30,
     "retained_claims": ["P001", "P009", "P013", "P021"],
     "design_scope": "no claim ref was deleted or moved; no website content or appearance, scanner code/dependency, media, research/download, Pages audience, production export, DNS, inquiry, payment, customer/worker data, held domain or unreleased product changed"
   },
@@ -502,7 +523,8 @@
     "P031": 119,
     "P032": 121,
     "P033": 124,
-    "P034": 126
+    "P034": 126,
+    "P035": 128
   },
   "pawsfect_walks": {
     "native_repository": "jordanistan/PawfectWalks",
