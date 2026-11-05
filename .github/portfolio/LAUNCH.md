@@ -6,6 +6,7 @@
 2. Use the personal site's review mirror as the intended mirror URL (PR #63 deployment succeeded but HTTP returned 404; access still unverified): `https://iamjordanrobison.com/domain-previews/review.html`. It generates all 14 previews from the pinned, previously reviewed ILL source commit. Update the pin deliberately after later source changes; it does not follow mutable main automatically.
 3. An owner-authenticated local session should inspect actual Pages custom-domain/HTTPS settings and Cloudflare access/security configuration, then test root and /review.html. Do not guess the cause or disrupt DNS/email. Repository administration is not exposed by this connection.
 4. Every preview is public. No private operational documents enter the artifact.
+5. Starfield's native educational review is verified at `https://jordanistan.github.io/starfieldstudio/`: trusted-main run 41945507058 deployed commit `dffd1c2cfbc06a21b04710ac6b6361167ee0ccc0` and matched all 12 served files byte-for-byte. This does not publish the separate production export or satisfy P011's brand, artwork, sample, fulfillment, pricing or terms gates. `_headers` is a downloadable artifact on GitHub Pages, not evidence that GitHub Pages enforces those header rules.
 
 ## Production from the same repository
 
