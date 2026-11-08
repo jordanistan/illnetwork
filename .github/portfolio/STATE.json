@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "coordinator_repository": "jordanistan/illnetwork",
   "source": "portfolio/",
   "domain_count": 14,
@@ -32,6 +32,7 @@
     "professional_live_tests": "11 offline verifier tests passed; native 40-page artifact and central 37-page mirror passed with zero errors; checked-in root and resume hashes remained unchanged; PR live job correctly skipped",
     "pawsfect_public_tests": "23 offline verifier tests passed; native lint, typecheck, production build and 6 focused artifact tests passed; strict local live probe passed on October 23 after native deployment",
     "spaceghostkilla_codeql_patch_checks": "v4.39.1 annotated tag dereferenced to the exact pinned commit; static-site, JavaScript, 14 offline live-review, exact workflow, 21-file review stage, 22-file production stage, download byte-comparison and diff checks passed; 207 coordinator tests, 37-page preview and all 14 production exports passed; all three native PR workflows succeeded",
+    "spaceghostkilla_codeql_4393_checks": "v4.39.3 unsigned annotated tag dereferenced to the exact pinned commit; static-site, JavaScript, 14 offline live-review, exact workflow, 21-file review stage, 22-file production stage, free PDF/ZIP byte-comparison, Python compilation and diff checks passed; independent review found no blocker; all three native PR workflows succeeded",
     "starfield_security_runtime_checks": "official Gitleaks v3 ref resolved to the exact pinned commit whose action.yml declares Node 24; official CodeQL v4.39.1 tag dereferenced to the exact pinned commit; JavaScript syntax, exact workflow assertions, a 13-file two-page native review artifact and diff checks passed; 207 coordinator tests, 37-page preview and all 14 production exports passed; both native PR workflows succeeded",
     "starfield_vite_patch_checks": "official Vite v6.4.5 tag and registry metadata verified; clean script-disabled install, exact vite@6.4.5 top-level version, production build, JavaScript syntax, exact package/lock/tarball assertions, 13-file two-page review artifact, exact two-file scope and diff checks passed; audit no longer reports Vite but retains 28 unrelated findings; lint retains six pre-existing errors in untouched source; both native PR workflows succeeded",
     "starfield_dependency_remediation_checks": "clean script-disabled install, Node 20 static build and real React source-graph bundle, exact router/tooling/removal assertions, 13-file two-page review artifact, JavaScript/Python syntax and diff checks passed; audit reduced from 28 findings including 16 high to 12 moderate fan-out entries rooted in one current minimatch advisory; Pages, dependency-quality and security PR workflows succeeded",
@@ -81,6 +82,13 @@
         "services_sha256": "0776db0ffd28c7c92f447b815fd2c338b26c47010ef6e88bb846b8999a8f3426",
         "pdf_sha256": "334731e306530ebb80438d0b606ca49e87eb6826faaaf991682758dd5c6067cc",
         "zip_sha256": "230a465d9370249c03b61fee3387ceb03765b569608ab37403536737bba04957"
+      },
+      "codeql_4393": {
+        "issue": 134,
+        "pull_request": 23,
+        "sha": "6cf7ea54597adcf8bda0e565d0a9c36a5d5b7066",
+        "workflow_runs": [42428579010, 42428579019, 42428579007],
+        "result": "CodeQL, site checks and secret scan succeeded; exact v4.39.3 commit pinned for init/analyze; PRs 21 and 22 closed as superseded; no Pages deployment claimed or required"
       }
     },
     "iambirdy": {
@@ -161,7 +169,7 @@
   },
   "commercial_deployments": "not configured",
   "native_secret_scanning_and_push_protection": "unverified",
-  "next_task": "P037 safely refreshed Pawsfect to Vite 6.4.5 without changing any public byte; use P026 only after privately verifying the seven real P003 decisions and complete one harmless private inbox receipt/reply test before paid care; P015 remains pending before recruiting; P004 still needs its real owner decisions and per-engagement authority; P001 and P021 need owner Pages/Cloudflare review and passing manual strict runs; P005 requires authenticated preview, response, inbox, DNS and rollback evidence; P009 and P013 remain actively claimed; preserve every native site's established design and unreleased product state",
+  "next_task": "P038 safely refreshed SpaceGhostKilla CodeQL to v4.39.3 without changing site or product bytes; use P026 only after privately verifying the seven real P003 decisions and complete one harmless private inbox receipt/reply test before paid care; P015 remains pending before recruiting; P004 still needs its real owner decisions and per-engagement authority; P001 and P021 need owner Pages/Cloudflare review and passing manual strict runs; P005 requires authenticated preview, response, inbox, DNS and rollback evidence; P009 and P013 remain actively claimed; preserve every native site's established design and unreleased product state",
   "tasks": {
     "P001": "verifier complete in PR #67; mirror HTTPS 200 with all 14 links but strict check fails on injected Cloudflare Rocket Loader/Insights; central endpoints return 403; owner/admin review and passing manual live run required",
     "P002": "complete in PR #35; merge 2bdb15e37746fbfa29ffc717187c5827da9b3673; lease released",
@@ -198,7 +206,8 @@
     "P034": "Starfield source quality gates restored in native PR #9 as 062a39adc9fa99c6e79e9d608afe3eb279c8d0b3; all three native workflows passed; lint and application/config typecheck are enforced; Pages and release state unchanged",
     "P035": "Starfield fixed-origin Pages verifier merged in native PR #10 as dffd1c2cfbc06a21b04710ac6b6361167ee0ccc0; trusted-main run 41945507058 deployed and matched all 12 served review files; production export and P011 remain separate",
     "P036": "native PR #9 merged as 501e03cc6c05c90b4ecafccf785d01c141567079 after runs 42134586446 and 42134586471 passed; reviewed P023/P024 boundary restored after measured live drift; central content/inquiry probes and five-file exact-byte verification pass; P003/P015 and private inbox acceptance remain owner work",
-    "P037": "native PR #10 merged as edc4981f7dbb8005288926a6fb80f94677af8f34 after boundary run 42134992753 passed; Vite 6.4.5 replaced 6.4.4 in the exact two dependency files; patch and base produced byte-identical five-file artifacts; central and native live checks pass; P003/P015 remain owner work"
+    "P037": "native PR #10 merged as edc4981f7dbb8005288926a6fb80f94677af8f34 after boundary run 42134992753 passed; Vite 6.4.5 replaced 6.4.4 in the exact two dependency files; patch and base produced byte-identical five-file artifacts; central and native live checks pass; P003/P015 remain owner work",
+    "P038": "SpaceGhostKilla PR #23 merged as 6cf7ea54597adcf8bda0e565d0a9c36a5d5b7066 after CodeQL, site-check and secret-scan runs passed; exact CodeQL v4.39.3 commit pinned for init/analyze; bot PRs #21/#22 closed; site, research, downloads and product state unchanged"
   },
   "learning_labs": {
     "issue": 33,
@@ -504,7 +513,7 @@
     "status": "fail-closed read-only claim auditor merged; P018 is release-ready at its exact acquired SHA",
     "checks": "13 focused tests and 144 portfolio tests passed locally; 37-page educational preview and all 14 isolated production exports passed; PR workflow runs 39176519367, 39176519306, 39176519213 and 39176519295 succeeded",
     "boundaries": "strict ASCII task and full-SHA schema, exact current-ref matching, no network mutation, no command on any audit inconsistency, active and owner-blocked claims protected, exact force-with-lease commands only for reviewed release-ready entries",
-    "release_ready_count": 32,
+    "release_ready_count": 33,
     "retained_claims": ["P001", "P009", "P013", "P021"],
     "design_scope": "no claim ref was deleted or moved; no website content or appearance, scanner code/dependency, media, research/download, Pages audience, production export, DNS, inquiry, payment, customer/worker data, held domain or unreleased product changed"
   },
@@ -544,7 +553,8 @@
     "P034": 126,
     "P035": 128,
     "P036": 130,
-    "P037": 132
+    "P037": 132,
+    "P038": 134
   },
   "pawsfect_walks": {
     "native_repository": "jordanistan/PawfectWalks",
